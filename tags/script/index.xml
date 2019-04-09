@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Script on vonKrafft</title>
+    <link>/tags/script/</link>
+    <description>Recent content in Script on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 02 Oct 2016 08:45:28 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Un script d&#39;aperçu d&#39;un projet Git</title>
+      <link>/console/script-apercu-dun-projet-git/</link>
+      <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
+      
+      <guid>/console/script-apercu-dun-projet-git/</guid>
+      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

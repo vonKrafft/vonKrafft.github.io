@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Un script d&#39;aperçu d&#39;un projet Git
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Vous connaissez sans doute la célèbre plateforme github.com, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme GitLab ou Gogs, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Un script d&#39;aperçu d&#39;un projet Git" />
+    <meta name="twitter:description" content="Vous connaissez sans doute la célèbre plateforme github.com, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme GitLab ou Gogs, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2016/10/8047d08e7a9c14108656e68be19a1e58-1024x640.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/console/script-apercu-dun-projet-git/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Un script d&#39;aperçu d&#39;un projet Git</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 2 octobre 2016
+      </p>
+    </header>
+    <article class="post-content"><p>Vous connaissez sans doute la célèbre plateforme <a href="https://github.com/">github.com</a>, qui permet d&rsquo;explorer et gérer un projet Git. D&rsquo;autres alternatives existent, comme <a href="https://about.gitlab.com/">GitLab</a> ou <a href="https://try.gogs.io/">Gogs</a>, qui permettent de disposer d&rsquo;une interface Web pour ses projets Git que l&rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&rsquo;une interface Web, je vous propose d&rsquo;afficher quelques inforamtions d&rsquo;un répertoire Git dans votre console.</p>
+
+<p></p>
+
+<h2 id="fonctionnalités">Fonctionnalités</h2>
+
+<p>Ce sont ces outils (GitHub, GitLab, Gogs &hellip;) qui m&rsquo;ont inspiré pour le script que je vous présente aujourd&rsquo;hui. L&rsquo;idée était d&rsquo;avoir un aperçu de l&rsquo;état d&rsquo;un projet Git. Le script permet d&rsquo;obtenir :</p>
+
+<ul>
+<li>Le nom du dépôt et de la branche actuelle ;</li>
+<li>Le nombre de commits, de branches, de tags et de contributeurs ;</li>
+<li>Le dernier commit, son auteur, son commentaire, son identifiant et sa date ;</li>
+<li>La liste des fichiers et répertoires avec leur dernier commit.</li>
+</ul>
+
+<p>Je dois vous l&rsquo;avouer, le script n&rsquo;est pas parfait et j&rsquo;ai déjà plusieurs idées pour l&rsquo;améliorer. Cependant, il fait ce qu&rsquo;on lui demande et c&rsquo;est pourquoi je vous le partage, si jamais vous souhaitez disposer d&rsquo;un petit script pour obtenir des infos sur vos projets en une seule commande.</p>
+
+<h2 id="le-code-source-git-overview-sh">Le code source git-overview.sh</h2>
+
+<script src="//gist.github.com/vonKrafft/45d673da94be9620d578fa76d1a22277.js?file=git-overview.sh"></script>
+
+<p>N&rsquo;hésitez pas à laisser un commentaire si vous avez des remarques et/ou des idées d&rsquo;amélioration.</p>
+
+<h2 id="ajouter-un-alias">Ajouter un alias</h2>
+
+<p>Pour facilement obtenir ces infos lorsque vous vous trouvez dans un répertoire d&rsquo;un projet Git, je vous propose de créer un alias :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        ~/.bashrc
+    </div>
+    
+    <pre class="code"><code data-language="bash">alias &#39;git-overview&#39;=&#39;/path/to/the/script/git-overview.sh&#39;
+</code></pre>
+</div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/git"><span class="tag">Git</span></a></li>
+        
+          <li><a href="/tags/script"><span class="tag">Script</span></a></li>
+        
+          <li><a href="/tags/gitlab"><span class="tag">Gitlab</span></a></li>
+        
+          <li><a href="/tags/github"><span class="tag">Github</span></a></li>
+        
+          <li><a href="/tags/gogs"><span class="tag">Gogs</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>897</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

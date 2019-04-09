@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ext4 on vonKrafft</title>
+    <link>/tags/ext4/</link>
+    <description>Recent content in Ext4 on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Thu, 20 Nov 2014 14:52:49 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ext4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Système de fichier : l&#39;émergence de btrfs ?</title>
+      <link>/dossiers/systeme-de-fichier-emergence-btrfs/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
+      
+      <guid>/dossiers/systeme-de-fichier-emergence-btrfs/</guid>
+      <description>&lt;p&gt;Parmi les systèmes de fichiers actuels, Btrfs (&lt;em&gt;B-tree File System&lt;/em&gt;, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Système de fichier : zfs, btrfs ou ext4 ?</title>
+      <link>/dossiers/systeme-de-fichier-zsf-btrfs-ou-ext4/</link>
+      <pubDate>Thu, 13 Nov 2014 20:49:31 +0000</pubDate>
+      
+      <guid>/dossiers/systeme-de-fichier-zsf-btrfs-ou-ext4/</guid>
+      <description>&lt;p&gt;Les systèmes de fichiers sont utilisés pour organiser le stockage de l’information sur des supports physiques (disques dur, ssd, etc.) de manière transparent pour l’utilisateur tout en lui permettant un stockage et un accès fiables.&lt;/p&gt;
+
+&lt;p&gt;Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

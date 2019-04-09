@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Système de fichier : zfs, btrfs ou ext4 ?
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Les systèmes de fichiers sont utilisés pour organiser le stockage de l’information sur des supports physiques (disques dur, ssd, etc.) de manière transparent pour l’utilisateur tout en lui permettant un stockage et un accès fiables.
+Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Système de fichier : zfs, btrfs ou ext4 ?" />
+    <meta name="twitter:description" content="Les systèmes de fichiers sont utilisés pour organiser le stockage de l’information sur des supports physiques (disques dur, ssd, etc.) de manière transparent pour l’utilisateur tout en lui permettant un stockage et un accès fiables.
+Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2014/11/95576abe5f73468976492f0867d8456b.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/dossiers/systeme-de-fichier-zsf-btrfs-ou-ext4/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-dossiers">
+    <header class="post-header">
+      <h1 class="post-title">Système de fichier : zfs, btrfs ou ext4 ?</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/dossiers/">Dossiers</a></span>
+        @vonKrafft · 13 novembre 2014
+      </p>
+    </header>
+    <article class="post-content"><p>Les systèmes de fichiers sont utilisés pour organiser le stockage de l’information sur des supports physiques (disques dur, ssd, etc.) de manière transparent pour l’utilisateur tout en lui permettant un stockage et un accès fiables.</p>
+
+<p>Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.</p>
+
+<p></p>
+
+<p>Ce bref état de l’art va donc tout d’abord présenter quelques facteurs de choix pouvant aider à départager des systèmes de fichier concurrents, avant de présenter plus en détail trois de ceux-ci : zfs, btrfs et ext4.</p>
+
+<h2 id="types-de-système-de-fichier">Types de système de fichier</h2>
+
+<p>Devant la multitude de systèmes de fichiers existant, il faut sélectionner quelques critères permettant de faire le choix le plus adapté à l’utilisation souhaitée. De plus, le choix est souvent conditionné en partie par le système d’exploitation choisi.</p>
+
+<p>Les systèmes de fichiers sont souvent regrouppés par type, ce qui permet de mettre en avant leur caractéristique principale. Voici une présentation rapide des types les plus fréquemment rencontrés :</p>
+
+<ul>
+<li><strong>journalisé</strong> : une trace de l’ensemble des modifications apportées aux données est conservé dans un journal, ce qui permet une plus grande tolérance aux pannes et une réparation plus facile en cas de corruption. Ext3, Ext4 et la famille Reiser sont journalisés.</li>
+<li><strong>non journalisé</strong> : ce sont des systèmes de fichiers plus historiques, qui sont de moins en moins utilisés; comme par exemple les systèmes FAT ou ext/ext2.</li>
+<li><strong>à <em>snapshot</em></strong> : un <em>snapshot</em> est un instantané du système de fichier qui permet d’enreigistré les modifications apportées. Selon l’implémentation utilisée (sauvegarde totale du système de fichier auparavant ou non), cette méthode permet d’éviter toute perte en cas de panne, mais implique une utilisation double d’espace de stockage. Les deux systèmes de fichier de ce type les plus anciens sont Btrfs et ZFS.</li>
+</ul>
+
+<p>Il existe encore d’autres types de systèmes de fichier, certains développés pour une utilisation en réseau, pour les clusters, ou encore d’autres plus spécialisés (ISO 9660 pour les CD-ROM, CFS pour le stockage chiffré, ramfs et tempFS pour les systèmes de fichiers temporaires, etc.). Dans la suite, nous n’aborderons plus ces systèmes de fichiers spécialisés pour nous concentrer sur les usages plus conventionnels.</p>
+
+<h2 id="ext4">ext4</h2>
+
+<h3 id="présentation-et-historique">Présentation et historique</h3>
+
+<p>Comme son nom l’indique, l’<em>extended filesystem 4</em> (ext4) est le quatrième des systèmes de fichiers <em>extended filesystem</em>, utilisés par Linux depuis ses début. Il a été développé pour apporter à ext3 des améliorations en attendant l’arrivée d’un système de fichier plus révolutionnaire (qui devrait être Btrfs). Cependant, même si ses concepteurs l’ont conçu comme une étape intermédiaire, il a été massivement adopté et est implémenté dans une grande partie des systèmes d’exploitation de type Unix. Par rapport à ses prédécesseurs, ext4 apporte une meilleure gestion des gros volumes et des gros fichiers, ainsi qu’une limitation de la fragmentation grâce à l’<em>extent</em>.</p>
+
+<h3 id="points-forts">Points forts</h3>
+
+<ul>
+<li>Compatibilité ascendante avec ext3</li>
+<li>Répandu, bien documenté, stable</li>
+<li>Limitation des erreurs I/O grâce à l’utilisation de checksum</li>
+<li>Moins de fragmentation, efficace sur les gros fichiers :
+
+<ul>
+<li>pré-allocation (grâce à l’extent)</li>
+<li>allocation retardée (le système attend d’avoir la taille totale du fichier à écrire pour allouer l’espace)</li>
+</ul></li>
+<li>performance pas trop en deça des autres pour les manipulations simples</li>
+</ul>
+
+<h3 id="points-faibles">Points faibles</h3>
+
+<ul>
+<li>compression et chifrement pas intégrés de base</li>
+<li>performances en deça pour les multiples manipulations en même temps</li>
+</ul>
+
+<h2 id="zfs">ZFS</h2>
+
+<h3 id="présentation-et-historique-1">Présentation et historique</h3>
+
+<p>ZFS a été développé dans l&rsquo;objectif d&rsquo;être le système de fichier &ldquo;ultime&rdquo;. Le projet a été lancé par Sun Microsystem entreprise maintenant rachetée par Oracle. Il a fait sa première apparition en 2005 sur Solaris et a été totalement intégré mi 2006.</p>
+
+<p>Il intègre en un seul produit le système de fichiers et la gestion de volumes.</p>
+
+<h3 id="points-forts-1">Points forts</h3>
+
+<ul>
+<li>vérification de disque à chaud</li>
+<li>vérification des métadata et des data lors d&rsquo;une vérification de disque</li>
+<li>systeme de snapshot très performant par différence</li>
+<li>possibilité de transférer des snapshot par le réseau, via ssh</li>
+<li>possibilité de définir un device pour faire du cache sur un pool de disque</li>
+<li>raidz (aucune, simple, double, ou triple partité)</li>
+</ul>
+
+<h3 id="points-faibles-1">Points faibles</h3>
+
+<ul>
+<li>pas intégrable dirctement dans le noyau linux à cause de sa license</li>
+</ul>
+
+<h2 id="btrfs">Btrfs</h2>
+
+<h3 id="présentation-et-historique-2">Présentation et historique</h3>
+
+<p>Le projet de <em>B-tree File System</em> (Btrfs, à prononcer Butter-FS) voit le jour fin 2007 et a pour but de créer un système de fichier combinant toutes les couches habituellement utilisées (mdadm/lvm/fs&hellip;) en un produit unique. Ainsi, puisqu&rsquo;il en a connaissances, Btrfs est capable de faire plus de choses et de les faire plus rapidement qu&rsquo;un système de fichier utilisant des couches indépendantes (et universelles).</p>
+
+<p>Son rôle sur le long terme est de remplacer ext4. Cependant, tant que son développement n&rsquo;est pas terminé, il souffre de beaucoup de points faibles et la plupart de ses fonctionnalité se retrouvent déjà dans les produits actuels.</p>
+
+<h3 id="points-forts-2">Points forts</h3>
+
+<ul>
+<li>Garantir la fiabilité des données</li>
+<li>Réaliser des instantanés au niveau fichier</li>
+<li>Mode « 3 copies » : RAID1 sur 3 blocs au lieu de 2</li>
+<li>Le « scrubbing » automatique en tâche de fond pour régulièrement traquer les corruptions et ventiler uniformément les données entre les disques</li>
+<li>De nouveaux algorithmes de compression, plus rapide (Snappy, de chez Google, ou LZ4, en plus de zlib et LZO)</li>
+</ul>
+
+<h3 id="points-faibles-2">Points faibles</h3>
+
+<ul>
+<li>Plus de 50% du disque sera utilisé pour assurer cette sécurité</li>
+<li>Pas de chiffrement des données</li>
+<li>En cas de panne d&rsquo;un disque, il est nécéssaire de démonter le FS !</li>
+<li>Une fragmentation importante.</li>
+<li>Une fiabilité encore très éloignées des FS habituels.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ZFS</th>
+<th>Btrfs</th>
+<th>Ext4</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Signification</td>
+<td>Z File System</td>
+<td>B-tree File System</td>
+<td>Extended File System</td>
+</tr>
+
+<tr>
+<td>date de création</td>
+<td>01/10/2005</td>
+<td>06/12/2007</td>
+<td>10/10/2006</td>
+</tr>
+
+<tr>
+<td>capacité maximale du disque</td>
+<td>16 Eio</td>
+<td>16 Eio</td>
+<td>1 Eio (limité à 16Tio par e2fsprogs)</td>
+</tr>
+
+<tr>
+<td>taille maxi d&rsquo;un fichier</td>
+<td>16 Eio</td>
+<td>16 Eio</td>
+<td>16 Tio</td>
+</tr>
+
+<tr>
+<td>nombre max de fichier dans un répertoire</td>
+<td>2^56</td>
+<td>Illimité</td>
+<td>Illimité</td>
+</tr>
+
+<tr>
+<td>nombre maxi de fichiers</td>
+<td>2^48</td>
+<td>2^64</td>
+<td>4 milliards</td>
+</tr>
+
+<tr>
+<td>nombre d&rsquo;instantannés max</td>
+<td>2^48</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td>architecture physique, comment les fichiers sont stockés sur le disque</td>
+<td>Extensible hash table</td>
+<td>extend</td>
+<td>extend</td>
+</tr>
+
+<tr>
+<td>taille des noms de fichiers</td>
+<td>255 octets</td>
+<td>255 octets</td>
+<td>255 octets</td>
+</tr>
+
+<tr>
+<td>licence</td>
+<td>CDDL open source</td>
+<td>GPL</td>
+<td>BSD</td>
+</tr>
+
+<tr>
+<td>éditeur/developpeur</td>
+<td>sun/oracle</td>
+<td>oracle</td>
+<td>sun</td>
+</tr>
+
+<tr>
+<td>objectif, besoin auquel il répond</td>
+<td>fiabilité, protection contre les corruptions de données</td>
+<td>Remplacer l&rsquo;ext4 en s&rsquo;inspirant de zfs</td>
+<td>Améliorer ext3 en attendant un successeur « révolutionnaire » (btrfs)</td>
+</tr>
+
+<tr>
+<td>dates associées au fichier</td>
+<td>N/A</td>
+<td>modification (mtime), modification des attributs(ctime), accès (atime)</td>
+<td>Précision à la nanoseconde</td>
+</tr>
+
+<tr>
+<td>où il est utilisé</td>
+<td>solaris 10, netbsd, zfsguru</td>
+<td>linux</td>
+<td>linux</td>
+</tr>
+
+<tr>
+<td>système de permissions</td>
+<td>posix</td>
+<td>posix, ACL</td>
+<td>N/A</td>
+</tr>
+
+<tr>
+<td>compression</td>
+<td>intégrée</td>
+<td>intégrée (gzip, LZO1, Snappy2 et LZ43)</td>
+<td>non</td>
+</tr>
+
+<tr>
+<td>chiffrement</td>
+<td>intégrée</td>
+<td>intégrée</td>
+<td>bob</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="sources-et-références">Sources et références</h2>
+
+<ul>
+<li><code>(en)</code> <a href="http://kernelnewbies.org/Ext4">http://kernelnewbies.org/Ext4</a></li>
+<li><code>(en)</code> <a href="https://ext4.wiki.kernel.org/index.php/Main_Page">https://ext4.wiki.kernel.org/index.php/Main_Page</a></li>
+<li><code>(fr)</code> <a href="http://fr.wikipedia.org/wiki/Extended_file_system">http://fr.wikipedia.org/wiki/Extended_file_system</a></li>
+<li><code>(fr)</code> <a href="http://docs.oracle.com/cd/E19253-01/820-2315/zfsover-1/index.html">http://docs.oracle.com/cd/E19253-01/820-2315/zfsover-1/index.html</a></li>
+<li><code>(fr)</code> <a href="http://noonworld.fr/larchitecture-de-zfs/">http://noonworld.fr/larchitecture-de-zfs/</a></li>
+<li><code>(fr)</code> <a href="http://fr.wikipedia.org/wiki/ZFS">http://fr.wikipedia.org/wiki/ZFS</a></li>
+<li><code>(en)</code> <a href="https://btrfs.wiki.kernel.org">https://btrfs.wiki.kernel.org</a></li>
+<li><code>(en)</code> <a href="https://www.youtube.com/watch?v=hxWuaozpe2I">https://www.youtube.com/watch?v=hxWuaozpe2I [vidéo]</a></li>
+<li><code>(fr)</code> <a href="http://fr.wikipedia.org/wiki/Btrfs">http://fr.wikipedia.org/wiki/Btrfs</a></li>
+</ul>
+
+<p><small class="align-right">Recherches &amp; rédaction : Jake, Wandrille et Thom</small></p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/veille-technologique"><span class="tag">Veille Technologique</span></a></li>
+        
+          <li><a href="/tags/syst%C3%A8me-de-fichier"><span class="tag">Système De Fichier</span></a></li>
+        
+          <li><a href="/tags/btrfs"><span class="tag">Btrfs</span></a></li>
+        
+          <li><a href="/tags/zfs"><span class="tag">ZFS</span></a></li>
+        
+          <li><a href="/tags/ext4"><span class="tag">Ext4</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1586</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

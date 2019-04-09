@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on vonKrafft</title>
+    <link>/tags/nginx/</link>
+    <description>Recent content in Nginx on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 09 Mar 2019 10:21:54 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Serveur Web avec Docker : Nginx, PHP et PostgreSQL</title>
+      <link>/console/serveur-web-docker-nginx-php-postgres/</link>
+      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      
+      <guid>/console/serveur-web-docker-nginx-php-postgres/</guid>
+      <description>Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
+ Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
+    </item>
+    
+    <item>
+      <title>Un simple site en PHP avec Docker et Nginx</title>
+      <link>/console/simple-site-php-avec-docker-nginx/</link>
+      <pubDate>Mon, 25 Feb 2019 19:53:21 +0000</pubDate>
+      
+      <guid>/console/simple-site-php-avec-docker-nginx/</guid>
+      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Une interface Web pour IRC avec Docker</title>
+      <link>/console/interface-web-pour-irc-avec-docker/</link>
+      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
+      
+      <guid>/console/interface-web-pour-irc-avec-docker/</guid>
+      <description>IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&amp;rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&amp;rsquo;IRC s&amp;rsquo;adaptent pour continuer d&amp;rsquo;utiliser le protocole historique &amp;hellip;
+   L&amp;rsquo;objectif que nous allons essayer d&amp;rsquo;atteindre est de faire tourner avec Docker l&amp;rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat.</description>
+    </item>
+    
+    <item>
+      <title>Activer HTTP2 avec Nginx sous Debian</title>
+      <link>/console/activer-http2-nginx-debian/</link>
+      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
+      
+      <guid>/console/activer-http2-nginx-debian/</guid>
+      <description>&lt;p&gt;Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc1945.txt&#34;&gt;mai 1996&lt;/a&gt; et HTTP/1.1 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc2068.txt&#34;&gt;janvier 1997&lt;/a&gt; il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

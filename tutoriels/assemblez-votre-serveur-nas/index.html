@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Assemblez votre serveur NAS de A à Z
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Assemblez votre serveur NAS de A à Z" />
+    <meta name="twitter:description" content="Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2011/01/356a8667d4d5192ba470210640d8e32e.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/tutoriels/assemblez-votre-serveur-nas/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-tutoriels">
+    <header class="post-header">
+      <h1 class="post-title">Assemblez votre serveur NAS de A à Z</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
+        @vonKrafft · 21 janvier 2011
+      </p>
+    </header>
+    <article class="post-content"><p>Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&rsquo;inclure dans votre réseau domestique.</p>
+
+<p></p>
+
+<h2 id="une-époque-dangereuse">Une époque dangereuse</h2>
+
+<p>L’informatique est bel et bien installée chez nous et s’il y a une vingtaine d’années, avoir un ordinateur était un luxe, aujourd’hui, on en a deux ou trois chez nous. De plus, changer de PC ou de disque dur est problématique aussi : celui qui a déjà grillé un disque dur sait de quoi je parle, et celui qui a déjà essayé de transférer des gros volumes de données (&gt; 300Go) d’un PC à un autre le sait aussi&hellip; Donc comment faire pour s’y retrouver ?</p>
+
+<p>Simple : la solution c’est le NAS ! Un stockage en réseau NAS, ou un NAS (de l&rsquo;anglais Network Attached Storage), est un serveur de fichiers autonome, relié à un réseau qui vous permet d’accéder à vos fichiers partout chez vous, voire même partout dans le monde si l’on sait un peu se débrouiller.</p>
+
+<p>Aujourd’hui, la situation se résume à ça : un utilisateur lambda d’un PC possède environ 500 à 750 Giga de données, voire beaucoup plus ! Vous avez sûrement sur votre ordinateur vos photos de vacances, vos archives personnelles, vos documents de travail, votre collection de mp3 achetés bien légalement sur iTunes, etc&hellip; Et là, deux options :</p>
+
+<ul>
+<li>Soit vous n’avez qu’un seul PC et donc toutes vos données sont au même endroit.<br />
+<strong>Avantage</strong> : vos fichiers ne sont pas éparpillés entre plusieurs ordinateurs même si c’est un peu le bazar dans votre disque dur.<br />
+<strong>Inconvénient</strong> : un disque dur, passé 4 à 5 ans, cela peut claquer à chaque instant (précisément à chaque démarrage/arrêt). Et là vous me dites « facile, je grave des DVD »&hellip; Double erreur. D’une part, vous faites confiance à un support ayant une durée de vie de 15 à 20 ans. D’autre part, QUI a encore la patience de copier ses fichiers sur des galettes de 7 Go avec un disque dur de 750 Go ? En tous cas, pas moi.</li>
+<li>Soit vous avez plusieurs PC, et là encore, c’est compliqué.<br />
+<strong>Avantage</strong> : vos fichiers sont sûrement en double et donc si un PC lâche, il vous en reste au moins un autre.<br />
+<strong>Inconvénient</strong> : vos fichiers sont éparpillés entre plusieurs ordinateurs, et donc vous ne vous y retrouvez plus. Là encore vous me dites : « je copie tout sur mon disque externe USB ». Mais ce n’est pas très pro, ça prend du temps, et en plus, si vous avez plusieurs PCs, c’est compliqué pour se passer le disque. Surtout cela reste un disque dur donc, si le disque externe vous lâche, vous perdez vos données.</li>
+</ul>
+
+<p>Maintenant, observons votre lieu de travail : il y a de fortes chances pour qu’au boulot, vous ayez accès à un « disque réseau partagé ». Un espace de stockage sur serveur, accessible via le réseau, et sur lequel vous stockez vos PowerPoint, vos PDF, vos documents, vos images débiles, vos films de vacances, et même quelques fichiers pour le travail&hellip;</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Pourquoi ne pas monter son serveur à la maison ?</div>
+
+<h2 id="intégrer-un-nas-dans-son-réseau">Intégrer un NAS dans son réseau</h2>
+
+<p>Après une introduction un peu longue, nous allons pouvoir commencer. Je supposerai par la suite que vous avez lu le guide <a href="/monter-son-pc/">Monter son PC</a> et donc je passerais très vite sur le montage.</p>
+
+<p>NOTE : Il existe des serveurs NAS « clef en main » à acheter dans le commerce. En dehors du fait qu’ils prennent rarement en charge le RAID, ils sont souvent plus chers que la solution proposée ici. Et souvent, ils ne sont pas évolutifs. Pas moyen d’y ajouter plus de deux disques (pour les premiers prix).</p>
+
+<figure>
+    <a href="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png">
+    </a>
+    
+        <figcaption>
+            <h4>Exemple de réseau domestique</h4>
+        </figcaption>
+    
+</figure>
+
+<p>Pour commencer, il va falloir « monter » un serveur NAS. Pour ce faire, vous avez besoin d’une carte mère, un peu de RAM, un processeur, une carte graphique (elle peut être intégrée à la carte mère), d’un boîtier, d’une alimentation, de deux disques durs de grosse capacité (tant qu’à faire), d’un Operating System dédié et d’une clef USB&hellip; C’est tout !</p>
+
+<p>Si vous avez un vieux PC dans un coin, c’est le moment de le recycler. N’importe quelle vieille machine avec un Pentium II démodé et 64Mo de RAM ou plus fera parfaitement l’affaire, du moment que vous pouvez y brancher deux disques durs (si possible SATA).</p>
+
+<h2 id="montez-un-nas-classique">Montez un NAS classique</h2>
+
+<div class="supply-panel clearfix">
+    <div class="supply-header">
+        <div class="supply-title">Matériel</div>
+        <div class="supply-cost">350 <span>euros</span></div>
+        <div class="supply-level supply-level-3">
+            <label>Difficulté</label>
+            <span class="level-1">1</span>
+            <span class="level-2">2</span>
+            <span class="level-3">3</span>
+            <span class="level-4">4</span>
+            <span class="level-5">5</span>
+        </div>
+    </div>
+    <div class="supply-content">
+        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
+        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Processeur AMD Sempron 145 (35€ env.), carte mère Gigabyte GA-M68MT-S2 (50€ env.), mémoire vive 1Go DDR3-1333 (20€ env.), disque dur 2x1To RAID1 (140€ env.), alimentation silencieuse (80€ env.), boîtier entrée de gamme (35€ env.)</span></div>
+    </div>
+</div>
+
+<h3 id="les-composants">Les composants</h3>
+
+<p>Niveau composant, un NAS ne requière pas du haut de gamme. les prix plancher feront l&rsquo;affaire. Je vous conseil d&rsquo;opter pour un boîtier Micro-ATX, ainsi que pour la carte mère qui va avec (attention, veillez à prendre de la DDR3). Libre à vous de voir plus grand, en choisissant un boîtier ATX, mais il est évident qu&rsquo;un petit NAS se casera plus facilement qu&rsquo;un grand. Pour le processeur, un Intel Celeron ou un AMD Sempron suffira, à vous de choisir en fonction de vos préférences entre les deux constructeur. Enfin, ajoutez environ 1 Go de mémoire vive DDR3 (2 Go maximum, après c&rsquo;est inutile), Et pensez à acheter une clé USB, ou retrouvez-en une au fond d&rsquo;un de vos tiroirs. Si vous en achetez une, je vous conseillerais 128 Mo, mais ça ne se fabrique plus (si vous avez une clé de 128 Mo chez vous, c&rsquo;est parfait) &hellip; donc prenez 1 Go pour être tranquille.</p>
+
+<h3 id="le-stockage-et-le-système-d-exploitation">Le stockage et le système d&rsquo;exploitation</h3>
+
+<p>C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
+
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
+
+<h2 id="montez-un-nas-miniature">Montez un NAS miniature</h2>
+
+<div class="supply-panel clearfix">
+    <div class="supply-header">
+        <div class="supply-title">Matériel</div>
+        <div class="supply-cost">460 <span>euros</span></div>
+        <div class="supply-level supply-level-3">
+            <label>Difficulté</label>
+            <span class="level-1">1</span>
+            <span class="level-2">2</span>
+            <span class="level-3">3</span>
+            <span class="level-4">4</span>
+            <span class="level-5">5</span>
+        </div>
+    </div>
+    <div class="supply-content">
+        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
+        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Processeur AMD Atom D525 intégré, carte mère Asus AT5IONT-I Mini-ITX (155€ env.), mémoire vive 1Go So-Dimm DDR3-800 (25€ env.), disque dur 2x1To RAID1 (190€ env.), alimentation intégrée, boîtier Antec ISK 100 (80€ env.)</span></div>
+    </div>
+</div>
+
+<h3 id="les-composants-1">Les composants</h3>
+
+<p>L&rsquo;objectif est de réduire la taille du NAS basique afin d&rsquo;obtenir un mini serveur domestique (un peu comme un <a href="/tutoriels/monter-un-mini-pc/">mini PC</a>). Niveau composant, il faudra opter pour un boîtier Mini-ITX ainsi que pour la carte mère qui va avec (attention, veillez à prendre de la DDR3). Pour le processeur, un Intel Atom intégré suffira, et ajoutez à ça environ 1 Go de mémoire vive DDR3 (2 Go maximum, après c&rsquo;est inutile). Enfin, pensez à acheter une clé USB, ou retrouvez-en une au fond d&rsquo;un de vos tiroirs. 128 Mo suffise, mais je vous conseil 1 Go pour être tranquille.</p>
+
+<h3 id="le-stockage-et-le-système-d-exploitation-1">Le stockage et le système d&rsquo;exploitation</h3>
+
+<p>Là encore, il faut réduire, donc opter pour des disque 2.5&rdquo; qui sont plus chers mais permettent une économie de place non négligeable. C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
+
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
+
+<h2 id="recyclez-votre-vieux-pc-en-nas">Recyclez votre vieux PC en NAS</h2>
+
+<div class="supply-panel clearfix">
+    <div class="supply-header">
+        <div class="supply-title">Matériel</div>
+        <div class="supply-cost">150 <span>euros</span></div>
+        <div class="supply-level supply-level-3">
+            <label>Difficulté</label>
+            <span class="level-1">1</span>
+            <span class="level-2">2</span>
+            <span class="level-3">3</span>
+            <span class="level-4">4</span>
+            <span class="level-5">5</span>
+        </div>
+    </div>
+    <div class="supply-content">
+        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
+        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Votre vieux PC, disque dur 2x1To RAID1 (140€ env.), une clé USB (10€ env.)</span></div>
+    </div>
+</div>
+
+<h3 id="le-vieux-pc">Le vieux PC</h3>
+
+<p>Si un vieux PC triane chez vous, il est temps d&rsquo;en faire quelque chose : un NAS par exemple ! Pré-requis : il faut minimum deux ports S-ATA et des composants pas trop bruyants. Coté processeur, un pentium 4 première génération suffira, ou un vieil AMD. Vous pouvez si vous le souhaitez changer l&rsquo;alimentation pour un modèle plus silencieux : optez pour une alimentation d&rsquo;environ 200 W, ça suffit. Pour le processeur, pourquoi pas investir dans un ventirad passif, limitant le bruit et la consommation électrique de votre NAS. Mais inutile de changer trop de composants, car dans ce cas là, un NAS monté de A à Z sera plus rentable.</p>
+
+<h3 id="le-stockage-et-le-système-d-exploitation-2">Le stockage et le système d&rsquo;exploitation</h3>
+
+<p>C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
+
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
+
+<h2 id="montage-du-nas">Montage du NAS</h2>
+
+<p>Donc, c’est très simple : montez votre NAS. Si vous recyclez votre vieux PC, passez à l&rsquo;étape n°8 directement. Pour plus dinfo sur le montage, rendez-vous <a href="/monter-son-pc/">ici</a>.</p>
+
+<ol>
+<li>Trouvez un tournevis cruciforme, un tournevis plat, une table solide et bien protégée contre les rayures ;</li>
+<li>Montez le boîtier, branchez son alimentation ;</li>
+<li>Installez la carte mère, paramétrez les jumpers conformément au manuel, ce qui implique que d’abord vous avez lu le manuel !</li>
+<li>Branchez votre CPU et son ventilo (si vous avez choisi l’option ITX, c’est déjà fait);</li>
+<li>Branchez votre carte graphique (si elle n’est pas intégrée à la carte mère) ;</li>
+<li>N’oubliez pas les barrettes de RAM (dans le bon sens, merci) ;</li>
+<li>N’oubliez pas les LED de façade, ça sert toujours !</li>
+<li>Branchez vos deux gros disques dans la tour,</li>
+<li>Ayez un câble RJ45 à portée de la main, pour brancher votre serveur sur le modem ADSL ou votre routeur wifi,</li>
+<li>Votre serveur est prêt sur le plan « hardware ».</li>
+</ol>
+
+<h2 id="finalisation-et-réglages-systèmes">Finalisation et réglages systèmes</h2>
+
+<p>Copiez, depuis votre PC fixe, Freenas sur votre clef USB en suivant les instructions du <a href="http://www.freenas.org/">site</a>.</p>
+
+<ol>
+<li>Débranchez écran et claviez, et branchez-les sur le « serveur »,</li>
+<li>Configurez le BIOS du serveur pour démarrer sur la clef USB,</li>
+<li>Suivez les instructions de la <a href="http://philoxserver.homelinux.org:8080/philoxsvr/file/freenas.pdf">documentation</a>,</li>
+<li>Une fois configuré, vous pouvez débrancher l’écran et le clavier du serveur, et le placer dans un endroit discret et proche du routeur wifi (pour branchement par câble RJ45).</li>
+<li>Petit conseil : imprimez une <a href="http://philoxserver.homelinux.org:8080/philoxsvr/file/freenas.pdf">doc de Freenas</a>, et stockez-la à côté du serveur. On ne sait jamais !</li>
+<li>Reste à configurer le routeur pour attribuer une adresse IP à votre serveur. Par exemple <code>192.1.68.1.5</code>. Vous pouvez aussi laisser le NAS et votre box ADSL faire joujou tous seuls &hellip;</li>
+</ol>
+
+<p>Ensuite, vous pourrez vous connecter au serveur depuis votre PC fixe via un explorateur web style Firefox pour configurer la matrice RAID et le système de fichier (LISEZ <a href="http://freenas.org/documentation:setup_and_user_guide">la documentation de Freenas</a>). Une fois ceci fait, vous pourrez créer un drive partagé sur le réseau, que tous les PC de la maison pourront voir. Il sera bien au chaud derrière le Firewall de votre routeur. En outre, Freenas étant un OS très simple et sans autres applications sur le serveur, les risques de piratage et/ou infection sont quasi nuls (enfin n’oubliez pas d’inclure le nouveau lecteur dans vos recherches de virus périodiques).</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-question-circle"></i> <strong>NOTE :</strong> Il y a une fonction « recycle bin » / poubelle dans Freenas, pour créer une « poubelle » comme dans Windows (un espace où sont conservés les fichiers « effacés » par vos soins et éventuellement par mégarde).</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Et voilà : vous avez maintenant un serveur de fichiers, d’une capacité de 1000 Go, qui démarre sur clef USB. Il contient toutes vos données en double, vous pouvez y accéder de partout dans la maison, de n’importe quel ordi. N’importe qui venant chez vous avec un ordinateur portable peut s’y connecter via votre modem/routeur. En le laissant tourner pendant que vous n’êtes pas chez vous, et moyennant quelques bricolages, vous pourrez même y accéder depuis internet &hellip; (je ne développerais pas ce point dans ce tuto).</p>
+
+<p>Si vous grillez un des disques, voici ce que je conseille : comme 3-4 ans se seront écoulés, achetez deux autres disques d’une capacité double ou triple (c’est le principe de la course aux armements), branchez-les dedans, construisez une nouvelle matrice RAID, et copiez les données du vieux disque&hellip;</p>
+
+<p><strong><em>Voilà, c’est donc fini. Vous avez à présent vos données rangées au même endroit et sécurisées.</em></strong></p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/tuto"><span class="tag">Tuto</span></a></li>
+        
+          <li><a href="/tags/nas"><span class="tag">NAS</span></a></li>
+        
+          <li><a href="/tags/montage-pc"><span class="tag">Montage PC</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>2978</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,216 @@
+
+/*****************************************
+ * Code
+ *****************************************/
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    10% {
+        transform: scale(1, 1);
+    }
+    35% {
+        transform: scale(1, 1.7);
+    }
+    40% {
+        transform: scale(1, 1.7);
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+[data-language] code, [class^="lang"] code, pre [data-language], pre [class^="lang"] {
+    opacity: 0;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    animation: 50ms ease-in-out 2s forwards fade-in;
+}
+
+[data-language] code.rainbow, [class^="lang"] code.rainbow, pre [data-language].rainbow, pre [class^="lang"].rainbow {
+    animation-delay: 0s;
+}
+
+[data-language] code.loading, [class^="lang"] code.loading, pre [data-language].loading, pre [class^="lang"].loading {
+    animation-play-state: paused;
+}
+
+.code-container {
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.code-container > .code-title {
+    color: #586069;
+    background-color: #f7f7f7;
+    overflow: hidden;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.code-container > pre.code {
+    position: relative;
+    margin: 0 auto;
+    max-height: 300px;
+}
+
+.code-container > pre.code.loading {
+    margin: 0;
+}
+
+.code-container > pre.code.loading .preloader div {
+    animation-play-state: running;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(1) {
+    background: #429ab4;
+    animation: fade 1.5s 300ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(2) {
+    background: #429ab4;
+    animation: fade 1.5s 438ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(3) {
+    background: #429ab4;
+    animation: fade 1.5s 577ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(4) {
+    background: #429ab4;
+    animation: fade 1.5s 715ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(5) {
+    background: #429ab4;
+    animation: fade 1.5s 853ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(6) {
+    background: #429ab4;
+    animation: fade 1.5s 992ms linear infinite;
+}
+
+.code-container > pre.code.loading .preloader div:nth-of-type(7) {
+    background: #429ab4;
+    animation: fade 1.5s 1130ms linear infinite;
+}
+
+.code-container > pre.code .preloader {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.code-container > pre.code .preloader div {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 4px;
+    opacity: 0;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+.code-container > pre.code {
+    word-wrap: break-word;
+    padding: 6px 10px;
+    line-height: 19px;
+}
+
+.code-container > pre.code > code {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.code-container code {
+    margin: 0px 2px;
+    padding: 0px 5px;
+    font-size: 12px;
+}
+
+.code-container > pre.code, .code-container > pre.code > code {
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    color: #333;
+}
+
+.code-container > pre.code, .code-container > pre.code code {
+    font-size: 13px;
+}
+
+.code-container > pre.code .comment {
+    color: #998;
+}
+
+.code-container > pre.code .support {
+    color: #0086B3;
+}
+
+.code-container > pre.code .support.prefix {
+    color: #B3008B;
+}
+
+.code-container > pre.code .support.path {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.code-container > pre.code .tag, .code-container > pre.code .tag-name {
+    color: navy;
+}
+
+.code-container > pre.code .keyword, .code-container > pre.code .css-property, .code-container > pre.code .vendor-fix, .code-container > pre.code .sass, .code-container > pre.code .class, .code-container > pre.code .id, .code-container > pre.code .css-value, .code-container > pre.code .entity.function, .code-container > pre.code .storage.function {
+    font-weight: bold;
+}
+
+.code-container > pre.code .css-property, .code-container > pre.code .css-value, .code-container > pre.code .vendor-fix, .code-container > pre.code .support.namespace {
+    color: #333;
+}
+
+.code-container > pre.code .constant.numeric, .code-container > pre.code .keyword.unit, .code-container > pre.code .hex-color {
+    font-weight: normal;
+    color: #099;
+}
+
+.code-container > pre.code .entity.class {
+    color: #458;
+}
+
+.code-container > pre.code .entity.id, .code-container > pre.code .entity.function {
+    color: #900;
+}
+
+.code-container > pre.code .attribute, .code-container > pre.code .variable {
+    color: teal;
+}
+
+.code-container > pre.code .string, .code-container > pre.code .support.value {
+    font-weight: normal;
+    color: #d14;
+}
+
+.code-container > pre.code .regexp {
+    color: #009926;
+}

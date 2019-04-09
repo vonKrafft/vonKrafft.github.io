@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ecran on vonKrafft</title>
+    <link>/tags/ecran/</link>
+    <description>Recent content in Ecran on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 05 Nov 2011 21:46:35 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ecran/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apprenez à gérer le double écran</title>
+      <link>/tutoriels/gerer-double-ecran/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tutoriels/gerer-double-ecran/</guid>
+      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Un écran Apple exploitant le port Thunderbolt</title>
+      <link>/actus/un-ecran-apple-exploitant-le-port-thunderbolt/</link>
+      <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
+      
+      <guid>/actus/un-ecran-apple-exploitant-le-port-thunderbolt/</guid>
+      <description>&lt;figure class=&#34;pull-left&#34;&gt;
+    &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
+        &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

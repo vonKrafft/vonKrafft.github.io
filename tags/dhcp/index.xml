@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dhcp on vonKrafft</title>
+    <link>/tags/dhcp/</link>
+    <description>Recent content in Dhcp on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 12 Dec 2015 10:22:06 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Donner un nom DNS à son serveur local</title>
+      <link>/console/donner-nom-dns-a-serveur-local/</link>
+      <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
+      
+      <guid>/console/donner-nom-dns-a-serveur-local/</guid>
+      <description>&lt;p&gt;Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

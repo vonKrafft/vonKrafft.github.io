@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configs on vonKrafft</title>
+    <link>/tags/configs/</link>
+    <description>Recent content in Configs on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Fri, 25 May 2012 23:32:20 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/configs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Assemblez votre PC Home Cinéma</title>
+      <link>/tutoriels/assemblez-pc-home-cinema/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tutoriels/assemblez-pc-home-cinema/</guid>
+      <description>&lt;p&gt;Le « Média Center » désigne les disques dur et les TV connectés, comme par exemple les TV d’Apple ou de Google, les lecteurs multimédia, mais aussi les box TV de opérateur. Successeur du lecteur DVD, le « Média Center » permet de regarder la TV, lire ses films et ses enregistrements et naviguer sur internet. Cependant, de nombreux problème se pose, notamment à cause des formats vidéo supporté, mais aussi parce que leur utilisation est trop restreinte. Pour pallier à ces inconvénients, vous pouvez opter pour un PC Home Cinéma.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

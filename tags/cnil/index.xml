@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cnil on vonKrafft</title>
+    <link>/tags/cnil/</link>
+    <description>Recent content in Cnil on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 28 Jan 2018 16:28:21 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/cnil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Les mots de passe : les bonnes pratiques</title>
+      <link>/dossiers/mots-de-passe-bonnes-pratiques/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/dossiers/mots-de-passe-bonnes-pratiques/</guid>
+      <description>&lt;p&gt;Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

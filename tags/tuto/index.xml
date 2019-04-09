@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tuto on vonKrafft</title>
+    <link>/tags/tuto/</link>
+    <description>Recent content in Tuto on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Fri, 02 Mar 2012 19:46:55 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tuto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 8, l&#39;OS nouvelle génération</title>
+      <link>/dossiers/windows-8-los-nouvelle-generation/</link>
+      <pubDate>Fri, 02 Mar 2012 19:46:55 +0000</pubDate>
+      
+      <guid>/dossiers/windows-8-los-nouvelle-generation/</guid>
+      <description>&lt;p&gt;Microsoft a dévoilé mercredi la version Consumer Preview de son futur système d&amp;rsquo;exploitation Windows 8. Avec cet OS, l&amp;rsquo;éditeur prend le pari risqué d&amp;rsquo;unifier les smartphones, les tablettes et les PC et est ainsi le premier à innover dans l&amp;rsquo;ère post-PC (&lt;a href=&#34;/dossiers/changement-depoque-la-fin-du-regne-du-pc&#34;&gt;voir article&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Changement d&#39;époque, la fin du règne du PC</title>
+      <link>/dossiers/changement-depoque-la-fin-du-regne-du-pc/</link>
+      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      
+      <guid>/dossiers/changement-depoque-la-fin-du-regne-du-pc/</guid>
+      <description>&lt;p&gt;Interconnecté, telle est la description du monde informatique actuel. Car si l’ordinateur individuel était au centre de ce monde il y a quelques années, il a fait son temps et n’est plus la star du high-tech. Aujourd’hui, il côtoie les portables, tablettes et Smartphones, qui ont donnés à l’informatique la mobilité et l’inter-connectivité que nous connaissons. Retour en image sur l’histoire du règne du PC dans l’ère de l’informatique individuelle.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Overclocker son CPU</title>
+      <link>/tutoriels/overclocker-son-cpu/</link>
+      <pubDate>Sat, 17 Sep 2011 20:48:51 +0000</pubDate>
+      
+      <guid>/tutoriels/overclocker-son-cpu/</guid>
+      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Assemblez votre serveur NAS de A à Z</title>
+      <link>/tutoriels/assemblez-votre-serveur-nas/</link>
+      <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
+      
+      <guid>/tutoriels/assemblez-votre-serveur-nas/</guid>
+      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Monter un Mini-PC</title>
+      <link>/tutoriels/monter-un-mini-pc/</link>
+      <pubDate>Wed, 05 Jan 2011 21:58:06 +0000</pubDate>
+      
+      <guid>/tutoriels/monter-un-mini-pc/</guid>
+      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

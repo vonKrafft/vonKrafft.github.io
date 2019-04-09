@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Se connecter en SSH à son VPS
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Se connecter en SSH à son VPS" />
+    <meta name="twitter:description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2016/01/597378aff3d794da6abd242d9a708295.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/console/connecter-ssh-vps/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Se connecter en SSH à son VPS</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 19 janvier 2016
+      </p>
+    </header>
+    <article class="post-content"><p>Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.</p>
+
+<p></p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Un serveur VPS, une connexion SSH, mais qu’est-ce que c‘est ?</div>
+
+<p>Un serveur VPS (de l’anglais Virtual Private Server) est une façon de partitionner un serveur en plusieurs serveurs virtuels indépendants qui ont chacun les caractéristiques logicielles d&rsquo;un serveur dédié, en utilisant des techniques de virtualisation. Chaque serveur peut fonctionner avec un système d&rsquo;exploitation différent et redémarrer indépendamment.</p>
+
+<p>L’administration d’un VPS se fait à distance, et dans notre cas nous utiliserons SSH. Le protocole SSH (de l&rsquo;anglais Secure Shell) impose une authentification lors de la création de la connexion. Une fois cette connexion établie, les échanges se font de façon sécurisée entre le client (nous) et le serveur (notre VPS).</p>
+
+<p>Dans la suite des manipulations, j’aurais la configuration suivante :</p>
+
+<ul>
+<li>Notre machine client depuis laquelle nous nous connecterons à notre serveur : elle porte le nom de “stargazer” ;</li>
+<li>Notre serveur VPS qui tourne via le logiciel VirtualBox sur notre machine client : il porte le nom de “farragut” avec l’adresse <code>farragut.server</code>.</li>
+</ul>
+
+<p>Un client et un serveur SSH sont respectivement installés sur “stargazer” et “farragut”. L’utilisateur client est “vonkrafft” et un autre utilisateur “vonkrafft” existe sur le VPS.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-circle"></i> <strong>ASTUCE</strong> : Comme vous pouvez le voir, j’ai une adresse personnalisée pour mon VPS alors que je travail en local (càd sur mon réseau privé derrière ma box Internet). Pour en savoir plus, je vous invite à lire <a href="/console/donner-nom-dns-a-serveur-local/">comment renommer votre serveur sur votre réseau local</a>.</div>
+
+<h2 id="connexion-au-serveur">Connexion au serveur</h2>
+
+<p>Pour nous connecter au serveur, rien de plus simple. Je me connecte grâce par SSH en tant que “vonkrafft” sur le VPS. Après avoir exécuté la commande, le serveur me demande mon mot de passe, je le saisi et c’est terminé : me voilà connecté au serveur.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
+vonkrafft@farragut.server&#39;s password:
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+You have mail.
+Last login: Thu Dec 18 18:08:28 2015 from stargazer
+vonkrafft@farragut:~$
+</code></pre>
+</div>
+
+<p>Comme vous pouvez le constater, j’ai du rentrer mon mot de passe, et cela va être le cas à chaque fois que je vais me connecter. Pour me faciliter les choses, nous allons mettre en place une authentification par clé.</p>
+
+<h2 id="générer-une-paire-de-clés-rsa">Générer une paire de clés RSA</h2>
+
+<p>Avant toute chose, il nous faut une paire de clés RSA privée/publiques.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Une clé RSA, c’est quoi, et pour quoi faire ?</div>
+
+<p>Le chiffrement RSA (nommé par les initiales de ses trois inventeurs Ronald Rivest, Adi Shamir et Leonard Adleman) est un algorithme de cryptographie asymétrique. Il repose sur l&rsquo;utilisation d&rsquo;une clé publique (qui est diffusée) et d&rsquo;une clé privée (gardée secrète), l&rsquo;une permettant de chiffrer le message et l&rsquo;autre de le déchiffrer. Ainsi, l&rsquo;expéditeur peut utiliser la clé publique du destinataire pour chiffrer un message que seul le destinataire (en possession de la clé privée) peut déchiffrer, garantissant la confidentialité du contenu.</p>
+
+<p>Il existe 2 types de clés : RSA et DSA. Chacune pouvant être de longueur différente : 1024, 2048, 4096 bits (les clés inférieures à 1024 bits sont à proscrire&hellip; surtout les RSA). Pour créer une clé DSA de 2048 bits : <code>ssh-keygen -t dsa -b 2048</code>. Sans paramètres, les options par défaut sont type RSA en 2048 bits.</p>
+
+<p>Pour générer notre paire de clés, il suffit d’utiliser l&rsquo;outil mis à disposition par le paquet SSH. Nous allons donc créer deux clés RSA de 4096 bits que je stocke sur ma machine client dans le répertoire <code>/home/vonkrafft/.ssh</code> :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/vonkrafft/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/vonkrafft/.ssh/id_rsa.
+Your public key has been saved in /home/vonkrafft/.ssh/id_rsa.pub.
+The key fingerprint is:
+09:69:5a:98:af:43:0f:72:1b:e7:fd:58:1b:41:d0:26 vonkrafft@stargazer
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE :</strong> J’ai choisi une taille de clé RSA de 4096 bits, vous pouvez bien évidement choisir DSA et/ou une autre taille de clé.</div>
+
+<p>Lors de la génération des clés, je suis invité à renseigner une passphrase.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Une passphrase, mais qu’est-ce que c’est encore que ça ?</div>
+
+<p>Vous connaissez déjà les password (ou mot de passe dans la langue de Molière). Les passphrase sont des mots de passe très long qui ont été nommé ainsi pour les différencier des des mots de passe plus courts. Aisni, nous avaons les phrases (longues) de passe, et les mots (courts) de passe. Cela permet à l’utilisateur de saisir une phrase de quelques mots facile à retenir mais difficile à casser. Pourquoi donc ? Parce que le niveau de complexité augmente de façon plus qu’exponentielle avec le nombre des caractères, en particulier quand on commence à découper en mots.</p>
+
+<p>La passphrase est optionnelle. Mais je vous conseille d&rsquo;entrer une passphrase: elle sert à chiffrer symétriquement la clé privée, ajoutant ainsi une couche de sécurité supplémentaire.</p>
+
+<h2 id="activer-l-authentification-par-clé">Activer l’authentification par clé</h2>
+
+<p>Voilà, on a une paire de clés, c’est bien beau tout ça mais j’en fais quoi ? Je vais commencé par copier ma clé publique sur le serveur VPS. Deux façon de faire ça. La première est de copier la clé manuellement :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ scp ~/.ssh/id_rsa.pub vonkrafft@farragut.server:/home/vonkrafft/.ssh/authorized_keys
+</code></pre>
+</div>
+
+<p>Ou alors, mieux, nous utilisons la commande <code>ssh-copy-id</code> :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-copy-id -i ~/.ssh/id_rsa.pub vonkrafft@farragut.server
+</code></pre>
+</div>
+
+<p>Du coté de notre VPS maintenant. Nous avons récupéré la clé publique du client, il faut maintenant paramétrer le daemon SSH pour qu’il accepte les connexions avec une clé. Pour cela, il suffit de modifier le fichier <code>/etc/ssh/sshd_config</code>. Il faut ensuite rechercher les options suivantes pour leur attribuer les bonnes valeurs :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/ssh/sshd_config
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">PubkeyAuthentication            yes
+AuthorizedKeysFile              %h/.ssh/authorized_keys
+ChallengeResponseAuthentication yes
+</code></pre>
+</div>
+
+<p>Au passage, nous pouvons en profiter pour désactiver la connexion SSH en tant que root afin de réduiore la surface d&rsquo;attaque de notre serveur. Si vous avez besoin de vous connecter à votre VPS en tant que root, ne désactivez pas cette option, mais à vos risques et périls.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/ssh/sshd_config
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">PermitRootLogin no
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE</strong> : Il est possible de désactiver l’authentification par mot de passe sur le VPS afin que seuls les clients avec une clé soient autorisés à se connecter. Pour cela il faut modifier la valeur de <code>PasswordAuthentication</code> à <code>no</code>.</div>
+
+<p>J’indique au daemon SSH qu’il trouvera la clé publique dans le fichier <code>~/.ssh/authorized_keys</code> de l’utilisateur concerné. Il faut ensuite redémarrer le daemon SSH pour appliquer les modifications :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@farragut:~$ sudo service ssh reload
+</code></pre>
+</div>
+
+<p>Voilà tout est prêt ! Je test la connexion et … on me demande ma passphrase. Nous avons donc troqué un mot de passe contre une passphrase encore plus longue à saisir …</p>
+
+<h2 id="ssh-agent">ssh-agent</h2>
+
+<p>Le serveur SSH est maintenant plus sécurisé, mais taper des passphrases à longueur de journée peut se révéler être très pénible surtout si on a choisi une « vraie » et longue passphrase.</p>
+
+<p>L&rsquo;agent SSH permet de taper la passphrase une seule fois et de la conserver en mémoire pendant tout son fonctionnement. Les déchiffrement de la clé privée se fera donc de façon transparente en local.</p>
+
+<p>Pour lancer l’agent SSH, il suffit d’exécuter la commande <code>ssh-agent</code>. Ensuite, nous ajoutons notre clé privée à l’agent avec <code>ssh-add</code> :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-agent
+vonkrafft@stargazer:~$ ssh-add
+Enter passphrase for /home/vonkrafft/.ssh/id_rsa:
+Identity added: /home/vonkrafft/.ssh/id_rsa (/home/vonkrafft/.ssh/id_rsa)
+</code></pre>
+</div>
+
+<p>Et lorsque nous nous reconnectons à notre VPS, nous n’avonsi plus besoin de saisir ni mot de passe ni passphrase.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
+Last login: Fri Dec 18 18:40:15 2015 from stargazer
+vonkrafft@farragut:~$
+</code></pre>
+</div>
+
+<p>Voilà, la connexion à notre VPS se fait de manière sécurisée grâce à nos clés RSA (4096 bits ça fait une bonne sécurité, bonne chance pour décrypter les communications …) et nous n’aurons plus besoin de saisir la passphrase tant que l’agent SSH tournera.</p>
+
+<h2 id="conclusion-se-connecter-en-ssh">Conclusion : se connecter en SSH</h2>
+
+<p>Nous avons donc vu comment sécuriser une connexion SSH grâce à une authentification par clé, et nous avons mis en place un agent SSH pour nous connecter sans avoir à saisir notre passphrase plusieurs fois. Petit rappel de la procédure :</p>
+
+<ul>
+<li>Générer une paire de clés RSA, sécurisé par une passphrase, et les stocker dans <code>~/.ssh</code> sur le poste du client</li>
+<li>Copier la clé publique dans le répertoire <code>~/.ssh</code> du VPS avec le nom <code>~/.ssh/authorized_keys</code></li>
+<li>Activer l’authentification par clé sur le VPS et indiquer au deamon ssh où trouver la clé publique du client</li>
+<li>Utiliser un agent ssh sur le client pour mémoriser la passphrase et éviter de la saisir plusieurs fois.</li>
+</ul>
+
+<h2 id="aller-plus-loin">Aller plus loin</h2>
+
+<h3 id="préciser-le-port-utilisé">Préciser le port utilisé</h3>
+
+<p>Par défaut, le protocole SSH utilise le port 22. Mais il est tout à fait possible de configurer son serveur pour que le deamon ssh écoute sur un port différent. Ensuite, pour se connecter au serveur, nous devons utiliser l’option <code>-p</code> suivie du numéro de port :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh -p 4242 vonkrafft@voyager.server
+</code></pre>
+</div>
+
+<h3 id="plusieurs-clés-pour-plusieurs-serveurs-ssh">Plusieurs clés pour plusieurs serveurs SSH</h3>
+
+<p>Il est possible de spécifier quelle clé il faut utiliser lors de la connexion SSH. Pour cela, il faut utiliser l’option <code>-i</code> suivie du chemin de la clé :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh -i ~/.ssh/id_rsa_farragut vonkrafft@farragut.server
+</code></pre>
+</div>
+
+<h3 id="simplifier-les-connexions-avec-un-fichier-de-config">Simplifier les connexions avec un fichier de config</h3>
+
+<p>Vous me direz que c’est fastidieux de devoir saisir les options, l’utilisateur et l&rsquo;hôte à chaque fois, et vous aurez bien raison. Mais rassurez-vous, il existe une façon de mémoriser ce choix. Pour cela, nous allons créer le fichier <code>~/.ssh/config</code> sur le poste client et y inscrire les lignes suivantes :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        ~/.ssh/config
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">Host farragut
+    HostName farragut.server
+    User vonkrafft
+    IdentityFile ~/.ssh/id_rsa
+Host voyager
+    HostName voyager.server
+    User vonkrafft
+    Port 4242
+    IdentityFile ~/.ssh/id_rsa_home
+</code></pre>
+</div>
+
+<p>Nous pouvons à présent nous connecter rapidement à deux hôtes (farragut et voyager) avec deux clés différentes et sans préciser d’option lors de la connexion.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh farragut
+</code></pre>
+</div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/vps"><span class="tag">VPS</span></a></li>
+        
+          <li><a href="/tags/admin-syst%C3%A8me"><span class="tag">Admin Système</span></a></li>
+        
+          <li><a href="/tags/ssh"><span class="tag">SSH</span></a></li>
+        
+          <li><a href="/tags/rsa"><span class="tag">RSA</span></a></li>
+        
+          <li><a href="/tags/authentification"><span class="tag">Authentification</span></a></li>
+        
+          <li><a href="/tags/cl%C3%A9"><span class="tag">Clé</span></a></li>
+        
+          <li><a href="/tags/s%C3%A9curit%C3%A9"><span class="tag">Sécurité</span></a></li>
+        
+          <li><a href="/tags/serveur"><span class="tag">Serveur</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1041</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

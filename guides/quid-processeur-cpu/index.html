@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Quid du processeur (CPU)
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Quid du processeur (CPU)" />
+    <meta name="twitter:description" content="Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2012/03/aaaeb16d6af6fcadb4a7a9df80de1cd3-1024x427.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/guides/quid-processeur-cpu/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-guides">
+    <header class="post-header">
+      <h1 class="post-title">Quid du processeur (CPU)</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/guides/">Guides</a></span>
+        @vonKrafft · 10 mars 2012
+      </p>
+    </header>
+    <article class="post-content"><p>Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.</p>
+
+<p></p>
+
+<h2 id="la-fréquence-du-processeur">La fréquence du processeur</h2>
+
+<p>Elle s’exprime en Gigahertz (GHz). Elle indique le nombre d’opération que le CPU peut effectuer par seconde (1GHz = 1 million d’opération par seconde). Longtemps considérer comme un indicateur de la puissance du CPU, la fréquence native d’un processeur actuel varie entre 1,5 GHz et 3,6 GHz pour les PC de bureau. Je parle de fréquence native car il est possible d’overclocker son processeur pour augmenter sa fréquence (voir l’article sur <a href="/tutoriels/overclocker-son-cpu/">l&rsquo;overclocking</a>).</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>INFO :</strong> Pour l’anecdote, le record d’overclocking avec un CPU grand public est détenu par l’AMD FX-8150 qui a atteint une fréquence de 8,429 GHz. Pour atteindre un tel niveau, il a fallu utiliser de l’hélium liquide pour refroidir le processeur.</div>
+
+<p>Cependant, il ne faut pas oublier que généralement plus la fréquence est élevée plus la température est élevée. Je dis « généralement » car avec la multiplication des cœurs (voir plus bas), le rapport fréquence/température s’est un peu complexifié.</p>
+
+<h2 id="la-mémoire-cache">La mémoire cache</h2>
+
+<p>Appelée aussi mémoire tampon, c’est une mémoire intégrée au CPU qui permet un accès plus raide aux informations. Lorsque vous sollicitez le processeur, celui-ci ne peut pas effectuer toutes les opérations nécessaires en une seule fois. Les ordres et les données sont donc stockés dans cette mémoire. Vous l’aurez donc compris, sa capacité influe sur la rapidité du CPU.
+Les processeurs actuels possèdent plusieurs niveaux de mémoire cache :</p>
+
+<ul>
+<li>Le <strong>cache L1</strong> : directement intégré au cœur du CPU, il est donc très rapide d’accès. Il est subdivisé en deux parties :
+
+<ul>
+<li>Le cache d’instructions qui contient les ordres reçus pour effectuer l’opération.</li>
+<li>Le cache de données qui stocke les informations nécessaires à l’exécution de l’opération.</li>
+</ul></li>
+<li>Le <strong>cache L2</strong> : situé dans le CPU, il vient s’intercaler entre le cœur du processeur et la mémoire vive. Il est plus rapide d’accès que la RAM mais moins que le cache L1.</li>
+<li>Le <strong>cache L3</strong> : autrefois solidaire de la carte mère, les nouvelle architecture l’intègre au CPU. Il s’intercale alors entre le cache L2 et la mémoire vive.</li>
+</ul>
+
+<table style="text-align: center; width: 100%; height: 100px;" cellspacing="5" cellpadding="1">
+    <tbody>
+        <tr>
+            <td style="background-color: #e0f2ff; border: solid 1px #404040; width: 19%;">Cœur du Processeur</td>
+            <td style="background-color: #fff4e0; border: solid 1px #404040; width: 19%;">Cache L1</td>
+            <td style="background-color: #e0ffe0; border: solid 1px #404040; width: 19%;">Cache L2</td>
+            <td style="background-color: #ffe0e0; border: solid 1px #404040; width: 19%;">Cache L3</td>
+            <td style="width: 5%; border: none;"></td>
+            <td style="background-color: #cacaca; border: solid 1px #404040; width: 19%;">Mémoire Vive</td>
+        </tr>
+        <tr>
+            <td style="height: 30%;" colspan="6">Schéma de la structure des caches d’un processeur</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="les-processeurs-multi-cœur">Les processeurs Multi-Cœur</h2>
+
+<p>La loi de Moore prévoyait que le nombre de composants au sein d’un processeur et donc la puissance des CPU double tous les deux ans. Or, ces dernier ayant une taille fixe, les fabriquant se heurte depuis quelques années aux limites physique de cette loi. Leur parade a été de multiplier les cœurs des processeurs pour obtenir plus de performance. Après une longue mode des Dual Core, on voit aujourd’hui des processeurs avec deux, trois, quatre, six, huit voire même douze cœurs.</p>
+
+<p>Le principal avantage de ces multi-cœurs est qu’ils ont rendu les PC réellement multitâche. En effet, un programme peut ainsi fonctionner en tache de fond (comme l’antivirus) sans gêner le programme en cours d’utilisation.</p>
+
+<p>Les principaux processeurs multi-cœur AMD et Intel les plus récents sont les suivants :</p>
+
+<ul>
+<li><strong>Deux cœurs</strong> : Intel Pentium D, Intel Dual-Core, Intel Core i3 et i5, AMD Athlon II X2, AMD Phenom II X2 et AMD A4.</li>
+<li><strong>Trois cœurs</strong> : AMD Athlon II X3, AMD Phenom II X3 et AMD A6.</li>
+<li><strong>Quatre cœurs</strong> : Intel Quad-Core, Intel Core i5 et i7, Intel Xeon, AMD Athlon II X4, AMD Phenom II X4, AMD A6 et A8 et AMD Opteron.</li>
+<li><strong>Six cœurs</strong> : Intel Core i7, Intel Xeon, AMD Phenom II X6, AMD FX et AMD Opteron.</li>
+<li><strong>Huit cœurs</strong> : AMD FX et AMD Opteron.</li>
+<li><strong>Douze cœurs</strong> : AMD Opteron.</li>
+</ul>
+
+<p><figure>
+    
+        <img src="/media/2012/03/ee18b896cc5899bec1f776840dbec215.jpg">
+    
+    
+</figure>
+<figure>
+    
+        <img src="/media/2012/03/42c1b10b6c736953a0c1756258ad74cb.jpg">
+    
+    
+</figure></p>
+
+<h2 id="le-socket">Le socket</h2>
+
+<p>En fonction du socket que vous allez choisir, vous devrez acheter une carte mère compatible avec celui-ci. Actuellement, les sockets les plus fréquents sont les AM3 (AMD), LGA1155 et LGA1156 (Intel). Mais on trouve également des sockets AM2 et AMD2+ (AMD) et des sockets LGA775, LGA1366 et LGA2011 (Intel).
+Pour plus d’info, voir l’article sur les <a href="/guides/quid-carte-mere/">cartes mères</a>.</p>
+
+<figure>
+    
+        <img src="/media/2012/03/639a82223fa951396ed4bf99e9c4eb20.jpg">
+    
+    
+</figure>
+
+<h2 id="un-processeur-pour-chaque-utilisation">Un processeur pour chaque utilisation</h2>
+
+<p>En fonction de vos besoins, les performances requises pour le CPU changent. C’est principalement le budget qui permet de définir les catégories d’utilisation :</p>
+
+<ul>
+<li><strong>Bureautique</strong> : un processeur entrée de gamme à moins de 100€ suffit.</li>
+<li><strong>Jeux et retouche vidéo/photo</strong> : un faut privilégier un processeur milieu de gamme entre 100€ et 200€.</li>
+<li><strong>Jeux poussés et professionnels</strong> : un processeur haut de gamme à plus de 200€ s’impose.</li>
+</ul>
+
+<p>Enfin, les processeurs sont vendus en version « Boite » accompagnés d’un refroidissement (ventirad) composé d’un ventilateur et d’un radiateur. Vous rencontrez peut-être des processeurs « Bulk ». Ce sont des processeurs vendus sans refroidissement, dans un emballage dénudé et avec une garantie moins longue. Cependant, les versions Bulk sont en train de disparaitre.</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/quid"><span class="tag">Quid</span></a></li>
+        
+          <li><a href="/tags/cpu"><span class="tag">CPU</span></a></li>
+        
+          <li><a href="/tags/processeur"><span class="tag">Processeur</span></a></li>
+        
+          <li><a href="/tags/overclocking"><span class="tag">Overclocking</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1162</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Serveur Web avec Docker : Nginx, PHP et PostgreSQL
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
+ Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker." />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Serveur Web avec Docker : Nginx, PHP et PostgreSQL" />
+    <meta name="twitter:description" content="Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
+ Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker." />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2019/03/bff132734906900fcbf309071ae72229.png" />
+  
+
+
+
+
+<link rel="canonical" href="/console/serveur-web-docker-nginx-php-postgres/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 9 mars 2019
+      </p>
+    </header>
+    <article class="post-content">
+
+<p>Un serveur Web incluant généralement un <strong>logiciel serveur</strong> (<em>Nginx</em>), un <strong>interpréteur de script CGI</strong> (<em>PHP</em>) et d&rsquo;un <strong>système de gestion de base de données</strong> (<em>PostgreSQL</em>), nous allons voir comment mettre en place ces trois composants en utilisant Docker.</p>
+
+<!-- more -->
+
+<div class="alert alert-info" role="alert"><i class="fa fa-github"></i> Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur <a href="https://gist.github.com/vonKrafft/18019dedb49eae01035489bbb9ff856c">gist.github.com</a>.</div>
+
+<figure>
+    
+        <img src="/media/2019/03/49abbcc5707255341cfebe39f9e2b1ce.png">
+    
+    
+</figure>
+
+<h2 id="nginx-et-php-fpm">Nginx et PHP FPM</h2>
+
+<p>Récemment, j&rsquo;expliquais comment simplement mettre en place un serveur <strong>Nginx</strong> qui supporte <strong>PHP</strong> à l&rsquo;aide de Docker. L&rsquo;image <code>php:fpm-alpine</code> utilisée y était minimaliste et n&rsquo;embarquait que très peu d&rsquo;extension PHP. De plus, aucune base de données n&rsquo;était présente dans notre infra : c&rsquo;est ce point là que nous allons corrigé ici.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-circle"></i> Il est recommandé d&rsquo;avoir lu l&rsquo;article <a href="/console/simple-site-php-avec-docker-nginx">Un simple site en PHP avec Docker et Nginx</a> pour la suite, et d&rsquo;avoir démarrer les containers Nginx et PHP.</div>
+
+<p>Pour rappel, nous avions créé l&rsquo;arborescence suivante dans laquelle nous retrouvons le fichier de configuration <code>nginx.conf</code>, les journaux Nginx et le contenu du site Web dans <code>www</code> :</p>
+
+<div class="code-container">
+	
+    <pre class="code"><code data-language="plaintext">├── docker-compose.yml
+└── docker-web
+    ├── log
+    │   ├── access.log
+    │   └── error.log
+    ├── nginx.conf
+    └── www
+        └── index.php
+</code></pre>
+</div>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        docker-compose.yml
+    </div>
+    
+    <pre class="code"><code data-language="yaml">version: &#39;3&#39;
+
+services:
+    web-nginx:
+        image: nginx:stable-alpine
+        container_name: web-nginx
+        volumes:
+            - &#34;./docker-web/www:/usr/share/nginx/html:ro&#34;
+            - &#34;./docker-web/log:/var/log/nginx&#34;
+            - &#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;
+        ports:
+            - &#34;127.0.0.1:80:80&#34;
+
+    web-php:
+        image: php:fpm-alpine
+        container_name: web-php
+        volumes:
+            - &#34;./docker-web/www:/script:ro&#34;
+</code></pre>
+</div>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        docker-web/nginx.conf
+    </div>
+    
+    <pre class="code"><code data-language="nginx">user                       nginx;
+worker_processes           1;
+
+error_log                  /var/log/nginx/error.log warn;
+pid                        /var/run/nginx.pid;
+
+events {
+    worker_connections     1024;
+}
+
+http {
+    include                /etc/nginx/mime.types;
+    default_type           application/octet-stream;
+    
+    log_format             main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; $status $body_bytes_sent &#34;$http_referer&#34; &#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
+    access_log             /var/log/nginx/access.log main;
+    
+    sendfile               on;
+    keepalive_timeout      65;
+    server_tokens          off;
+
+    server {
+        listen             80;
+        server_name        localhost;
+        
+        location / {
+            root           /usr/share/nginx/html;
+            index          index.php index.html index.htm;
+        }
+        
+        error_page         500 502 503 504 /50x.html;
+        location = /50x.html {
+            root           /usr/share/nginx/html;
+        }
+
+        location ~ \.php$ {
+            root           /usr/share/nginx/html;
+            include        fastcgi_params;
+            fastcgi_pass   web-php:9000;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  /script$fastcgi_script_name;
+        }
+    }
+}
+</code></pre>
+</div>
+
+<p>Après avoir vérifié que nos deux containers <code>web-nginx</code> et <code>web-php</code> sont bien démarrés et que le serveur Nginx est accessible depuis un navigateur Web, nous allons modifier le fichier <code>index.php</code> pour qu&rsquo;il se connecte à la base de données et affiche la version du <abbr title="Système de Gestion de Base de Données">SGBD</abbr>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        docker-web/www/index.php
+    </div>
+    
+    <pre class="code"><code data-language="php">&lt;?php
+$dbconn = pg_connect(&#39;host=web-pgsql port=5432 dbname=foobar user=foobar password=foobar&#39;)
+    or die(&#39;Could not connect&#39;);
+     
+echo &#39;&lt;pre&gt;&#39; . var_export(pg_version($dbconn), true) . &#39;&lt;/pre&gt;&#39;;
+
+pg_close($dbconn);
+?&gt;
+</code></pre>
+</div>
+
+<p>Si tous ce passe bien, vous devriez obtenir une erreur &hellip; <em>wait, what?</em></p>
+
+<figure>
+    <a href="/media/2019/03/762a28c8146467077d7aefd4f33314ad.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2019/03/762a28c8146467077d7aefd4f33314ad.png" alt="Call to undefined function">
+    </a>
+    
+</figure>
+
+<h2 id="personnaliser-l-image-docker-de-php">Personnaliser l&rsquo;image Docker de PHP</h2>
+
+<p>Le serveur nous indique qu&rsquo;il y a une erreur : <code>Call to undefined function pg_connect()</code>. En effet, l&rsquo;image Docker standard de PHP n&rsquo;embarque que très peu de module. Il est précisé sur la page <a href="https://hub.docker.com/_/php">DockerHub PHP</a> comment <strong>ajouter des extensions PHP supplémentaires</strong>. Nous allons donc créer notre propre image Docker de PHP pour y intégrer le client PostgreSQL.</p>
+
+<p>Commençons par créer un fichier <code>Dockerfile</code> dans le répertoire <code>docker-web/.build-php</code> (vous pouvez le placer ailleurs). C&rsquo;est dans ce fichiers que nous allons décrire comment construire l&rsquo;image :</p>
+
+<ul>
+<li>Nous partons de l&rsquo;image <code>php:fpm-alpine</code></li>
+<li>Nous y ajoutons les paquets <code>postgresql-dev</code> afin de disposer des bibliothèques nécessaire aux extensions PHP PostgreSQL</li>
+<li>L&rsquo;image <code>php:fpm-alpine</code> embarque des scripts pour faciliter l&rsquo;ajout d&rsquo;extension, nous les utilisons pour ajouter <code>pgsql</code> et <code>pdo_pgsql</code>.</li>
+</ul>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        docker-web/.build-php/Dockerfile
+    </div>
+    
+    <pre class="code"><code data-language="dockerfile">FROM php:fpm-alpine
+RUN apk update &amp;&amp; apk add --no-cache \
+        postgresql-dev \
+    &amp;&amp; docker-php-ext-install -j$(nproc) pgsql \
+    &amp;&amp; docker-php-ext-install -j$(nproc) pdo_pgsql
+</code></pre>
+</div>
+
+<p>Il faut également modifier le fichier <code>docker-compose.yml</code> pour préciser que nous voulons utiliser notre image plutôt que <code>php:fpm-alpine</code>. Nous renseignons pour cela la directive <code>build</code> afin d&rsquo;indiquer à Docker Compose <strong>de construire l&rsquo;image si nécessaire</strong> (premier démarrage, modification du fichier <code>Dockerfile</code>, etc&hellip;), ou <strong>d&rsquo;utiliser la dernière image construite</strong> si aucune modification n&rsquo;a été opérée depuis le dernier build.</p>
+
+<div class="code-container">
+	
+    <pre class="code"><code data-language="yaml">web-php:
+    build: ./docker-web/.build-php
+    container_name: web-php
+    volumes:
+        - &#34;./docker-web/www:/script:ro&#34;
+</code></pre>
+</div>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">host:~# docker-compose up -d
+</code></pre>
+</div>
+
+<p>Si tous ce passe bien, vous devriez obtenir une erreur &hellip; <em>wait, again?</em></p>
+
+<figure>
+    <a href="/media/2019/03/25f80845da0b1c6c3de60d74036a6324.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2019/03/25f80845da0b1c6c3de60d74036a6324.png" alt="Unable to connect to PostgreSQL server">
+    </a>
+    
+</figure>
+
+<h2 id="le-container-postgresql">Le container PostgreSQL</h2>
+
+<p>Évidement, il nous manque le container PostgreSQL, que nous avons déjà nommé ci-dessus dans le fichier <code>index.php</code> : <strong>web-pgsql</strong>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">host:~# mkdir -p docker-web/data # Pour stocker le contenu de la base de données
+</code></pre>
+</div>
+
+<p>Pas besoin de faire compliqué ici, nous allons simplement utiliser l&rsquo;image officielle et Docker Compose pour configurer et démarrer le container PostgreSQL :</p>
+
+<ul>
+<li>Le container est nommé <code>web-pgsql</code> ;</li>
+<li>Le répertoire <code>./docker-web/data</code> est monté pour y stocker le contenu de la base de données ;</li>
+<li>Les variables d&rsquo;environnement suivantes sont définies :
+
+<ul>
+<li><strong><code>POSTGRES_PASSWORD</code></strong>, cette variable définit le mot de passe de l&rsquo;utilisateur <code>POSTGRES_USER</code> pour PostgreSQL ;</li>
+<li><strong><code>POSTGRES_USER</code></strong>, cette variable créera l&rsquo;utilisateur <code>foobar</code>. S&rsquo;il n&rsquo;est pas spécifié, l&rsquo;utilisateur par défaut de <code>postgres</code> sera utilisé ;</li>
+<li><strong><code>POSTGRES_DB</code></strong>, cette variable créera la base de données <code>foobar</code>. S&rsquo;il n&rsquo;est pas spécifié,la valeur de <code>POSTGRES_USER</code> sera utilisée.</li>
+</ul></li>
+</ul>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> Pour les besoins de cet article, j&rsquo;ai utilisé les identifiants <code>foobar:foobar</code> pour me connecter à la base de données. Pensez à remplacer les variable d&rsquo;environnement par vos propres valeurs ;)</div>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        docker-compose.yml
+    </div>
+    
+    <pre class="code"><code data-language="yaml">version: &#39;3&#39;
+
+services:
+    web-nginx:
+        image: nginx:stable-alpine
+        container_name: web-nginx
+        volumes:
+            - &#34;./docker-web/www:/usr/share/nginx/html:ro&#34;
+            - &#34;./docker-web/log:/var/log/nginx&#34;
+            - &#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;
+        ports:
+            - &#34;127.0.0.1:80:80&#34;
+
+    web-php:
+        image: php:fpm-alpine
+        container_name: web-php
+        volumes:
+            - &#34;./docker-web/www:/script:ro&#34;
+
+    web-pgsql:
+        image: postgres:alpine
+        container_name: web-pgsql
+        volumes:
+            - &#34;./docker-web/data:/var/lib/postgresql/data&#34;
+        environment:
+            POSTGRES_USER: foobar
+            POSTGRES_PASSWORD: foobar
+            POSTGRES_DB: foobar
+</code></pre>
+</div>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">host:~# docker-compose up -d
+</code></pre>
+</div>
+
+<p>Si tous ce passe bien, vous devriez obtenir une erreur &hellip; Ah non, pas cette fois-ci, maintenant que tout est en place la fonction <a href="https://secure.php.net/manual/fr/function.pg-version.php"><code>pg_version()</code></a> renvoie les infos des versions client/serveur de PostgreSQL.</p>
+
+<figure>
+    <a href="/media/2019/03/5f46c66379b93cbc1ec1c6460be50af5.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2019/03/5f46c66379b93cbc1ec1c6460be50af5.png" alt="Tout fonctionne">
+    </a>
+    
+</figure>
+
+<hr />
+
+<h4 id="références">Références</h4>
+
+<ol>
+<li><a href="https://hub.docker.com/_/php">PHP (Docker Official Images) - Docker Hub</a></li>
+<li><a href="https://hub.docker.com/_/nginx">Nginx (Docker Official Images) - Docker Hub</a></li>
+<li><a href="https://hub.docker.com/_/postgres">PostgreSQL (Docker Official Images) - Docker Hub</a></li>
+</ol>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/docker"><span class="tag">Docker</span></a></li>
+        
+          <li><a href="/tags/php"><span class="tag">PHP</span></a></li>
+        
+          <li><a href="/tags/nginx"><span class="tag">Nginx</span></a></li>
+        
+          <li><a href="/tags/postgresql"><span class="tag">PostgreSQL</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. 
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

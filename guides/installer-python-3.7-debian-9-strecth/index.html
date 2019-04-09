@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Installer Python 3.7 sur Debian 9 Stretch
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Nous allons installer Python 3.7 sur un système Debian 9 (Stretch). Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de release des version Debian stables, Debian 9 n&amp;rsquo;intègre que la version 3.5 de Python.
+   Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings." />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Installer Python 3.7 sur Debian 9 Stretch" />
+    <meta name="twitter:description" content="Nous allons installer Python 3.7 sur un système Debian 9 (Stretch). Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de release des version Debian stables, Debian 9 n&amp;rsquo;intègre que la version 3.5 de Python.
+   Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings." />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" />
+  
+
+
+
+
+<link rel="canonical" href="/guides/installer-python-3.7-debian-9-strecth/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-guides">
+    <header class="post-header">
+      <h1 class="post-title">Installer Python 3.7 sur Debian 9 Stretch</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/guides/">Guides</a></span>
+        @vonKrafft · 4 mars 2019
+      </p>
+    </header>
+    <article class="post-content">
+
+<p>Nous allons installer <strong>Python 3.7</strong> sur un système <strong>Debian 9 (Stretch)</strong>. Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de <em>release</em> des version Debian stables, Debian 9 n&rsquo;intègre que la version 3.5 de Python.</p>
+
+<!-- more -->
+
+<figure>
+    
+        <img src="/media/2019/03/3b3d883f353f54a8ad62760ab18ea9c6.png">
+    
+    
+</figure>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Une des fonctionnalités sympa dont j&rsquo;avais besoin est l&rsquo;ajout des <a href="https://realpython.com/python-f-strings/#arbitrary-expressions">f-Strings</a>. Apparu avec Python 3.6, elle permettent d&rsquo;ajouter dans les chaînes de caractères des expressions qui seront remplacée par leur valeur. Et quitte à mettre à jour Python, autant installer la dernière version ;)</div>
+
+<h2 id="installer-python-3-7">Installer Python 3.7</h2>
+
+<p>La première étape est de mettre à jour le système et d&rsquo;installer <code>libffi</code>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ sudo apt update &amp;&amp; sudo apt upgrade
+debian:~$ sudo apt install libffi-dev
+</code></pre>
+</div>
+
+<p>Ensuite, nous téléchargeons la dernière version de Python 3.7 (liste des version sur <a href="https://www.python.org/ftp/python">https://www.python.org/ftp/python</a>), nous décompressons l&rsquo;archive <em>tgz</em> dans le répertoire <code>/usr/src</code> et nous installons Python.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
+debian:~$ sudo tar -xzf Python-3.7.2.tgz -C /usr/src
+debian:~$ cd /usr/src/Python-3.7.2
+debian:/usr/src/Python-3.7.2$ sudo ./configure --enable-optimizations
+debian:/usr/src/Python-3.7.2$ sudo make altinstall
+</code></pre>
+</div>
+
+<p>Je vous propose d&rsquo;aller prendre un café, car ça va durer un petit moment. Si l&rsquo;installation s&rsquo;est correctement terminée (i.e. aucun message d&rsquo;erreur, notamment dans les dernières lignes affichées dans la console), vous devriez être en mesure de lancer la commande suivante :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ python3.7 -V
+Python 3.7.2
+debian:~$ pip3 --version
+pip 19.0.3 from /usr/local/lib/python3.7/site-packages/pip (python 3.7)
+</code></pre>
+</div>
+
+<p>Et voilà :)</p>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/python"><span class="tag">Python</span></a></li>
+        
+          <li><a href="/tags/python-3.7"><span class="tag">Python 3.7</span></a></li>
+        
+          <li><a href="/tags/debian"><span class="tag">Debian</span></a></li>
+        
+          <li><a href="/tags/debian-9"><span class="tag">Debian 9</span></a></li>
+        
+          <li><a href="/tags/stretch"><span class="tag">Stretch</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. 
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Quid de la mémoire vive (RAM)
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory, est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Quid de la mémoire vive (RAM)" />
+    <meta name="twitter:description" content="La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory, est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2012/01/8d8bea89388715ee7c01183a0667e892.png" />
+  
+
+
+
+
+<link rel="canonical" href="/guides/quid-memoire-vive-ram/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-guides">
+    <header class="post-header">
+      <h1 class="post-title">Quid de la mémoire vive (RAM)</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/guides/">Guides</a></span>
+        @vonKrafft · 24 janvier 2012
+      </p>
+    </header>
+    <article class="post-content"><p>La mémoire vive, aussi appelée RAM de l&rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.</p>
+
+<p></p>
+
+<h2 id="quantité-de-mémoire">Quantité de mémoire</h2>
+
+<p>La mémoire vive bénéficie d’une connexion privilégiée avec le processeur et ce dernier utilise cette rapidité d’accès pour y stocker toutes les informations dont il a besoin pour effectuer ses calculs. Lorsque la quantité de mémoire vive n’est pas suffisante, les traitements se font non plus sur la RAM mais sur le disque dur, ce qui ralentit considérablement le système.</p>
+
+<p>Lorsque vous monter ou achetez un PC, ne vous privez donc pas de mémoire vive. Actuellement, la majorité des ordinateur, portables ou fixes, disposent de 4 Go de mémoire vive,  les Netbook et autres petits PC sont souvent dotés de 1 ou 2 Go ce qui suffit à la majorité des usages. Toutefois, pour une utilisation plus intense, comme le jeu ou le graphisme 3D, préférez 8 Go de RAM ou plus.</p>
+
+<figure>
+    <a href="/media/2012/01/4970b20d9e382c16cfcc1712e1dba3f5.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2012/01/4970b20d9e382c16cfcc1712e1dba3f5-300x117.png">
+    </a>
+    
+</figure>
+
+<h2 id="format-norme-et-cas-lacency">Format, Norme et CAS Lacency</h2>
+
+<p>Le format de la mémoire vive est imposé par la carte mère. Celui a évoluer au fil du temps en passant de la SDRAM, DDR, DDR2 à la DDR3. La DDR2, longtemps utilisée, est encore très présente mais tous les PC actuellement sur le marché l’ont troqués contre la DDR3, plus rapide. A ce format s’ajour le modèle de la mémoire, DIMM pour les ordinateur de bureau, SO-DIMM pour les ordinateur portable.</p>
+
+<figure>
+    <a href="/media/2012/01/26f3fa7e1e45cd50273eef044d333d64.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2012/01/26f3fa7e1e45cd50273eef044d333d64-300x82.png">
+    </a>
+    
+</figure>
+
+<p>Caque format de RAM est décliné en plusieurs normes impactant sur leurs performances. Ces déclinaisons sont portées principalement sur les fréquences de fonctionnement. Ainsi, de la DDR3 PC3-14400 (1800 MHz) présente des taux de transfert moins élevé que de la DDR3 PC3-10600 (1333 MHz). Généralement, les mémoires à hautes fréquences ne sont pas beaucoup plus chères et il est préférable d’opter pour ces dernières. En effet, elles sont souvent rétro compatible et fonctionneront à la fréquence la plus élevée imposée par votre carte mère ou votre processeur.</p>
+
+<p>Enfin, les performances des mémoires sont aussi définies par le CAS Lacency (CL5, CL7 …). Il correspond au temps de réaction entre la réception et le traitement de l’information. En effet, plus la fréquence augment, plus les temps de latence sont importants. De façon générale, pour une même catégorie de mémoire (format et norme), plus le CAS Lacency est faible plus la mémoire sera rapide.</p>
+
+<h2 id="le-nombre-de-barrette-de-ram">Le nombre de barrette de RAM</h2>
+
+<p>Vous pouvez installer autant de barrettes que vous le permet votre carte mère.</p>
+
+<ul>
+<li>1 barrette : parfois imposée sur les carte mères mini-ITX, je ne vous le recommande pas, l’achat de deux barrettes ne coûte pas beaucoup plus cher.</li>
+<li>2 ou 4 barrettes : Aujourd’hui, une grande majorité de cartes mères propose le Dual-Channel en s’équipant de deux ou quatre slot de mémoire vive. Cette technologie fait fonctionner les barrettes en paires pour optimiser le temps d’accès à la mémoire. Cette la configuration que je vous conseille d’adopter.</li>
+<li>3 ou 6 barrettes : rare mais présent, le Triple-Channel est basé sur le même principe que le Dual-Channel, comme son nom l’indique, mais fait fonctionner les barrettes par trois.</li>
+<li>Plus de barrettes : honnêtement, cela n’a pas grand intérêt.</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-circle"></i> Pour le Dual-Channel et le triple-Channel, les barrettes de mémoire vive doivent être identiques (et compatible avec le Dual ou le triple Channel bien sûr).</div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/quid"><span class="tag">Quid</span></a></li>
+        
+          <li><a href="/tags/ram"><span class="tag">RAM</span></a></li>
+        
+          <li><a href="/tags/m%C3%A9moire"><span class="tag">Mémoire</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>2610</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

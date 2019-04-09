@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Comment fonctionne l&#39;USB
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Comment fonctionne l&#39;USB" />
+    <meta name="twitter:description" content="Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2011/04/6a758e155636cd29a0e897e498151f6e.jpeg" />
+  
+
+
+
+
+<link rel="canonical" href="/guides/comment-fonctionne-usb/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-guides">
+    <header class="post-header">
+      <h1 class="post-title">Comment fonctionne l&#39;USB</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/guides/">Guides</a></span>
+        @vonKrafft · 29 avril 2011
+      </p>
+    </header>
+    <article class="post-content"><p><em>Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?</em></p>
+
+<p></p>
+
+<h2 id="un-peu-de-culture-générale">Un peu de culture générale</h2>
+
+<p>Le port USB est un port universel, c’est le plus utilisé dans l’informatique de tous les jours. Tout d&rsquo;abord, le port USB a vu le jour en 1990 dans le but de remplacer tous les anciens ports qui commençaient à s&rsquo;essouffler. Il a connu trois versions depuis sa création : la 1.1 la 2.0 et la 3.0.</p>
+
+<figure>
+    <a href="/media/2011/04/d756e54c471730bae5a6c5af6dc5faf4.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2011/04/d756e54c471730bae5a6c5af6dc5faf4.png">
+    </a>
+    
+</figure>
+
+<ul>
+<li>La version 1.1 permet deux modes de fonctionnement :
+
+<ul>
+<li>Low speed à 192 Ko/s pour les claviers et souris, etc.;</li>
+<li>Full speed à 1,5 Mo/s pour les imprimantes, scanners, etc.</li>
+</ul></li>
+<li>La version 2.0 ajoute un nouveau mode :
+
+<ul>
+<li>High speed, à 60 Mo/s. Il est utilisé par les disques durs externes, les clés de stockage, et par les nouveaux scanners et nouvelles imprimantes.</li>
+<li>Mais ce n&rsquo;est pas tout : la version 2.0 ajoute une alimentation en 5 Volts et jusqu&rsquo;à 500 mA, soit 2,5 Watts (0,5A x 5V = 2,5W).</li>
+<li>Tout récemment, en 2008, la version 3.0 de l&rsquo;USB a vu le jour et apporte un débit de transfert de 625 Mo/s soit 5000 Mbits/s. Ce mode est alors nommé Superspeed.</li>
+</ul></li>
+</ul>
+
+<h2 id="schéma-électrique">Schéma électrique</h2>
+
+<h3 id="usb-1-1-et-2-0-low-full-high-speed">USB 1.1 et 2.0 – Low, Full &amp; High Speed</h3>
+
+<p>Commençons par les deux premières normes de l’USB. La norme 1.1 et 2.0 se ressemble grandement. La première a quasiment disparu tandis que la deuxième fait partie intégrante de notre vie. Peu à peu, l’USB 2.0 sera remplacé par la nouvelle norme 3.0</p>
+
+<ul>
+<li>Alors, en 1 nous avons la borne +5V (2.0) ;</li>
+<li>En 2, D+, qui permet de transférer les données (1.1 et 2.0) ;</li>
+<li>En 3, D-, qui permet également de transférer les données (1.1 et 2.0) ;</li>
+<li>En 4, Ground, c&rsquo;est-à-dire le 0V (2.0).</li>
+</ul>
+
+<p>On distingue aussi deux type de port USB :</p>
+
+<ul>
+<li>Le port type A (le plus courant) : pour les clés USB, câble de mp3/ appareil photo … ;</li>
+<li>Le port type B (moins fréquent) : pour les imprimantes et scanners notamment.</li>
+</ul>
+
+<p>Il existe encore les ports de type mini A et mini B. On les trouve le plus souvent pour connecter les appareils photos, certaines clés audio USB, etc.</p>
+
+<figure class="gallery gallery-column-2">
+	<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/04/6b45ebaa03b0d371340fc0596a8e56fa.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/04/6b45ebaa03b0d371340fc0596a8e56fa.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/04/1f588a9d86faed1fd4f1acf12956170c.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/04/1f588a9d86faed1fd4f1acf12956170c.png">
+        </a>
+    </div>
+</div>
+
+	<figcaption class="clearfix"><h4>Schéma du connecteur USB</h4></figcaption>
+</figure>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-question-circle"></i> Pourquoi y a-t-il deux broches D+ et D- pour transmettre les données (data) alors que c&rsquo;est un port série ?</div>
+
+<p>Le port USB utilise un type d&rsquo;encodage (NRZI) qui nécessite deux broches. C&rsquo;est-à-dire que cet encodage utilise la borne D- pour représenter un 0 binaire, avec une tension négative, et la borne D+ pour le 1 binaire, avec une tension positive. NRZI signifie Non Return to Zero Inverted : jamais de retour à zéro, inversé. C&rsquo;est un codage bien spécial :</p>
+
+<ul>
+<li>s&rsquo;il faut envoyer un &ldquo;1&rdquo;&ldquo;, la sortie ne change pas d&rsquo;état ;</li>
+<li>s&rsquo;il faut envoyer un 0&rdquo;, la sortie change d&rsquo;état à chaque fois.</li>
+</ul>
+
+<h3 id="usb-3-0-superspeed">USB 3.0 – SuperSpeed</h3>
+
+<p>Maintenant, passons à la version 3.0 : il est plus complexe puisqu&rsquo;il comporte neuf fils !</p>
+
+<p>En apparence, il reste similaire à la version 2.0, ce qui lui permet entre autres d&rsquo;assurer une compatibilité descendante et ascendante : on peut brancher des vieux périphériques sur du nouveau matériel et des périphériques neufs sur du vieux matériel.</p>
+
+<p>Mais, s&rsquo;il conserve les quatre broches classiques de l&rsquo;USB, cinq viennent s&rsquo;ajouter permettant ainsi au mode Superspeed d&rsquo;atteindre un très haut débit : 600 Mo/s tout de même !</p>
+
+<figure>
+    <a href="/media/2011/04/3107d7e498eebaf742fd42a6e29b3547.jpg" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2011/04/3107d7e498eebaf742fd42a6e29b3547.jpg" alt="Schéma du connecteur USB 3.0">
+    </a>
+    
+        <figcaption>
+            <h4>Schéma du connecteur USB 3.0</h4>
+        </figcaption>
+    
+</figure>
+
+<p>Voici les vues de dessus et de profil du connecteur (en coupe) :</p>
+
+<ul>
+<li>Les broches 1, 2, 3 et 4 ont toujours les mêmes fonctions ;</li>
+<li>En 5 et 6, nous avons les contacts joliment nommés StdA_SSRX- et StdA_SSRX+ qui sont dédiés à la réception (pour l&rsquo;ordinateur) en mode Superspeed ;</li>
+<li>En 8 et 9, ce sont les contacts StdA_SSTX- et StdA_SSTX+ qui servent à l&rsquo;émission (pour l&rsquo;ordinateur) en mode Superspeed ;</li>
+<li>Le contact 7 est quant à lui dédié au retour des signaux et se nomme GND_DRAIN.</li>
+</ul>
+
+<p>Certes, les noms nous sont inutiles, mais cela nous apprend qu&rsquo;il y a désormais une connectique pour la transmission et la réception dans la version 3.0 de l&rsquo;USB.</p>
+
+<p>Maintenant que vous en savez un peu plus sur ce port, vous pouvez <a href="/tutoriels/fabriquez-ventilateur-usb/">construire un ventilateur USB</a>.</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/quid"><span class="tag">Quid</span></a></li>
+        
+          <li><a href="/tags/usb"><span class="tag">USB</span></a></li>
+        
+          <li><a href="/tags/technique"><span class="tag">Technique</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>2880</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

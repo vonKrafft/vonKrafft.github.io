@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atx on vonKrafft</title>
+    <link>/tags/atx/</link>
+    <description>Recent content in Atx on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 04 Feb 2012 22:00:27 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/atx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quid de la carte mère</title>
+      <link>/guides/quid-carte-mere/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/guides/quid-carte-mere/</guid>
+      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

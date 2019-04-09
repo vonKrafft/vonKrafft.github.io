@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutoriels on vonKrafft</title>
+    <link>/tutoriels/</link>
+    <description>Recent content in Tutoriels on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Thu, 12 Dec 2013 17:23:50 +0000</lastBuildDate>
+    
+	<atom:link href="/tutoriels/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Un morpion en Javascript</title>
+      <link>/tutoriels/un-morpion-en-javascript/</link>
+      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
+      
+      <guid>/tutoriels/un-morpion-en-javascript/</guid>
+      <description>&lt;p&gt;On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recyclez vos disquettes en pot à crayons</title>
+      <link>/tutoriels/recyclez-vos-disquettes-pot-a-crayons/</link>
+      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      
+      <guid>/tutoriels/recyclez-vos-disquettes-pot-a-crayons/</guid>
+      <description>&lt;p&gt;Il vous reste des disquettes au fond d’un placard et votre âme nostalgique de Geek ne saurait s’en défaire, et bien ne les jetez pas – du moins pas tous – et recyclez-les en un pot à crayons.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Assemblez votre PC Home Cinéma</title>
+      <link>/tutoriels/assemblez-pc-home-cinema/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tutoriels/assemblez-pc-home-cinema/</guid>
+      <description>&lt;p&gt;Le « Média Center » désigne les disques dur et les TV connectés, comme par exemple les TV d’Apple ou de Google, les lecteurs multimédia, mais aussi les box TV de opérateur. Successeur du lecteur DVD, le « Média Center » permet de regarder la TV, lire ses films et ses enregistrements et naviguer sur internet. Cependant, de nombreux problème se pose, notamment à cause des formats vidéo supporté, mais aussi parce que leur utilisation est trop restreinte. Pour pallier à ces inconvénients, vous pouvez opter pour un PC Home Cinéma.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Réinstaller Windows sur son PC</title>
+      <link>/tutoriels/reinstaller-windows-pc/</link>
+      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
+      
+      <guid>/tutoriels/reinstaller-windows-pc/</guid>
+      <description>&lt;p&gt;Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apprenez à gérer le double écran</title>
+      <link>/tutoriels/gerer-double-ecran/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tutoriels/gerer-double-ecran/</guid>
+      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Donnez une seconde vie à votre PC</title>
+      <link>/tutoriels/donnez-seconde-vie-pc/</link>
+      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
+      
+      <guid>/tutoriels/donnez-seconde-vie-pc/</guid>
+      <description>&lt;p&gt;Votre PC est trop vieux à votre goût trop lent, mais le remplacer vous fait mal au cœur (et au porte-monnaie) car vous l’avez acheté il y a moins de cinq ans &amp;hellip; et bien ne le remplacez pas, offrez-lui plutôt une cure de rajeunissement et donnez-lui une seconde vie.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Overclocker son CPU</title>
+      <link>/tutoriels/overclocker-son-cpu/</link>
+      <pubDate>Sat, 17 Sep 2011 20:48:51 +0000</pubDate>
+      
+      <guid>/tutoriels/overclocker-son-cpu/</guid>
+      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fabriquez votre ventilateur USB</title>
+      <link>/tutoriels/fabriquez-ventilateur-usb/</link>
+      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      
+      <guid>/tutoriels/fabriquez-ventilateur-usb/</guid>
+      <description>&lt;p&gt;Je ne sais pas si vous suivez l&amp;rsquo;actualité informatique, mais on peut remarquer tout un tas de trucs inutiles en USB : un barbecue USB, un aquarium USB, un ventilateur USB, un réfrigérateur USB, une chauffe tasse USB, etc. … Je vous propose de faire un ventilateur USB. Ce n’est pas grandement utile mais vous pourrez fièrement vous vanter en disant : « c’est moi qui l’ai fait ! ».&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recyclez son ordinateur</title>
+      <link>/tutoriels/recyclez-son-ordinateur/</link>
+      <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
+      
+      <guid>/tutoriels/recyclez-son-ordinateur/</guid>
+      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Assemblez votre serveur NAS de A à Z</title>
+      <link>/tutoriels/assemblez-votre-serveur-nas/</link>
+      <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
+      
+      <guid>/tutoriels/assemblez-votre-serveur-nas/</guid>
+      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Monter un Mini-PC</title>
+      <link>/tutoriels/monter-un-mini-pc/</link>
+      <pubDate>Wed, 05 Jan 2011 21:58:06 +0000</pubDate>
+      
+      <guid>/tutoriels/monter-un-mini-pc/</guid>
+      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

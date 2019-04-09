@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Glowing Bear on vonKrafft</title>
+    <link>/tags/glowing-bear/</link>
+    <description>Recent content in Glowing Bear on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Thu, 04 Oct 2018 18:43:12 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/glowing-bear/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Une interface Web pour IRC avec Docker</title>
+      <link>/console/interface-web-pour-irc-avec-docker/</link>
+      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
+      
+      <guid>/console/interface-web-pour-irc-avec-docker/</guid>
+      <description>IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&amp;rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&amp;rsquo;IRC s&amp;rsquo;adaptent pour continuer d&amp;rsquo;utiliser le protocole historique &amp;hellip;
+   L&amp;rsquo;objectif que nous allons essayer d&amp;rsquo;atteindre est de faire tourner avec Docker l&amp;rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat.</description>
+    </item>
+    
+  </channel>
+</rss>

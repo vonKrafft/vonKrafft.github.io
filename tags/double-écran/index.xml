@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Double Écran on vonKrafft</title>
+    <link>/tags/double-%C3%A9cran/</link>
+    <description>Recent content in Double Écran on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 05 Nov 2011 21:46:35 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/double-%C3%A9cran/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apprenez à gérer le double écran</title>
+      <link>/tutoriels/gerer-double-ecran/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tutoriels/gerer-double-ecran/</guid>
+      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

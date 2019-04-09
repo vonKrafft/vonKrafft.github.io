@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chromebook on vonKrafft</title>
+    <link>/tags/chromebook/</link>
+    <description>Recent content in Chromebook on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Tue, 05 Jul 2011 21:40:46 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/chromebook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Le Samsung Serie 5, le premier ChomeBook</title>
+      <link>/actus/le-samsung-serie-5-le-premier-chomebook/</link>
+      <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
+      
+      <guid>/actus/le-samsung-serie-5-le-premier-chomebook/</guid>
+      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

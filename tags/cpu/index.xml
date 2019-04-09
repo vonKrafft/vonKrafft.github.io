@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cpu on vonKrafft</title>
+    <link>/tags/cpu/</link>
+    <description>Recent content in Cpu on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 10 Mar 2012 19:15:49 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/cpu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quid du processeur (CPU)</title>
+      <link>/guides/quid-processeur-cpu/</link>
+      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
+      
+      <guid>/guides/quid-processeur-cpu/</guid>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Overclocker son CPU</title>
+      <link>/tutoriels/overclocker-son-cpu/</link>
+      <pubDate>Sat, 17 Sep 2011 20:48:51 +0000</pubDate>
+      
+      <guid>/tutoriels/overclocker-son-cpu/</guid>
+      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Modification de l&#39;organisation de l&#39;ordinateur</title>
+      <link>/actus/modification-organisation-ordinateur/</link>
+      <pubDate>Fri, 01 Apr 2011 22:40:50 +0000</pubDate>
+      
+      <guid>/actus/modification-organisation-ordinateur/</guid>
+      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

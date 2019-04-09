@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guides on vonKrafft</title>
+    <link>/categories/guides/</link>
+    <description>Recent content in Guides on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Mon, 04 Mar 2019 19:43:46 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/guides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installer Python 3.7 sur Debian 9 Stretch</title>
+      <link>/guides/installer-python-3.7-debian-9-strecth/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
+      
+      <guid>/guides/installer-python-3.7-debian-9-strecth/</guid>
+      <description>Nous allons installer Python 3.7 sur un système Debian 9 (Stretch). Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de release des version Debian stables, Debian 9 n&amp;rsquo;intègre que la version 3.5 de Python.
+   Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings.</description>
+    </item>
+    
+    <item>
+      <title>Migrer d&#39;un WordPress vers Hugo</title>
+      <link>/guides/migrer-wordpress-vers-hugo/</link>
+      <pubDate>Fri, 05 Jan 2018 08:43:46 +0000</pubDate>
+      
+      <guid>/guides/migrer-wordpress-vers-hugo/</guid>
+      <description>&lt;p&gt;Ayant récement migré de WordPress vers Hugo, j&amp;rsquo;ai eu besoin d&amp;rsquo;exporter le contenu de la base de données vers des fichiers Markdown, mais aussi revoir l&amp;rsquo;organisation des ressources, notamment les images. Pour cela, j&amp;rsquo;ai implémenté quelques scripts que je me propose ici de partager.&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img src=&#34;/media/2018/01/f6840c5d35c17f43623f8cb9eb7d6f7e.png&#34;&gt;
+    
+    
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Trucs et astuces pour les liseuses Kobo</title>
+      <link>/guides/trucs-astuces-liseuses-kobo/</link>
+      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      
+      <guid>/guides/trucs-astuces-liseuses-kobo/</guid>
+      <description>&lt;p&gt;Si vous aussi vous avez franchi le pas du numérique et que vous avez acheté une liseuse pour pouvoir enfin emporter plus de 3 livres pour vos vacances et si vous aussi vous avez choisi la Kobo (créée par qui vous savez), cet article est écrit tout juste pour vous.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Guide d&#39;achat - Les PC portables 2012</title>
+      <link>/guides/guide-dachat-pc-portable-2012/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/guides/guide-dachat-pc-portable-2012/</guid>
+      <description>&lt;p&gt;Ça y est, c’est la rentrée, et j&amp;rsquo;en profite pour faire une mise à jour du guide d&amp;rsquo;achat PC portables. En effet, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour vous épauler dans vos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choisir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quid de l&#39;alimentation PC</title>
+      <link>/guides/quid-de-l-alimentation-pc/</link>
+      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      
+      <guid>/guides/quid-de-l-alimentation-pc/</guid>
+      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quid du processeur (CPU)</title>
+      <link>/guides/quid-processeur-cpu/</link>
+      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
+      
+      <guid>/guides/quid-processeur-cpu/</guid>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quid de la carte mère</title>
+      <link>/guides/quid-carte-mere/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/guides/quid-carte-mere/</guid>
+      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quid de la mémoire vive (RAM)</title>
+      <link>/guides/quid-memoire-vive-ram/</link>
+      <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
+      
+      <guid>/guides/quid-memoire-vive-ram/</guid>
+      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Optimiser la durée de vie de sa batterie</title>
+      <link>/guides/optimiser-duree-vie-batterie/</link>
+      <pubDate>Sun, 25 Sep 2011 21:04:15 +0000</pubDate>
+      
+      <guid>/guides/optimiser-duree-vie-batterie/</guid>
+      <description>&lt;p&gt;Vous tous, possesseurs de PC portables ou de gadgets électroniques, vous êtes confronté l’autonomie de votre appareil et  à la durée de vie de sa batterie. Mais savez-vous qu’une batterie demande de l’entretient et qu’il ne faut pas l’utiliser n’importe comment ? Voici quelques conseils qui permettront à votre batterie Lithium-ion de durer plus longtemps.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Guide d&#39;achat PC portable 2011</title>
+      <link>/guides/guide-achat-pc-portable-2011/</link>
+      <pubDate>Fri, 26 Aug 2011 20:20:51 +0000</pubDate>
+      
+      <guid>/guides/guide-achat-pc-portable-2011/</guid>
+      <description>&lt;p&gt;Ça y est, c’est la rentrée, et c’est aussi la période pendant laquelle les constructeurs de PC portable renouvellent leurs gammes. Au même moment, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour nous épauler dans nos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bien choisir son disque SSD</title>
+      <link>/guides/bien-choisir-disque-ssd/</link>
+      <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
+      
+      <guid>/guides/bien-choisir-disque-ssd/</guid>
+      <description>&lt;p&gt;Annoncé comme l’avenir du stockage des informations, le SSD est un élément qui doit vous inciter à la plus grande prudence et à une grande réflexion avant l&amp;rsquo;achat. Voici quelques pistes pour vous aider dans ce choix.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Le Courant Porteur en Ligne - CPL</title>
+      <link>/guides/le-courant-porteur-en-ligne-cpl/</link>
+      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
+      
+      <guid>/guides/le-courant-porteur-en-ligne-cpl/</guid>
+      <description>&lt;p&gt;La technologie CPL permet de transmettre des données par le circuit électrique de la maison. Explication du fonctionnement du courant porteur en ligne.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Comment fonctionne l&#39;USB</title>
+      <link>/guides/comment-fonctionne-usb/</link>
+      <pubDate>Fri, 29 Apr 2011 19:21:47 +0000</pubDate>
+      
+      <guid>/guides/comment-fonctionne-usb/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

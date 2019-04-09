@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | PGP : Générer des clés et configurer une Yubikey
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Ayant récemment acquis une Yubikey NEO, j&amp;rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&amp;rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&amp;rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&amp;rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&amp;rsquo;ont permis d&amp;rsquo;y arriver (on ne sait jamais, ça pourra servir à d&amp;rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).
+  
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="PGP : Générer des clés et configurer une Yubikey" />
+    <meta name="twitter:description" content="Ayant récemment acquis une Yubikey NEO, j&amp;rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&amp;rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&amp;rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&amp;rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&amp;rsquo;ont permis d&amp;rsquo;y arriver (on ne sait jamais, ça pourra servir à d&amp;rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).
+  
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/console/pgp-generer-des-cles-et-configurer-une-yubikey/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">PGP : Générer des clés et configurer une Yubikey</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 22 juin 2018
+      </p>
+    </header>
+    <article class="post-content"><p>Ayant récemment acquis une <a href="https://www.yubico.com/product/yubikey-neo/">Yubikey NEO</a>, j&rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&rsquo;ont permis d&rsquo;y arriver (on ne sait jamais, ça pourra servir à d&rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).</p>
+
+<figure>
+    
+        <img src="/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg">
+    
+    
+</figure>
+
+<p></p>
+
+<h2 id="petits-rappels-sur-pgp">Petits rappels sur PGP</h2>
+
+<p>Ça ne peut pas faire de mal de résumer les bases de <a href="http://www.openpgp.org/">OpenPGP</a>, et plus particulièrement la structure d&rsquo;une clé PGP.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> PGP fait initialement référence à <a href="https://fr.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy</a>, mais aussi au standard OpenPGP. Par la suite, j&rsquo;utiliserais le terme PGP pour désigner OpenPGP.</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <a href="https://fr.wikipedia.org/wiki/GNU_Privacy_Guard">GnuPG</a> (ou GPG, de l&rsquo;anglais GNU Privacy Guard) est l&rsquo;implémentation GNU du standard OpenPGP défini dans la <a href="http://tools.ietf.org/html/rfc4880">RFC 4880</a>. Par la suite, nous générerons des clés OpenPGP à l&rsquo;aide de GnuPG.</div>
+
+<h3 id="structure-d-une-clé-pgp">Structure d&rsquo;une clé PGP</h3>
+
+<p>Une clé PGP n&rsquo;est pas simplement une bi-clé publique/privée comme le sont les clés SSH, elles contiennent également des métadonnées et éventuellement d&rsquo;autres clés. De manière générale, une clé PGP est constituée de quatre éléments :</p>
+
+<ul>
+<li>Une <strong>clé primaire</strong> (ou clé maître) : il s&rsquo;agit d&rsquo;une bi-clé utilisée pour signer les informations contenues dans la clé PGP. L&rsquo;ID de cette clé primaire (une empreinte de 20 octets, soit 40 caractères, défini dans la <a href="http://tools.ietf.org/html/rfc4880#section-12.2">RFC 4880-12.2</a>) est utilisée pour référencer la clé PGP.</li>
+<li>Une <strong>identité primaire</strong> : c&rsquo;est elle qui définit le nom et l&rsquo;adresse email du détenteur de la clé PGP.</li>
+<li>Une ou plusieurs <strong>identités secondaires</strong> optionnelles : Si généralement le nom est le même pour toutes les identités (je ne vous prive pas de vous inventer des surnoms), il est commun d&rsquo;associer plusieurs adresses email à la clé PGP.</li>
+<li>Éventuellement des <strong>sous-clés</strong> : il s&rsquo;agit là aussi de bi-clé utilisées pour signer, chiffrer ou s&rsquo;authentifier. Ces clés sont certifiées par la clé primaire.</li>
+</ul>
+
+<figure>
+    
+        <img src="/media/2018/06/e91ebb5eb00250a74a0ebfe7450bfa2f.png">
+    
+    
+</figure>
+
+<p>On peut se rendre compte qu&rsquo;une clé PGP est en réalité une véritable structure pouvant contenir une ou plusieurs bi-clés ainsi que des métadonnées concernant le propriétaire de la clé. Initialement, lorsque Zimmermann décrit PGP dans la <a href="https://tools.ietf.org/html/rfc1991">RCF 1991</a>, une clé PGP ne comporte qu&rsquo;une seule bi-clé. Lorsque la notion de sous-clés a été ajouté, le terme de &ldquo;clé PGP&rdquo; au singulier est resté.</p>
+
+<h3 id="les-sous-clés">Les sous-clés</h3>
+
+<p>On distingue quatre actions pour les clés PGP : la certification, la signature, le chiffrement et l&rsquo;authentification. Seule la clé primaire possède le pouvoir de certification. Les sous-clés sont des bi-clés signée par la clé primaire. La clé publique permet de vérifier une signature et chiffrer un document, tandis que la clé privée permet de signer ou déchiffrer un document, mais aussi à s&rsquo;authentifier.</p>
+
+<ul>
+<li>La sous-clé de <strong>chiffrement</strong> : Elle est automatiquement créée par défaut et signée par la clé primaire. Elle permet de chiffrer les documents, les mails, etc.</li>
+<li>La sous-clé de <strong>signature</strong> : Elle permet de signer les documents, les mails, etc. Par défaut, cette fonction est remplie par la clé primaire.</li>
+<li>La sous-clé d&rsquo;<strong>authentification</strong> :  Elle est utilisée pour s&rsquo;authentifier auprès de services externes tels que SSH. Par défaut, cette fonction est remplie par la clé primaire.</li>
+</ul>
+
+<p>Chaque sous-clé a sa propre date d&rsquo;expiration (optionnelle) et peut être révoquées indépendamment des autres. Il peut être alors judicieux de n&rsquo;attribuer qu&rsquo;un seul rôle à chaque clé, une clé primaire utilisée pour signer les sous-clés et les identités, et trois sous-clés utilisées respectivement pour signer, chiffrer et s&rsquo;authentifier.</p>
+
+<h3 id="les-cartes-à-puces">Les cartes à puces</h3>
+
+<p>Pour terminer cette (longue) introduction, parlons rapidement des cartes à puces (ou smart-card), telle que la Yubikey. Ce sont simplement des supports physiques pour stocker des clés privées et réalisée des opérations cryptographiques directement sur la carte.</p>
+
+<p>Les cartes à puce sont conçues de telle sorte qu&rsquo;une fois les clés privées ont été importées sur le périphérique, elles ne peuvent plus être extraites. Ainsi, même en cas de compromission de la machine, un attaquant ne pourra pas obtenir les clés privées.</p>
+
+<h2 id="configurer-la-yubikey">Configurer la Yubikey</h2>
+
+<p>Maintenant que les bases sont posées, il est temps de générer une clé PGP et de configurer notre Yubikey pour pouvoir signer et chiffrer des documents, mais aussi utiliser SSH avec une sous-clé stockée sur la Yubikey. Nos objectifs sont les suivants :</p>
+
+<ul>
+<li>Générer une clé PGP avec :</li>
+<li>Une clé primaire RSA 4096 bits pouvant uniquement certifier les identifiés et les sous-clés</li>
+<li>Une identité primaire avec notre nom et notre email</li>
+<li>Trois sous-clés RSA 2048 bits qui seront respectivement utilisées pour signer, chiffrer et s&rsquo;authentifier</li>
+<li>Exporter la clé primaire privée sur une clé USB dédiée que nous stockerons précieusement</li>
+<li>Configurer la Yubikey pour y stocker les sous-clés privées</li>
+<li>Configurer Debian pour s&rsquo;authentifier en SSH avec la sous-clé d&rsquo;authentification de la Yubikey</li>
+</ul>
+
+<h3 id="créer-une-nouvelle-clé-pgp">Créer une nouvelle clé PGP</h3>
+
+<p>Nous allons donc générer une clé primaire qui ne sera utilisée que pour signer les autres informations de notre clé PGP. Nous utilisons les options <code>--expert</code> et <code>--full-generate-key</code> pour obtenir toutes les options disponibles lors de la génération, notamment pour pouvoir définir précisément le rôle de la clé primaire.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --expert --full-generate-key
+</code></pre>
+</div>
+
+<p>Choisir l&rsquo;option <strong>(8) RSA (set your own capabilities)</strong>, désactiver tous les rôles sauf <strong>Certify</strong> et générer une clé de 4096 bits. On peut ensuite vérifier que la clé a bien été créée :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --list-keys
+pub   rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+debian:~$ gpg2 --list-secret-keys
+sec   rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+</code></pre>
+</div>
+
+<p>On a donc une clé <strong>pub</strong>lique et une clé <strong>sec</strong>rète (privée) dont le rôle est de certifier <strong>[C]</strong> les autres informations de la clé PGP. On a également une identité <strong>uid</strong>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> J&rsquo;ai mis une date d&rsquo;expiration de ma clé primaire à un an car je suis masochiste et j&rsquo;adore générer des clés PGP tous les ans &hellip; Blague à part, j&rsquo;ai généré cette nouvelle clé PGP pour ma Yubikey à des fins de test, et je vais très probablement générer une nouvelle clé dans l&rsquo;année.</div>
+
+<p>L&rsquo;étape suivante est de générer nos trois sous-clés :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --expert --edit-key 788FC46C8BB350B8
+gpg&gt; addkey
+</code></pre>
+</div>
+
+<p>GnuPG dispose d&rsquo;une interface de commande pour l&rsquo;édition des clés. Pour ajouter une clé, saisir <code>addkey</code>, puis choisir l&rsquo;option <strong>(8) RSA (set your own capabilities)</strong>, désactiver tous les rôles sauf <strong>Sign</strong> et générer une clé de 2048 bits.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> <strong>Mais pourquoi utiliser RSA 2048 bits ?</strong><br>La Yubikey NEO, à l&rsquo;heure où j&rsquo;écris ces lignes, ne supporte que RSA 2048 and ECC p256. J&rsquo;ai utilisé ici des clés RSA, mais libre à vous de générer des clés ECC en sélectionnant l&rsquo;option <strong>(11) ECC (set your own capabilities)</strong>.</div>
+
+<p>Répéter l&rsquo;opération pour générer les deux autres clés avec les rôles <strong>Encrypt</strong> et <strong>Authenticate</strong>, puis enregistrer les modifications :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">gpg&gt; quit
+Save changes? (y/N) y
+</code></pre>
+</div>
+
+<p>Vous devriez ensuite obtenir ceci :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --list-keys
+pub   rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+sub   rsa2048/0x9DAAB9EBD88FFC37 2018-06-15 [S]
+sub   rsa2048/0x9C892908F2535889 2018-06-15 [E]
+sub   rsa2048/0xE69F0992A12AD72E 2018-06-15 [A]
+debian:~$ gpg2 --list-secret-keys
+sec   rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+ssb   rsa2048/0x9DAAB9EBD88FFC37 2018-06-15 [S]
+ssb   rsa2048/0x9C892908F2535889 2018-06-15 [E]
+ssb   rsa2048/0xE69F0992A12AD72E 2018-06-15 [A]
+</code></pre>
+</div>
+
+<p>On retrouve donc nos sous-clés privées (<strong>ssb</strong>) et publiques (<strong>sub</strong>) pour signer <strong>[S]</strong>, chiffrer <strong>[E]</strong> et s&rsquo;authentifier <strong>[A]</strong>.</p>
+
+<h3 id="exporter-les-clés">Exporter les clés</h3>
+
+<p>Nous n&rsquo;avons plus besoin à présent de la clé privée primaire qui a été utilisée pour signer l&rsquo;identité et les sous-clés. Mais on va tout de même éviter de la supprimer : on ne sait jamais, elle pourrait nous servir &hellip; On va donc exporter toutes nos clés sur une clé USB vierge dédiée au stockage de notre clé PGP.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --armor --output /mnt/usb/secret-keys.txt --export-secret-key 788FC46C8BB350B8
+</code></pre>
+</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <strong>Attention</strong> Ne pas laisser trainer et ne pas perdre le support USB. Ça peut paraitre inutile de le préciser, mais il s&rsquo;agit de vos clés privées ! Selon l&rsquo;usage que vous ferez de votre clé PGP, la perte ou le vol de ces clés peut conduire à l&rsquo;<strong>usurpation de votre identité</strong> !</div>
+
+<p>Maintenant que l&rsquo;on dispose d&rsquo;un backup sur un support USB bien planqué chez nous (ou dans un coffre à la banque, mais ce n&rsquo;est pas forcément à la portée de tout le monde), on peut supprimer la clé privée primaire de notre clé PGP. Il nous faut pour cela :</p>
+
+<ol>
+<li>Exporter les sous-clés ;</li>
+<li>Supprimer complètement la clé PGP que nous venons tout juste de générer ;</li>
+<li>Importer les sous-clés et supprimer le fichier d&rsquo;export.</li>
+</ol>
+
+<p>Après l&rsquo;importation, nous aurons récupéré les sous-clés mais pas la clé primaire.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --armor --output ./secret-subkeys.txt --export-secret-subkeys 788FC46C8BB350B8
+debian:~$ gpg2 --delete-secret-key 788FC46C8BB350B8
+debian:~$ gpg2 --import ./secret-subkeys.txt
+debian:~$ rm ./secret-subkeys.txt
+debian:~$ gpg2 --list-secret-keys
+sec#  rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+ssb   rsa2048/0x9DAAB9EBD88FFC37 2018-06-15 [S]
+ssb   rsa2048/0x9C892908F2535889 2018-06-15 [E]
+ssb   rsa2048/0xE69F0992A12AD72E 2018-06-15 [A]
+</code></pre>
+</div>
+
+<p>On observe que la clé <strong>sec</strong>rète est à présent suivie d&rsquo;un <strong>#</strong>. Cela indique que la clé privée n&rsquo;est pas stockée sur le poste. Nous sommes prêts pour importer les sous-clés sur la Yubikey.</p>
+
+<h3 id="configurer-la-yubikey-1">Configurer la Yubikey</h3>
+
+<p>Après avoir branché la Yubikey, vérifions que nous pouvons communiquer avec elle (<em>E.T. téléphone maison</em>) :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg-connect-agent --hex &#34;scd apdu 00 f1 00 00&#34; /bye
+D[0000]  04 03 04 90 00                                     .....
+OK
+</code></pre>
+</div>
+
+<p>Ensuite, on va dire à la Yubikey de se comporter comme une carte à puce pour pouvoir y copier nos clés. Pour cela, nous avons besoin de <a href="https://github.com/Yubico/yubikey-personalization">ykpersonalize</a>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ ykpersonalize -m82
+Firmware version 4.3.4 Touch level 773 Program sequence 1
+The USB mode will be set to: 0x82
+Commit? (y/n) [n]: y
+</code></pre>
+</div>
+
+<p>La dernière étape consiste à personnaliser la clé. Vous pouvez y renseigner votre nom, langue, pseudo, sexe et l&rsquo;URL à laquelle votre clé publique est disponible (nous verrons sans doute dans un autre article comment mettre notre clé publique en ligne).</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --card-edit
+</code></pre>
+</div>
+
+<p>Le plus important ici est de <strong>modifier les codes PIN par défaut</strong>. Et oui, ça ne sert pas à grand-chose de protéger ses clés privées sur une Yubikey si tout le monde peut les utiliser (à condition de détenir physiquement votre Yubikey).</p>
+
+<p>Dans l&rsquo;interface d&rsquo;édition de la Yubikey, tapez <code>admin</code> afin d&rsquo;activer les commandes d&rsquo;administration. Ensuite, tapez <code>passwd</code> pour changer le code PIN et le code PIN admin. Par défaut, le PIN est <code>123456</code> et le PIN admin est <code>12345678</code> Sauvegardez vos modifications et quitter l&rsquo;interface d&rsquo;édition de la Yubikey.</p>
+
+<h3 id="importer-nos-clés-sur-la-yubikey">Importer nos clés sur la Yubikey</h3>
+
+<p>Dernière étape : importer les trois sous-clés sur la Yubikey. Pour cela, il nous faut la console d&rsquo;édition de notre clé PGP.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --edit-key 788FC46C8BB350B8
+pub  rsa4096/0x788FC46C8BB350B8
+created: 2018-06-15  expires: 2019-06-15  usage: C   
+trust: ultimate      validity: ultimate
+ssb  rsa2048/0x9DAAB9EBD88FFC37
+created: 2018-06-15  expires: never       usage: S   
+ssb  rsa2048/0x9C892908F2535889
+created: 2018-06-15  expires: never       usage: E   
+ssb  rsa2048/0xE69F0992A12AD72E
+created: 2018-06-15  expires: never       usage: A   
+[ultimate] (1). Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+</code></pre>
+</div>
+
+<p>Ensuite, nous sélectionnons les clés une à une pour les importer sur la Yubikey.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">gpg&gt; key 1      # Sélection de la première sous-clé à transférer
+gpg&gt; keytocard  # Déplacement de la clé sur la carte à puce
+Please select where to store the key: 1 (Signing)
+
+gpg&gt; key 1      # Désélection de la première sous-clé
+gpg&gt; key 2      # Sélection de la seconde sous-clé à transférer
+gpg&gt; keytocard  # Déplacement de la clé sur la carte à puce
+Please select where to store the key: 2 (Encryption)
+    
+gpg&gt; key 2      # Désélection de la seconde sous-clé
+gpg&gt; key 3      # Sélection de la troisième sous-clé à transférer
+gpg&gt; keytocard  # Déplacement de la clé sur la carte à puce
+Please select where to store the key: 3 (Authentication)
+    
+gpg&gt; quit
+Save changes? (y/N) y
+</code></pre>
+</div>
+
+<p>Maintenant que les sous-clés ont été déplacées sur la Yubikey, si nous listons les clés, nous verrons qu&rsquo;elles ne sont plus stockées localement mais pointent vers la carte à puce (Le suffixe <strong>&gt;</strong> signifie &ldquo;pointeur vers une clé&rdquo;) :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --list-secret-keys
+sec#  rsa4096/0x788FC46C8BB350B8 2018-06-15 [C] [expires: 2019-06-15]
+Key fingerprint = 1523 4153 E3D0 76C2 72E0  1D31 788F C46C 8BB3 50B8
+uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&amp;gt;
+ssb&gt;  rsa2048/0x9DAAB9EBD88FFC37 2018-06-15 [S]
+ssb&gt;  rsa2048/0x9C892908F2535889 2018-06-15 [E]
+ssb&gt;  rsa2048/0xE69F0992A12AD72E 2018-06-15 [A]
+</code></pre>
+</div>
+
+<h2 id="utiliser-la-yubikey-avec-gpg-ssh-agent">Utiliser la Yubikey avec GPG/SSH Agent</h2>
+
+<p>Maintenant que vous avez votre clé PGP fraichement générée et sécurisée sur votre Yubikey, vous pouvez utiliser vos sous-clés pour notamment signer et/ou le chiffrer vos mails et documents. La sous-clé d&rsquo;authentification peut également être utilisé pour se connecter en SSH. C&rsquo;est ce cas-là qui va nous intéresser ici et nous allons configurer <code>gpg-agent</code>. Vous utilisez déjà sans doute <code>ssh-agent</code>, et bien <code>gpg-agent</code> intègre les fonctionnalités de <code>ssh-agent</code> et permet d&rsquo;utiliser vos
+clés PGP en plus de vos clés SSH classiques.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ echo &#34;use-agent&#34; &gt;&gt; ~/.gnupg/gpg.conf                                  # GnuPG essayera de se connecter à l&#39;agent avant de demander une passphrase
+debian:~$ echo &#34;enable-ssh-support&#34; &gt;&gt; ~/.gnupg/gpg-agent.conf                   # Activer le support de SHH
+debian:~$ echo &#34;write-env-file $HOME/.gpg-agent-info&#34; &gt;&gt; ~/.gnupg/gpg-agent.conf # Fichier dans lequel se trouvent les variables d&#39;environnement, notamment le nom du socket
+debian:~$ echo &#34;source ~/.gpg-yubikey&#34; &gt;&gt; ~/.zshrc                               # Ou ~/.bashrc, ou autre ...
+</code></pre>
+</div>
+
+<p>La dernière ligne, ajoutée au fichier <code>~/.zshrc</code> (ou <code>~/.bashrc</code> selon votre shell), permet de démarrer automatiquement l&rsquo;agent GPG lors de l&rsquo;ouverture d&rsquo;un émulateur de terminal. Pour cela, j&rsquo;ai préféré ajouter les commandes dans un fichier séparé <code>~/.gpg-yubikey</code> pour définir les variables d&rsquo;environnement et de démarrer l&rsquo;agent GPG :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        ~/.gpg-yubikey
+    </div>
+    
+    <pre class="code"><code data-language="shell">if [ ! -f &#34;${HOME}/.gpg-agent-info&#34; ] &amp;&amp; [ -S &#34;${HOME}/.gnupg/S.gpg-agent&#34; ] &amp;&amp; [ -S &#34;${HOME}/.gnupg/S.gpg-agent.ssh&#34; ]; then
+    echo &#34;GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent&#34; &gt;&gt; &#34;${HOME}/.gpg-agent-info&#34;;
+    echo &#34;SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh&#34; &gt;&gt; &#34;${HOME}/.gpg-agent-info&#34;;
+fi
+
+if [ -f &#34;${HOME}/.gpg-agent-info&#34; ]; then
+    . &#34;${HOME}/.gpg-agent-info&#34;
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export GPG_TTY=$(tty)
+    gpg-connect-agent updatestartuptty /bye &gt;&amp; /dev/null
+fi
+</code></pre>
+</div>
+
+<p>Maintenant, à chaque ouverture d&rsquo;un émulateur de terminal, l&rsquo;agent GPG sera lancé (s&rsquo;il ne l&rsquo;est pas déjà) avec support du SSH. Nous pouvons toujours utiliser la commande <code>ssh-add</code> comme avant pour ajouter des clés SSH à l&rsquo;agent et lorsque la Yubikey est branchée, les clés sont automatiquement ajoutées à l&rsquo;agent GPG.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ ssh-add -L
+ssh-rsa AAAA[...]UhB9OUWmkFt5DFMrJpYAhSuz cardno:000..........
+ecdsa-sha2-nistp521 AAAA[...]EHrYHEkXOQ== ~/.ssh/id_ecdsa
+ssh-rsa AAA[...]ZC0ktDvMBKLKHdp9iIJnbswm3 ~/.ssh/id_rsa
+</code></pre>
+</div>
+
+<p>Il ne nous reste plus qu&rsquo;à exporter la clé publique et la copier sur le serveur dans le fichier <code>~/.ssh/authorized_keys</code>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg2 --export-ssh-key 788FC46C8BB350B8 &gt; ~/.ssh/yubikey.pub
+</code></pre>
+</div>
+
+<p>Vous pouvez également modifier votre fichier de configuration <code>~/.ssh/config</code> pour utiliser la clé publique et l&rsquo;agent GPG se chargera du reste &hellip;</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        ~/.ssh/config
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">Host serveur
+    Hostname 192.168.0.1
+    User root
+    IdentityFile ~/.ssh/yubikey.pub
+</code></pre>
+</div>
+
+<hr />
+
+<p><strong>Edit 2019-03-07</strong></p>
+
+<p>Si vos clés PGP ne sont pas ajoutées à l&rsquo;agent GPG (i.e. non visibles dans le résultat de la commande <code>ssh-add -L</code>) et que vous obtenez l&rsquo;erreur <code>gpg --card-status</code> pour la commande <code>gpg: error getting version from 'scdaemon': No SmartCard daemon</code>, pensez à installer les paquets <code>pcscd</code>, <code>scdaemon</code> et <code>pcsc-tools</code> :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">debian:~$ gpg --card-status
+gpg: error getting version from &#39;scdaemon&#39;: No SmartCard daemon
+gpg: la carte OpenPGP n&#39;est pas disponible : No SmartCard daemon
+debian:~$ sudo apt install pcscd scdaemon pcsc-tools
+debian:~$ gpg --card-status
+Reader ...........: Yubico Yubikey NEO OTP CCID 00 00
+# ... [cropped result]
+</code></pre>
+</div>
+
+<hr />
+
+<h4 id="sources">Sources</h4>
+
+<ol>
+<li><a href="https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp">Using Your YubiKey with OpenPGP</a> (EN)</li>
+<li><a href="https://davesteele.github.io/gpg/2014/09/20/anatomy-of-a-gpg-key/">Anatomy of a GPG Key</a> (EN)</li>
+<li><a href="https://rzetterberg.github.io/yubikey-gpg-nixos.html">Setting up GnuPG + Yubikey on NixOS for SSH authentication</a> (EN)</li>
+<li><a href="https://gist.github.com/pietroalbini/b218ee9bf4316454ad9f">Install YubiKey NEO&rsquo;s GPG Ubuntu 14.04</a> (EN)</li>
+<li><a href="https://ttmm.io/tech/yubikey/">Configuring Yubikeys, GPG, and Keybase</a> (EN)</li>
+<li>Le script <code>gpg-yubikey</code> n&rsquo;est pas de moi, mais impossible de retrouver la source &hellip;</li>
+</ol></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/pgp"><span class="tag">PGP</span></a></li>
+        
+          <li><a href="/tags/yubikey"><span class="tag">Yubikey</span></a></li>
+        
+          <li><a href="/tags/openpgp"><span class="tag">OpenPGP</span></a></li>
+        
+          <li><a href="/tags/gnupg"><span class="tag">GnuPG</span></a></li>
+        
+          <li><a href="/tags/gpg"><span class="tag">GPG</span></a></li>
+        
+          <li><a href="/tags/ssh"><span class="tag">SSH</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>269</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Exploiter un &#34;.git&#34; accessible sur un site Web
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : chmod 777 sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs Apache et MySQL très laxistes et surtout un répertoire .git avec du directory listing …
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Exploiter un &#34;.git&#34; accessible sur un site Web" />
+    <meta name="twitter:description" content="Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : chmod 777 sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs Apache et MySQL très laxistes et surtout un répertoire .git avec du directory listing …
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2017/03/a22eaab5c6227da7b38ffb1db7ba6ccd.png" />
+  
+
+
+
+
+<link rel="canonical" href="/console/repertoire-git-accessible/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Exploiter un &#34;.git&#34; accessible sur un site Web</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 15 mars 2017
+      </p>
+    </header>
+    <article class="post-content"><p>Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : <em>chmod 777</em> sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs <em>Apache</em> et <em>MySQL</em> très laxistes et surtout un répertoire <code>.git</code> avec du directory listing …</p>
+
+<p></p>
+
+<p>Depuis, les problèmes sont résolus et je voulais vous partager l’exploitation du <code>.git</code> que j’ai trouvé assez sympa. Pour des questions de confidentialité, nous appellerons ce site « champions.fr » (parce qu’à ce niveau-là, ce sont vraiment de grands champions pour avoir un site comme celui-là en production avec une tétrachiée de données clients).</p>
+
+<h2 id="let-s-begin">Let’s begin !</h2>
+
+<p>Tout d&rsquo;abord, j&rsquo;ai accès à la page suivante : <a href="http://champions.fr/.git/">http://champions.fr/.git/</a>. Comme je l’ai dit plus haut, j’ai du directory listing. L’exploitation d’un git peut se faire sans directory listing mais c’est plus facile lorsque l&rsquo;on peut lister le contenu des répertoires car aucun outil ou script particulier n&rsquo;est nécessaire. Sans directory listing, il nous faudra utiliser un script tel que <a href="https://github.com/evilpacket/DVCS-Pillage">DVCS Pillage Toolkit</a>.</p>
+
+<figure>
+    <a href="/media/2017/03/733aa40510c54d3875c3989cd65fe2e1.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2017/03/733aa40510c54d3875c3989cd65fe2e1-1024x468.png" alt="Directory listing du .git">
+    </a>
+    
+</figure>
+
+<p>Pour « cloner » le dépôt en local, il me suffit de télécharger récursivement tous les fichiers du répertoire git :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~# wget -r http://champions.fr/.git/
+root:~# cd champions.fr
+root:~/champion.fr(git:stable_prod)#
+</code></pre>
+</div>
+
+<h2 id="restaurer-avec-git">Restaurer avec git</h2>
+
+<p>Je me retrouve avec un dépôt git en local. Cependant, j&rsquo;ai seulement récupéré le répertoire <code>.git</code>, et donc lorsque je fais un <code>git status</code>, cela m&rsquo;informe que tous les fichiers ont été supprimés ! Qu’à cela ne tienne, Git permet de restaurer l&rsquo;état du dernier commit. Pour cela, nous utiliserons la commande <code>git reset</code>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~/champion.fr(git:stable_prod)# git reset --hard
+</code></pre>
+</div>
+
+<figure>
+    <a href="/media/2017/03/0a95e43f86e9262e800fea6b27b3d11f.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2017/03/0a95e43f86e9262e800fea6b27b3d11f.png" alt="Directory listing du .git">
+    </a>
+    
+</figure>
+
+<p>Bon, on ne parlera pas des webshells qui ont été versionnés, des dumps de base de données ou bien encore du « .bash_history » ni de « .ssh » (oui, c’est vraiment dégueulasse comme site …)</p>
+
+<h2 id="rechercher-un-fichier-particulier">Rechercher un fichier particulier</h2>
+
+<p>Ce qui nous intéresse (en plus du code source naturellement), c’est de savoir que c’est un WordPress. Les informations que nous voulons (ie. les mots de passe de la base de données), sont dans « wp-config.php ». Damned, le fichier n’existe pas ! En réalité, le fichier a été déplacé dans le répertoire parent (incroyable, il y a tout de même des notions de sécu chez les admins sys !). Mais là encore ce n’est pas grave, car nous avons le répertoire <code>.git</code> et donc il y a une chance que ce fichier ait été versionné. Pour restaurer le fichier <code>wp-config.php</code>, il faut remonter au dernier commit qui le concerne (ie le commit qui marque sa suppression).</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~/champion.fr(git:stable_prod)# git checkout $(git rev-list -n 1 HEAD -- wp-config.php)^ -- wp-config.php
+</code></pre>
+</div>
+
+<figure>
+    <a href="/media/2017/03/905262a4583b7b31dfa7ffab7aa80a5a.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2017/03/905262a4583b7b31dfa7ffab7aa80a5a.png" alt="Directory listing du .git">
+    </a>
+    
+</figure>
+
+<p>Non seulement on a le mot de passe MySQL sur un serveur de dev (pour root), mais aussi celui de la production. Ces comptes et mots de passe peuvent aussi êtres utilisés pour d&rsquo;autres services, comme par exemple d&rsquo;authentification Web ou bien la connexion SSH (qui sait ?).</p>
+
+<p>Bon, le plus important ici, c’est le code source de du site que nous avons obtenu. Puisque c’est un WordPress, nous pouvons savoir quelle est la version utilisée, ainsi que la liste des plugins présents. Et bien sûr, nous avons accès au code du thème. Ici, c’est un thème « maison » assez lourds avec plein de requêtes SQL construites avec des concaténations bien sales d’inputs non filtrés. Mais c’est un cas particulier, vous aurez sans doute des choses un peu moins fun lors de vos expériences personnelles de tests d&rsquo;intrusion (quoique …).</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/serveur"><span class="tag">Serveur</span></a></li>
+        
+          <li><a href="/tags/git"><span class="tag">Git</span></a></li>
+        
+          <li><a href="/tags/exploit"><span class="tag">Exploit</span></a></li>
+        
+          <li><a href="/tags/directory-listing"><span class="tag">Directory Listing</span></a></li>
+        
+          <li><a href="/tags/pentest"><span class="tag">Pentest</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>733</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

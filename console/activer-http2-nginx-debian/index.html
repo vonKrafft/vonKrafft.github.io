@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Activer HTTP2 avec Nginx sous Debian
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en mai 1996 et HTTP/1.1 en janvier 1997 il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Activer HTTP2 avec Nginx sous Debian" />
+    <meta name="twitter:description" content="Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en mai 1996 et HTTP/1.1 en janvier 1997 il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2016/05/12df53fea8b3adfa6c2ec456dd22e204.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/console/activer-http2-nginx-debian/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Activer HTTP2 avec Nginx sous Debian</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 10 mai 2016
+      </p>
+    </header>
+    <article class="post-content"><p>Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en <a href="https://www.ietf.org/rfc/rfc1945.txt">mai 1996</a> et HTTP/1.1 en <a href="https://www.ietf.org/rfc/rfc2068.txt">janvier 1997</a> il n&rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&rsquo;une seule connexion TCP. Ces travaux ont inspiré l&rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?</p>
+
+<p></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Le tutoriel suivant est conçu pour Debian, ou tout autre distribution qui s&rsquo;en inspire. Pour les autres distributions Linux, les commandes nécessitent d&rsquo;être adaptée, notamment le gestionnaire de paquets.</div>
+
+<h2 id="activer-http2-avec-nginx">Activer HTTP2 avec nginx</h2>
+
+<p>Tout d&rsquo;abord, il va faloir s&rsquo;octroyer les droits administrateur. Si ce n&rsquo;est pas possible ou si vous avez peur de faire une fausse manipulation, préfixez les commandes par <code>sudo</code> dans la suite du tutoriel, sinon exécutez la commande <code>sudo -s</code> et saisissez votre mot de passe lorsque demandé.</p>
+
+<h3 id="mise-à-jour-du-serveur">Mise à jour du serveur</h3>
+
+<p>Comme je vous l&rsquo;ai déjà précisé, les standards de HTTP2 ont été publié en mai 2015. Rapidement, les serveur les plus utilisés ont intégré le support du protocole dans leur version beta, comme ce dut le cas avec Nginx depuis la version 1.9.5. Or la version stable de Nginx était la 1.8.1, donc cela imposait d&rsquo;ajouter la version mainline du serveur dans les dépôts Linux, ce que je pensais vous expliquer lorsque j&rsquo;ai débuter la rédaction de ce tutoriel. Mais depuis le 26 avril 2016, Nginx est disponible en version stable 1.10.0 qui comporte toutes les fonctionnalités des version mainline 1.9.x, dont le support de HTTP2.</p>
+
+<p>Pour commencé, nous allons donc vérifier la version de Nginx et si besoin nous allons le mettre à jour.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~# nginx -v
+nginx version: nginx/1.9.13
+root:~# apt-get update
+root:~# apt-get dist-upgrade
+root:~# nginx -v
+nginx version: nginx/1.10.0
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Vous pouver aussi simplement l&rsquo;installer avec <code>apt-get install nginx</code>, sans oublier de lancer <code>apt-get update</code> avant.</div>
+
+<p>Bon aller, tant que j&rsquo;y suis, je vais vous dire comment installer la version mainline.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Mais tu viens de nous dire que la version 1.10.0 était disponible, stable, et supportait HTTP2 &hellip; ?</div>
+
+<p>Oui mais &hellip; J&rsquo;ai préciser au début du tutoriel que la distribution utilisée est Debian, et tout le monde connait la rapidité légendaire de mise à jour des dépôts Debian. Donc à moins d&rsquo;attendre que les dépôts soient mis à jour pour Nginx, ce qui peut prendre du temps, nous allons installer la version mainline. Et puis cela vous permettra de bénéficier des dernières fonctionnalités du serveur.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~# curl http://nginx.org/keys/nginx_signing.key | apt-key add -
+root:~# echo -e &#34;deb http://nginx.org/packages/mainline/debian/ `lsb_release -cs` nginx\ndeb-src http://nginx.org/packages/mainline/debian/ `lsb_release -cs` nginx&#34; &amp;gt; /etc/apt/sources.list.d/nginx.list
+root:~# apt-get update
+root:~# apt-get dist-upgrade
+</code></pre>
+</div>
+
+<h3 id="activer-https">Activer HTTPS</h3>
+
+<p>La nouvelle version du protocole préconise l&rsquo;utilisation de TLS, dont la version minimum requise est imposée pour HTTPS/2 : TLS version 1.2 ou supérieure (RFC7540 Section 9.2). Nous allons donc configurer le serveur pour utiliser HTTPS. Si vous aviez déjà configurer la gestion de HTTPS pour votre serveur, vous pouvez passer cette section.</p>
+
+<p>Tout d&rsquo;abord, nous allons créer le répertoire qui contiendra les certificats SSL. J&rsquo;ai choisi de le mettre avec le répertoire de configuration de Nginx (dans <code>/etc/nginx</code>), mais vous pouvez le mettre ailleurs.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~# mkdir /etc/nginx/ssl
+</code></pre>
+</div>
+
+<p>Ensuite, nous allons créer un certificat auto-signé ainsi qu&rsquo;une clé pour signer ce certificat. Si vous disposé déjà d&rsquo;un certificat, copiez-le dans le répertoire que nous venons de créer. J&rsquo;en profite aussi pour générer un fichier de configuration pour les paramètres de Diffie-Hellman.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">root:~# openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+root:~# openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+</code></pre>
+</div>
+
+<h3 id="configurer-nginx">Configurer Nginx</h3>
+
+<p>Le serveur est à jour, nous avons notre certificat &hellip; il ne nous reste plus qu&rsquo;à activer HTTP2 et HTTPS. Ci-dessous, je vous met un extrait du fichier de configuration (dans mon cas, et par défaut, c&rsquo;est le fichier <code>/etc/nginx/conf.d/default.conf</code>).</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/nginx/conf.d/default.conf
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">server {
+    # Activer HTTP2 et SSL
+    listen 443 ssl http2 default deferred;
+    # Configuration SSL
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+    # Pour améliorer les performances
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_timeout 5m;
+    # Notre fichier de peramètres de Diffie-Hellman
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+    # SSL n&#39;est plus un protocol sûr, et je vous recommande la dernière version de TLS
+    ssl_protocols TLSv1.2;
+}
+# redirect all http traffic to https
+server {
+    listen 80;
+    server_name localhost;
+    return 301 https://$host$request_uri;
+}
+</code></pre>
+</div>
+
+<p>Bien sûr, ces paramètres sont à rajouter ou à modifier dans le fichier de configuration et ils ne se suffisent pas à eux-même. Pour sécuriser votre serveur Nginx, je vous invite à jeter un coup d’œil à ce projet, qui donne des <a href="https://gist.github.com/plentz/6737338">recommendations pour améliorer la sécurité de Nginx</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Ne pas oublier de redémarrer le serveur avec la commande <code>service nginx restart</code></div>
+
+<figure class="gallery gallery-column-2">
+	<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2016/05/12df53fea8b3adfa6c2ec456dd22e204.jpg" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2016/05/12df53fea8b3adfa6c2ec456dd22e204-300x186.jpg">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2016/05/ee434023cf89d7dfb21f63d64f0f9d74.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2016/05/ee434023cf89d7dfb21f63d64f0f9d74-150x150.png">
+        </a>
+    </div>
+</div>
+
+	
+</figure>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Et voilà, vous avez un serveur Nginx à jour avec HTTP2 et SSL. Vous pouvez vous y rendre à l&rsquo;adresse <a href="https://localhost/">https://localhost/</a>. Avant de se quitter, je vous propose les commandes suivante pour compiler Nginx depuis les sources, utile notamment pour l&rsquo;installer sur un Raspberry Pi avec Raspbian (source <a href="https://hanshell.com/2_compile_nginx_on_raspberry_pi.html">https://hanshell.com/</a>).</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">wandrille:~$ sudo apt-get install libpcre3-dev libssl-dev debhelper libxml2-dev libxslt-dev libgd2-xpm-dev libgeoip-dev libperl-dev
+wandrille:~$ apt-get source nginx
+wandrille:~$ cd nginx-1.9.13/
+wandrille:~$ time dpkg-buildpackage -uc -b
+wandrille:~$ cd ..
+wandrille:~$ sudo dpkg -i nginx_1.9.13-1~jessie_armhf.deb
+wandrille:~$ sudo dpkg -i nginx-module-geoip_1.9.13-1~jessie_armhf.deb
+wandrille:~$ sudo service nginx restart
+wandrille:~$ nginx -v
+</code></pre>
+</div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/nginx"><span class="tag">Nginx</span></a></li>
+        
+          <li><a href="/tags/http"><span class="tag">HTTP</span></a></li>
+        
+          <li><a href="/tags/http2"><span class="tag">HTTP2</span></a></li>
+        
+          <li><a href="/tags/serveur"><span class="tag">Serveur</span></a></li>
+        
+          <li><a href="/tags/ssl"><span class="tag">SSL</span></a></li>
+        
+          <li><a href="/tags/https"><span class="tag">HTTPS</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1041</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

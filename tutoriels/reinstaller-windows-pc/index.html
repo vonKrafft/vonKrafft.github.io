@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Réinstaller Windows sur son PC
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Réinstaller Windows sur son PC" />
+    <meta name="twitter:description" content="Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2012/03/4552016b0902f973b7fdd9e443b95a9e-1024x426.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/tutoriels/reinstaller-windows-pc/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-tutoriels">
+    <header class="post-header">
+      <h1 class="post-title">Réinstaller Windows sur son PC</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
+        @vonKrafft · 20 mars 2012
+      </p>
+    </header>
+    <article class="post-content"><p>Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.</p>
+
+<p></p>
+
+<div class="supply-panel clearfix">
+    <div class="supply-header">
+        <div class="supply-title">Matériel</div>
+        
+        <div class="supply-level supply-level-2">
+            <label>Difficulté</label>
+            <span class="level-1">1</span>
+            <span class="level-2">2</span>
+            <span class="level-3">3</span>
+            <span class="level-4">4</span>
+            <span class="level-5">5</span>
+        </div>
+    </div>
+    <div class="supply-content">
+        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 4 heures</span></div>
+        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Un DVD d&#39;installation de Windows ou une clé USB bootable, un disque dur externe pour sauvegarder vos données, votre PC et un accès à Internet</span></div>
+    </div>
+</div>
+
+<h2 id="sauvegarder-ses-données">Sauvegarder ses données</h2>
+
+<p>Même si les disques durs sont de plus en plus partitionné, une partie étant réservée au système et l’autre destinée au stockage de vos données, il peut arriver que vous n’ayez qu’un seul disque dur où se mêlent vos données personnelles et les fichiers système. Une réinstallation de votre système d’exploitation doit donc débuter par la mise en lieu sûr de vos données.</p>
+
+<figure>
+    
+        <img src="/media/2012/03/50a00bbbe78ef49034bf6ed7e02020c3.jpg">
+    
+    
+</figure>
+
+<p>Vous avez besoin d’un disque dur externe (ou interne), ou bien d’une clé USB si jamais vos données sont peu volumineuses. Ensuite, il vous faut explorer tous les recoins de votre PC à la recherche de vos données.</p>
+
+<h3 id="vos-documents">Vos documents</h3>
+
+<p>Chaque utilisateur de Windows possède un dossier qui lui est réservé au sein du disque système (disque C:/ généralement). C’est dans ce dossier que Windows enregistre tous les documents par défaut. Pour y accéder :</p>
+
+<ul>
+<li>Windows 7 : C:\Users\VotreNom</li>
+<li>Windows Vista et XP : C:\Documents and Settings\VotreNom</li>
+</ul>
+
+<p>Vous noterez que les deux emplacements sont sensiblement identiques. Pour la suite du tuto, j’adopterais la notation « Users ». Vous y retrouverez vos document mais aussi vos musiques, vos films, vos favoris, etc. … Pour ces derniers, seuls ceux d’Internet Explorer y sont.</p>
+
+<h3 id="vos-favoris">Vos favoris</h3>
+
+<p>Ceux d’Inter Explorer sont enregistrés avec vos documents. Pour les autres explorateurs internet, ils sont stockés dans des dossiers spécifiques au navigateur. Pour les deux principaux :</p>
+
+<ul>
+<li>Chrome : C:\Users\VotreNom\AppData\Local\GoogleChrome\User Data\Default</li>
+</ul>
+
+<p>Puis faire une copie du ou des fichiers « Bookmarks » que vous replacerez au même endroit après la réinstallation de Chrome et Windows. Le dossier AppData (ou Application Data) est un dossier caché. A noté que les dernières versions de chrome permettent de se connecter avec un compte Gmail et de sauvegarder ses favoris en ligne.</p>
+
+<ul>
+<li>Firefox : C:\Users\VotreNom\Appdata\Local\Mozilla\Firefox\Profiles\xxxxxx.default</li>
+</ul>
+
+<p>Puis faire une copie du ou des fichiers « Bookmarks.html » que vous replacerez au même endroit après la réinstallation de Firefox et Windows. Le dossier AppData (ou Application Data) est un dossier caché.</p>
+
+<h3 id="vos-mails-et-vos-contacts">Vos mails et vos contacts</h3>
+
+<p>Si vous utilisez un logiciel comme Outlook ou Windows Live Mail pour recevoir votre courrier, il est nécessaire de sauvegarder vos emails reçus.
+Dans Outlook Express allez dans le menu Outils, choisissez Options puis l’onglet Maintenance et  cliquez sur Dossier de stockage.  Puis rendez-vous dans ce dossier et copier les mails. Pour les contacts, allez dans le menu Fichier, pointez sur Exporter, puis cliquez sur Carnet d&rsquo;adresses.
+Dans Windows Live Mail 2011, déroulez le menu Backstage (une enveloppe suivie d&rsquo;une flèche en haut à gauche), sélectionnez Exporter des messages puis Messages électroniques. Pour les contacts, affichez la fenêtre Contacts de Windows Live Mail et cliquez sur le bouton Exporter dans le ruban Accueil.
+Dans Windows Live Mail 2009, déroulez le menu Fichier, sélectionnez Exporter puis Messages. Pour les contacts, affichez la fenêtre Contacts de Windows Live Mail et sélectionnez la commande Exporter dans le menu Fichier
+Dans Thunderbird sauvegardez le repertoire C :UsersVotreNomAppDataLocalThunderbirdProfilesxxxxxxx.defaultmail. Pour les contacts, c&rsquo;est le fichier « abook.mab » dans C :UsersVotreNomAppDataLocalThunderbirdProfilesxxxxxxx.default</p>
+
+<h2 id="les-drivers">Les drivers</h2>
+
+<p>Réinstaller Windows va effacer l’intégralité de votre disque. A la fin de celle-ci, il se peut que votre matériel, comme une imprimante, un lecteur CD ou le son, ne soit pas reconnu par Windows. Il est donc préférable de télécharger l’intégralité des pilotes nécessaires à votre configuration. Pour cela, je vous conseille <a href="http://www.touslesdrivers.com/index.php?v_page=29">www.touslesdrivers.com</a> qui se chargera de détecter vos périphériques et de vous proposer les pilotes adéquats.
+Pensez aussi à télécharger un antivirus que vous installerez dès la fin de l’installation de Windows pour plus de sécurité.</p>
+
+<h2 id="réinstaller-windows">Réinstaller Windows</h2>
+
+<p>Pour ce faire, vous devez avoir avec vous le DVD d’installation de Windows. Si vous ne l’avez pas, il faut demander au constructeur de votre PC comment faire pour en obtenir un ou bien l’acheter. Ensuite, vous insérer le DVD, vous installer Windows et vous passez à la suite, je ne vais pas m’étendre là-dessus.
+Cependant, il peut arriver que vous ne disposiez pas de lecteur DVD sur votre ordinateur. C’est le cas, par exemple, des Netbooks. Pas de panique, il suffit de créer une clé USB d’installation.
+Tout d’abord, vous devez créer une image ISO du DVD, ou alors en télécharger une sur le site de Microsoft. Pour créer une image à partir du disque, je vous conseille <a href="http://www.clubic.com/telecharger-fiche36463-iso-recorder.html">ISO Recorder</a>, <a href="http://www.clubic.com/telecharger-fiche14725-burnatonce.html">BurnAtOnce </a>ou encore <a href="http://www.clubic.com/telecharger-fiche12674-deepburner-free.html">DeepBurner</a>.
+Ensuite, il faut créer votre clé USB d’installation à partir de votre fichier ISO. Microsoft propose son propre logiciel pour Windows 7 : <a href="http://www.clubic.com/telecharger-fiche302934-windows-7-usb-dvd-download-tool.html">Windows 7 USB/DVD Download Tool</a> . Mais je vous conseille <a href="http://www.clubic.com/telecharger-fiche297880-wintoflash.html">WinToFlash</a>, un utilitaire très léger qui ne nécessite pas d’installation.</p>
+
+<p>Ça y est ? vous avez un Windows tout beau tout neuf ? Parfait, passons à la suite : la réinstallation des logiciels.</p>
+
+<h2 id="réinstallation-des-logiciels">Réinstallation des logiciels</h2>
+
+<p>Premier conseil, n’installer que le strict minimum. Ne commencer pas à polluer votre nouveau système avec des logiciels que vous n’utiliserez que très rarement.
+Ensuite, commencer par installer votre antivirus, que vous aviez téléchargé avant de réinstaller Windows. Puis paramétrez votre connexion internet et installer au besoin les pilotes des périphérique non reconnus par Windows. Pour savoir lequel dysfonctionnent, faites un clic droit sur le Poste de Travail (ou Ordinateur pour Vista et 7), sélectionnez « Propriété » et cliquez sur « Gestionnaire des périphériques ». Le matériel défectueux est signalé par un triangle jaune d’avertissement.</p>
+
+<p>Vient maintenant le temps d’installer tous les logiciels dont vous avez besoin. Vous me direz que c’est long et fastidieux de rechercher tous les logiciels sur le net et de les installer un par un, sans compter les redémarrages du PC. Et bien je vous donne une astuce : <a href="http://ninite.com/">http://ninite.com/</a>. Vous sélectionnez les logiciels souhaitez (les grands classiques y sont tous) et le site génère un assistant d’installation que vous téléchargez. Celui-ci se charge ensuite de télécharger et d’installer tous les logiciels sélectionnés. Pour les programmes absents du site, il vous faudra tout de même passer par une installation manuelle.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Voilà, vous avez réussi à réinstaller Windows et vous avez un nouvel OS tout propre. Il ne reste plus qu’à y ajouter vos données que vous aviez sauvegardé et de paramétrer vos logiciels.
+Pour clore de tutoriel, voici de quoi conserver votre système au sommet de sa forme :</p>
+
+<ul>
+<li><a href="http://www.clubic.com/telecharger-fiche14492-ccleaner.html">Ccleaner</a> (gratuit) : simple d’utilisation, il est destiné à l’utilisateur Lambda qui ne veut pas se casser la tête avec des optimisations compliquées. Un clic toutes les semaines et votre système aura une durée de vie accrue.</li>
+<li><a href="http://www.clubic.com/telecharger-fiche73266-glary-utilities.html">Glary Utilities</a> (gratuit) : tout comme Ccleaner, il propose une solution de « Maintenance en un clic » accompagné d’un mode de fonctions avancées.</li>
+<li><a href="http://www.clubic.com/telecharger-fiche14995-tuneup-utilities-2012.html">TuneUp Utilities</a> (40 euros env.) : complet, il propose tout un panel de programme pour optimiser et personnaliser son système. Je vous le recommande.</li>
+</ul>
+
+<figure class="gallery gallery-column-3">
+	<div class="gallery-item">
+    <div class="gallery-image">
+        
+            <img src="/media/2012/03/62e6e5d80448b91eda532682e8e250af.jpg">
+        
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        
+            <img src="/media/2012/03/e2c637950d07ec5c417060eef93b182a.jpg">
+        
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        
+            <img src="/media/2012/03/3fabd73770bf5b901740141d92bb29a5.jpg">
+        
+    </div>
+</div>
+
+	
+</figure></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/windows"><span class="tag">Windows</span></a></li>
+        
+          <li><a href="/tags/microsoft"><span class="tag">Microsoft</span></a></li>
+        
+          <li><a href="/tags/r%C3%A9installation"><span class="tag">Réinstallation</span></a></li>
+        
+          <li><a href="/tags/sauvegarde"><span class="tag">Sauvegarde</span></a></li>
+        
+          <li><a href="/tags/printemps"><span class="tag">Printemps</span></a></li>
+        
+          <li><a href="/tags/logiciels"><span class="tag">Logiciels</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1162</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

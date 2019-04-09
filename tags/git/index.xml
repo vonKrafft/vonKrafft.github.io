@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on vonKrafft</title>
+    <link>/tags/git/</link>
+    <description>Recent content in Git on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 18 Jul 2018 23:40:17 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gérer ses mots de passe avec PGP</title>
+      <link>/console/gerer-ses-mots-de-passe-avec-pgp/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
+      
+      <guid>/console/gerer-ses-mots-de-passe-avec-pgp/</guid>
+      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&amp;rsquo;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Exploiter un &#34;.git&#34; accessible sur un site Web</title>
+      <link>/console/repertoire-git-accessible/</link>
+      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      
+      <guid>/console/repertoire-git-accessible/</guid>
+      <description>&lt;p&gt;Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : &lt;em&gt;chmod 777&lt;/em&gt; sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs &lt;em&gt;Apache&lt;/em&gt; et &lt;em&gt;MySQL&lt;/em&gt; très laxistes et surtout un répertoire &lt;code&gt;.git&lt;/code&gt; avec du directory listing …&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Un script d&#39;aperçu d&#39;un projet Git</title>
+      <link>/console/script-apercu-dun-projet-git/</link>
+      <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
+      
+      <guid>/console/script-apercu-dun-projet-git/</guid>
+      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

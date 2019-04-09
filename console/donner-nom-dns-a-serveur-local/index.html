@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Donner un nom DNS à son serveur local
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Donner un nom DNS à son serveur local" />
+    <meta name="twitter:description" content="Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2015/12/5bb38ba3a8ec3b4d0c26c73c31d0cd58.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/console/donner-nom-dns-a-serveur-local/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-console">
+    <header class="post-header">
+      <h1 class="post-title">Donner un nom DNS à son serveur local</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/console/">Console</a></span>
+        @vonKrafft · 12 décembre 2015
+      </p>
+    </header>
+    <article class="post-content"><p>Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.</p>
+
+<p></p>
+
+<p>Il en existe deux versions :</p>
+
+<ul>
+<li>IPv4 (version 4) crée en 1981 est le format le plus utilisé. Cela permet d’écrire les adresses sur 32 bits, soit en théorie 4 294 967 296 adresses possibles. Mais nous avons dans le monde plus d’équipements relié à internet qu’il n’y a d’adresses IPv4.</li>
+<li>IPv6 (version 6) crée en 1998 est censé remplacer IPv4. Cela permet d’écrire les adresses sur 128 bits, soit en théorie 3,4×10^38 adresses possibles.</li>
+</ul>
+
+<p>Pour palier au manque d’adresses IPv4, nous utilisons ce que nous appelons les plages d’IP privées. Ainsi, vous possédez une IP publique attribuée par votre FAI (Fournisseur d&rsquo;Accès Internet) et de plusieurs IP privées. Ces IP privées sont la plupart du temps de la forme 192.168.X.X, qui est une des plages d’IPv4 privées (utilisée par toutes des box Internet des FAI français par défaut), soit en théorie 35 536 adresses possibles. Ces adresses privées sont locales, c’est à dire que vous ne pourrez pas accéder à votre PC depuis l’extérieur en utilisant son IP privée. Mais nous ne cherchons pas à accéder à notre PC depuis l’extérieur …</p>
+
+<table>
+<thead>
+<tr>
+<th>Préfixe</th>
+<th>Plage IP privée</th>
+<th>Nombre d&rsquo;adresses</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>10.0.0.0/8</td>
+<td>10.0.0.0 – 10.255.255.255</td>
+<td>232-8 = 16 777 216</td>
+</tr>
+
+<tr>
+<td>172.16.0.0/12</td>
+<td>172.16.0.0 – 172.31.255.255</td>
+<td>232-12 = 1 048 576</td>
+</tr>
+
+<tr>
+<td>192.168.0.0/16</td>
+<td>192.168.0.0 – 192.168.255.255</td>
+<td>232-16 = 65 536</td>
+</tr>
+</tbody>
+</table>
+
+<p>Donc, après cette rapide présentation des adresses IP, il est temps de s’attaquer au tutoriel.</p>
+
+<h2 id="mais-pourquoi-renommer-son-serveur">Mais pourquoi renommer son serveur ?</h2>
+
+<p>Si vous avez un serveur local (pour diverses raisons), vous pouvez y accéder avec une machine client grâce à son adresse IP, comme par exemple <a href="http://192.168.1.20">http://192.168.1.20</a> (c&rsquo;est aussi le cas pour tous les ordinateurs connecter à votre réseau local et hébergeant un serveur HTTP).</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> Non mais attend, tu viens de nous dire que nous ne pouvions pas accéder à notre PC en utilisant son IP privée ?!?</div>
+
+<p>Oui, mais cela est vrai uniquement depuis l’extérieur, c’est-à-dire depuis une machine client qui se trouve au delà de notre box Internet. Mais nous supposons que notre serveur et notre client sont sur le même réseaux privé.</p>
+
+<figure>
+    <a href="/media/2015/12/91e02cd2b8621d0c05197f645668c5c4.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2015/12/91e02cd2b8621d0c05197f645668c5c4.png">
+    </a>
+    
+        <figcaption>
+            <h4>Par défaut, un client extérieur ne peut pas accéder aux équipements de votre réseau local</h4>
+        </figcaption>
+    
+</figure>
+
+<p>Donc, vous pouvez accéder à votre serveur (en HTTP, FTP, SSH … en fonction des services installés sur votre serveur) avec on adresse IP. Mais les adresses IP sont allouées dynamiquement, c’est-à-dire que l’adresse de votre serveur peut changer. Nous allons donc faire deux choses :</p>
+
+<ul>
+<li>Configurer le serveur pour lui donner une adresse IP fixe</li>
+<li>Indiquer à notre (nos) client(s) que notre serveur a un nom</li>
+</ul>
+
+<h2 id="une-ip-fixe">Une IP fixe</h2>
+
+<p>Nous allons configurer notre interface réseau. Pour moi, il s’agit de eth0 (connexion physique n°0), mais cela peut être différent pour vous : eth1 (si vous avez plusieurs cartes réseau), wlan0 (si vous êtes connecté en wifi), ou autre …</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Le serveur <code>vps-001</code> est un serveur Debian. Pour les autres distributions Linux, opu pour un serveur Windows, il sera necessaire d&rsquo;adapter certaines commandes et/ou chemins de fichiers.</div>
+
+<p>Le fichier de configuration est le suivant : /etc/networks/interfaces. Par défaut, notre serveur (comme n’importe quel équipement réseau) demande une adresse IP à notre box Internet :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/networks/interfaces
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">iface eth0 inet dhcp
+</code></pre>
+</div>
+
+<p>Nous allons donc modifier cette ligne pour lui dire quelle adresse IP utiliser :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/networks/interfaces
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.254
+</code></pre>
+</div>
+
+<p>Pour connaître l’adresse IP de votre gateway, utilisez la commande trace :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@vps-001:~$ sudo route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.254   0.0.0.0         UG    0      0      0   eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0      0   eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0      0   eth0
+</code></pre>
+</div>
+
+<p>L’adresse de votre gateway est celle repérée par le flag UG. Pour moi il s’agit de 192.168.1.254. Pour appliquer les changements, nous redémarrons le réseau :</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-code"></i>
+        Console
+    </div>
+    
+    <pre class="code"><code data-language="console">vonkrafft@vps-001:~$ sudo service networking restart
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Il est aussi possible d&rsquo;attribuer une adresse IP fixe en utilisant votre box Internet. Mais toutes les box des FAI français ne proposent pas cette options.</div>
+
+<h2 id="un-nom-dns-pour-votre-serveur">Un nom DNS pour votre serveur</h2>
+
+<p>Lorsque vous naviguez sur le web, vous ne vous amusez surement pas à saisir l’adresse IP du serveur hébergant votre site web. Non ? Vous saisissez son URL (par exemple <code>google.com</code>). Derrière ce nom, il y a un service appelé DNS (de l’anglais Domain Name Service) qui s’occupe de traduire le nom du site en adresse IP. Tout comme les pages blanches font la correspondance entre un nom et un numéro de téléphone, un DNS fait la correspondance entre un nom de domaine et une adresse IP.</p>
+
+<p>Il existe de nombreux serveurs DNS dans le monde, mais ils ne nous intéressent pas ici car nous allons utiliser notre DNS local.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Un DNS local ? Où ça ?</div>
+
+<p>Tous les PC possède un DNS local qui est consulté avant de demander aux autres DNS de traduire un nom. Nous allons donc renseigner notre nom dans le DNS de notre machine client, qui n’est autre qu’un fichier : <code>/etc/hosts</code>. Il faut ajouter notre traduction comme suit : <code>&lt;adresse_ip&gt; &lt;nom&gt;</code></p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-text-o"></i>
+        /etc/hosts
+    </div>
+    
+    <pre class="code"><code data-language="plaintext">192.168.1.100    vps-001.server
+</code></pre>
+</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Mais quel nom choisir ?</div>
+
+<p>Qu’importe. Quoi qu’il arrive ce DNS est local, vous êtes le seul à le consulter. Vous pourriez très bien nommer votre serveur <code>facebook.com</code>. Il sera accessible avec ce nom depuis votre client mais vous n’aurez plus accès à Facebook.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-lightbulb-o"></i> Le plus simple est de choisir le nom de la machine suivi d’un domaine local que vous utiliserez pour tous vos équipements réseau. Pour mon réseau local, j’utilise le nom de la machine suivi de “.server”</div>
+
+<p>Et voilà, c’est tout. Cependant, votre serveur n’a été renommé que pour un client, et il vous faudra répéter la manipulation pour chaques clients en modifiant leur fichier <code>/etc/hosts</code>. Une autre solution consiste à utiliser un serveur DNS local.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Il est aussi possible d&rsquo;attribuer une adresse nom de domaine en utilisant votre box Internet. Mais toutes les box des FAI français ne proposent pas cette options.</div>
+
+<p>A présent, vous pouvez accéder à votre serveur ainsi :</p>
+
+<ul>
+<li>http(s)://vps-001.server</li>
+<li>ssh vonkrafft@vps-001.server</li>
+<li>etc.</li>
+</ul></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/vps"><span class="tag">VPS</span></a></li>
+        
+          <li><a href="/tags/admin-syst%C3%A8me"><span class="tag">Admin Système</span></a></li>
+        
+          <li><a href="/tags/ip"><span class="tag">IP</span></a></li>
+        
+          <li><a href="/tags/host"><span class="tag">Host</span></a></li>
+        
+          <li><a href="/tags/dhcp"><span class="tag">DHCP</span></a></li>
+        
+          <li><a href="/tags/dns"><span class="tag">DNS</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1041</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

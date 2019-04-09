@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Overclocker son CPU
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Overclocker son CPU" />
+    <meta name="twitter:description" content="Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2011/09/1c624a315b25dee4702269e5b6753953-1024x683.jpg" />
+  
+
+
+
+
+<link rel="canonical" href="/tutoriels/overclocker-son-cpu/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-tutoriels">
+    <header class="post-header">
+      <h1 class="post-title">Overclocker son CPU</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
+        @vonKrafft · 17 septembre 2011
+      </p>
+    </header>
+    <article class="post-content"><p>Il y a quelques années, l&rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.</p>
+
+<p></p>
+
+<div class="supply-panel clearfix">
+    <div class="supply-header">
+        <div class="supply-title">Matériel</div>
+        
+        <div class="supply-level supply-level-3">
+            <label>Difficulté</label>
+            <span class="level-1">1</span>
+            <span class="level-2">2</span>
+            <span class="level-3">3</span>
+            <span class="level-4">4</span>
+            <span class="level-5">5</span>
+        </div>
+    </div>
+    <div class="supply-content">
+        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>2 heures</span></div>
+        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Un PC sous Windows et les logiciels CPU-Z, setFSB, OCCT &amp; Speecy</span></div>
+    </div>
+</div>
+
+<h2 id="qu-est-ce-que-l-overclocking">Qu’est-ce que l’overclocking</h2>
+
+<h3 id="pourquoi-overclocker-votre-processeur">Pourquoi overclocker votre processeur ?</h3>
+
+<p>Le but d&rsquo;un overclocking est d’améliorer la puissance de calcul du processeur. Cela permet :</p>
+
+<ul>
+<li>D’obtenir un PC <strong>plus réactif</strong> pour un meilleur confort d’utilisation.</li>
+<li>De redonner un peu de puissance à une <strong>vielle configuration</strong> afin de pouvoir encore l’utiliser quelques années.</li>
+</ul>
+
+<h3 id="comment-se-fait-il-qu-on-puisse-faire-de-l-overclocking">Comment se fait-il qu’on puisse faire de l’overclocking ?</h3>
+
+<p>Afin d’éviter la casse, les constructeurs baissent volontairement la fréquence du processeur. Ainsi, votre CPU résistera aux contraintes extérieures (canicule, poussière …). Sachez qu’une gamme de processeur n’est basée que sur une architecture.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-cogs"></i> <strong>EXEMPLE :</strong> Les AMD Athlon II X2 2xx dont la fréquence varie entre 3.0 et 3.4 GHz.</div>
+
+<p>On peut donc effectuer un overclocking sur un CPU milieu de gamme et obtenir la fréquence d’un CPU haut de gamme (voire plus).</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE :</strong> Cela ne signifie pas qu’un processeur milieu de gamme overclocké est aussi puissant qu’un haut de gamme. En effet, les performances d’un CPU ne dépendent pas uniquement de sa fréquence.</div>
+
+<h3 id="le-principe-de-l-overclocking">Le principe de l’overclocking</h3>
+
+<p>Tout d’abord, il faut savoir que le processeur communique avec la RAM (mémoire vive), la carte graphique et le chipset (puces de la carte mère). Ce dernier communique avec le reste des composants. L’ensemble des connexions qui relient le chipset au processeur s’appelle le <strong>Front Side Bus</strong> (FSB).
+Pour des raisons historiques, la fréquence du processeur est égale à la <strong><em>fréquence du FSB</em> x <em>un multiplicateur</em></strong>, que nous allons appeler ici &ldquo;coeff. CPU&rdquo;.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-cogs"></i> <strong>EXEMPLE :</strong> Pentium 4 Dual Core E5200 : 200MHz (FSB) x 12,5 (Coeff. CPU) = 2500 MHz</div>
+
+<p>Pour overclocker un processeur, il existe deux solutions :</p>
+
+<ul>
+<li><strong>Augmenter le coefficient du CPU</strong>, mais celui-ci est plafonné par les constructeurs.</li>
+<li><strong>Augmenter le FSB</strong>, c’est que nous allons faire.</li>
+</ul>
+
+<h2 id="se-renseigner-sur-son-matériel">Se renseigner sur son matériel</h2>
+
+<p>Durant la suite de ce tutoriel,  je prendrais comme exemple un** Intel Pentium 4 Dual Core E5200**. C’est un processeur qui possède un coefficient multiplicateur de 12,5 et qui est cadencé initialement à <strong>2,5 GHz</strong>. Je vais procéder un à overclocking de 20% en augmentant le FSB de 200 MHz à 240 MHz pour obtenir une fréquence de <strong>3,0 GHz</strong>.</p>
+
+<p>Tout d’abord, vous devez réunir des informations concernant votre matériel.</p>
+
+<p>Pour cela, téléchargez <a href="http://www.clubic.com/telecharger-fiche11090-cpu-z.html"><strong>CPU-Z</strong></a>, installez-le puis lancez-le. Dans l’onglet « <strong>CPU</strong> », vous pouvez voir la fréquence de votre processeur, celle de votre FSB et le coefficient multiplicateur du CPU.</p>
+
+<p>Avant de continuer, téléchargez et installez :</p>
+
+<ul>
+<li><a href="http://www.clubic.com/telecharger-fiche307458-setfsb.html"><strong>SetFSB</strong></a>, qui vous permettra de modifier la fréquence du FSB depuis Windows ;</li>
+<li><a href="http://www.clubic.com/telecharger-fiche133762-occt.html"><strong>OCCT</strong></a>, afin de tester la stabilité de l’overclocking ;</li>
+<li><a href="http://www.clubic.com/telecharger-fiche309808-speccy.html"><strong>Speccy</strong></a>, qui vous donnera toutes les informations relatives à votre matériel ainsi que la température du processeur (très importante, il faut la surveiller de près).</li>
+</ul>
+
+<h2 id="overclocker-son-processeur">Overclocker son processeur</h2>
+
+<p>Ça y est, il est temps de passer aux choses sérieuses : nous allons <strong>overclocker</strong> le processeur !</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-warning"></i> <strong>ATTENTION :</strong> le fait d’overclocker votre processeur supprime sa garantie. Il est fortement recommandé d’effectuer une sauvegarde de ses données avant de débuter un overclocking de votre processeur. Tuto Wibb ne peut être tenu pour responsable des éventuels dommages survenus suite à l&rsquo;utilisation de ce tutoriel.</div>
+
+<h3 id="modifier-le-bios">Modifier le BIOS</h3>
+
+<figure>
+    <a href="/media/2011/09/5f8d177789055b98bd23693375337c2b.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2011/09/5f8d177789055b98bd23693375337c2b.png" alt="Overclocker son CPU - Bios">
+    </a>
+    
+</figure>
+
+<p>Premièrement, redémarrer votre PC et appuyez sur la touche « <strong>suppr</strong> » de votre clavier lorsque le PC démarre afin d’accéder au BIOS.</p>
+
+<p>Ensuite, dans le BIOS, activez le contrôle manuel du FSB. Pour cela, activez le « <strong>Clock Control</strong> » (Gigabyte) ou bien augmentez de <strong>1 MHz</strong> le FSB (Asus).</p>
+
+<p>Enregistrez les modifications et redémarrez votre PC.</p>
+
+<h3 id="modifier-la-fréquence-du-fsb">Modifier la fréquence du FSB</h3>
+
+<p>Maintenant que vous êtes de retour sous Windows, nous allons augmenter le FSB :</p>
+
+<ul>
+<li>Ouvrer SetFSB</li>
+<li>Sélectionnez le PLL de votre carte mère dans la liste « Clock Generator ». Pour cela, cherchez dans <a href="http://soj.mesdiscussions.net/soj/Overclocking/pll-liste-pll-sujet_2572_1.htm">cette liste</a> le modèle de votre carte mère (ou un modèle qui s’en approche)</li>
+<li>Cliquez sur « Get FSB »</li>
+</ul>
+
+<p>Vous obtenez alors ceci :</p>
+
+<figure>
+    <a href="/media/2011/09/2f8924ac181b3a1bfd99be88a8debd59.png" data-lightbox="post-gallery" target="_blank">
+        <img src="/media/2011/09/2f8924ac181b3a1bfd99be88a8debd59.png" alt="Overclocker son CPU - SetFSB">
+    </a>
+    
+</figure>
+
+<p>Pour modifier la fréquence du FSB, déplacer le curseur du haut sur la fréquence souhaitée et cliquer sur « Set FSB ».</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE :</strong> Il est inutile de se précipiter, avancez par palier de 5 MHz.</div>
+
+<h3 id="pourquoi-ça-ne-fonctionne-pas">Pourquoi ça ne fonctionne pas ?</h3>
+
+<p>L’overclocking n’est pas une science exacte. Il arrive donc que des erreurs surviennent :</p>
+
+<ul>
+<li>Si votre PC ne répond plus, c’est que le PPL que vous avez sélectionné dans la liste n’est pas compatible avec votre carte mère.</li>
+<li>Si votre PC plante et redémarre, c’est que vous avez rentré une fréquence trop élevée.</li>
+</ul>
+
+<h3 id="overclocking-de-10">Overclocking de 10%</h3>
+
+<p>Nous allons débuter doucement par une légère augmentation du FSB.</p>
+
+<ul>
+<li>Régler SetFSB sur une fréquence <strong>10%</strong> plus haute que celle d’origine (Ici, 220 MHz)</li>
+<li>Cliquez sur « <strong>Set FSB</strong> »</li>
+<li>Si votre PC n’a pas planté, ouvrez OCCT</li>
+<li>Sélectionnez « Perso » dans la case « Test Type »</li>
+<li>Réglez le test sur 30 minutes</li>
+<li>Cliquez sur « <strong>ON</strong> »</li>
+<li>Si au bout d’une demi-heure OCCT ne détecte pas d’erreurs, vous pouvez passer à 20%</li>
+</ul>
+
+<figure class="gallery gallery-column-2">
+	<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/618d2a1113c26c423473dcb0e40cdddd.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/618d2a1113c26c423473dcb0e40cdddd.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/b00f20b3296cb93beb01c0ea82f092b8.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/b00f20b3296cb93beb01c0ea82f092b8.png">
+        </a>
+    </div>
+</div>
+
+	<figcaption class="clearfix"><h4>CPU-Z à 10% - OCCT à 10%</h4></figcaption>
+</figure>
+
+<h3 id="overclocking-de-20">Overclocking de 20%</h3>
+
+<p>Votre processeur tourne actuellement à 110% de ses capacités initiales et il est stable. Nous allons donc mettre la barre un peu plus haute et passe à 20 % d’overclocking :</p>
+
+<ul>
+<li>Régler SetFSB sur une fréquence <strong>20%</strong> plus haute que celle d’origine (Ici, 240 MHz)</li>
+<li>Cliquez sur « <strong>Set FSB</strong> »</li>
+<li>Si votre PC n’a pas planté, ouvrez OCCT</li>
+<li>Sélectionnez « <strong>Auto (1h)</strong> » dans la case « Test Type »</li>
+<li>Cliquez sur « <strong>ON</strong> »</li>
+<li>Si au bout d’une heure OCCT ne détecte pas d’erreurs, vous avez <strong>réussi</strong> votre overclocking</li>
+</ul>
+
+<figure class="gallery gallery-column-5">
+	<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/a29e1ddf3eeee1ac457d751fd265e724.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/a29e1ddf3eeee1ac457d751fd265e724-150x150.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/4c8666d46865ab5008993cf2f373239c.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/4c8666d46865ab5008993cf2f373239c-150x150.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/c9449ce52c76a2897d84810c959a2b15.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/c9449ce52c76a2897d84810c959a2b15-150x150.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/ab67281fa7514190951edaa614b941be.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/ab67281fa7514190951edaa614b941be-150x150.png">
+        </a>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="gallery-image">
+        <a href="/media/2011/09/b6ed449c4defbde9f578c47ce22d6b36.png" data-lightbox="post-gallery" target="_blank">
+            <img src="/media/2011/09/b6ed449c4defbde9f578c47ce22d6b36-150x150.png">
+        </a>
+    </div>
+</div>
+
+	<figcaption class="clearfix"><h4>OCCT à 20% - CPU-Z à 20% - Test de OCCT - Température au repos - Température en charge</h4></figcaption>
+</figure>
+
+<h3 id="finitions">Finitions</h3>
+
+<p>Voilà, vous exploitez votre CPU à <strong>120%</strong>.</p>
+
+<p>Pour finir votre overclocking, redémarrez votre PC et allez dans le BIOS. Puis modifiez la valeur de la fréquence du FSB en y inscrivant celle souhaitée (Ici, 200 MHz + 20 % = 240 MHz).</p>
+
+<p>Enregistrez et redémarrer le PC.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Vous venez donc d’effectuer un overclocking de 20 %, augmentant ainsi la fréquence de votre processeur et – j’espère – la fluidité de votre PC.</p>
+
+<p>Cependant, cette méthode d’overclocking reste relativement simple et elle ne permet pas de dépasser les 20 % d’overclocking. Pour aller plus loin et pousser son CPU dans ses derniers retranchements, il existe des manipulations plus complexes et plus risquées mais qui permettent une augmentation de 50 % voire plus. Tutoriel à suivre …</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/cpu"><span class="tag">CPU</span></a></li>
+        
+          <li><a href="/tags/overclocking"><span class="tag">Overclocking</span></a></li>
+        
+          <li><a href="/tags/tuto"><span class="tag">Tuto</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>2739</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

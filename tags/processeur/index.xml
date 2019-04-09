@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Processeur on vonKrafft</title>
+    <link>/tags/processeur/</link>
+    <description>Recent content in Processeur on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 10 Mar 2012 19:15:49 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/processeur/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quid du processeur (CPU)</title>
+      <link>/guides/quid-processeur-cpu/</link>
+      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
+      
+      <guid>/guides/quid-processeur-cpu/</guid>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

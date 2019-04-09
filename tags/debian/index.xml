@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on vonKrafft</title>
+    <link>/tags/debian/</link>
+    <description>Recent content in Debian on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Mon, 04 Mar 2019 19:43:46 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installer Python 3.7 sur Debian 9 Stretch</title>
+      <link>/guides/installer-python-3.7-debian-9-strecth/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
+      
+      <guid>/guides/installer-python-3.7-debian-9-strecth/</guid>
+      <description>Nous allons installer Python 3.7 sur un système Debian 9 (Stretch). Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de release des version Debian stables, Debian 9 n&amp;rsquo;intègre que la version 3.5 de Python.
+   Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings.</description>
+    </item>
+    
+  </channel>
+</rss>

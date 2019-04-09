@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Batterie on vonKrafft</title>
+    <link>/tags/batterie/</link>
+    <description>Recent content in Batterie on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 25 Sep 2011 21:04:15 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/batterie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Optimiser la durée de vie de sa batterie</title>
+      <link>/guides/optimiser-duree-vie-batterie/</link>
+      <pubDate>Sun, 25 Sep 2011 21:04:15 +0000</pubDate>
+      
+      <guid>/guides/optimiser-duree-vie-batterie/</guid>
+      <description>&lt;p&gt;Vous tous, possesseurs de PC portables ou de gadgets électroniques, vous êtes confronté l’autonomie de votre appareil et  à la durée de vie de sa batterie. Mais savez-vous qu’une batterie demande de l’entretient et qu’il ne faut pas l’utiliser n’importe comment ? Voici quelques conseils qui permettront à votre batterie Lithium-ion de durer plus longtemps.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

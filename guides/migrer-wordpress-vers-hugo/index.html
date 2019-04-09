@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Migrer d&#39;un WordPress vers Hugo
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="Ayant récement migré de WordPress vers Hugo, j&amp;rsquo;ai eu besoin d&amp;rsquo;exporter le contenu de la base de données vers des fichiers Markdown, mais aussi revoir l&amp;rsquo;organisation des ressources, notamment les images. Pour cela, j&amp;rsquo;ai implémenté quelques scripts que je me propose ici de partager.
+  
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Migrer d&#39;un WordPress vers Hugo" />
+    <meta name="twitter:description" content="Ayant récement migré de WordPress vers Hugo, j&amp;rsquo;ai eu besoin d&amp;rsquo;exporter le contenu de la base de données vers des fichiers Markdown, mais aussi revoir l&amp;rsquo;organisation des ressources, notamment les images. Pour cela, j&amp;rsquo;ai implémenté quelques scripts que je me propose ici de partager.
+  
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2018/01/f6840c5d35c17f43623f8cb9eb7d6f7e.png" />
+  
+
+
+
+
+<link rel="canonical" href="/guides/migrer-wordpress-vers-hugo/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-guides">
+    <header class="post-header">
+      <h1 class="post-title">Migrer d&#39;un WordPress vers Hugo</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/guides/">Guides</a></span>
+        @vonKrafft · 5 janvier 2018
+      </p>
+    </header>
+    <article class="post-content"><p>Ayant récement migré de WordPress vers Hugo, j&rsquo;ai eu besoin d&rsquo;exporter le contenu de la base de données vers des fichiers Markdown, mais aussi revoir l&rsquo;organisation des ressources, notamment les images. Pour cela, j&rsquo;ai implémenté quelques scripts que je me propose ici de partager.</p>
+
+<figure>
+    
+        <img src="/media/2018/01/f6840c5d35c17f43623f8cb9eb7d6f7e.png">
+    
+    
+</figure>
+
+<p></p>
+
+<p>Depuis novembre 2013, le site <strong>Tuto Wibb</strong> était géré avec un WordPress. Fin 2017, j&rsquo;ai décidé d&rsquo;ajouter une partie blog à mon site perso et donc de fusionner <strong>vonKrafft.fr</strong> et <strong>Tuto Wibb</strong>. J&rsquo;en ai profité pour abandonner WordPress, trop lourd pour mes besoins, et surtout trop compliqué à maintenir avec l&rsquo;avalanche de mise à jour et de patchs de sécurité de la part de WordPress, mais aussi des plugins &hellip;</p>
+
+<p>J&rsquo;ai donc porté mon intérêt sur <a href="https://gohugo.io/">Hugo</a>, un générateur de site statique implémenté en Golang. Le principe est simple : le contenu est rédigé en Markdown, auquel on y ajoute des templates en HTML et des ressources variées (images, CSS, JavaScript &hellip;). Hugo se charge ensuite de générer les pages HTML. Plus de requêtes dynamiques, fini le PHP de WordPress : tout est <strong>statique</strong>. Cela permet aussi de versionner le contenu de <strong>vonKrafft.fr</strong> sur <a href="https://github.com/vonKrafft/vonkrafft-hugo">GitHub</a>.</p>
+
+<p>Se pose alors le problème de la migration. Le contenu des articles est actuellement dans une <strong>base de données</strong>, les images sont dans <code>wp-content/uploads</code> et l&rsquo;organisation par catégorie est géré par deux tables de la base de données &hellip; Bref, un joli bazar !</p>
+
+<h2 id="exporter-les-articles-en-markdown">Exporter les articles en Markdown</h2>
+
+<p>La première étape consite à exporter les articles (les types <code>post</code> dans WordPress) et de créer des fichiers Markdown compréhensibles par Hugo. Le contenu des articles se trouve dans la table <code>wp_posts</code>, et nous voulons récupérer uniquement les articles de type <code>post</code> publiés.</p>
+
+<div class="code-container">
+	
+    <pre class="code"><code data-language="PHP">$wpdb-&gt;get_var(&#34;SELECT GROUP_CONCAT(`ID`) FROM `wp_posts` WHERE `post_status` LIKE &#39;publish&#39; AND `post_type` LIKE &#39;post&#39;&#34;);
+</code></pre>
+</div>
+
+<p>Cela permet d&rsquo;obtenir la liste des ID des articles à exporter. Nous itérerons par la suite sur la liste de ces ID. Pour chaque article, il faut à présent récupérer le contenu et les informations additionnelles de la table <code>wp_posts</code>. Dans mon cas, j&rsquo;ai aussi besoin de la catégorie, la liste des tags et la description SEO de l&rsquo;article.</p>
+
+<div class="code-container">
+	
+    <pre class="code"><code data-language="PHP">$current_post = $wpdb-&gt;get_row($wpdb-&gt;prepare(&#34;SELECT * FROM `wp_posts` WHERE `ID` = %d&#34;, array($id)));
+$current_term = $wpdb-&gt;get_results($wpdb-&gt;prepare(&#34;SELECT `name`, `slug` FROM `wp_term_taxonomy` AS tt JOIN `wp_term_relationships` AS tr ON tt.`term_taxonomy_id` = tr.`term_taxonomy_id` JOIN `wp_terms` AS t ON tt.`term_id` = t.`term_id` WHERE tr.`object_id` = %d AND tt.`taxonomy` = %s&#34;, array($id, &#39;category&#39;)));
+$current_tags = $wpdb-&gt;get_results($wpdb-&gt;prepare(&#34;SELECT `name`, `slug` FROM `wp_term_taxonomy` AS tt JOIN `wp_term_relationships` AS tr ON tt.`term_taxonomy_id` = tr.`term_taxonomy_id` JOIN `wp_terms` AS t ON tt.`term_id` = t.`term_id` WHERE tr.`object_id` = %d AND tt.`taxonomy` = %s&#34;, array($id, &#39;post_tag&#39;)), OBJECT_K);
+$current_desc = $wpdb-&gt;get_var($wpdb-&gt;prepare(&#34;SELECT `meta_value` FROM `wp_postmeta` WHERE `post_id` = %d AND `meta_key` = %s&#34;, array($id, &#39;_yoast_wpseo_metadesc&#39;)));
+</code></pre>
+</div>
+
+<p>Ensuite, il faut construire le contenu du fichier. Hugo utilise un format d&rsquo;en-tête spécifique pour les métadonnées de la page : les Front Matter (de l&rsquo;anglais &ldquo;avant-propos&rdquo;). En TOML, YAML ou JSON, ils doivent être placés au début du fichier. Pour ma part, j&rsquo;ai choisi le format YAML délimité par <code>---</code>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        migration-functions.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">function get_post_content($id)
+{
+	global $wpdb;
+	
+	$current_post = $wpdb-&gt;get_row($wpdb-&gt;prepare(&#34;SELECT * FROM `wp_posts` WHERE `ID` = %d&#34;, array($id)));
+	$current_term = $wpdb-&gt;get_results($wpdb-&gt;prepare(&#34;SELECT `name`, `slug` FROM `wp_term_taxonomy` AS tt JOIN `wp_term_relationships` AS tr ON tt.`term_taxonomy_id` = tr.`term_taxonomy_id` JOIN `wp_terms` AS t ON tt.`term_id` = t.`term_id` WHERE tr.`object_id` = %d AND tt.`taxonomy` = %s&#34;, array($id, &#39;category&#39;)));
+	$current_tags = $wpdb-&gt;get_results($wpdb-&gt;prepare(&#34;SELECT `name`, `slug` FROM `wp_term_taxonomy` AS tt JOIN `wp_term_relationships` AS tr ON tt.`term_taxonomy_id` = tr.`term_taxonomy_id` JOIN `wp_terms` AS t ON tt.`term_id` = t.`term_id` WHERE tr.`object_id` = %d AND tt.`taxonomy` = %s&#34;, array($id, &#39;post_tag&#39;)), OBJECT_K);
+	$current_desc = $wpdb-&gt;get_var($wpdb-&gt;prepare(&#34;SELECT `meta_value` FROM `wp_postmeta` WHERE `post_id` = %d AND `meta_key` = %s&#34;, array($id, &#39;_yoast_wpseo_metadesc&#39;)));
+
+	$markdown = &#39;&#39;;
+	$markdown .= &#39;---&#39; . PHP_EOL;
+	$markdown .= &#39;title: &#34;&#39; . addslashes($current_post-&gt;post_title) . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;description: &#34;&#39; . addslashes($current_desc) . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;tags: [ &#34;&#39; . implode(&#39;&#34;, &#34;&#39;, array_keys($current_tags)) . &#39;&#34; ]&#39; . PHP_EOL;
+	$markdown .= &#39;lastmod: &#34;&#39; . $current_post-&gt;post_modified . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;date: &#34;&#39; . $current_post-&gt;post_date . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;categories:&#39; . PHP_EOL;
+	foreach ($current_term as $cat) $markdown .= &#34;\t&#34; . &#39;- &#34;&#39; . addslashes($cat-&gt;name) . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;type: page&#39; . PHP_EOL;
+	$markdown .= &#39;slug: &#34;&#39; . addslashes($current_post-&gt;post_name) . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;---&#39; . PHP_EOL;
+	$markdown .= PHP_EOL;
+	$markdown .= md($current_post-&gt;post_content);
+
+	$path = $current_term[0]-&gt;slug;
+	$filename = strstr($current_post-&gt;post_date, &#39; &#39;, TRUE) . &#39;-&#39; . $current_post-&gt;post_name . &#39;.md&#39;;
+
+	return array($markdown, $path, $filename);
+}
+</code></pre>
+</div>
+
+<p>Vous pouvez constater que je ne prends pas le contenu brut de l&rsquo;article, mais je le fait passé par la fonction <code>md()</code>.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        migration-functions.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">function md($content)
+{
+	for ($i=1; $i &lt; 7; $i&#43;&#43;) { 
+		$content = preg_replace(&#34;/&amp;lt;h$i&amp;gt;((?:.|\n)*?)&amp;lt;\/h$i&amp;gt;/&#34;, PHP_EOL . str_repeat(&#39;#&#39;, $i) . &#34; $1&#34; . PHP_EOL, $content);
+	}
+	$content = preg_replace(&#39;/&amp;lt;code&amp;gt;([^&amp;lt;]*)&amp;lt;\/code&amp;gt;/&#39;, &#34;`$1`&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;(?:strong|b)&amp;gt;([^&amp;lt;]*)&amp;lt;\/(?:strong|b)&amp;gt;/&#39;, &#34;**$1**&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;(?:em|i)&amp;gt;([^&amp;lt;]*)&amp;lt;\/(?:em|i)&amp;gt;/&#39;, &#34;*$1*&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;blockquote&amp;gt;((?:.|\n)*?)&amp;lt;\/blockquote&amp;gt;/&#39;, PHP_EOL . &#39;&amp;gt; &#39; . str_replace(&#39;\n&#39;, PHP_EOL . &#39;&amp;gt; &#39;, &#34;$1&#34;), $content);
+	$content = preg_replace(&#39;/&amp;lt;hr( \/)?&amp;gt;/&#39;, &#34;---&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;img [^&amp;gt;]*src=&#34;([^&#34;]*)&#34;[^&amp;gt;]*alt=&#34;([^&#34;]*)&#34;[^&amp;gt;]*&amp;gt;/&#39;, &#34;![$2]($1)&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;img [^&amp;gt;]*alt=&#34;([^&#34;]*)&#34;[^&amp;gt;]*src=&#34;([^&#34;]*)&#34;[^&amp;gt;]*&amp;gt;/&#39;, &#34;![$1]($2)&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;a [^&amp;gt;]*href=&#34;([^&#34;]&#43;)&#34;[^&amp;gt;]*&amp;gt;([^&amp;lt;]*)&amp;lt;\/a&amp;gt;/&#39;, &#34;[$2]($1)&#34;, $content);
+	$content = preg_replace(&#39;/\[(tw_[^\]]*)\]/&#39;, &#34;{{&amp;lt; $1 &amp;gt;}}&#34;, $content);
+	$content = preg_replace(&#39;/\[(\/tw_[^\]]*)\]/&#39;, &#34;{{&amp;lt; $1 &amp;gt;}}&#34;, $content);
+	$content = preg_replace(&#39;/https?:\/\/tuto-wibb\.krafft\.ovh\/wp-content\/uploads\/([^\)]&#43;)/&#39;, &#34;images/$1&#34;, $content);
+	$content = preg_replace(&#39;/&amp;lt;p[^&amp;gt;]*&amp;gt;((?:.|\n)*?)&amp;lt;\/p&amp;gt;/&#39;, &#34;$1&#34; . PHP_EOL, $content);
+	preg_match_all(&#39;/&amp;lt;ul[^&amp;gt;]*&amp;gt;((?:.|\n)*?)&amp;lt;\/ul&amp;gt;/&#39;, $content, $ul_array, PREG_SET_ORDER, 0);
+	foreach ($ul_array as $ul) {
+		$content = str_replace($ul[0], preg_replace(&#39;/\s&#43;&amp;lt;li[^&amp;gt;]*&amp;gt;((?:.|\n)*?)&amp;lt;\/li&amp;gt;/&#39;, PHP_EOL . &#34;- $1&#34;, $ul[1]), $content);
+	}
+	preg_match_all(&#39;/&amp;lt;ol[^&amp;gt;]*&amp;gt;((?:.|\n)*?)&amp;lt;\/ol&amp;gt;/&#39;, $content, $ol_array, PREG_SET_ORDER, 0);
+	foreach ($ol_array as $ol) {
+		$content = str_replace($ol[0], preg_replace(&#39;/\s&#43;&amp;lt;li[^&amp;gt;]*&amp;gt;((?:.|\n)*?)&amp;lt;\/li&amp;gt;/&#39;, PHP_EOL . &#34;1. $1&#34;, $ol[1]), $content);
+	}
+	return $content;
+}
+</code></pre>
+</div>
+
+<p>Bon, la fonction n&rsquo;est pas parfaite, loin de là, mais je n&rsquo;ai pas trouvé mieux (sinon utiliser une bibliothèque PHP-Markdown pour faire le boulot). Si vous avez des idées, n&rsquo;hésitez pas à me le dire : c&rsquo;est trop tard pour ma migration mais ça peut en aider d&rsquo;autres. Quoi qu&rsquo;il en soit, je dois repasser par chaque article pour vérifier que tout est bien passé en Markdown.</p>
+
+<p>Après quelques tests, il ne nous reste plus qu&rsquo;à automatiser le tout et créer les fichiers de sortie. Une boucle sur la liste des ID des articles, et le tour est joué :)</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        migration-hugo.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">$posts = $wpdb-&gt;get_var(&#34;SELECT GROUP_CONCAT(`ID`) FROM `wp_posts` WHERE `post_status` LIKE &#39;publish&#39; AND `post_type` LIKE &#39;post&#39;&#34;);
+foreach ($posts as $id) {
+	list($content, $category, $filename) = get_content($id);
+	mkdir(&#39;hugo/&#39; . $category, 0755, TRUE);
+	file_put_contents(&#39;hugo/&#39; . $category . &#39;/&#39; . $filename, $content);
+}
+</code></pre>
+</div>
+
+<p>Et voilà, on se retrouve avec nos fichiers Markdown ! Il suffit de tout mettre dans le répertoire <code>content</code> de Hugo et c&rsquo;est terminé.</p>
+
+<h2 id="exporter-les-pages-en-markdown">Exporter les pages en Markdown</h2>
+
+<p>C&rsquo;est presque identique à l&rsquo;exportation des articles. L&rsquo;en-tête du fichier change légèrement : on n&rsquo;a plus de description, de tags, de catégorie et de slug, et le type n&rsquo;est plus <code>post</code> mais <code>page</code>. Pour ce qui est du chemin du fichier Markdown, il y a deux cas possibles :</p>
+
+<ul>
+<li>La page n&rsquo;a pas de page parente, dans ce cas là elle est enregistrée dans <code>/nom-de-la-page/_index.md</code> ;</li>
+<li>La page a une page parente, dans ce cas là elle est enregistrée dans <code>/nom-du-parent/nom-de-la-page.md</code>.</li>
+</ul>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        migration-functions.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">function get_page_content($id)
+{
+	global $wpdb;
+	
+	$current_page = $wpdb-&gt;get_row($wpdb-&gt;prepare(&#34;SELECT * FROM `wp_posts` WHERE `ID` = %d&#34;, array($id)));
+
+	if (intval($current_page-&gt;post_parent) &gt; 0)
+	{
+		$current_parent = $wpdb-&gt;get_row($wpdb-&gt;prepare(&#34;SELECT * FROM `wp_posts` WHERE `ID` = %d&#34;, array(intval($current_page-&gt;post_parent))));
+	}
+
+	$markdown = &#39;&#39;;
+	$markdown .= &#39;---&#39; . PHP_EOL;
+	$markdown .= &#39;title: &#34;&#39; . (isset($current_parent) ? addslashes($current_parent-&gt;post_title) .  &#39; | &#39; : &#39;&#39;) . addslashes($current_page-&gt;post_title) . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;lastmod: &#34;&#39; . $current_page-&gt;post_modified . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;date: &#34;&#39; . $current_page-&gt;post_date . &#39;&#34;&#39; . PHP_EOL;
+	$markdown .= &#39;type: page&#39; . PHP_EOL;
+	$markdown .= &#39;---&#39; . PHP_EOL;
+	$markdown .= PHP_EOL;
+	$markdown .= md($current_page-&gt;post_content);
+
+	$path = isset($current_parent) ? $current_parent-&gt;post_name : $current_page-&gt;post_name;
+	$filename = isset($current_parent) ? $current_page-&gt;post_name . &#39;.md&#39; : &#39;_index.md&#39;;
+
+	return array($markdown, $path, $filename);
+}
+</code></pre>
+</div>
+
+<p>Pour créer tous mes fichiers, il me suffit alors de boucler sur la liste des ID des pages.</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        migration-hugo.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">$pages = explode(&#39;,&#39;, $wpdb-&gt;get_var(&#34;SELECT GROUP_CONCAT(`ID`) FROM `wp_posts` WHERE `post_status` LIKE &#39;publish&#39; AND `post_type` LIKE &#39;page&#39;&#34;));
+foreach ($pages as $id) {
+	list($content, $path, $filename) = get_page_content($id);
+	mkdir(&#39;hugo/pages/&#39; . $path, 0755, TRUE);
+	file_put_contents(&#39;hugo/pages/&#39; . $path . &#39;/&#39; . $filename, $content);
+}
+</code></pre>
+</div>
+
+<h2 id="vérfier-le-contenu-et-importer-les-images">Vérfier le contenu et importer les images</h2>
+
+<p>Je vais vous l&rsquo;avouer tout de suite, c&rsquo;est la partie casse-coui****s de la migration. La vérification est optionnelle, il est possible de se satisfaire de la correction des erreurs remontées par Hugo. Quant aux images, un copié/collé de <code>wp-content/uploads</code> et le tour est joué. Mais je ne trouve pas ça très propre et quitte à migrer, autant faire les choses bien.</p>
+
+<p>Pour les images, j&rsquo;ai créé un répertoire <code>static/media</code> dans lequel je mets toutes mes images triée par années et par mois. Pour un article de décembre 2017, mes images seront dans <code>static/media/2017/12</code>. Pour les pages, je crée un répertoire par page ou groupe de pages.</p>
+
+<p>Ensuite, j&rsquo;ai parcouru tous les articles pour vérifier la syntaxe du Markdown, ajouter des shortcodes et inclure les images. Puisque par la suite, je vais avoir besoin d&rsquo;ajouter des images aux futurs articles, je me suis dit qu&rsquo;il me fallait quelque chose pour redimensionner mes images. J&rsquo;ai donc implémenté un petit script qui <a href="/console/redimensionner-images-python/">copie et redimensionne une image</a>.</p>
+
+<h2 id="rediriger-son-ancien-site-wordpress-vers-hugo">Rediriger son ancien site WordPress vers Hugo</h2>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Si vous ne changez pas de nom de domaine, vous pouvez ignorer cette dernière partie. Pour ma part, je suis passé de <a href="http://tuto-wibb.krafft.ovh/">http://tuto-wibb.krafft.ovh/</a> à <a href="https://vonkrafft.fr/">https://vonkrafft.fr/</a>, et donc j&rsquo;avais besoin de mettre en place une redirection.</div>
+
+<p>Voilà, un joli site statique avec Hugo, tout beau tout neuf, mais que faire de l&rsquo;ancien site ? Il faut surtout éviter de le supprimer, ou en tout cas pas tout de suite. Aussi longtemps que possible, il faut mettre en place une redirection permanente vers vos nouveaux articles.</p>
+
+<p>Pour cela, on va créer un fichier <code>index.php</code> à la racine du WordPress (sans oublié de faire une copie de l&rsquo;ancien fichier vers un fichier <code>index.php.initial</code> par exemple).</p>
+
+<div class="code-container">
+	
+    <div class="code-title">
+        <i class="fa fa-file-code-o"></i>
+        index.php
+    </div>
+    
+    <pre class="code"><code data-language="PHP">&amp;lt;?php    
+require_once(dirname(__FILE__) . &#39;/wp-load.php&#39;);
+global $wpdb;
+
+$actual_link = (isset($_SERVER[&#39;HTTPS&#39;]) ? &#34;https&#34; : &#34;http&#34;) . &#34;://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]&#34;;
+$id = url_to_postid($actual_link);
+
+$type = $wpdb-&gt;get_var($wpdb-&gt;prepare(&#39;SELECT `post_type` FROM `wp_posts` WHERE `ID` = %d&#39;, $id));
+if ($type === &#39;page&#39;)
+{
+	$parent_id = $wpdb-&gt;get_var($wpdb-&gt;prepare(&#39;SELECT `post_parent` FROM `wp_posts` WHERE `ID` = %d&#39;, $id));
+	$path = $parent_id ? $wpdb-&gt;get_var($wpdb-&gt;prepare(&#39;SELECT `post_name` FROM `wp_posts` WHERE `ID` = %d&#39;, $parent_id)) . &#39;/&#39; : &#39;&#39;;
+}
+else
+{
+	$path = strtolower($wpdb-&gt;get_var($wpdb-&gt;prepare(&#39;SELECT `name` FROM `wp_term_taxonomy` AS tt JOIN `wp_term_relationships` AS tr ON tt.`term_taxonomy_id` = tr.`term_taxonomy_id` JOIN `wp_terms` AS t ON tt.`term_id` = t.`term_id` WHERE tr.`object_id` = %d AND tt.`taxonomy` = %s&#39;, array($id, &#39;category&#39;)))) . &#39;/&#39;;
+}
+$slug = $wpdb-&gt;get_var($wpdb-&gt;prepare(&#39;SELECT `post_name` FROM `wp_posts` WHERE `ID` = %d&#39;, $id));
+
+$new_link = &#34;https://vonkrafft.fr/$path$slug/&#34;;
+
+header(&#39;Status: 301 Moved Permanently&#39;, False, 301);      
+header(&#39;Location: &#39; . $new_link);      
+exit();
+</code></pre>
+</div>
+
+<p>Bon, ça casse pas trois pattes à un canard. Tout d&rsquo;abord, on récupère l&rsquo;URL et l&rsquo;ID associé à l&rsquo;URL. Si c&rsquo;est une page, la nouvelle URL débutera par le slug de la page parente, si page parente il y a. Si c&rsquo;est un article, la nouvelle URL débutera par le slug de la catégorie. Enfin, on récupère le slug du post pour terminer la nouvelle URL.</p>
+
+<p>La redirection doit être permanente, avec le code HTTP 301 (Moved Permanently). Cela permet de faire comprendre aux navigateurs et aux robots que le site est définitivement à cette nouvelle adresse.</p>
+
+<p>Le fichier <code>index.php</code> doit être conservé le plus longtemps possible (cela nécessite un serveur et un nom de domaine). Lorsque le serveur ne sera plus disponible, il faudra ajouter une entrée DNS <code>CNAME</code> de votre ancien nom de domaine vers votre nouveau nom de domaine. Et lorsque votre ancien nom de domaine ne sera plus disponible, et bien tant pis &hellip;</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>On a donc des fonctions PHP pour :</p>
+
+<ul>
+<li>Convertir le contenu d&rsquo;un post WordPress en Markdown (je reste ouvert aux suggestions d&rsquo;amélioration) ;</li>
+<li>Générer un export d&rsquo;un article (type <code>post</code>) ;</li>
+<li>Générer un export d&rsquo;une page (type <code>page</code>) ;</li>
+<li>Mettre en place une rediretcion dans le cas d&rsquo;un changement de domaine.</li>
+</ul>
+
+<p>En mixant tout ça, vous pouvez à présent migrer votre site WordPress vers Hugo. Tout n&rsquo;est pas automatisé, une longue phase de vérification est nécessaire pour chaque fichier Markdown, surtout si comme moi vous choisissez de revoir toutes vos illustrations.</p>
+
+<p>En espérant en aider (et en motiver) certains à migrer vers un site statique :)</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/wordpress"><span class="tag">Wordpress</span></a></li>
+        
+          <li><a href="/tags/hugo"><span class="tag">Hugo</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>437</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

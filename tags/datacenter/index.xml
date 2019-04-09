@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datacenter on vonKrafft</title>
+    <link>/tags/datacenter/</link>
+    <description>Recent content in Datacenter on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 20 Apr 2013 11:31:43 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/datacenter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visitez les data-centers de Google</title>
+      <link>/actus/visitez-les-data-center-de-google/</link>
+      <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
+      
+      <guid>/actus/visitez-les-data-center-de-google/</guid>
+      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

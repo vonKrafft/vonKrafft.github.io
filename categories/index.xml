@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on vonKrafft</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 27 Dec 2017 18:39:41 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Actus</title>
+      <link>/categories/actus/</link>
+      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      
+      <guid>/categories/actus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Console</title>
+      <link>/categories/console/</link>
+      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      
+      <guid>/categories/console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dossiers</title>
+      <link>/categories/dossiers/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/categories/dossiers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guides</title>
+      <link>/categories/guides/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
+      
+      <guid>/categories/guides/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutoriels</title>
+      <link>/categories/tutoriels/</link>
+      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
+      
+      <guid>/categories/tutoriels/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

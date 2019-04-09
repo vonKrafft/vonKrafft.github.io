@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>
+    vonKrafft | Un morpion en Javascript
+</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="vonKrafft" />
+  <meta name="description" content="On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.
+
+" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@v0nkrafft" />
+    <meta name="twitter:title" content="Un morpion en Javascript" />
+    <meta name="twitter:description" content="On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.
+
+" />
+    <meta name="twitter:image" content="https://vonkrafft.fr/media/2013/12/86d8663b4bb62cbe6de841cb80991e60-1024x614.png" />
+  
+
+
+
+
+<link rel="canonical" href="/tutoriels/un-morpion-en-javascript/" />
+<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+
+
+
+
+<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
+
+
+<link rel="stylesheet" href="/css/bundle.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/lightbox.css" />
+<link rel="stylesheet" href="/css/rajdhani.css" />
+<link rel="stylesheet" href="/css/rainbow-wibb.css" />
+<link rel="stylesheet" href="/css/wibb.css" />
+
+
+  
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <script src="/js/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="/js/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="/js/ofi.min.js"></script>
+
+
+<script src="/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
+  
+  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
+  
+  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+      
+      
+        <li class="menu-item  is-active">
+          <a href="/">Blog</a>
+          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
+          <ul class="menu-sublist">
+            
+              <li class="menu-subitem menu-actus">
+                <a href="/categories/actus/">Actus</a>
+              </li>
+            
+              <li class="menu-subitem menu-dossiers">
+                <a href="/categories/dossiers/">Dossiers</a>
+              </li>
+            
+              <li class="menu-subitem menu-guides">
+                <a href="/categories/guides/">Guides</a>
+              </li>
+            
+              <li class="menu-subitem menu-tutoriels">
+                <a href="/categories/tutoriels/">Tutoriels</a>
+              </li>
+            
+              <li class="menu-subitem menu-console">
+                <a href="/categories/console/">Console</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/works/">Works</a>
+          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="/contact/">Contact</a>
+          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
+          <ul class="menu-sublist">
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+  
+    <ul class="social-list">
+ 
+     <li class="social-item">
+         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
+     </li>
+ 
+     <li class="social-item">
+         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+     </li>
+ 
+     
+ 
+     
+ 
+     
+ 
+     <li class="social-item">
+         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+     </li>
+ 
+    </ul>  
+
+  </nav>
+</header>
+
+  <section class="main post-detail post-tutoriels">
+    <header class="post-header">
+      <h1 class="post-title">Un morpion en Javascript</h1>
+      <p class="post-meta">
+        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
+        @vonKrafft · 12 décembre 2013
+      </p>
+    </header>
+    <article class="post-content"><p>On est parfois ammener à s&rsquo;oocuper comme on peu lorsqu&rsquo;on ne trouve rien à faire. C&rsquo;est ainsi que j&rsquo;ai implémenté un Morpion codé en JavaScript.</p>
+
+<p></p>
+
+<h2 id="le-jeu-du-morpion">Le jeu du Morpion</h2>
+
+<p>Le <strong>morpion</strong> est un jeu de réflexion se pratiquant à deux joueurs au tour par tour et dont le but est de créer le premier un alignement de trois symbole sur une grille de 3 x 3.</p>
+
+<ul>
+<li>Vous pouvez y jouer sur <a href="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5/">cette page</a></li>
+<li>Vous pouvez télécharger le code source avec <a href="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5.zip">ce lien</a></li>
+</ul>
+
+<figure>
+    
+        <img src="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5.jpg">
+    
+    
+        <figcaption>
+            <h4>Aperçu du jeu</h4>
+        </figcaption>
+    
+</figure>
+
+<h2 id="la-page-html">La page HTML</h2>
+
+<p>Elle comporte une zone de jeu et une colonne latérale pour les points et les messages. Chaque balise HTML possède un id pour pouvoir être manipulée par le script JavaScript. La zone de jeu est une balise &ldquo;canvas&rdquo;. Elle est utilisée en tant que zone de dessin.</p>
+
+<h2 id="le-script-js">Le script JS</h2>
+
+<p>Pour ce jeu du morpion, j&rsquo;ai utilisé la bibliothèque jQuery.</p>
+
+<h3 id="la-zone-de-jeu">La zone de jeu</h3>
+
+<p>Pour dessiner la grille de jeux, j&rsquo;ai implémenté un fonction <code>drawGrid()</code>. Elle dessine quatre segments grâce à la méthode <code>lineTo()</code>. Cette méthode est également utilisée pour tracer la croix du joueur 1. Pour le cercle du joueur 2, j&rsquo;ai utilisé la méthode <code>arc()</code>.</p>
+
+<h3 id="déroulement-d-une-action">Déroulement d&rsquo;une action</h3>
+
+<p>Je récupère l’événement d&rsquo;un clique de la souris grâce au code <code>$(&quot;#canvas&quot;).click(function(e){})</code>. Lorsque l&rsquo;on clique sur la zone de jeu, le script calcule les coordonnées du centre de la case la plus proche. Ensuite, si la case est libre, on appelle la fonction <code>drawSector()</code>. En fonction du joueur qui est en train de jouer, cette fonction dessine une croix ou un cercle, permute le numéro du joueur en train de jouer et actualise le message d&rsquo;information. Enfin, elle vérifie si une ligne est complète. Si c&rsquo;est le cas, le script appelle la fonction <code>theEnd()</code>. Si un joueur a gagné, on incrémente son compteur de points. S&rsquo;il y a match nul, seul le compteur de manche est incrémenté. Enfin, le message d&rsquo;information est actualisé et deux boutons s&rsquo;affichent : &ldquo;Nouvelle manche&rdquo; et &ldquo;Nouvelle partie&rdquo;.</p>
+
+<h3 id="nouvelle-manche-ou-partie">Nouvelle manche ou partie</h3>
+
+<p>A la fin de chaque manche, deux boutons apparaissent afin de commencer une nouvelle manche ou une nouvelle partie. Pour la nouvelle manche, on exécute la fonction <code>newMatch()</code>. La grille est redessinée, le tableau contenant la liste des cases occupées et réinitialisé et le message d&rsquo;information est actualisé. Pour la nouvelle partie, on exécute la fonction <code>newGame()</code>. Cette fonction appelle la fonction <code>newMatch()</code> et en plus, les compteurs de points et de manches sont remis à zéro.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Vous êtes libre d&rsquo;utiliser librement ce code. Seulement, si vous le diffusez, merci de citer vos sources et de conserver les commentaires des fichiers HTML, JavaScript et CSS.</div></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="/tags/morpion"><span class="tag">Morpion</span></a></li>
+        
+          <li><a href="/tags/javascript"><span class="tag">JavaScript</span></a></li>
+        
+          <li><a href="/tags/jeu"><span class="tag">Jeu</span></a></li>
+        
+          <li><a href="/tags/css"><span class="tag">CSS</span></a></li>
+        
+          <li><a href="/tags/jquery"><span class="tag">JQuery</span></a></li>
+        
+          <li><a href="/tags/tic-tac-toe"><span class="tag">Tic Tac Toe</span></a></li>
+        
+          <li><a href="/tags/html"><span class="tag">HTML</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1922</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="text/javascript" src="/js/disqus.js"></script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2019 vonKrafft</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
+</footer>
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/rainbow.js"></script>
+
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
+<script type="text/javascript" src="/js/gtag.js"></script>
+
+
+
+  </body>
+</html>

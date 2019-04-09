@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Électronique on vonKrafft</title>
+    <link>/tags/%C3%A9lectronique/</link>
+    <description>Recent content in Électronique on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 18 May 2011 13:02:44 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%C3%A9lectronique/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fabriquez votre ventilateur USB</title>
+      <link>/tutoriels/fabriquez-ventilateur-usb/</link>
+      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      
+      <guid>/tutoriels/fabriquez-ventilateur-usb/</guid>
+      <description>&lt;p&gt;Je ne sais pas si vous suivez l&amp;rsquo;actualité informatique, mais on peut remarquer tout un tas de trucs inutiles en USB : un barbecue USB, un aquarium USB, un ventilateur USB, un réfrigérateur USB, une chauffe tasse USB, etc. … Je vous propose de faire un ventilateur USB. Ce n’est pas grandement utile mais vous pourrez fièrement vous vanter en disant : « c’est moi qui l’ai fait ! ».&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

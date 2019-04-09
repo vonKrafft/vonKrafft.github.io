@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on vonKrafft</title>
+    <link>/tags/php/</link>
+    <description>Recent content in Php on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sat, 09 Mar 2019 10:21:54 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Serveur Web avec Docker : Nginx, PHP et PostgreSQL</title>
+      <link>/console/serveur-web-docker-nginx-php-postgres/</link>
+      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      
+      <guid>/console/serveur-web-docker-nginx-php-postgres/</guid>
+      <description>Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
+ Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
+    </item>
+    
+    <item>
+      <title>Un simple site en PHP avec Docker et Nginx</title>
+      <link>/console/simple-site-php-avec-docker-nginx/</link>
+      <pubDate>Mon, 25 Feb 2019 19:53:21 +0000</pubDate>
+      
+      <guid>/console/simple-site-php-avec-docker-nginx/</guid>
+      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image on vonKrafft</title>
+    <link>/tags/image/</link>
+    <description>Recent content in Image on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 31 Dec 2017 09:14:06 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redimensionner ses images en Python</title>
+      <link>/console/redimensionner-images-python/</link>
+      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
+      
+      <guid>/console/redimensionner-images-python/</guid>
+      <description>&lt;p&gt;Lorsque l&amp;rsquo;on ajoute des illustrations a un article sur un site Web, il est important de bien la dimensionner : une image trop petite sera soit floue soit illisible, tandis qu&amp;rsquo;une image trop grande sera trop longue à charger.&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img src=&#34;/media/2017/12/f99dc7883dc86099da307531d273ada6.png&#34;&gt;
+    
+    
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
