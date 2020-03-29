@@ -1,0 +1,1404 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "tutoriels",
+        "name" : "Des prises connectées Sonoff avec Tasmota",
+        "headline" : "Des prises connectées Sonoff avec Tasmota",
+        "description" : "Guide pour flasher des modules Sonoff Basic R2 afin d\x27utiliser Tamota et obtenir des prises connectées à moins de 10 euros.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-03-29 15:23:50 \x2b0000 UTC",
+        "dateModified" : "2020-03-29 15:23:50 \x2b0000 UTC",
+        "url" : "\/tutoriels\/prises-conectees-sonoff-tasmota\/",
+        "wordCount" : "1083",
+        "keywords" : [ "Domotique","Sonoff","Tasmota","ESP8266","Google Home","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Des prises connectées Sonoff avec Tasmota</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Guide pour flasher des modules Sonoff Basic R2 afin d&#39;utiliser Tamota et obtenir des prises connectées à moins de 10 euros.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Des prises connectées Sonoff avec Tasmota"/>
+<meta name="twitter:description" content="Guide pour flasher des modules Sonoff Basic R2 afin d&#39;utiliser Tamota et obtenir des prises connectées à moins de 10 euros."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Des prises connectées Sonoff avec Tasmota" />
+<meta property="og:description" content="Guide pour flasher des modules Sonoff Basic R2 afin d&#39;utiliser Tamota et obtenir des prises connectées à moins de 10 euros." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/tutoriels/prises-conectees-sonoff-tasmota/" />
+<meta property="article:published_time" content="2020-03-29T15:23:50+00:00" />
+<meta property="article:modified_time" content="2020-03-29T18:35:51+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Des prises connectées Sonoff avec Tasmota">
+<meta itemprop="description" content="Guide pour flasher des modules Sonoff Basic R2 afin d&#39;utiliser Tamota et obtenir des prises connectées à moins de 10 euros.">
+<meta itemprop="datePublished" content="2020-03-29T15:23:50&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-29T18:35:51&#43;00:00" />
+<meta itemprop="wordCount" content="1083">
+
+
+
+<meta itemprop="keywords" content="Domotique,Sonoff,Tasmota,ESP8266,Google Home," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f&amp;text=Des%20prises%20connect%c3%a9es%20Sonoff%20avec%20Tasmota&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f&amp;title=Des%20prises%20connect%c3%a9es%20Sonoff%20avec%20Tasmota" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f&amp;title=Des%20prises%20connect%c3%a9es%20Sonoff%20avec%20Tasmota" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f&amp;title=Des%20prises%20connect%c3%a9es%20Sonoff%20avec%20Tasmota" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f&amp;description=Des%20prises%20connect%c3%a9es%20Sonoff%20avec%20Tasmota" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2ftutoriels%2fprises-conectees-sonoff-tasmota%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2020/03/a6c629a0985665748bfb63318a02a126.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h1>
+            
+        
+        
+            <p>Guide pour flasher des modules Sonoff Basic R2 afin d&#39;utiliser Tamota et obtenir des prises connectées à moins de 10 euros.</p>
+        
+    </div>
+    <div class="meta meta-tutoriels">
+        
+
+        <time class="published"
+            datetime='2020-03-29'>
+            29 mars 2020</time>
+        <span class="author"></span>
+
+        
+            <p>6 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Ayant vendu mon âme <del>au diable</del> à <em>Big Brother</em> fin 2019 lors de l&rsquo;acquisition d&rsquo;un Google Home Mini, je me suis vite aperçu que l&rsquo;usage que j&rsquo;en avais n'était pas très éloigné d&rsquo;une enceinte <em>Bluetooth</em> classique. Désireux d&rsquo;en faire plus, je me suis mis en tête d&rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.</p>
+<p>Mais alors là, plusieurs soucis. Premièrement <strong>ces prises coûtent les yeux de la tête !</strong> Non mais 30 euros minimum pour un module <code>ESP8266</code> et un (plus ou moins) joli boîtier, c&rsquo;est un peu abusé &hellip; De plus, ces prises font souvent parti de <strong>l'écosystème du fabriquant</strong>, vous obligeant à acheter tous vos appareils domotiques chez le même constructeur, avec le risque dans le cas contraire de vous retrouver avec de multiples comptes sur les différentes plate-forme en ligne. Et voilà le dernier gros soucis : le <em>Cloud</em>. Relier les appareils de <strong>mon réseau local sur Internet</strong>, impliquant souvent d&rsquo;ouvrir des ports sur la box, ça me tente pas trop &hellip;</p>
+<h2 id="une-prise-connectée-fait-maison">Une prise connectée &ldquo;fait maison&rdquo;</h2>
+<p>Pour se fabriquer une prise connectée, il me faut un relais et un module <code>ESP8266</code>. Oui mais mon module et le signal de commande du relais fonctionnent en courant faible, il me faut donc également un transformateur pour passer du <em>230V 50Hz</em> au <em>5V continu</em>. Et c&rsquo;est là qu&rsquo;est le problème.</p>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Se fabriquer sa propre prise ? Une fausse bonne idée &hellip;
+</div>
+<p>Achetés séparément et en petite quantité (je n&rsquo;ai pas besoin de centaines de prises connectées), tous ces composants coûtent finalement cher et on se rapproche des tarifs d&rsquo;une prise commercialisée pour le grand public. De plus, ces composants prennent de la place, et j&rsquo;aimerais ne pas avoir une boîte à chaussure au pied de chacune de mes lampes &hellip;</p>
+<h2 id="sonoff--tasmota-la-solution">Sonoff + Tasmota, la solution</h2>
+<p>Lorsqu&rsquo;on cherche comment faire de la domotique <em>DIY</em>, on tombe rapidement sur la pléthore de Tutos expliquant comment flasher un module <strong>Sonoff</strong>. Ces modules, basés sur un <code>ESP8285</code> (variante du <code>ESP8266</code> avec 1Mo de mémoire), ne diffèrent pas beaucoup des prises connectées classiques et disposent elles aussi d&rsquo;un écosystème <em>Cloud</em>. Mais ils ont l&rsquo;avantage d'être bon marché, facilement démontables et peu encombrants.</p>
+<p>Je me suis donc tourné vers l&rsquo;achat de deux <strong><a href="https://www.amazon.fr/gp/product/B082W4ZWLW/">Sonoff Basic R2</a></strong> pour tester cette solution. Le module est constitué d&rsquo;un relais, une puce <code>ESP8285</code> (Wi-Fi 802.11 b/g/n, 1Mo Built-in Flash), un transformateur <em>90-250V &gt; 5V</em> et fonctionne par conséquent sur le <em>230V 50Hz</em> européen. Pour s&rsquo;affranchir de l'écosystème <em>eWeLink</em> mis à disposition par <em>Sonoff</em>, il est également possible de facilement flasher le firmware du microcontrôleur pour en utiliser un autre. Et c&rsquo;est ce que j&rsquo;ai fait en m&rsquo;orientant vers <strong><a href="https://github.com/arendst/Tasmota">Tasmota</a></strong>.</p>
+<div class="supply">
+    <div class="supply-body">
+        <p class="supply-cost">10 <span>euros</span></p>
+        <p class="supply-item"><b>Temps estimé :</b> <span>30 minutes</span></p>
+        <p class="supply-item"><b>Il vous faut :</b> <span>Un module Sonoff ou tout autre appareil compatible avec Tasmota, un adaptateur FT232RL, de quoi souder des broches sur un PCB</span></p>
+    </div>
+    <ul class="supply-level">
+        <li class='level-1 '>1</li>
+        <li class='level-2 '>2</li>
+        <li class='level-3 active'>3</li>
+        <li class='level-4 '>4</li>
+        <li class='level-5 '>5</li>
+    </ul>
+</div>
+<h2 id="une-prise-connectée-pour-moins-de-10-euros">Une prise connectée pour moins de 10 euros</h2>
+<p>Donc pour une quinzaine d&rsquo;euros, nous avons deux modules qui nous permettront de faire deux prises connectées. Il nous faut également un <a href="https://www.amazon.fr/gp/product/B01N9RZK6I/">adaptateur FT232RL</a> pour envoyer le nouveau firmware sur notre module <em>Sonoff</em> via USB.</p>
+<h3 id="préparation-du-matériel">Préparation du matériel</h3>
+<p>Pour commencer, il faut démonter le module <em>Sonoff</em>, y repérer les connecteurs RX (Réception), TX (Émission), VCC et GND (alimentation 5V) et y souder des connecteurs. C&rsquo;est la seule étape délicate, mais nécessaire pour flasher le microcontrôleur. L&rsquo;idéal est d&rsquo;y souder 4 broches, mais, n&rsquo;ayant pas ça sous le coude, j&rsquo;ai utilisé des petites sections de câbles et des connecteurs <em>Dupont</em>.</p>
+
+
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2020/03/7b4c3c0367ae188987808a782619aecd.jpg" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2020/03//7b4c3c0367ae188987808a782619aecd-300x300.jpg' alt="">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2020/03/5346b0eaca0e0672536a9479111b9fdb.jpg" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2020/03//5346b0eaca0e0672536a9479111b9fdb-300x300.jpg' alt="">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2020/03/6f50d92c2bf8b65e1ec816a84746853b.jpg" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2020/03//6f50d92c2bf8b65e1ec816a84746853b-300x300.jpg' alt="">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        <figcaption class="image-caption">Préparation du module Sonoff pour y brancher l&#39;adapteur FT232RL</figcaption>
+    </figure>
+
+
+
+<h3 id="installer-tamota">Installer Tamota</h3>
+<p>Maintenant que le module est prêt à être flashé, il nous faut télécharger :</p>
+<ul>
+<li>La dernière version de <strong><a href="https://github.com/arendst/Tasmota/releases">Tasmota</a></strong> dans la langue de votre choix ;</li>
+<li>Le logiciel <strong><a href="https://github.com/tasmota/tasmotizer/releases">Tasmotizer</a></strong> ou un autre des <a href="https://tasmota.github.io/docs/#/installation/Flashing">outils recommandés</a></li>
+</ul>
+<p>Il faut ensuite connecter notre module en USB, mais également lui faire comprendre qu&rsquo;il va recevoir un nouveau firmware. Pour cela, maintenir le bouton du <em>Sonoff</em> enfoncé et connecter l&rsquo;USB. Une fois le module alimenté, nous pouvons relâcher le bouton. La procédure est très simple : après avoir lancé <em>Tasmotizer</em>, sélectionner le binaire que nous venons tout juste de télécharger, et cliquer sur <strong>Tasmotize</strong> !</p>
+
+
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2020/03//bf81e1c68a61074fc5c6fe7658576667.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2020/03//6ab642c85acabfbf87f59eaacf608b28.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+        </div>
+        
+    </figure>
+
+
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">esptool.py v2.8
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP8285
+Features: WiFi, Embedded Flash
+Crystal is 26MHz
+MAC: 24:62:ab:55:42:24
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Auto-detected Flash size: 1MB
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 3.0s
+Compressed 592768 bytes to 411116...
+Wrote 592768 bytes (411116 compressed) at 0x00000000 in 36.5 seconds (effective 130.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...</code></pre></td></tr></table>
+</div>
+</div>
+<p>Et voilà, le module est prêt à être utilisé ! Relions-y deux prises mâle et femelle et puis nous pouvons l&rsquo;alimenter. La LED devrait clignoter en vert : cela signifie que le module est prêt à être configuré.</p>
+<h3 id="configurer-tasmota">Configurer Tasmota</h3>
+<p>Lors de sa première mise sous tension, <em>Tamota</em> met en place un point d&rsquo;accès Wi-Fi nommé <code>tamota-[0-9]+</code>. Connectez-vous à ce réseau avec l&rsquo;appareil de votre choix, tel qu&rsquo;un smartphone, puis rendez-vous à l&rsquo;adresse <a href="http://192.168.4.1/">http://192.168.4.1/</a>. Sur cette page, il faudra entrer les informations suivantes:</p>
+<ul>
+<li><strong>AP1 SSId</strong> : Le nom de votre réseau Wi-Fi</li>
+<li><strong>Mot de passe AP1</strong> : Le mot de passe pour votre point d&rsquo;accès Wi-Fi</li>
+<li><strong>Nom d&rsquo;hôte</strong> (optionnel) : Le nom de la prise, par défaut <code>tamota-[0-9]+</code></li>
+</ul>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Il est possible d&rsquo;envoyer directement la configuration à l&rsquo;appareil flashé via <em>Tasmotizer</em> (configuration Wi-Fi, MQTT, module et/ou template).
+</div>
+<p>Après avoir cliqué sur &ldquo;Sauvegarder&rdquo;, le module redémarre et se connecte automatique au réseau Wi-Fi que nous venons de configurer. Il faut à présent trouver l&rsquo;adresse IP que la box a octroyé au module. Pour cela, un rapide scan réseau permet de trouver :</p>
+<pre><code class="language-terminal" data-lang="terminal">$ nmap -sn 192.168.1.0/24   
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-27 20:59 CET
+Nmap scan report for tasmota-7718 (192.168.1.5)
+Host is up (0.0097s latency).</code></pre>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-lightbulb-o"></i>&nbsp;Je vous recommande d&rsquo;attribuer une adresse IP fixe à votre prise.
+</div>
+<p>Nous pouvons maintenant nous connecter en HTTP à notre prise connectée depuis l&rsquo;adresse <code>http://192.168.1.5/</code>.</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2020/03//73e863a39bd0dae83bc7a8cd5d98d189-1024x299.png" alt="">
+            </span>
+        
+        
+    </figure>
+
+
+<p>Et voilà, une <strong>prise connectée</strong> peu onéreuse qui nous permet de commander une lampe ou tout type d&rsquo;appareil 230V (10A max.) ! Personnellement, je ne me suis pas arrêté là et je me suis installé une centrale domotique sur un <em>Raspberry Pi</em> que j&rsquo;ai relié à ma <em>Google Home Mini</em> pour un contrôle à la voix, mais ce sera l&rsquo;objet d&rsquo;un autre article :)</p>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/tutoriels">Tutoriels</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/domotique">Domotique</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/sonoff">Sonoff</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/tasmota">Tasmota</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/esp8266">ESP8266</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/google-home">Google Home</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/tutoriels/un-morpion-en-javascript/"
+                class="button big previous">Un morpion en Javascript</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

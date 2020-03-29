@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Asus Noob Overclocking Challenge on vonKrafft</title>
     <link>/tags/asus-noob-overclocking-challenge/</link>
     <description>Recent content in Asus Noob Overclocking Challenge on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 31 Mar 2012 00:20:11 +0000</lastBuildDate>
     
 	<atom:link href="/tags/asus-noob-overclocking-challenge/index.xml" rel="self" type="application/rss+xml" />
@@ -18,16 +17,17 @@
       <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
       
       <guid>/actus/asus-noob-overclocking-challenge-2012/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    
-        &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; height=&#34;150px&#34;&gt;
-    
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image left&#34;&gt;
+                &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&amp;rsquo;était sur place ; bilan et score du Challenge.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&#39;était sur place ; bilan et score du Challenge.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Actus on vonKrafft</title>
     <link>/categories/actus/</link>
     <description>Recent content in Actus on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Wed, 27 Dec 2017 18:39:41 +0000</lastBuildDate>
     
 	<atom:link href="/categories/actus/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
       
       <guid>/actus/les-7-ans-de-tuto-wibb/</guid>
-      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,16 +26,17 @@
       <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
       <guid>/actus/un-jour-a-la-paris-games-week-2013/</guid>
-      <description>&lt;figure class=&#34;pull-right&#34;&gt;
-    &lt;a href=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71-150x150.jpg&#34; alt=&#34;pgw01&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
-    &lt;/a&gt;
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image right&#34;&gt;
+                &lt;img src=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71-150x150.jpg&#34; alt=&#34;pgw01&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Depuis 2009, le parc des expos de la porte de Versailles accueille la &lt;a href=&#34;http://www.parisgamesweek.com/&#34;&gt;Paris Games Week&lt;/a&gt; (PGW). La PWG, c’est LE salon français dédié aux jeux vidéo. Il a eu lieu cette année du 30 octobre au 3 novembre 2013. Jeux en avant-première, tournois et ambiance gamer, voici un bref résumé du salon et toutes les informations sur les jeux à venir pour ceux qui n’ont pas eu la chance de pouvoir y aller.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Depuis 2009, le parc des expos de la porte de Versailles accueille la &lt;a href=&#34;http://www.parisgamesweek.com/&#34;&gt;Paris Games Week&lt;/a&gt; (PGW). La PWG, c’est LE salon français dédié aux jeux vidéo. Il a eu lieu cette année du 30 octobre au 3 novembre 2013. Jeux en avant-première, tournois et ambiance gamer, voici un bref résumé du salon et toutes les informations sur les jeux à venir pour ceux qui n’ont pas eu la chance de pouvoir y aller.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,9 +45,7 @@
       <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
       
       <guid>/actus/visitez-les-data-center-de-google/</guid>
-      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,9 +54,7 @@
       <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
       <guid>/actus/iphone-5-apple-en-mal-de-revolution/</guid>
-      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,9 +63,7 @@
       <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
       
       <guid>/actus/une-rentree-high-tech-qui-sannonce-riche/</guid>
-      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,9 +72,7 @@
       <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
       
       <guid>/actus/outlook-com-remplace-feu-hotmail-com/</guid>
-      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -91,9 +81,7 @@
       <pubDate>Mon, 02 Jul 2012 23:24:44 +0000</pubDate>
       
       <guid>/actus/surface-lintegration-made-in-microsoft/</guid>
-      <description>&lt;p&gt;L’essor des tablettes à prit Microsoft de cours, et ce dernier se devait de trouver une parade à iOS et Android. Dans cette optique, l’éditeur de système d’exploitation a effectué une refonte totale de son OS Windows pour l’ouvrir au marché des tablettes. Mais ce que personne n’attendait, c’est que ce géant des logiciels se lance dans la commercialisation de sa propre tablette. En effet, la société a annoncé le 19 juin dernier la sortie prochaine de sa tablette : Surface.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L’essor des tablettes à prit Microsoft de cours, et ce dernier se devait de trouver une parade à iOS et Android. Dans cette optique, l’éditeur de système d’exploitation a effectué une refonte totale de son OS Windows pour l’ouvrir au marché des tablettes. Mais ce que personne n’attendait, c’est que ce géant des logiciels se lance dans la commercialisation de sa propre tablette. En effet, la société a annoncé le 19 juin dernier la sortie prochaine de sa tablette : Surface.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -102,16 +90,17 @@
       <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
       
       <guid>/actus/asus-noob-overclocking-challenge-2012/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    
-        &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; height=&#34;150px&#34;&gt;
-    
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image left&#34;&gt;
+                &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&amp;rsquo;était sur place ; bilan et score du Challenge.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&#39;était sur place ; bilan et score du Challenge.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -120,11 +109,8 @@
       <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
       
       <guid>/actus/ipad-3-le-nouvel-ipad-troisieme-du-nom/</guid>
-      <description>&lt;h2 id=&#34;ipad-3-et-non-le-nouvel-ipad&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;ipad-3--et-non--le-nouvel-ipad-&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -133,9 +119,7 @@
       <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
       
       <guid>/actus/convergence-systeme-exploitation-os/</guid>
-      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -144,9 +128,7 @@
       <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
       
       <guid>/actus/steve-jobs-1955-2011/</guid>
-      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -155,16 +137,17 @@
       <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
       
       <guid>/actus/un-ecran-apple-exploitant-le-port-thunderbolt/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
-    &lt;/a&gt;
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; class=&#34;image featured left&#34;&gt;
+                &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
+            &lt;/a&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -173,9 +156,7 @@
       <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
       
       <guid>/actus/le-samsung-serie-5-le-premier-chomebook/</guid>
-      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -184,9 +165,7 @@
       <pubDate>Sun, 19 Jun 2011 21:34:09 +0000</pubDate>
       
       <guid>/actus/cure-de-minceur-pour-le-macbook-air/</guid>
-      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -195,9 +174,7 @@
       <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
       
       <guid>/actus/nouveau-defi-recyclage-informatique/</guid>
-      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -206,9 +183,7 @@
       <pubDate>Fri, 01 Apr 2011 22:40:50 +0000</pubDate>
       
       <guid>/actus/modification-organisation-ordinateur/</guid>
-      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;</description>
     </item>
     
   </channel>

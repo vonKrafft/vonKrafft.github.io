@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nas on vonKrafft</title>
+    <title>NAS on vonKrafft</title>
     <link>/tags/nas/</link>
-    <description>Recent content in Nas on vonKrafft</description>
+    <description>Recent content in NAS on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 22 Jan 2011 22:32:02 +0000</lastBuildDate>
     
 	<atom:link href="/tags/nas/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
       
       <guid>/tutoriels/recyclez-son-ordinateur/</guid>
-      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +26,7 @@
       <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
       
       <guid>/tutoriels/assemblez-votre-serveur-nas/</guid>
-      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;</description>
     </item>
     
   </channel>

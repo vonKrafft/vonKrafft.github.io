@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Boitier on vonKrafft</title>
     <link>/tags/boitier/</link>
     <description>Recent content in Boitier on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Mon, 27 Aug 2012 11:47:31 +0000</lastBuildDate>
     
 	<atom:link href="/tags/boitier/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
       
       <guid>/dossiers/fractal-design-arc-midi-test-boitier/</guid>
-      <description>&lt;p&gt;Sorti il y a un an, le Fractal Design Arc Midi, boitier commercialisé par Fractal, se place dans le moyen gamme et vise la clientèle Gamer. Conçu pour offrir un maximum de place et de modularité dans un boitier compact, il est plus petit qu’un boîtier Grand Tour mais reste tout de même plus grand qu’un boîtier Moyen Tour. Enfin, il promet surtout des performances de refroidissement accrues grâce à une large possibilité de ventilation musclée et un châssis très aéré. Tour d’horizon du Fractal Design Arc Midi Tower.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sorti il y a un an, le Fractal Design Arc Midi, boitier commercialisé par Fractal, se place dans le moyen gamme et vise la clientèle Gamer. Conçu pour offrir un maximum de place et de modularité dans un boitier compact, il est plus petit qu’un boîtier Grand Tour mais reste tout de même plus grand qu’un boîtier Moyen Tour. Enfin, il promet surtout des performances de refroidissement accrues grâce à une large possibilité de ventilation musclée et un châssis très aéré. Tour d’horizon du Fractal Design Arc Midi Tower.&lt;/p&gt;</description>
     </item>
     
   </channel>

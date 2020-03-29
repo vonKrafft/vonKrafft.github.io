@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Messagerie on vonKrafft</title>
     <link>/tags/messagerie/</link>
     <description>Recent content in Messagerie on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Thu, 02 Aug 2012 22:54:11 +0000</lastBuildDate>
     
 	<atom:link href="/tags/messagerie/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
       
       <guid>/actus/outlook-com-remplace-feu-hotmail-com/</guid>
-      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;</description>
     </item>
     
   </channel>

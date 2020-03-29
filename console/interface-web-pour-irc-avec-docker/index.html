@@ -1,266 +1,549 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Une interface Web pour IRC avec Docker
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&amp;rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&amp;rsquo;IRC s&amp;rsquo;adaptent pour continuer d&amp;rsquo;utiliser le protocole historique &amp;hellip;
-   L&amp;rsquo;objectif que nous allons essayer d&amp;rsquo;atteindre est de faire tourner avec Docker l&amp;rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat." />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Une interface Web pour IRC avec Docker" />
-    <meta name="twitter:description" content="IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&amp;rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&amp;rsquo;IRC s&amp;rsquo;adaptent pour continuer d&amp;rsquo;utiliser le protocole historique &amp;hellip;
-   L&amp;rsquo;objectif que nous allons essayer d&amp;rsquo;atteindre est de faire tourner avec Docker l&amp;rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat." />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2018/10/43118e2d20e0480d62d73d6deba5ef8f.png" />
-  
-
-
-
-
-<link rel="canonical" href="/console/interface-web-pour-irc-avec-docker/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "console",
+        "name" : "Une interface Web pour IRC avec Docker",
+        "headline" : "Une interface Web pour IRC avec Docker",
+        "description" : "IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d\x26rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d\x26rsquo;IRC s\x26rsquo;adaptent pour continuer d\x26rsquo;utiliser le protocole historique \x26hellip;\n   L\x26rsquo;objectif que nous allons essayer d\x26rsquo;atteindre est de faire tourner avec Docker l\x26rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-10-04 18:43:12 \x2b0000 UTC",
+        "dateModified" : "2018-10-04 18:43:12 \x2b0000 UTC",
+        "url" : "\/console\/interface-web-pour-irc-avec-docker\/",
+        "wordCount" : "1288",
+        "keywords" : [ "Docker","WeeChat","Glowing Bear","IRC","Nginx","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Une interface Web pour IRC avec Docker</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Chronicles of a cybersecurity engineer">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Une interface Web pour IRC avec Docker"/>
+<meta name="twitter:description" content="IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&rsquo;IRC s&rsquo;adaptent pour continuer d&rsquo;utiliser le protocole historique &hellip;
+   L&rsquo;objectif que nous allons essayer d&rsquo;atteindre est de faire tourner avec Docker l&rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Une interface Web pour IRC avec Docker" />
+<meta property="og:description" content="IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&rsquo;IRC s&rsquo;adaptent pour continuer d&rsquo;utiliser le protocole historique &hellip;
+   L&rsquo;objectif que nous allons essayer d&rsquo;atteindre est de faire tourner avec Docker l&rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/console/interface-web-pour-irc-avec-docker/" />
+<meta property="article:published_time" content="2018-10-04T18:43:12+00:00" />
+<meta property="article:modified_time" content="2018-10-04T18:43:12+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Une interface Web pour IRC avec Docker">
+<meta itemprop="description" content="IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la RFC 1459, il est de moins en moins utilisé au profit d&rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&rsquo;IRC s&rsquo;adaptent pour continuer d&rsquo;utiliser le protocole historique &hellip;
+   L&rsquo;objectif que nous allons essayer d&rsquo;atteindre est de faire tourner avec Docker l&rsquo;application Glowing Bear, une interface Web pour le client IRC WeeChat.">
+<meta itemprop="datePublished" content="2018-10-04T18:43:12&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-04T18:43:12&#43;00:00" />
+<meta itemprop="wordCount" content="1288">
+
+
+
+<meta itemprop="keywords" content="Docker,WeeChat,Glowing Bear,IRC,Nginx," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-console">
-    <header class="post-header">
-      <h1 class="post-title">Une interface Web pour IRC avec Docker</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/console/">Console</a></span>
-        @vonKrafft · 4 octobre 2018
-      </p>
-    </header>
-    <article class="post-content">
 
-<p>IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la <a href="https://tools.ietf.org/html/rfc1459">RFC 1459</a>, il est de moins en moins utilisé au profit d&rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&rsquo;IRC s&rsquo;adaptent pour continuer d&rsquo;utiliser le protocole historique &hellip;</p>
+<section id="menu">
 
-<figure>
-    <a href="/media/2018/10/65cbb229fe3468f903a2cb8eec16c8c7.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2018/10/65cbb229fe3468f903a2cb8eec16c8c7-1024x437.png" alt="IRC xkcd">
-    </a>
     
-</figure>
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f&amp;text=Une%20interface%20Web%20pour%20IRC%20avec%20Docker&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fconsole%2finterface-web-pour-irc-avec-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f&amp;title=Une%20interface%20Web%20pour%20IRC%20avec%20Docker" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f&amp;title=Une%20interface%20Web%20pour%20IRC%20avec%20Docker" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f&amp;title=Une%20interface%20Web%20pour%20IRC%20avec%20Docker" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fconsole%2finterface-web-pour-irc-avec-docker%2f&amp;description=Une%20interface%20Web%20pour%20IRC%20avec%20Docker" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fconsole%2finterface-web-pour-irc-avec-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2018/10/43118e2d20e0480d62d73d6deba5ef8f.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/console/interface-web-pour-irc-avec-docker/">Une interface Web pour IRC avec Docker</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta meta-console">
+        
+
+        <time class="published"
+            datetime='2018-10-04'>
+            4 octobre 2018</time>
+        <span class="author"></span>
+
+        
+            <p>7 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>IRC est un protocole de communication qui a récemment soufflé ses bougies pour son 30ème anniversaire. Apparu en août 1988 avec la <a href="https://tools.ietf.org/html/rfc1459">RFC 1459</a>, il est de moins en moins utilisé au profit d&rsquo;outils plus polyvalents tels que Slack ou Discord. Mais les plus fervent utilisateurs d&rsquo;IRC s&rsquo;adaptent pour continuer d&rsquo;utiliser le protocole historique &hellip;</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/10/65cbb229fe3468f903a2cb8eec16c8c7.png" class="image featured center">
+                <img src="/media/2018/10/65cbb229fe3468f903a2cb8eec16c8c7-1024x437.png" alt="IRC xkcd">
+            </a>
+        
+        
+    </figure>
+
 
 <p>L&rsquo;objectif que nous allons essayer d&rsquo;atteindre est de faire tourner avec Docker l&rsquo;application <a href="https://github.com/glowing-bear/glowing-bear">Glowing Bear</a>, une interface Web pour le client IRC WeeChat. Pour cela, nous utiliserons le <strong>dépôt officiel de Nginx</strong> et nous créerons une image pour WeeChat.</p>
-
 <p>La première chose à faire est bien sûr d&rsquo;installer <a href="https://www.docker.com/">Docker</a>. Je vais également utiliser dans cet article <strong>Docker Compose</strong>. Cela facilite la gestion des applications Docker lorsqu&rsquo;on utilise de multiples conteneurs.</p>
 
-<div class="alert alert-success" role="alert">Pour notre exemple, le site Web sera accessible à l&rsquo;adresse <a href="http://irc.docker.local/">http://irc.docker.local/</a>.</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-"></i>&nbsp;Pour notre exemple, le site Web sera accessible à l&rsquo;adresse <a href="http://irc.docker.local/">http://irc.docker.local/</a>.
+</div>
 <h2 id="le-conteneur-weechat">Le conteneur WeeChat</h2>
-
 <p>Ce conteneur sera dédié au client IRC. Basé sur <a href="https://hub.docker.com/_/alpine/">Alpine</a>, il embarquera WeeChat avec un utilisateur dédié.</p>
-
 <h3 id="une-image-docker-pour-weechat">Une image Docker pour WeeChat</h3>
-
 <p>Il n&rsquo;existe pas de dépôt officiel pour WeeChat. Afin de ne pas dépendre d&rsquo;une tierce personne sur Internet, nous allons créer une image Docker dans laquelle nous allons installer et configurer le client IRC. Pour créer une image Docker, il faut utiliser un fichier <code>Dockerfile</code> dans lequel nous précisons les opérations à réaliser pour construire l&rsquo;image. Pour plus de détails, je vous laisse aller jeter un œil à la <a href="https://docs.docker.com/engine/reference/builder/">documentation Dockerfile</a>.</p>
-
-<script src="//gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=Dockerfile"></script>
+<script type="application/javascript" src="https://gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=Dockerfile"></script>
 
 <ol>
 <li>Nous partons de l&rsquo;image officielle d&rsquo;<a href="https://hub.docker.com/_/alpine/">Alpine</a> ;</li>
@@ -275,227 +558,805 @@
 <li>Au lancement du conteneur, la commande <code>weechat</code> sera exécutée.</li>
 </ol>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-circle"></i> J&rsquo;ai défini l&rsquo;uid et le gid du compte <code>weechat</code> à <em>1000</em>. La valeur de ces uid/gid importent peu pour notre images, à condition d&rsquo;être supérieurs ou égaux à <em>1000</em>. Par la suite, nous allons créer un utilisateur sur l&rsquo;hôte avec les mêmes uid/gid, donc assurez vous que ces valeurs sont disponibles sur l&rsquo;hôte et changez-les si besoin.</div>
 
-<p>Ensuite, il nous suffit de construire notre image avec la commande <code>docker build</code> (attention de ne pas oublier le point à la fin de la commande) :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
     
-    <pre class="code"><code data-language="console">debian:~$ docker build -t vonkrafft/weechat:latest .
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-exclamation-circle"></i>&nbsp;J&rsquo;ai défini l&rsquo;uid et le gid du compte <code>weechat</code> à <em>1000</em>. La valeur de ces uid/gid importent peu pour notre images, à condition d'être supérieurs ou égaux à <em>1000</em>. Par la suite, nous allons créer un utilisateur sur l&rsquo;hôte avec les mêmes uid/gid, donc assurez vous que ces valeurs sont disponibles sur l&rsquo;hôte et changez-les si besoin.
+</div>
+<p>Ensuite, il nous suffit de construire notre image avec la commande <code>docker build</code> (attention de ne pas oublier le point à la fin de la commande) :</p>
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ docker build -t vonkrafft/weechat:latest .
 Successfully built 226da8c3ad94
 Successfully tagged vonkrafft/weechat:latest
 debian:~$ docker image ls
 REPOSITORY             TAG           IMAGE ID            SIZE
-vonkrafft/weechat      latest        226da8c3ad94        54.3MB
-</code></pre>
-</div>
-
-<h3 id="préparer-l-hôte-pour-accueillir-le-conteneur">Préparer l&rsquo;hôte pour accueillir le conteneur</h3>
-
+vonkrafft/weechat      latest        226da8c3ad94        54.3MB</code></pre>
+<h3 id="préparer-lhôte-pour-accueillir-le-conteneur">Préparer l&rsquo;hôte pour accueillir le conteneur</h3>
 <p>À ce stade, nous disposons d&rsquo;une image Docker pour notre client IRC. Il nous faut à présent créer le conteneur WeeChat qui utilisera cette image. Pour cela, nous utiliserons Docker Compose. Tout d&rsquo;abord, il nous faut un utilisateur non privilégié sur l&rsquo;hôte pour faire tourner le conteneur.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">debian:~$ groupadd -g 1000 weechat 
-debian:~$ useradd -u 1000 -M -p &#39;*&#39; -s /bin/false -g 1000 weechat
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ groupadd -g 1000 weechat 
+debian:~$ useradd -u 1000 -M -p &#39;*&#39; -s /bin/false -g 1000 weechat</code></pre>
 <p>Nous allons également avoir besoin d&rsquo;un <strong>répertoire de travail</strong>. Pour ma part, j&rsquo;aime bien avoir toutes les données relatives à Docker dans une répertoire <code>/docker</code>, mais libre à vous de stocker vos données où cela vous arrange. Dans notre répertoire de travail, nous allons stocker les fichiers de configuration et de journalisation de WeeChat.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">debian:~$ mkdir -p /docker/web-irc/weechat
-debian:~$ chown 1000:1000 /docker/web-irc/weechat
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ mkdir -p /docker/web-irc/weechat
+debian:~$ chown 1000:1000 /docker/web-irc/weechat</code></pre>
 <h3 id="configurer-et-exécuter-weechat">Configurer et exécuter WeeChat</h3>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">debian:~$ ls -lh /docker/web-irc/
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ ls -lh /docker/web-irc/
 drwxr-xr-x 2 weechat weechat 4.0K Sep 29 11:29 weechat
-debian:~$ docker run --rm -it -v &#34;/docker/web-irc/weechat:/weechat/.weechat&#34; vonkrafft/weechat:latest weechat
-</code></pre>
-</div>
-
+debian:~$ docker run --rm -it -v &#34;/docker/web-irc/weechat:/weechat/.weechat&#34; vonkrafft/weechat:latest weechat</code></pre>
 <p>Si tout fonctionne (notamment vis-à-vis des permissions sur les répertoires partagés), vous devriez avoir accès à l&rsquo;IHM de WeeChat en ligne de commande. C&rsquo;est la seule fois où vous aurez besoin d&rsquo;accéder à WeeChat via le terminal.</p>
 
-<figure>
-    <a href="/media/2018/10/fc416cc1729e3bfefc3b19a193c40c98.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2018/10/fc416cc1729e3bfefc3b19a193c40c98-1024x401.png" alt="WeeChat en ligne de commande">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/10/fc416cc1729e3bfefc3b19a193c40c98.png" class="image featured center">
+                <img src="/media/2018/10/fc416cc1729e3bfefc3b19a193c40c98-1024x401.png" alt="WeeChat en ligne de commande">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Cet accès temporaire à WeeChat en ligne de commande va nous permettre de configurer le relais de WeeChat via le port 9001. Si vous souhaitez plus de détail, je vous invite à regarder la documentation sur le protocole <a href="https://weechat.org/files/doc/devel/weechat_relay_protocol.en.html">WeeChat Relay</a>.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-comments-o"></i>
-        WeeChat
-    </div>
-    
-    <pre class="code"><code data-language="console">/relay add weechat 9001
+<pre><code class="language-terminal" data-lang="terminal">/relay add weechat 9001
 /set relay.network.password mon_super_mot_de_passe
-/exit
-</code></pre>
-</div>
-
+/exit</code></pre>
 <p>Lorsque nous quittons WeeChat, le terminal va se fermer automatiquement et le conteneur WeeChat va être détruit car nous avions lancé ce conteneur avec l&rsquo;option <code>--rm</code> (Clean-up). Pas d’inquiétude, la configuration sera persistante dans le dossier <code>/docker/web-irc/weechat</code> (un <code>ls</code> peut vous aider à vous en convaincre).</p>
-
 <h2 id="le-docker-nginx">Le docker Nginx</h2>
-
 <p>Nous allons utiliser l&rsquo;image officielle de <a href="https://hub.docker.com/_/nginx/">Nginx</a>, dans sa <strong>version stable sur Alpine</strong>. Le choix de la version est personnel, vous pouvez utiliser la version mainline ou bien vous baser sur Debian selon vos préférences.</p>
-
 <h3 id="les-répertoires-partagés">Les répertoires partagés</h3>
-
 <p>Dans notre répertoire de travail, nous allons stocker le contenu du site Web, les fichiers de journalisation du serveur Nginx, ainsi que notre fichier de configuration Nginx <code>default.conf</code>.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">debian:~$ cd /docker
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ cd /docker
 debian:~$ mkdir -p web-irc/log
 debian:~$ touch web-irc/log/access.log web-irc/log/error.log
-debian:~$ chmod a&#43;rw web-irc/log/*
-</code></pre>
-</div>
-
+debian:~$ chmod a+rw web-irc/log/*</code></pre>
 <p>Les fichiers de journalisation doivent être accessibles en lecture et en écriture par le conteneur Nginx. Alors certes, un <code>a+rw</code> n&rsquo;est pas très propre, mais c&rsquo;est la meilleure solution que j&rsquo;ai actuellement (n&rsquo;hésitez pas à m&rsquo;en suggérer d&rsquo;autres).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Il n&rsquo;est pas nécessaire de monter un répertoire pour les fichiers de journalisation. Néanmoins, je trouve pratique de les avoir à disposition sur l&rsquo;hôte et cela permet de ne pas les perdre si le conteneur est détruit.</div>
 
-<h3 id="le-fichier-de-configuration">Le fichier de configuration</h3>
-
-<p>Ensuite, il nous faut un fichier de configuration. Nous indiquons le port en écoute, le nom de domaine, le chemin des fichiers de journalisation et du code source. Il nous faut aussi préciser la redirection vers le relais WeeChat.</p>
-
-<script src="//gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=default.conf"></script>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Dans la directive <code>proxy_pass</code>, j&rsquo;ai renseigné l&rsquo;URL du relais WeeChat. Dans mon cas, mon conteneur s&rsquo;appelle <strong>weechat</strong> et Docker s&rsquo;occupera de la résolution DNS pour cette URL. Si vous avez nommé votre conteneur différemment, il vous faudra reporter ce nom dans le fichier de configuration Nginx.</div>
-
-<h3 id="le-code-source">Le code source</h3>
-
-<p>Il nous faut à présent télécharger le code source de <a href="https://github.com/glowing-bear/glowing-bear">Glowing Bear</a>. Vous pouvez télécharger l&rsquo;archive ZIP et la décompresser dans <code>/docker/web-irc/www</code>, ou alors utiliser Git pour cloner le dépôt (dans ce cas là, pensez à supprimer ou à restreindre l&rsquo;accès au répertoire <code>.git</code>).</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
     
-    <pre class="code"><code data-language="console">debian:~$ git clone https://github.com/glowing-bear/glowing-bear.git /docker/web-irc/www
-debian:~$ rm -r /docker/web-irc/www/.git
-</code></pre>
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Il n&rsquo;est pas nécessaire de monter un répertoire pour les fichiers de journalisation. Néanmoins, je trouve pratique de les avoir à disposition sur l&rsquo;hôte et cela permet de ne pas les perdre si le conteneur est détruit.
 </div>
+<h3 id="le-fichier-de-configuration">Le fichier de configuration</h3>
+<p>Ensuite, il nous faut un fichier de configuration. Nous indiquons le port en écoute, le nom de domaine, le chemin des fichiers de journalisation et du code source. Il nous faut aussi préciser la redirection vers le relais WeeChat.</p>
+<script type="application/javascript" src="https://gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=default.conf"></script>
 
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Dans la directive <code>proxy_pass</code>, j&rsquo;ai renseigné l&rsquo;URL du relais WeeChat. Dans mon cas, mon conteneur s&rsquo;appelle <strong>weechat</strong> et Docker s&rsquo;occupera de la résolution DNS pour cette URL. Si vous avez nommé votre conteneur différemment, il vous faudra reporter ce nom dans le fichier de configuration Nginx.
+</div>
+<h3 id="le-code-source">Le code source</h3>
+<p>Il nous faut à présent télécharger le code source de <a href="https://github.com/glowing-bear/glowing-bear">Glowing Bear</a>. Vous pouvez télécharger l&rsquo;archive ZIP et la décompresser dans <code>/docker/web-irc/www</code>, ou alors utiliser Git pour cloner le dépôt (dans ce cas là, pensez à supprimer ou à restreindre l&rsquo;accès au répertoire <code>.git</code>).</p>
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ git clone https://github.com/glowing-bear/glowing-bear.git /docker/web-irc/www
+debian:~$ rm -r /docker/web-irc/www/.git</code></pre>
 <h2 id="finaliser-les-conteneurs">Finaliser les conteneurs</h2>
-
 <p>Maintenant que notre image WeeChat est prête, que nos répertoires partagés sont créés et configurés et que notre fichier de configuration Nginx est terminé, nous pouvons lancer les deux conteneurs qui nous permettront d&rsquo;avoir une IHM Web pour notre client IRC. Nous pouvons donc rédiger le fichier <code>docker-compose.yml</code> qui nous permettra de gérer nos conteneurs. À noter que nous utiliserons l&rsquo;option <strong>tty</strong> pour le conteneur WeeChat car le client IRC a besoin d&rsquo;un terminal pour s’exécuter.</p>
-
-<script src="//gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=docker-compose.yml"></script>
+<script type="application/javascript" src="https://gist.github.com/vonKrafft/bc74bd9c90c6bbe19f07729c42ffc0f4.js?file=docker-compose.yml"></script>
 
 <p>Pour terminer, la commande <code>docker-compose up -d</code> va créer et lancer les conteneurs. Si tous se passe bien, vous devriez donc avoir deux conteneur en cours d&rsquo;exécution et le conteneur Nginx devrait exposer le port TCP/80 vous permettant d&rsquo;accéder à l&rsquo;URL <a href="http://irc.docker.local/">http://irc.docker.local/</a>.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-triangle"></i> Attention !!! En l&rsquo;état, le conteneur Nginx héberge votre serveur HTTP sur le port TCP/80, donc non chiffré. Je vous conseille fortement de mettre en place le HTTPS (surtout si votre site est exposé sur Internet). Par exemple, vous pouvez utiliser un proxy : <a href="https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/">LetsEncrypt container to use with nginx as proxy</a>.</div>
 
-<figure>
-    <a href="/media/2018/10/db25bfb420b2f3d4d9df2ee1d7c91135.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2018/10/db25bfb420b2f3d4d9df2ee1d7c91135-1024x339.png" alt="Glowing Bear authentication form">
-    </a>
     
-</figure>
+    
+
+
+
+
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-triangle"></i>&nbsp;Attention !!! En l'état, le conteneur Nginx héberge votre serveur HTTP sur le port TCP/80, donc non chiffré. Je vous conseille fortement de mettre en place le HTTPS (surtout si votre site est exposé sur Internet). Par exemple, vous pouvez utiliser un proxy : <a href="https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/">LetsEncrypt container to use with nginx as proxy</a>.
+</div>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/10/db25bfb420b2f3d4d9df2ee1d7c91135.png" class="image featured center">
+                <img src="/media/2018/10/db25bfb420b2f3d4d9df2ee1d7c91135-1024x339.png" alt="Glowing Bear authentication form">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Et voilà, votre interface Web pour IRC est en place. Pour vous authentifier, utilisez l&rsquo;adresse <code>irc.docker.local</code> (le hostname du serveur sur lequel le conteneur Nginx est lancé) avec le port <code>80</code> (ou 443 si vous avez mis en place le HTTPS) et le mot de passe défini plus haut (dans mon cas <code>mon_super_mot_de_passe</code>).</p>
 
-<figure>
-    <a href="/media/2018/10/34c898d3d2cc51387f3e9957abb6c529.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2018/10/34c898d3d2cc51387f3e9957abb6c529-1024x494.png" alt="Glowing Bear interface">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
 
-<hr />
+    
+    
+    
+    
+    
 
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/10/34c898d3d2cc51387f3e9957abb6c529.png" class="image featured center">
+                <img src="/media/2018/10/34c898d3d2cc51387f3e9957abb6c529-1024x494.png" alt="Glowing Bear interface">
+            </a>
+        
+        
+    </figure>
+
+
+<hr>
 <h4 id="sources">Sources</h4>
-
 <ol>
 <li><a href="https://hub.docker.com/_/nginx/">Official build of Nginx</a> (EN)</li>
 <li><a href="https://docs.docker.com/">Docker Documentation</a> (EN)</li>
 <li><a href="https://weechat.org/doc/">WeeChat Documentation</a> (EN, FR et autres)</li>
 <li><a href="https://dan.lousqui.fr/monter-une-passerelle-de-communication-irc-weechat-glowing-bear-bitlbee-fr.html">Monter une passerelle de communication IRC/WeeChat/Glowing Bear/Bitlbee</a> (FR)</li>
 </ol>
-</article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/docker"><span class="tag">Docker</span></a></li>
-        
-          <li><a href="/tags/weechat"><span class="tag">WeeChat</span></a></li>
-        
-          <li><a href="/tags/glowing-bear"><span class="tag">Glowing Bear</span></a></li>
-        
-          <li><a href="/tags/irc"><span class="tag">IRC</span></a></li>
-        
-          <li><a href="/tags/nginx"><span class="tag">Nginx</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>165</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/console">Console</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/weechat">WeeChat</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/glowing-bear">Glowing Bear</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/irc">IRC</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/nginx">Nginx</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>542</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/console/redimensionner-images-python/"
+                class="button big previous">Redimensionner ses images en Python</a></li>
+    
+
+    
+        <li><a href="/console/simple-site-php-avec-docker-nginx/"
+                class="button big next">Un simple site en PHP avec Docker et Nginx</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

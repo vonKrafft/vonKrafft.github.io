@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tuto Wibb on vonKrafft</title>
     <link>/tags/tuto-wibb/</link>
     <description>Recent content in Tuto Wibb on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Wed, 27 Dec 2017 18:39:41 +0000</lastBuildDate>
     
 	<atom:link href="/tags/tuto-wibb/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
       
       <guid>/actus/les-7-ans-de-tuto-wibb/</guid>
-      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;</description>
     </item>
     
   </channel>

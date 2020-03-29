@@ -1,0 +1,1458 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "securite",
+        "name" : "Gérer ses mots de passe avec PGP",
+        "headline" : "Gérer ses mots de passe avec PGP",
+        "description" : "Si de nouvelles méthodes d\x27authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-07-18 23:40:17 \x2b0000 UTC",
+        "dateModified" : "2018-07-18 23:40:17 \x2b0000 UTC",
+        "url" : "\/securite\/gerer-ses-mots-de-passe-avec-pgp\/",
+        "wordCount" : "1986",
+        "keywords" : [ "PGP","OpenPGP","GnuPG","GPG","Pass","Git","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Gérer ses mots de passe avec PGP</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Si de nouvelles méthodes d&#39;authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gérer ses mots de passe avec PGP"/>
+<meta name="twitter:description" content="Si de nouvelles méthodes d&#39;authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Gérer ses mots de passe avec PGP" />
+<meta property="og:description" content="Si de nouvelles méthodes d&#39;authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/securite/gerer-ses-mots-de-passe-avec-pgp/" />
+<meta property="article:published_time" content="2018-07-18T23:40:17+00:00" />
+<meta property="article:modified_time" content="2018-07-18T23:40:17+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Gérer ses mots de passe avec PGP">
+<meta itemprop="description" content="Si de nouvelles méthodes d&#39;authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable.">
+<meta itemprop="datePublished" content="2018-07-18T23:40:17&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-18T23:40:17&#43;00:00" />
+<meta itemprop="wordCount" content="1986">
+
+
+
+<meta itemprop="keywords" content="PGP,OpenPGP,GnuPG,GPG,Pass,Git," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f&amp;text=G%c3%a9rer%20ses%20mots%20de%20passe%20avec%20PGP&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f&amp;title=G%c3%a9rer%20ses%20mots%20de%20passe%20avec%20PGP" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f&amp;title=G%c3%a9rer%20ses%20mots%20de%20passe%20avec%20PGP" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f&amp;title=G%c3%a9rer%20ses%20mots%20de%20passe%20avec%20PGP" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f&amp;description=G%c3%a9rer%20ses%20mots%20de%20passe%20avec%20PGP" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fsecurite%2fgerer-ses-mots-de-passe-avec-pgp%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2018/07/12df53fea8b3adfa6c2ec456dd22e204.jpg)"></div>
+    <div class="title">
+        
+            <h1><a href="/securite/gerer-ses-mots-de-passe-avec-pgp/">Gérer ses mots de passe avec PGP</a></h1>
+            
+        
+        
+            <p>Si de nouvelles méthodes d&#39;authentification font peu à peu leur apparission, les mots de passe sont encore largement utilisés. Mais face à la croissance de plus en plus importante de services nécessitant un mot de passe, comment gérer efficacement nos identifiants sans nous rendre vulnérable.</p>
+        
+    </div>
+    <div class="meta meta-securite">
+        
+
+        <time class="published"
+            datetime='2018-07-18'>
+            18 juillet 2018</time>
+        <span class="author"></span>
+
+        
+            <p>10 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Si de nouvelles méthodes d&rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J'évoquais déjà dans mon article sur <a href="/dossiers/mots-de-passe-bonnes-pratiques/">les bonnes pratiques en matière de mot de passe</a> comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&rsquo;empêchera pas l&rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &hellip;</p>
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/07/12df53fea8b3adfa6c2ec456dd22e204.jpg" class="image featured center">
+                <img src="/media/2018/07/12df53fea8b3adfa6c2ec456dd22e204.jpg" alt="">
+            </a>
+        
+        
+    </figure>
+
+
+<h2 id="une-avalanche-de-mots-de-passe">Une avalanche de mots de passe</h2>
+<p>Face à une croissance de plus en plus importante du nombre de mots de passe nécessaires dans la vie de tous les jours, l&rsquo;Homo Sapiens s&rsquo;est adapté et a élaboré plusieurs méthodes pour ne pas oublier ces précieux sésames. Vous pouvez par exemple :</p>
+<ul>
+<li>Mettre le même mot de passe partout. Après tout, pourquoi se casser la tête à inventer de nouveaux mots de passe lorsqu&rsquo;il suffit de réutiliser celui que l&rsquo;on connait déjà par cœur ? Les adeptes de cette méthode utilisent souvent le prénom de leur animal de compagnie comme mot de passe universel &hellip;</li>
+<li>Noter vos mots de passe sur des post-it, que vous planquerez discrètement sous le clavier. L&rsquo;homme moderne souhaitant s&rsquo;affranchir du support papier, vous pouvez également de voir un fichier texte enregistrer sur le Bureau, habilement nommé &ldquo;motsdepasse.txt&rdquo;, ou un mail dans &ldquo;Brouillon&rdquo; avec l&rsquo;ensembles des identifiants.</li>
+<li>Incrémenter son mot de passe et/ou utiliser une base commune suivie ou préfixée par le nom du service auquel le mot de passe donne accès. Cela peut donner des mots de passe assez long et donc si cela vous permet de retenir vos identifiants, c&rsquo;est une bonne méthode.</li>
+<li>Utiliser des mots de passe de 20 caractères avec une entropie importante que vous retenez facilement car votre cerveau s&rsquo;apparente à un supercalculateur avec une mémoire immuable et illimitée.</li>
+</ul>
+<p>Vous l&rsquo;aurez compris, ce n&rsquo;est pas facile de jongler avec cette multitude de mots de passe. Si ce n'était pas assez clair, je ne recommande aucune des méthodes citées ci-dessus et si vous souhaitez de bonnes règles pour vos mots de passe, je vous conseille de jeter un œil aux <a href="https://www.ssi.gouv.fr/guide/mot-de-passe/">recommandations de l&rsquo;ANSSI</a>. Pour allier sécurité et convivialité, il existe les gestionnaires de mots de passe. Vous ne retenez plus qu&rsquo;un seul mot de passe qui sera utilisé pour chiffrer/déchiffrer tous les autres sur votre PC. Ainsi, vous pouvez avoir des mots de passe complexes différents pour chacun des services que vous utilisé sans avoir à tous les connaître.</p>
+<p>Bien sûr, en plus de choisir un mot de passe maître robuste (une passphrase de plus de 20 caractères faisant l&rsquo;affaire), il convient de bien choisir son gestionnaire de mot de passe afin de sélectionner un éditeur de confiance utilisant des algorithmes de chiffrement éprouvés. Parmi les gestionnaires les plus utilisés, je pourrais citer <a href="https://keepass.info/">KeePass</a>, <a href="https://1password.com/">1Password</a>, <a href="https://www.lastpass.com/fr">LastPass</a> ou encore <a href="https://www.dashlane.com/">Dashlane</a>.</p>
+
+
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07/55df45851ba0b5217648e7f6781cfe51-150x150.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07/ef9c4dbcfa0b6025c36f40ab2dfc02bf-150x150.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07/d08f7c91fcf5bd23107a3e9bef4b3bea-150x150.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+            
+                
+                    <span class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07/8177e32666901164e845c4829dd6a72d-150x150.png' alt="">
+                    </span>
+                
+                
+            
+            
+        
+        </div>
+        
+    </figure>
+
+
+
+<h2 id="chiffrer-nos-mots-de-passe">Chiffrer nos mots de passe</h2>
+<p>Dans un précédent article, j&rsquo;ai expliqué comment <a href="/console/pgp-generer-des-cles-et-configurer-une-yubikey/">générer des clés PGP et configurer une Yubikey</a>. Avec notre clé PGP et GnuPG, il est possible de chiffrer des documents. Ainsi, nous pouvons créer un fichier avec tous nos mots de passe et le chiffrer avec PGP.</p>
+<pre><code class="language-terminal" data-lang="terminal">debian:~$ vim motsdepasse.txt                                                          # Modifier notre fichier avec les mots de passe
+debian:~$ gpg2 --recipient $GPGKEY --output motsdepasse.gpg --encrypt motsdepasse.txt  # Chiffrer le fichier
+debian:~$ rm motsdepasse.txt                                                           # Supprimer le fichier texte non chiffré
+debian:~$ gpg2 --output motsdepasse.txt --decrypt motsdepasse.gpg                      # Lorsqu&#39;on en a bseoin, déchiffrer le fichier</code></pre>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Pour GnuPG 1.0 et 2.0, l&rsquo;algorithme de chiffrement par défaut est <strong>Cast5</strong>, pour GnuPG 2.1 c&rsquo;est <strong>AES-128</strong>. Il est possible de choisir un autre algorithme lors du chiffrement avec l&rsquo;option <code>--cipher-algo</code> ou modifier l&rsquo;algorithme par défaut dans le fichier de configuration <code>~/.gnupg/gpg.conf</code> avec les directives <code>personal-cipher-preferences</code> et <code>s2k-cipher-algo</code>.
+</div>
+<p>Bon, on est bien content avec notre fichier, mais si l&rsquo;on doit déchiffrer à chaque fois notre fichier, rechercher le mot de passe que l&rsquo;on souhaite, copier/coller et  puis chiffrer à nouveau le fichier &hellip; on va vite s&rsquo;en lasser et revenir à nos règles toutes pourries citées plus haut. Heureusement, quelqu&rsquo;un a déjà planché sur un gestionnaire de mot de passe basé sur PGP.</p>
+<h2 id="pass-le-gestionnaire-de-mot-de-passe-unix-standard">Pass, le gestionnaire de mot de passe UNIX standard</h2>
+<p>Avec <a href="https://www.passwordstore.org/"><code>pass</code></a>, chaque mot de passe réside dans un fichier GPG chiffré nommé selon le titre du site ou de la ressource nécessitant le mot de passe. Ces fichiers chiffrés sont organisés dans des répertoires dont l&rsquo;arborescence est laissé libre à l&rsquo;utilisateur, le tout stocké dans le dossier <code>~/.password-store</code>. Il est possible de synchroniser les mots de passe d&rsquo;un ordinateur à l&rsquo;autre en utilisant Git. Enfin, <code>pass</code> embarque des commandes simples afin de manipuler les mots de passe pour ajouter, modifier et copier les fichiers avec du chiffrement/déchiffrement à la volé.</p>
+<h3 id="initialiser-un-répertoire-de-stockage-pour-les-mots-de-passe">Initialiser un répertoire de stockage pour les mots de passe</h3>
+<p>Nous allons créer un répertoire de stockage de mot de passe pour y enregistrer nos mots de passe personnel, mais aussi les mots de passe d&rsquo;autres personnes et des mots de passe commun. Imaginons une équipe constituée d&rsquo;Alice, Bob et John qui souhaiterais mettre en place une gestion centralisée de leurs mots de passe. Alice, la chef de projet, décide d&rsquo;utiliser <code>pass</code> puisqu&rsquo;ils ont chacun une clé PGP.</p>
+<pre><code class="language-terminal" data-lang="terminal">alice:~$ sudo apt install git gpg2 pass      # Installation
+alice:~$ pass init alice@awesome-project.fr  # Création d&#39;un répertoire de stockage de mot de passe
+alice:~$ pass init $GPGKEY
+mkdir: created directory &#39;/home/alice/.password-store/&#39;
+Password store initialized for alice@awesome-project.fr
+alice:~$ ls -lah /home/alice/.password-store/
+total 12K
+drwx------  2 alice alice 4.0K Jun 26 20:51 .
+drwxr-xr-x 39 alice alice 4.0K Jun 26 20:56 ..
+-rw-------  1 alice alice   41 Jun 26 20:51 .gpg-id</code></pre>
+<p>Le dossier <code>.password-store</code> a été créé dans le répertoire d&rsquo;Alice et le fichier <code>.gpg-id</code> contient l&rsquo;identité d&rsquo;Alice (ici son adresse mail). Tous les mots de passe qui seront ajoutés avec <code>pass</code> seront chiffrés avec la clé d&rsquo;Alice.</p>
+<pre><code class="language-terminal" data-lang="terminal">alice:~$ pass init -p alice alice@awesome-project.fr   # Initialisation d&#39;un répertoire pour Alice
+alice:~$ pass init -p bob bob@awesome-project.fr       # Initialisation d&#39;un répertoire pour Bob
+alice:~$ pass init -p john john@awesome-project.fr     # Initialisation d&#39;un répertoire pour John
+alice:~$ pass init -p shared alice@awesome-project.fr  # Initialisation d&#39;un répertoire partagé
+alice:~$ echo &#34;bob@awesome-project.fr&#34; &gt;&gt; ~/.password-store/shared/.gpg-id
+alice:~$ echo &#34;john@awesome-project.fr&#34; &gt;&gt; ~/.password-store/shared/.gpg-id</code></pre>
+<p>A présent, on dispose de quatre répertoires dans <code>~/.password-store</code>, chacun comportant un fichier <code>.gpg-id</code>. Nous avons un répertoire pour Alice, un pour Bob, un pour John et un partagé. Les fichiers <code>.gpg-id</code> des répertoires d&rsquo;Alice, Bob et John ne contiennent que l&rsquo;identité de la clé de leurs propriétaires respectifs. Ainsi, les mots de passe ajoutés dans le répertoire de Bob (par exemple) seront chiffrés avec la clé publique de Bob et donc seul ce dernier pourra les déchiffrer.</p>
+<p>Le fichier <code>.gpg-id</code> du réperoire <code>~/.password-store/shared</code> contient les identités des trois clés PGP d&rsquo;Alice, Bob et John. Ainsi, les mots de passe ajoutés dans ce répertoire seront chiffrés avec ces trois clés et donc toute l'équipe pourra les déchiffrer.</p>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Au moment de chiffrer, <code>pass</code> va rechercher le premier fichier <code>.gpg-id</code> qu&rsquo;il trouvera en remontant l&rsquo;arborescence jusqu'à la racine du répertoire <code>~/.password-store</code>. Si aucun fichier <code>.gpg-id</code> n&rsquo;est trouvé ou si ce dernier est vide, une erreur indiquera d&rsquo;utiliser <code>pass init</code>.
+</div>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-exclamation-circle"></i>&nbsp;Attention, si vous avez bien suivi, seul l&rsquo;identité d&rsquo;Alice est présent dans <code>~/.password-store/.gpg-id</code>. Tous mots de passe créé ailleurs que dans <code>alice</code>, <code>bob</code>, <code>john</code> ou <code>shared</code> sera chiffré avec la clé d&rsquo;Alice et donc lisible par cette dernière. Par conséquent, si Bob ou John ajoutent des mots de passe ailleurs que dans leurs répertoires, ils seront lisibles par Alice. L&rsquo;idéal est de supprimer le fichier <code>~/.password-store/.gpg-id</code>.
+</div>
+<h3 id="partage-des-mots-de-passe-chiffrés-avec-git">Partage des mots de passe chiffrés avec Git</h3>
+<p>A présent que l&rsquo;arborescence du répertoire <code>~/.password-store</code> est créé, Alice voudrais le partager avec Bob et John. Pour cela, <code>pass</code> intègre les commandes de <code>git</code> pour versionner les modifications des mots de passe et synchroniser le contenu avec un serveur Git.</p>
+<pre><code class="language-terminal" data-lang="terminal">alice:~$ pass git init                                                      # Initialisation d&#39;un dépôt Git
+alice:~$ pass git remote add origin awesome-project.fr:/git/pass-store.git  # URL du serveur Git sur lequel centraliser les mots de passe</code></pre>
+<h3 id="ajout-ou-suppression-dune-identité">Ajout ou suppression d&rsquo;une identité</h3>
+<p>L'équipe vient d&rsquo;embaucher Jane et donc Alice voudrais lui partager les mots de passe de <code>shared</code>. Pour cela, elle ajoute l&rsquo;identité de Jane dans <code>shared/.gpg-id</code>. Les nouveaux mots de passe créé dans <code>shared</code> sont à présent bien chiffés avec les quatre clés, seulement voilà, les anciens mots de passe ne sont pas lisibles par Jane. Pour cela, il faut réinitialiser le répertoire pour chiffrer les mots de passe avec toutes les clés PGP autorisées.</p>
+<pre><code class="language-terminal" data-lang="terminal">alice:~$ pass init -p jane jane@awesome-project.fr                           # Création d&#39;un répertoire privée pour Jane
+alice:~$ echo &#34;jane@awesome-project.fr&#34; &gt;&gt; ~/.password-store/shared/.gpg-id  # Ajout de l&#39;identité de Jane pour le répertoire shared
+alice:~$ pass init -p shared $(cat ~/.password-store/shared/.gpg-id)         # Réinitialisation du répertoire partagé</code></pre>
+<p>C&rsquo;est la même manipulation lorsque l&rsquo;on souhaite retirer une clé PGP : après avoir retiré l&rsquo;identité dans le fichier <code>shared/.gpg-id</code>, il suffit de lancer la commande <code>pass init -p shared $(cat ~/.password-store/shared/.gpg-id)</code>. Bien sûr, je vous recommande également de changer les mots de passe concernés après avoir mis à jour le fichier <code>.gpg-id</code>.</p>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Dans l&rsquo;exemple ci-dessus, je crée un seul répertoire partagé pour tout le monde. Vous pouvez bien sûr créer autant de répertoires partagés que vous souhaitez, avec autant de combinaisons d&rsquo;identités désirées.
+</div>
+<p>Personnellement, j&rsquo;adore <code>pass</code> pour sa simplicité de conception et d&rsquo;utilisation. Quand on y pense, ce n&rsquo;est rien de plus que <code>gpg</code>, <code>git</code> et quelques commandes de base pour copier, modifier et supprimer des fichiers. Vous pouvez même utiliser votre éditeur de texte préféré pour modifier les mots de passe, <code>pass</code> utilise la variable d&rsquo;environnement <code>$EDITOR</code> (<code>vi</code> par défaut).</p>
+<p>Je n&rsquo;ai pas détaillé toutes les fonctionnalités de <code>pass</code>, et je vous invite à regarder le site officiel de <a href="https://www.passwordstore.org/">Standard UNIX Password Manager</a>. Il est aussi possible d&rsquo;utiliser des <a href="https://www.passwordstore.org/#extensions">plugins pour <code>pass</code></a>, pour par exemple importer ses mots de passe depuis un autre gestionnaire de mot de passe, utiliser <code>pass</code> avec <code>dmenu</code> (i3), ajouter des extensions Chrome/Firefox pour bénéficier de ses mots de passe directement dans
+son navigateur &hellip;</p>
+<h2 id="qtpass-un-gui-pour-gérer-ses-mots-de-passe">QtPass, un GUI pour gérer ses mots de passe</h2>
+<p>Nos mots de passe sont à présent protégés chiffrés avec nos clés PGP, bien organisés dans <code>~/.password-store</code>, et nous disposons de plusieurs commandes pour gérer leur organisation. Mais gérer ses mots de passe au travers d&rsquo;un émulateur de terminal n&rsquo;est pas forcément au goût de chacun et il serait agréable de bénéficier d&rsquo;une interface graphique pour <code>pass</code>. C&rsquo;est ce que propose <a href="">QtPass</a>, en se basant sur <code>git</code>/<code>gpg</code> ou bien sur <code>pass</code>.</p>
+<pre><code>&lt;figure&gt;
+    
+        &lt;a href=&quot;/media/2018/07/ace5cefdb350559e106bedfd03b3ee4d.png&quot; class=&quot;image featured center&quot;&gt;
+            &lt;img src=&quot;/media/2018/07/ace5cefdb350559e106bedfd03b3ee4d.png&quot; alt=&quot;&quot;&gt;
+        &lt;/a&gt;
+    
+    
+&lt;/figure&gt;
+</code></pre>
+<h2 id="nos-mots-de-passe-nomades-avec-android">Nos mots de passe nomades avec Android</h2>
+<p>Un gestionnaire de mot de passe sur son PC, c&rsquo;est pratique. Mais lorsqu&rsquo;il s&rsquo;agit de s&rsquo;authentifier sur notre téléphone/tablette, cela devient vite fastidieux de recopier nos sésames de 20 caractères aléatoires (si ce n&rsquo;est plus). Il serait donc intéressant de bénéficier d&rsquo;une application pour gérer ses mots de passe sur nos appareils nomades.</p>
+<p>L&rsquo;implémentation de <code>pass</code> sur Android est <a href="https://play.google.com/store/apps/details?id=com.zeapo.pwdstore">Password Store</a>. Pour les curieux, le code source de l&rsquo;application est disponible sur <a href="https://github.com/zeapo/Android-Password-Store">GitHub zeapo/Android-Password-Store</a>.</p>
+
+
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2018/07/cfeb30ebaab19c8e177d372eea3ccfa3.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07//cfeb30ebaab19c8e177d372eea3ccfa3-300x533.png' alt="">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/07/45e3706caddbbcf13c47fec36a40d4d1.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07//45e3706caddbbcf13c47fec36a40d4d1-300x533.png' alt="">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/07/e0ab24074a3b1be066c969707ad99170.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/07//e0ab24074a3b1be066c969707ad99170-300x535.png' alt="">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        <figcaption class="image-caption">Application Password Store pour Android</figcaption>
+    </figure>
+
+
+
+<p>Cela permet de synchroniser ses mots de passe avec Git et de gérer leur stockage sur le téléphone. Bien sûr, il vous faudra une clé PGP sur votre téléphone et vous aurez besoin pour cela de l&rsquo;application <a href="https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain">OpenKeychain</a> afin de générer et utiliser une clé PGP. Cette application est également compatible avec les <a href="/console/pgp-generer-des-cles-et-configurer-une-yubikey/">Yubikey</a> et il vous suffira d&rsquo;utiliser NFC
+et votre Yubikey à chaque fois que vous aurez besoin de déchiffrer un mot de passe.</p>
+<h2 id="les-autres-plateformes">Les autres plateformes</h2>
+<p>Je n&rsquo;ai pas pu tester <code>pass</code> sur les autres plateformes, n&rsquo;ayant pas de PC, téléphone ou tablette avec ces systèmes d&rsquo;exploitation. Mais il existe des clients compatibles pour (presque) toutes les plateformes, parmi lesquelles :</p>
+<ul>
+<li>Microsoft Windows avec <a href="https://github.com/mbos/Pass4Win">Pass4Win</a></li>
+<li>Mac OS avec <a href="https://git.zx2c4.com/password-store/tree/contrib/pass.applescript">pass.applescript</a></li>
+<li>iOS avec l&rsquo;application <a href="https://mssun.github.io/passforios/">passforios</a></li>
+<li><a href="https://www.passwordstore.org/#other">Liste complète des clients compatibles</a></li>
+</ul>
+<hr>
+<h4 id="sources">Sources</h4>
+<ol>
+<li><a href="https://www.passwordstore.org/">Pass: The Standard Unix Password Manager</a> (EN)</li>
+<li><a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592">Using pass in a team</a> (EN)</li>
+</ol>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/securite">Securite</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/pgp">PGP</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/openpgp">OpenPGP</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/gnupg">GnuPG</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/gpg">GPG</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/pass">Pass</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/git">Git</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>619</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/securite/pgp-generer-des-cles-et-configurer-une-yubikey/"
+                class="button big previous">PGP : Générer des clés et configurer une Yubikey</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

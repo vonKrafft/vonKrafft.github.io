@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tic Tac Toe on vonKrafft</title>
     <link>/tags/tic-tac-toe/</link>
     <description>Recent content in Tic Tac Toe on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Thu, 12 Dec 2013 17:23:50 +0000</lastBuildDate>
     
 	<atom:link href="/tags/tic-tac-toe/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
       <guid>/tutoriels/un-morpion-en-javascript/</guid>
-      <description>&lt;p&gt;On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.&lt;/p&gt;</description>
     </item>
     
   </channel>

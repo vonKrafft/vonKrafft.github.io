@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pass on vonKrafft</title>
     <link>/tags/pass/</link>
     <description>Recent content in Pass on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Wed, 18 Jul 2018 23:40:17 +0000</lastBuildDate>
     
 	<atom:link href="/tags/pass/index.xml" rel="self" type="application/rss+xml" />
@@ -14,13 +13,11 @@
     
     <item>
       <title>Gérer ses mots de passe avec PGP</title>
-      <link>/console/gerer-ses-mots-de-passe-avec-pgp/</link>
+      <link>/securite/gerer-ses-mots-de-passe-avec-pgp/</link>
       <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/console/gerer-ses-mots-de-passe-avec-pgp/</guid>
-      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&amp;rsquo;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>/securite/gerer-ses-mots-de-passe-avec-pgp/</guid>
+      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&#39;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;</description>
     </item>
     
   </channel>

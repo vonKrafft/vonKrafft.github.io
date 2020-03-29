@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Console on vonKrafft</title>
     <link>/categories/console/</link>
     <description>Recent content in Console on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 09 Mar 2019 10:21:54 +0000</lastBuildDate>
+    <language>fr-fr</language>
+    <lastBuildDate>Mon, 18 Mar 2019 20:21:54 +0000</lastBuildDate>
     
 	<atom:link href="/categories/console/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +14,11 @@
     <item>
       <title>Serveur Web avec Docker : Nginx, PHP et PostgreSQL</title>
       <link>/console/serveur-web-docker-nginx-php-postgres/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
       <guid>/console/serveur-web-docker-nginx-php-postgres/</guid>
       <description>Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
- Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
+&amp;nbsp;Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.     Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
     </item>
     
     <item>
@@ -28,9 +27,7 @@
       <pubDate>Mon, 25 Feb 2019 19:53:21 +0000</pubDate>
       
       <guid>/console/simple-site-php-avec-docker-nginx/</guid>
-      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,35 +41,6 @@
     </item>
     
     <item>
-      <title>Gérer ses mots de passe avec PGP</title>
-      <link>/console/gerer-ses-mots-de-passe-avec-pgp/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
-      
-      <guid>/console/gerer-ses-mots-de-passe-avec-pgp/</guid>
-      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&amp;rsquo;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>PGP : Générer des clés et configurer une Yubikey</title>
-      <link>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</link>
-      <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
-      
-      <guid>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</guid>
-      <description>&lt;p&gt;Ayant récemment acquis une &lt;a href=&#34;https://www.yubico.com/product/yubikey-neo/&#34;&gt;Yubikey NEO&lt;/a&gt;, j&amp;rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&amp;rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&amp;rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&amp;rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&amp;rsquo;ont permis d&amp;rsquo;y arriver (on ne sait jamais, ça pourra servir à d&amp;rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).&lt;/p&gt;
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg&#34;&gt;
-    
-    
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Redimensionner ses images en Python</title>
       <link>/console/redimensionner-images-python/</link>
       <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
@@ -80,25 +48,44 @@
       <guid>/console/redimensionner-images-python/</guid>
       <description>&lt;p&gt;Lorsque l&amp;rsquo;on ajoute des illustrations a un article sur un site Web, il est important de bien la dimensionner : une image trop petite sera soit floue soit illisible, tandis qu&amp;rsquo;une image trop grande sera trop longue à charger.&lt;/p&gt;
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2017/12/f99dc7883dc86099da307531d273ada6.png&#34;&gt;
-    
-    
-&lt;/figure&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Exploiter un &#34;.git&#34; accessible sur un site Web</title>
-      <link>/console/repertoire-git-accessible/</link>
-      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
-      
-      <guid>/console/repertoire-git-accessible/</guid>
-      <description>&lt;p&gt;Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : &lt;em&gt;chmod 777&lt;/em&gt; sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs &lt;em&gt;Apache&lt;/em&gt; et &lt;em&gt;MySQL&lt;/em&gt; très laxistes et surtout un répertoire &lt;code&gt;.git&lt;/code&gt; avec du directory listing …&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;span class=&#34;image center&#34;&gt;
+                &lt;img src=&#34;/media/2017/12/f99dc7883dc86099da307531d273ada6.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -107,9 +94,7 @@
       <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
       
       <guid>/console/script-apercu-dun-projet-git/</guid>
-      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -118,9 +103,7 @@
       <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
       <guid>/console/activer-http2-nginx-debian/</guid>
-      <description>&lt;p&gt;Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc1945.txt&#34;&gt;mai 1996&lt;/a&gt; et HTTP/1.1 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc2068.txt&#34;&gt;janvier 1997&lt;/a&gt; il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc1945.txt&#34;&gt;mai 1996&lt;/a&gt; et HTTP/1.1 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc2068.txt&#34;&gt;janvier 1997&lt;/a&gt; il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -129,9 +112,7 @@
       <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
       <guid>/console/connecter-ssh-vps/</guid>
-      <description>&lt;p&gt;Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -140,9 +121,7 @@
       <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
       
       <guid>/console/donner-nom-dns-a-serveur-local/</guid>
-      <description>&lt;p&gt;Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.&lt;/p&gt;</description>
     </item>
     
   </channel>

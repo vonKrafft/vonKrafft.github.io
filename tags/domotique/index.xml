@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Domotique on vonKrafft</title>
+    <link>/tags/domotique/</link>
+    <description>Recent content in Domotique on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/domotique/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Des prises connectées Sonoff avec Tasmota</title>
+      <link>/tutoriels/prises-conectees-sonoff-tasmota/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
+      
+      <guid>/tutoriels/prises-conectees-sonoff-tasmota/</guid>
+      <description>&lt;p&gt;Ayant vendu mon âme &lt;del&gt;au diable&lt;/del&gt; à &lt;em&gt;Big Brother&lt;/em&gt; fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&#39;était pas très éloigné d&amp;rsquo;une enceinte &lt;em&gt;Bluetooth&lt;/em&gt; classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

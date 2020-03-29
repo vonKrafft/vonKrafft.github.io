@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chipset on vonKrafft</title>
     <link>/tags/chipset/</link>
     <description>Recent content in Chipset on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 04 Feb 2012 22:00:27 +0000</lastBuildDate>
     
 	<atom:link href="/tags/chipset/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
       
       <guid>/guides/quid-carte-mere/</guid>
-      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +26,7 @@
       <pubDate>Fri, 01 Apr 2011 22:40:50 +0000</pubDate>
       
       <guid>/actus/modification-organisation-ordinateur/</guid>
-      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;</description>
     </item>
     
   </channel>

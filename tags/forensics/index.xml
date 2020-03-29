@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forensics on vonKrafft</title>
+    <link>/tags/forensics/</link>
+    <description>Recent content in Forensics on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Tue, 27 Feb 2018 19:34:07 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Scenario MCCU</title>
+      <link>/write-up/ctf-tamu-scenario-mccu-700/</link>
+      <pubDate>Tue, 27 Feb 2018 19:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-scenario-mccu-700/</guid>
+      <description>&lt;p&gt;This was a series of challenges that involved a compromised WordPress website. Several proofs (screenshots, log extracts, WordPress archive, etc.) allowed us to answer questions.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

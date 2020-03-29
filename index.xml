@@ -1,25 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vonKrafft</title>
     <link>/</link>
     <description>Recent content on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 09 Mar 2019 10:21:54 +0000</lastBuildDate>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Des prises connectées Sonoff avec Tasmota</title>
+      <link>/tutoriels/prises-conectees-sonoff-tasmota/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
+      
+      <guid>/tutoriels/prises-conectees-sonoff-tasmota/</guid>
+      <description>&lt;p&gt;Ayant vendu mon âme &lt;del&gt;au diable&lt;/del&gt; à &lt;em&gt;Big Brother&lt;/em&gt; fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&#39;était pas très éloigné d&amp;rsquo;une enceinte &lt;em&gt;Bluetooth&lt;/em&gt; classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[CTF] ESGI - My Name is Rookie</title>
+      <link>/write-up/ctf-esgi-my-name-is-rookie-350/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
+      
+      <guid>/write-up/ctf-esgi-my-name-is-rookie-350/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;M0th3r &amp;gt; Quelque chose me perturbe. Comment un Androïde a pu passer le test des pirates cybernétique. Duke le premier de son genre n’a été crée par personne du gouvernement. Aujourd’hui disparu je veux retrouver son core. Si tu veux m’aider, tu dois passer le test des pirate Cybernétique. C’est le test que Duke-083 a passé haut la main. Récupère tout ce que tu sais sur Zedcorp.&lt;/p&gt;
+&lt;p&gt;http = ctf.hacklab-esgi.org:5008 \&lt;br&gt;
+ssh = ctf.hacklab-esgi.org:5007&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
       <title>Serveur Web avec Docker : Nginx, PHP et PostgreSQL</title>
       <link>/console/serveur-web-docker-nginx-php-postgres/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
       <guid>/console/serveur-web-docker-nginx-php-postgres/</guid>
       <description>Un serveur Web incluant généralement un logiciel serveur (Nginx), un interpréteur de script CGI (PHP) et d&amp;rsquo;un système de gestion de base de données (PostgreSQL), nous allons voir comment mettre en place ces trois composants en utilisant Docker.
- Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.   Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
+&amp;nbsp;Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur gist.github.com.     Nginx et PHP FPM Récemment, j&amp;rsquo;expliquais comment simplement mettre en place un serveur Nginx qui supporte PHP à l&amp;rsquo;aide de Docker.</description>
     </item>
     
     <item>
@@ -29,7 +50,7 @@
       
       <guid>/guides/installer-python-3.7-debian-9-strecth/</guid>
       <description>Nous allons installer Python 3.7 sur un système Debian 9 (Stretch). Pour ceux qui ne le savent pas, Python est un langage de programmation open source et Python 3.7 est la dernière version majeure du langage. Il comprend de nombreuses nouvelles fonctionnalités, mais du fait du rythme de release des version Debian stables, Debian 9 n&amp;rsquo;intègre que la version 3.5 de Python.
-   Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings.</description>
+   &amp;nbsp;Une des fonctionnalités sympa dont j&amp;rsquo;avais besoin est l&amp;rsquo;ajout des f-Strings.</description>
     </item>
     
     <item>
@@ -38,9 +59,7 @@
       <pubDate>Mon, 25 Feb 2019 19:53:21 +0000</pubDate>
       
       <guid>/console/simple-site-php-avec-docker-nginx/</guid>
-      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -55,31 +74,97 @@
     
     <item>
       <title>Gérer ses mots de passe avec PGP</title>
-      <link>/console/gerer-ses-mots-de-passe-avec-pgp/</link>
+      <link>/securite/gerer-ses-mots-de-passe-avec-pgp/</link>
       <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/console/gerer-ses-mots-de-passe-avec-pgp/</guid>
-      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&amp;rsquo;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>/securite/gerer-ses-mots-de-passe-avec-pgp/</guid>
+      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&#39;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PGP : Générer des clés et configurer une Yubikey</title>
-      <link>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</link>
+      <link>/securite/pgp-generer-des-cles-et-configurer-une-yubikey/</link>
       <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
       
-      <guid>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</guid>
+      <guid>/securite/pgp-generer-des-cles-et-configurer-une-yubikey/</guid>
       <description>&lt;p&gt;Ayant récemment acquis une &lt;a href=&#34;https://www.yubico.com/product/yubikey-neo/&#34;&gt;Yubikey NEO&lt;/a&gt;, j&amp;rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&amp;rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&amp;rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&amp;rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&amp;rsquo;ont permis d&amp;rsquo;y arriver (on ne sait jamais, ça pourra servir à d&amp;rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).&lt;/p&gt;
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg&#34;&gt;
-    
-    
-&lt;/figure&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;span class=&#34;image center&#34;&gt;
+                &lt;img src=&#34;/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] NDH - Schreddinger</title>
+      <link>/write-up/ctf-ndh-shreddinger-500/</link>
+      <pubDate>Mon, 02 Apr 2018 21:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-ndh-shreddinger-500/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;The infamous Shredder tried to destroy important documents!
+Please, help us recover them and prevents their evil scheme.&lt;/p&gt;
+&lt;p&gt;Points      500&lt;br&gt;
+Category    Dev&lt;br&gt;
+Validation  11&lt;br&gt;
+URL         &lt;a href=&#34;http://shreddinger.challs.malice.fr/&#34;&gt;http://shreddinger.challs.malice.fr/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Scenario MCCU</title>
+      <link>/write-up/ctf-tamu-scenario-mccu-700/</link>
+      <pubDate>Tue, 27 Feb 2018 19:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-scenario-mccu-700/</guid>
+      <description>&lt;p&gt;This was a series of challenges that involved a compromised WordPress website. Several proofs (screenshots, log extracts, WordPress archive, etc.) allowed us to answer questions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Simple DES</title>
+      <link>/write-up/ctf-tamu-simple-des-125/</link>
+      <pubDate>Mon, 26 Feb 2018 19:22:12 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-simple-des-125/</guid>
+      <description>Larry is working on an encryption algorithm based on DES.
+He hasn&amp;rsquo;t worked out all the kinks yet, but he thinks it works.
+Your job is to confirm that you can decrypt a message, given the algorithm and parameters used.
+His system works as follows:
+ Choose a plaintext that is divisible into 12bit &amp;lsquo;blocks&amp;rsquo; Choose a key at least 8bits in length For each block from i=0 while i&amp;lt;N perform the following operations Repeat the following operations on block i, from r=0 while r&amp;lt;R Divide the block into 2 6bit sections Lr,Rr Using Rr, &amp;ldquo;expand&amp;rdquo; the value from 6bits to 8bits.</description>
     </item>
     
     <item>
@@ -88,9 +173,7 @@
       <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
       
       <guid>/dossiers/mots-de-passe-bonnes-pratiques/</guid>
-      <description>&lt;p&gt;Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -101,14 +184,44 @@
       <guid>/guides/migrer-wordpress-vers-hugo/</guid>
       <description>&lt;p&gt;Ayant récement migré de WordPress vers Hugo, j&amp;rsquo;ai eu besoin d&amp;rsquo;exporter le contenu de la base de données vers des fichiers Markdown, mais aussi revoir l&amp;rsquo;organisation des ressources, notamment les images. Pour cela, j&amp;rsquo;ai implémenté quelques scripts que je me propose ici de partager.&lt;/p&gt;
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2018/01/f6840c5d35c17f43623f8cb9eb7d6f7e.png&#34;&gt;
-    
-    
-&lt;/figure&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;span class=&#34;image center&#34;&gt;
+                &lt;img src=&#34;/media/2018/01/f6840c5d35c17f43623f8cb9eb7d6f7e.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -119,38 +232,44 @@
       <guid>/console/redimensionner-images-python/</guid>
       <description>&lt;p&gt;Lorsque l&amp;rsquo;on ajoute des illustrations a un article sur un site Web, il est important de bien la dimensionner : une image trop petite sera soit floue soit illisible, tandis qu&amp;rsquo;une image trop grande sera trop longue à charger.&lt;/p&gt;
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2017/12/f99dc7883dc86099da307531d273ada6.png&#34;&gt;
-    
-    
-&lt;/figure&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
+
     
-    <item>
-      <title>Contact</title>
-      <link>/contact-en/</link>
-      <pubDate>Thu, 28 Dec 2017 15:21:24 +0000</pubDate>
-      
-      <guid>/contact-en/</guid>
-      <description>Français
-  Name : Wandrille Krafft Location : Paris, France Website : https://vonkrafft.fr/  Cybersecurity consultant, I share my knowledge on this site. Initialy created in 2011, the site has evolved to deal with more technical topics and focused on computer security systems and system administration.
-Do not hesitate to contact me if you feel like it :-)
-I am not interested by headhunters. To contact me, follow me on Twitter or make a request through LinkedIn.</description>
-    </item>
     
-    <item>
-      <title>Contact</title>
-      <link>/contact/</link>
-      <pubDate>Thu, 28 Dec 2017 15:21:24 +0000</pubDate>
-      
-      <guid>/contact/</guid>
-      <description>English
-  Nom : Wandrille Krafft Localisation : Région parisienne Site Web : https://vonkrafft.fr/  Consultant en cybersécurité, je partage mes connaissance sur ce site. Initialement crée en 2011 lorsque j&amp;rsquo;était en Math Sup&amp;rsquo;, le site a évolué pour s&amp;rsquo;orienter vers des sujets plus techniques et axés sur la sécurité des systèmes informatiques et l&amp;rsquo;administration système.
-N&amp;rsquo;hésitez pas à me contacter si l&amp;rsquo;envie vous en prend :-)
-Je ne suis pas intéressé par les chasseurs de têtes.</description>
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;span class=&#34;image center&#34;&gt;
+                &lt;img src=&#34;/media/2017/12/f99dc7883dc86099da307531d273ada6.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -159,20 +278,16 @@ Je ne suis pas intéressé par les chasseurs de têtes.</description>
       <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
       
       <guid>/actus/les-7-ans-de-tuto-wibb/</guid>
-      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a bientôt &lt;strong&gt;sept ans&lt;/strong&gt;, mon premier article est publié sur le site : un tutoriel pour &lt;a href=&#34;/tutoriels/monter-un-mini-pc/&#34;&gt;monter un Mini-PC&lt;/a&gt;. Le site s&amp;rsquo;appelle alors &lt;strong&gt;Tuto Wibb&lt;/strong&gt;, une déclinaison du précédent site &lt;strong&gt;Wibb&lt;/strong&gt; que j&amp;rsquo;avais créé pour apprendre le HTML et le CSS. A cette époque, je suis Math sup&amp;rsquo; (2nd année de prépa) et je me dis que quitte à m&amp;rsquo;intéresser à l&amp;rsquo;informatique, autant partager mes connaissances. Hébergé sur la plateforme &lt;strong&gt;Kazeo&lt;/strong&gt;, je débute la rédaction de plusieurs tutoriels.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Exploiter un &#34;.git&#34; accessible sur un site Web</title>
-      <link>/console/repertoire-git-accessible/</link>
+      <link>/securite/repertoire-git-accessible/</link>
       <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
       
-      <guid>/console/repertoire-git-accessible/</guid>
-      <description>&lt;p&gt;Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : &lt;em&gt;chmod 777&lt;/em&gt; sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs &lt;em&gt;Apache&lt;/em&gt; et &lt;em&gt;MySQL&lt;/em&gt; très laxistes et surtout un répertoire &lt;code&gt;.git&lt;/code&gt; avec du directory listing …&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>/securite/repertoire-git-accessible/</guid>
+      <description>&lt;p&gt;Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : &lt;em&gt;chmod 777&lt;/em&gt; sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs &lt;em&gt;Apache&lt;/em&gt; et &lt;em&gt;MySQL&lt;/em&gt; très laxistes et surtout un répertoire &lt;code&gt;.git&lt;/code&gt; avec du directory listing …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -181,9 +296,7 @@ Je ne suis pas intéressé par les chasseurs de têtes.</description>
       <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
       
       <guid>/guides/trucs-astuces-liseuses-kobo/</guid>
-      <description>&lt;p&gt;Si vous aussi vous avez franchi le pas du numérique et que vous avez acheté une liseuse pour pouvoir enfin emporter plus de 3 livres pour vos vacances et si vous aussi vous avez choisi la Kobo (créée par qui vous savez), cet article est écrit tout juste pour vous.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Si vous aussi vous avez franchi le pas du numérique et que vous avez acheté une liseuse pour pouvoir enfin emporter plus de 3 livres pour vos vacances et si vous aussi vous avez choisi la Kobo (créée par qui vous savez), cet article est écrit tout juste pour vous.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -192,31 +305,7 @@ Je ne suis pas intéressé par les chasseurs de têtes.</description>
       <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
       
       <guid>/console/script-apercu-dun-projet-git/</guid>
-      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Réalisations</title>
-      <link>/works/</link>
-      <pubDate>Sat, 14 May 2016 12:21:24 +0000</pubDate>
-      
-      <guid>/works/</guid>
-      <description>English
-  vonKrafft.fr  Pour les 7 ans du site, tout change, à commencer par le nom. RIP Tuto Wibb &amp;hellip; Mon site vitrine perso et mon site de news fusionnent sous la bannière vonKrafft, Chronicles of a cybersecurity consultant. Pour cette migration, je conçois un nouveau design et j&amp;rsquo;abandonne WordPress pour Hugo, un générateur de site statique implémenté en Golang.
-Développeur(s) : Wandrille K. Date : Décembre 2017 Client : Projet personnel Étiquettes : Tuto Wibb, Actus, Dossiers, Guides, Tutoriels, Console, Cyber-sécurité, goHugo, HTML, CSS, Javascript, Markdown       Sotic Dashboard  Sotic est une société spécialisée dans la conception et l&amp;rsquo;installation de motoréducteurs.</description>
-    </item>
-    
-    <item>
-      <title>Works</title>
-      <link>/works-en/</link>
-      <pubDate>Sat, 14 May 2016 12:21:24 +0000</pubDate>
-      
-      <guid>/works-en/</guid>
-      <description>Français
-  vonKrafft.fr  For 7 years of the site, everything changes, starting with the name. RIP Tuto Wibb &amp;hellip; My personal website and my news website merge under the vonKrafft banner, Chronicles of a cybersecurity consultant. For this migration, I create a new design and I leave WordPress for Hugo, a static site generator implemented with Golang.
-Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project Étiquettes : Tuto Wibb, News, Guides, Tutorials, Programming, Cybersecurity, goHugo, HTML, CSS, Javascript, Markdown       Sotic Dashboard  otic is a company specializing in the design and installation of geared motors.</description>
+      <description>&lt;p&gt;Vous connaissez sans doute la célèbre plateforme &lt;a href=&#34;https://github.com/&#34;&gt;github.com&lt;/a&gt;, qui permet d&amp;rsquo;explorer et gérer un projet Git. D&amp;rsquo;autres alternatives existent, comme &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt; ou &lt;a href=&#34;https://try.gogs.io/&#34;&gt;Gogs&lt;/a&gt;, qui permettent de disposer d&amp;rsquo;une interface Web pour ses projets Git que l&amp;rsquo;on pourra hébergé chez soi, sur un serveur personnel ou un poste local. Au lieu d&amp;rsquo;une interface Web, je vous propose d&amp;rsquo;afficher quelques inforamtions d&amp;rsquo;un répertoire Git dans votre console.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -225,9 +314,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
       <guid>/console/activer-http2-nginx-debian/</guid>
-      <description>&lt;p&gt;Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc1945.txt&#34;&gt;mai 1996&lt;/a&gt; et HTTP/1.1 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc2068.txt&#34;&gt;janvier 1997&lt;/a&gt; il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc1945.txt&#34;&gt;mai 1996&lt;/a&gt; et HTTP/1.1 en &lt;a href=&#34;https://www.ietf.org/rfc/rfc2068.txt&#34;&gt;janvier 1997&lt;/a&gt; il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -236,9 +323,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
       <guid>/console/connecter-ssh-vps/</guid>
-      <description>&lt;p&gt;Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -247,9 +332,115 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
       
       <guid>/console/donner-nom-dns-a-serveur-local/</guid>
-      <description>&lt;p&gt;Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sur le réseaux, les machines sont identifiés par une adresse IP et/ou un nom DNS (et pas que, mais ce n’est pas le propos de ce tutoriel). Une adresse IP (de l’anglais Internet Protocol) est comme une adresse postale mais appliquée au domaine de l’informatique.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Finitions &amp; conclusion</title>
+      <link>/wibb/monter-son-pc/finitions-conclusion/</link>
+      <pubDate>Mon, 21 Sep 2015 17:11:49 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/finitions-conclusion/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Une fois que vous avez vu que tout marchait bien, si votre ordinateur est refroidi par un ou plusieurs ventilateurs, il serait dommage que l&amp;rsquo;ensemble des fils formant ce plat de spaghettis rendent toute ventilation inutile.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Vérifications &amp; tests</title>
+      <link>/wibb/monter-son-pc/verifications-tests/</link>
+      <pubDate>Mon, 21 Sep 2015 17:08:00 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/verifications-tests/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Check-list avant d&amp;rsquo;allumer le PC (oui, on y arrive !</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Mise en place d&#39;une carte fille</title>
+      <link>/wibb/monter-son-pc/mise-en-place-dune-carte-fille/</link>
+      <pubDate>Mon, 21 Sep 2015 17:02:12 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/mise-en-place-dune-carte-fille/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Installez votre carte fille  Commencez par enlever une languette métallique à l’arrière de votre PC, Parfois, il faut en enlever plusieurs, tout dépend de votre carte fille ; Enfoncez la carte (sans forcer) dans le connecteur de la carte mère ; Vissez la carte au boîtier ; Certaines cartes filles (graphique notamment) demandent une alimentation à part (PCIe 4, 6 ou 8 pins).</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Carte mère &amp; branchements</title>
+      <link>/wibb/monter-son-pc/carte-mere-branchements/</link>
+      <pubDate>Mon, 21 Sep 2015 16:59:59 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/carte-mere-branchements/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Nous allons maintenant effectuer la tâche la plus délicate du montage : introduite les carte mère dans le boîtier.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Fixation de l&#39;alimentation</title>
+      <link>/wibb/monter-son-pc/fixation-de-lalimentation/</link>
+      <pubDate>Mon, 21 Sep 2015 16:49:01 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/fixation-de-lalimentation/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Installez l&amp;rsquo;alimentation si elle n&amp;rsquo;est pas fournie avec le boîtier.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Installation des disques</title>
+      <link>/wibb/monter-son-pc/installation-des-disques/</link>
+      <pubDate>Mon, 21 Sep 2015 16:46:03 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/installation-des-disques/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Les lecteurs CD et de disquette    Pour monter les lecteurs CD et/ou de disquette :</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Préparation du boîtier</title>
+      <link>/wibb/monter-son-pc/preparation-du-boitier/</link>
+      <pubDate>Mon, 21 Sep 2015 16:42:12 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/preparation-du-boitier/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Commencez par déballer entièrement le boîtier : ouvrez les parois et posez-les dans un coin pour ne pas les abîmer.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Installation de la mémoire vive</title>
+      <link>/wibb/monter-son-pc/installation-de-la-memoire-vive/</link>
+      <pubDate>Mon, 21 Sep 2015 16:20:36 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/installation-de-la-memoire-vive/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Avant d’installer la carte mère dans le boîtier, nous allons fixer la mémoire vive.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Fixation du ventirad</title>
+      <link>/wibb/monter-son-pc/fixation-du-ventirad/</link>
+      <pubDate>Mon, 21 Sep 2015 16:10:18 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/fixation-du-ventirad/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Le ventirad est là pour refroidir le CPU.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Pose du processeur</title>
+      <link>/wibb/monter-son-pc/pose-du-processeur/</link>
+      <pubDate>Mon, 21 Sep 2015 15:55:18 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/pose-du-processeur/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Nous allons maintenant fixer le processeur (CPU).</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Déballage de la carte mère</title>
+      <link>/wibb/monter-son-pc/deballage-de-la-carte-mere/</link>
+      <pubDate>Mon, 21 Sep 2015 15:48:30 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/deballage-de-la-carte-mere/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  On va commencez par se mettre à la masse, c&amp;rsquo;est-à-dire que vous allez toucher une surface métallique afin de dissiper l&#39;éventuelle électricité statique que vous pourriez convoyer et qui pourrait endommager vos composants.</description>
+    </item>
+    
+    <item>
+      <title>Monter son PC | Présentation &amp; outillage</title>
+      <link>/wibb/monter-son-pc/presentation-outillage/</link>
+      <pubDate>Mon, 21 Sep 2015 15:45:51 +0000</pubDate>
+      
+      <guid>/wibb/monter-son-pc/presentation-outillage/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.   Introduction Présentation &amp;amp; outillage Déballage de la carte mère Pose du processeur Fixation du ventirad Installation de la mémoire vive Préparation du boîtier Installation des disques Fixation de l&amp;rsquo;alimentation Carte mère &amp;amp; branchements Mise en place d&amp;rsquo;une carte fille Vérifications &amp;amp; tests Finitions &amp;amp; conclusion  Pour le montage de votre PC, il vous faut bien sûr tous les composants nécessaires à la réalisation d’un ordinateur, des outils adéquats, et un endroit où travailler.</description>
     </item>
     
     <item>
@@ -258,9 +449,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
       <guid>/dossiers/systeme-de-fichier-emergence-btrfs/</guid>
-      <description>&lt;p&gt;Parmi les systèmes de fichiers actuels, Btrfs (&lt;em&gt;B-tree File System&lt;/em&gt;, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Parmi les systèmes de fichiers actuels, Btrfs (&lt;em&gt;B-tree File System&lt;/em&gt;, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -270,10 +459,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       
       <guid>/dossiers/systeme-de-fichier-zsf-btrfs-ou-ext4/</guid>
       <description>&lt;p&gt;Les systèmes de fichiers sont utilisés pour organiser le stockage de l’information sur des supports physiques (disques dur, ssd, etc.) de manière transparent pour l’utilisateur tout en lui permettant un stockage et un accès fiables.&lt;/p&gt;
-
-&lt;p&gt;Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Il existe plusieurs systèmes de fichiers, chacun ayant des caractéristiques propres et des cas d’utilisation particulier. S’il est souvent peu utile de sélectionner manuellement son système de fichier plutôt que de choisir celui proposé par défaut, dans certaines conditions d’utilisation il est nécessaire de sélectionner le système de fichier le plus adapté ; cela peut-être le plus rapide, ou le plus fiable, ou celui impliquant le moins de cycles d’écritures, etc.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -282,9 +468,52 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
       <guid>/tutoriels/un-morpion-en-javascript/</guid>
-      <description>&lt;p&gt;On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Les Configs PC | Saloon HD</title>
+      <link>/wibb/les-configs-pc/saloon-hd/</link>
+      <pubDate>Sat, 30 Nov 2013 12:46:33 +0000</pubDate>
+      
+      <guid>/wibb/les-configs-pc/saloon-hd/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.  Avec la progression des disques durs multimédia et des TV connectée, le PC home cinéma perd peu à peu de son intérêt.</description>
+    </item>
+    
+    <item>
+      <title>Les Configs PC | Carré VIP</title>
+      <link>/wibb/les-configs-pc/carre-vip/</link>
+      <pubDate>Sat, 30 Nov 2013 12:45:49 +0000</pubDate>
+      
+      <guid>/wibb/les-configs-pc/carre-vip/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.  Parfois, il faut voir les choses en grand et c&amp;rsquo;est ce que prouve cette configuration (très) haut de gamme qui ne fait aucun compromis sur la performance : Une configuration ultra performante sans aucune concession.</description>
+    </item>
+    
+    <item>
+      <title>Les Configs PC | Gamer Zone</title>
+      <link>/wibb/les-configs-pc/gamer-zone/</link>
+      <pubDate>Sat, 30 Nov 2013 12:44:22 +0000</pubDate>
+      
+      <guid>/wibb/les-configs-pc/gamer-zone/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.  Voici pour le joueur chevronné une configuration puissante et moderne dans une enveloppe tarifaire raisonnable.</description>
+    </item>
+    
+    <item>
+      <title>Les Configs PC | Family</title>
+      <link>/wibb/les-configs-pc/family/</link>
+      <pubDate>Sat, 30 Nov 2013 12:43:25 +0000</pubDate>
+      
+      <guid>/wibb/les-configs-pc/family/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.  Un ordinateur familial, c’est un PC pour un usage bureautique mais aussi un PC pour les jeux des enfants et les films &amp;amp; musiques.</description>
+    </item>
+    
+    <item>
+      <title>Les Configs PC | Bureautik</title>
+      <link>/wibb/les-configs-pc/bureautik/</link>
+      <pubDate>Sat, 30 Nov 2013 12:42:41 +0000</pubDate>
+      
+      <guid>/wibb/les-configs-pc/bureautik/</guid>
+      <description>&amp;nbsp;Cette page est issue de l&amp;rsquo;ancien site Tuto Wibb et n&amp;rsquo;a pas été mise à jour depuis 2015. Son contenu peut donc être inexact, voire erroné, et l&amp;rsquo;application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. Je vous invite à lire Les 7 ans de Tuto Wibb pour plus d&amp;rsquo;informations.  Nul besoin d’investir dans un ordinateur hors de prix si votre utilisation se résume à internet et bureautique.</description>
     </item>
     
     <item>
@@ -293,16 +522,17 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
       <guid>/actus/un-jour-a-la-paris-games-week-2013/</guid>
-      <description>&lt;figure class=&#34;pull-right&#34;&gt;
-    &lt;a href=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71-150x150.jpg&#34; alt=&#34;pgw01&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
-    &lt;/a&gt;
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image right&#34;&gt;
+                &lt;img src=&#34;/media/2013/11/ad85189defc55188e36d0030a505bb71-150x150.jpg&#34; alt=&#34;pgw01&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Depuis 2009, le parc des expos de la porte de Versailles accueille la &lt;a href=&#34;http://www.parisgamesweek.com/&#34;&gt;Paris Games Week&lt;/a&gt; (PGW). La PWG, c’est LE salon français dédié aux jeux vidéo. Il a eu lieu cette année du 30 octobre au 3 novembre 2013. Jeux en avant-première, tournois et ambiance gamer, voici un bref résumé du salon et toutes les informations sur les jeux à venir pour ceux qui n’ont pas eu la chance de pouvoir y aller.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Depuis 2009, le parc des expos de la porte de Versailles accueille la &lt;a href=&#34;http://www.parisgamesweek.com/&#34;&gt;Paris Games Week&lt;/a&gt; (PGW). La PWG, c’est LE salon français dédié aux jeux vidéo. Il a eu lieu cette année du 30 octobre au 3 novembre 2013. Jeux en avant-première, tournois et ambiance gamer, voici un bref résumé du salon et toutes les informations sur les jeux à venir pour ceux qui n’ont pas eu la chance de pouvoir y aller.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -311,9 +541,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
       
       <guid>/actus/visitez-les-data-center-de-google/</guid>
-      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -322,9 +550,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 27 Oct 2012 12:15:09 +0000</pubDate>
       
       <guid>/dossiers/windows-8-faut-il-ou-non-linstaller/</guid>
-      <description>&lt;p&gt;Nouveau fer de lance de Microsoft, Windows 8 est disponible depuis le 26 octobre dernier. Faut-il garder son système d’exploitation (OS) actuel ou bien passer à Windows 8 ? Certes, les nouvelles fonctionnalités sont tentante, mais sachez rester prudent. Voici les pours et les contres de ce nouveaux Windows.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Nouveau fer de lance de Microsoft, Windows 8 est disponible depuis le 26 octobre dernier. Faut-il garder son système d’exploitation (OS) actuel ou bien passer à Windows 8 ? Certes, les nouvelles fonctionnalités sont tentante, mais sachez rester prudent. Voici les pours et les contres de ce nouveaux Windows.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -333,9 +559,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
       <guid>/actus/iphone-5-apple-en-mal-de-revolution/</guid>
-      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -344,9 +568,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
       
       <guid>/guides/guide-dachat-pc-portable-2012/</guid>
-      <description>&lt;p&gt;Ça y est, c’est la rentrée, et j&amp;rsquo;en profite pour faire une mise à jour du guide d&amp;rsquo;achat PC portables. En effet, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour vous épauler dans vos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choisir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ça y est, c’est la rentrée, et j&amp;rsquo;en profite pour faire une mise à jour du guide d&amp;rsquo;achat PC portables. En effet, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour vous épauler dans vos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choisir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -355,16 +577,48 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
       
       <guid>/dossiers/proces-samsung-apple-consequences/</guid>
-      <description>&lt;figure&gt;
-    &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a-1024x471.jpg&#34;&gt;
-    &lt;/a&gt;
+      <description>&lt;p&gt;Le tribunal californien chargé de l’affaire &amp;ldquo;Samsung-Apple&amp;rdquo; a rendu ce week-end son &lt;a href=&#34;http://www.scribd.com/fullscreen/103860673?access_key=key-1ho669app2expaa7tptr&#34;&gt;verdict&lt;/a&gt; et condamne le constructeur coréen à 1,049 milliard de dommages et intérêts. Quant à la firme de Steve Jobs, elle n’écope d’aucunes condamnations. Cette défaite de Samsung aura de lourdes conséquences sur le marché du smartphone.Voilà qui clôture plusieurs mois de débats qui ont secoués la planète numérique : Samsung a été condamné à versé plus d’un milliard de dollars à Apple pour avoir utilisé illégalement plusieurs de ses brevets. Un record pour une affaire de violation de propriété intellectuelle.&lt;/p&gt;
+
+
+
     
-&lt;/figure&gt;
+    
+        
+        
+        
+        
+        
+        
+    
 
-&lt;p&gt;Le tribunal californien chargé de l’affaire &amp;ldquo;Samsung-Apple&amp;rdquo; a rendu ce week-end son &lt;a href=&#34;http://www.scribd.com/fullscreen/103860673?access_key=key-1ho669app2expaa7tptr&#34;&gt;verdict&lt;/a&gt; et condamne le constructeur coréen à 1,049 milliard de dommages et intérêts. Quant à la firme de Steve Jobs, elle n’écope d’aucunes condamnations. Cette défaite de Samsung aura de lourdes conséquences sur le marché du smartphone.Voilà qui clôture plusieurs mois de débats qui ont secoués la planète numérique : Samsung a été condamné à versé plus d’un milliard de dollars à Apple pour avoir utilisé illégalement plusieurs de ses brevets. Un record pour une affaire de violation de propriété intellectuelle.&lt;/p&gt;
+    
+    
+    
+    
+    
 
-&lt;p&gt;&lt;/p&gt;</description>
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; class=&#34;image featured center&#34;&gt;
+                &lt;img src=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a-1024x471.jpg&#34; alt=&#34;&#34;&gt;
+            &lt;/a&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -373,9 +627,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
       
       <guid>/dossiers/fractal-design-arc-midi-test-boitier/</guid>
-      <description>&lt;p&gt;Sorti il y a un an, le Fractal Design Arc Midi, boitier commercialisé par Fractal, se place dans le moyen gamme et vise la clientèle Gamer. Conçu pour offrir un maximum de place et de modularité dans un boitier compact, il est plus petit qu’un boîtier Grand Tour mais reste tout de même plus grand qu’un boîtier Moyen Tour. Enfin, il promet surtout des performances de refroidissement accrues grâce à une large possibilité de ventilation musclée et un châssis très aéré. Tour d’horizon du Fractal Design Arc Midi Tower.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sorti il y a un an, le Fractal Design Arc Midi, boitier commercialisé par Fractal, se place dans le moyen gamme et vise la clientèle Gamer. Conçu pour offrir un maximum de place et de modularité dans un boitier compact, il est plus petit qu’un boîtier Grand Tour mais reste tout de même plus grand qu’un boîtier Moyen Tour. Enfin, il promet surtout des performances de refroidissement accrues grâce à une large possibilité de ventilation musclée et un châssis très aéré. Tour d’horizon du Fractal Design Arc Midi Tower.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -384,9 +636,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
       
       <guid>/actus/une-rentree-high-tech-qui-sannonce-riche/</guid>
-      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -395,9 +645,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
       
       <guid>/actus/outlook-com-remplace-feu-hotmail-com/</guid>
-      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la sortie de Windows 8, Microsoft fait souffler une tempête de changement sur l’ensemble de ses services. C’est au tour d’Hotmail d’adopter les couleurs de Windows 8 en se métamorphosant en Outlook. Avec ce nouveau client mail en ligne, Microsoft espère concurrencer Gmail et les autres ténors de la messagerie en ligne.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -406,9 +654,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 18 Jul 2012 11:20:55 +0000</pubDate>
       
       <guid>/dossiers/test-de-portal-2-sur-pc/</guid>
-      <description>&lt;p&gt;Avec Portal, Valve avait signé en 2007 un magnifique jeu de réflexion unique en son genre. Et voici la suite : Portal 2 est un jeu intelligent, drôle et original. Ce chef d’œuvre ôte tous les doutes sur l&amp;rsquo;intérêt d&amp;rsquo;offrir une suite à Portal grâce à une histoire solo haletante et un Game Play enrichie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Avec Portal, Valve avait signé en 2007 un magnifique jeu de réflexion unique en son genre. Et voici la suite : Portal 2 est un jeu intelligent, drôle et original. Ce chef d’œuvre ôte tous les doutes sur l&amp;rsquo;intérêt d&amp;rsquo;offrir une suite à Portal grâce à une histoire solo haletante et un Game Play enrichie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -417,9 +663,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Mon, 02 Jul 2012 23:24:44 +0000</pubDate>
       
       <guid>/actus/surface-lintegration-made-in-microsoft/</guid>
-      <description>&lt;p&gt;L’essor des tablettes à prit Microsoft de cours, et ce dernier se devait de trouver une parade à iOS et Android. Dans cette optique, l’éditeur de système d’exploitation a effectué une refonte totale de son OS Windows pour l’ouvrir au marché des tablettes. Mais ce que personne n’attendait, c’est que ce géant des logiciels se lance dans la commercialisation de sa propre tablette. En effet, la société a annoncé le 19 juin dernier la sortie prochaine de sa tablette : Surface.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L’essor des tablettes à prit Microsoft de cours, et ce dernier se devait de trouver une parade à iOS et Android. Dans cette optique, l’éditeur de système d’exploitation a effectué une refonte totale de son OS Windows pour l’ouvrir au marché des tablettes. Mais ce que personne n’attendait, c’est que ce géant des logiciels se lance dans la commercialisation de sa propre tablette. En effet, la société a annoncé le 19 juin dernier la sortie prochaine de sa tablette : Surface.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -428,9 +672,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
       
       <guid>/tutoriels/recyclez-vos-disquettes-pot-a-crayons/</guid>
-      <description>&lt;p&gt;Il vous reste des disquettes au fond d’un placard et votre âme nostalgique de Geek ne saurait s’en défaire, et bien ne les jetez pas – du moins pas tous – et recyclez-les en un pot à crayons.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il vous reste des disquettes au fond d’un placard et votre âme nostalgique de Geek ne saurait s’en défaire, et bien ne les jetez pas – du moins pas tous – et recyclez-les en un pot à crayons.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -439,9 +681,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
       
       <guid>/tutoriels/assemblez-pc-home-cinema/</guid>
-      <description>&lt;p&gt;Le « Média Center » désigne les disques dur et les TV connectés, comme par exemple les TV d’Apple ou de Google, les lecteurs multimédia, mais aussi les box TV de opérateur. Successeur du lecteur DVD, le « Média Center » permet de regarder la TV, lire ses films et ses enregistrements et naviguer sur internet. Cependant, de nombreux problème se pose, notamment à cause des formats vidéo supporté, mais aussi parce que leur utilisation est trop restreinte. Pour pallier à ces inconvénients, vous pouvez opter pour un PC Home Cinéma.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le « Média Center » désigne les disques dur et les TV connectés, comme par exemple les TV d’Apple ou de Google, les lecteurs multimédia, mais aussi les box TV de opérateur. Successeur du lecteur DVD, le « Média Center » permet de regarder la TV, lire ses films et ses enregistrements et naviguer sur internet. Cependant, de nombreux problème se pose, notamment à cause des formats vidéo supporté, mais aussi parce que leur utilisation est trop restreinte. Pour pallier à ces inconvénients, vous pouvez opter pour un PC Home Cinéma.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -450,9 +690,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
       
       <guid>/guides/quid-de-l-alimentation-pc/</guid>
-      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -461,16 +699,17 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
       
       <guid>/actus/asus-noob-overclocking-challenge-2012/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    
-        &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; height=&#34;150px&#34;&gt;
-    
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image left&#34;&gt;
+                &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&amp;rsquo;était sur place ; bilan et score du Challenge.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&#39;était sur place ; bilan et score du Challenge.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -479,9 +718,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
       
       <guid>/tutoriels/reinstaller-windows-pc/</guid>
-      <description>&lt;p&gt;Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -490,9 +727,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
       
       <guid>/guides/quid-processeur-cpu/</guid>
-      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -501,11 +736,8 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
       
       <guid>/actus/ipad-3-le-nouvel-ipad-troisieme-du-nom/</guid>
-      <description>&lt;h2 id=&#34;ipad-3-et-non-le-nouvel-ipad&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;ipad-3--et-non--le-nouvel-ipad-&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -514,9 +746,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 02 Mar 2012 19:46:55 +0000</pubDate>
       
       <guid>/dossiers/windows-8-los-nouvelle-generation/</guid>
-      <description>&lt;p&gt;Microsoft a dévoilé mercredi la version Consumer Preview de son futur système d&amp;rsquo;exploitation Windows 8. Avec cet OS, l&amp;rsquo;éditeur prend le pari risqué d&amp;rsquo;unifier les smartphones, les tablettes et les PC et est ainsi le premier à innover dans l&amp;rsquo;ère post-PC (&lt;a href=&#34;/dossiers/changement-depoque-la-fin-du-regne-du-pc&#34;&gt;voir article&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Microsoft a dévoilé mercredi la version Consumer Preview de son futur système d&amp;rsquo;exploitation Windows 8. Avec cet OS, l&#39;éditeur prend le pari risqué d&amp;rsquo;unifier les smartphones, les tablettes et les PC et est ainsi le premier à innover dans l&#39;ère post-PC (&lt;a href=&#34;/dossiers/changement-depoque-la-fin-du-regne-du-pc&#34;&gt;voir article&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -525,9 +755,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
       
       <guid>/actus/convergence-systeme-exploitation-os/</guid>
-      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -536,9 +764,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
       
       <guid>/guides/quid-carte-mere/</guid>
-      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -547,9 +773,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
       
       <guid>/guides/quid-memoire-vive-ram/</guid>
-      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -558,9 +782,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
       
       <guid>/actus/steve-jobs-1955-2011/</guid>
-      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -569,9 +791,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
       
       <guid>/tutoriels/gerer-double-ecran/</guid>
-      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -580,9 +800,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
       
       <guid>/dossiers/changement-depoque-la-fin-du-regne-du-pc/</guid>
-      <description>&lt;p&gt;Interconnecté, telle est la description du monde informatique actuel. Car si l’ordinateur individuel était au centre de ce monde il y a quelques années, il a fait son temps et n’est plus la star du high-tech. Aujourd’hui, il côtoie les portables, tablettes et Smartphones, qui ont donnés à l’informatique la mobilité et l’inter-connectivité que nous connaissons. Retour en image sur l’histoire du règne du PC dans l’ère de l’informatique individuelle.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Interconnecté, telle est la description du monde informatique actuel. Car si l’ordinateur individuel était au centre de ce monde il y a quelques années, il a fait son temps et n’est plus la star du high-tech. Aujourd’hui, il côtoie les portables, tablettes et Smartphones, qui ont donnés à l’informatique la mobilité et l’inter-connectivité que nous connaissons. Retour en image sur l’histoire du règne du PC dans l’ère de l’informatique individuelle.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -591,16 +809,17 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
       
       <guid>/actus/un-ecran-apple-exploitant-le-port-thunderbolt/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
-    &lt;/a&gt;
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; class=&#34;image featured left&#34;&gt;
+                &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
+            &lt;/a&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -609,9 +828,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
       
       <guid>/tutoriels/donnez-seconde-vie-pc/</guid>
-      <description>&lt;p&gt;Votre PC est trop vieux à votre goût trop lent, mais le remplacer vous fait mal au cœur (et au porte-monnaie) car vous l’avez acheté il y a moins de cinq ans &amp;hellip; et bien ne le remplacez pas, offrez-lui plutôt une cure de rajeunissement et donnez-lui une seconde vie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Votre PC est trop vieux à votre goût trop lent, mais le remplacer vous fait mal au cœur (et au porte-monnaie) car vous l’avez acheté il y a moins de cinq ans &amp;hellip; et bien ne le remplacez pas, offrez-lui plutôt une cure de rajeunissement et donnez-lui une seconde vie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -620,9 +837,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 25 Sep 2011 21:04:15 +0000</pubDate>
       
       <guid>/guides/optimiser-duree-vie-batterie/</guid>
-      <description>&lt;p&gt;Vous tous, possesseurs de PC portables ou de gadgets électroniques, vous êtes confronté l’autonomie de votre appareil et  à la durée de vie de sa batterie. Mais savez-vous qu’une batterie demande de l’entretient et qu’il ne faut pas l’utiliser n’importe comment ? Voici quelques conseils qui permettront à votre batterie Lithium-ion de durer plus longtemps.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Vous tous, possesseurs de PC portables ou de gadgets électroniques, vous êtes confronté l’autonomie de votre appareil et  à la durée de vie de sa batterie. Mais savez-vous qu’une batterie demande de l’entretient et qu’il ne faut pas l’utiliser n’importe comment ? Voici quelques conseils qui permettront à votre batterie Lithium-ion de durer plus longtemps.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -631,9 +846,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 17 Sep 2011 20:48:51 +0000</pubDate>
       
       <guid>/tutoriels/overclocker-son-cpu/</guid>
-      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -642,9 +855,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 11 Sep 2011 20:43:05 +0000</pubDate>
       
       <guid>/dossiers/quelle-tablette-pour-quel-usage/</guid>
-      <description>&lt;p&gt;Il y a peu, on se posait encore la question de l&amp;rsquo;utilité d&amp;rsquo;une tablette. Mais ces écrans tactiles ultra connectés à mi-chemin entre téléphone et netbook sont devenus les stars de l&amp;rsquo;équipement informatique. Sélection de trois tablettes pour trois usages différents.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a peu, on se posait encore la question de l&amp;rsquo;utilité d&amp;rsquo;une tablette. Mais ces écrans tactiles ultra connectés à mi-chemin entre téléphone et netbook sont devenus les stars de l&#39;équipement informatique. Sélection de trois tablettes pour trois usages différents.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -653,9 +864,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
       
       <guid>/dossiers/7-pc-portables-rentree-2011/</guid>
-      <description>&lt;p&gt;Pour bien débuter la rentrée, voici en complément du &lt;a href=&#34;/guides/guide-achat-pc-portable-2011/&#34;&gt;guide d&amp;rsquo;achat PC portable&lt;/a&gt; une sélection de sept PC portables afin de vous aider dans votre quête du PC le mieux adapté pour vous.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour bien débuter la rentrée, voici en complément du &lt;a href=&#34;/guides/guide-achat-pc-portable-2011/&#34;&gt;guide d&amp;rsquo;achat PC portable&lt;/a&gt; une sélection de sept PC portables afin de vous aider dans votre quête du PC le mieux adapté pour vous.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -664,9 +873,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 26 Aug 2011 20:20:51 +0000</pubDate>
       
       <guid>/guides/guide-achat-pc-portable-2011/</guid>
-      <description>&lt;p&gt;Ça y est, c’est la rentrée, et c’est aussi la période pendant laquelle les constructeurs de PC portable renouvellent leurs gammes. Au même moment, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour nous épauler dans nos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ça y est, c’est la rentrée, et c’est aussi la période pendant laquelle les constructeurs de PC portable renouvellent leurs gammes. Au même moment, vous vous dites qu’il est temps d’investir dans un ordinateur portable afin de remplacer votre vieux modèle ou bien pour nous épauler dans nos études qui débutent. Quoi qu’il en soit, il est parfois difficile de choir le bon modèle de PC. Voici un guide pour vous aider dans votre achat de septembre.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -675,9 +882,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
       
       <guid>/actus/le-samsung-serie-5-le-premier-chomebook/</guid>
-      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -686,9 +891,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 19 Jun 2011 21:34:09 +0000</pubDate>
       
       <guid>/actus/cure-de-minceur-pour-le-macbook-air/</guid>
-      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -697,9 +900,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
       
       <guid>/actus/nouveau-defi-recyclage-informatique/</guid>
-      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -708,9 +909,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
       
       <guid>/guides/bien-choisir-disque-ssd/</guid>
-      <description>&lt;p&gt;Annoncé comme l’avenir du stockage des informations, le SSD est un élément qui doit vous inciter à la plus grande prudence et à une grande réflexion avant l&amp;rsquo;achat. Voici quelques pistes pour vous aider dans ce choix.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Annoncé comme l’avenir du stockage des informations, le SSD est un élément qui doit vous inciter à la plus grande prudence et à une grande réflexion avant l&amp;rsquo;achat. Voici quelques pistes pour vous aider dans ce choix.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -719,9 +918,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
       
       <guid>/guides/le-courant-porteur-en-ligne-cpl/</guid>
-      <description>&lt;p&gt;La technologie CPL permet de transmettre des données par le circuit électrique de la maison. Explication du fonctionnement du courant porteur en ligne.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La technologie CPL permet de transmettre des données par le circuit électrique de la maison. Explication du fonctionnement du courant porteur en ligne.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -730,9 +927,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
       
       <guid>/tutoriels/fabriquez-ventilateur-usb/</guid>
-      <description>&lt;p&gt;Je ne sais pas si vous suivez l&amp;rsquo;actualité informatique, mais on peut remarquer tout un tas de trucs inutiles en USB : un barbecue USB, un aquarium USB, un ventilateur USB, un réfrigérateur USB, une chauffe tasse USB, etc. … Je vous propose de faire un ventilateur USB. Ce n’est pas grandement utile mais vous pourrez fièrement vous vanter en disant : « c’est moi qui l’ai fait ! ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Je ne sais pas si vous suivez l&amp;rsquo;actualité informatique, mais on peut remarquer tout un tas de trucs inutiles en USB : un barbecue USB, un aquarium USB, un ventilateur USB, un réfrigérateur USB, une chauffe tasse USB, etc. … Je vous propose de faire un ventilateur USB. Ce n’est pas grandement utile mais vous pourrez fièrement vous vanter en disant : « c’est moi qui l’ai fait ! ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -741,9 +936,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 29 Apr 2011 19:21:47 +0000</pubDate>
       
       <guid>/guides/comment-fonctionne-usb/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;em&gt;Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -752,9 +945,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 01 Apr 2011 22:40:50 +0000</pubDate>
       
       <guid>/actus/modification-organisation-ordinateur/</guid>
-      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans un PC, ce n’est pas au processeur que reviennent toutes les tâches. Il est épaulé par tous les autres composants avec qui il dialogue grâce au chipset, un ensemble de puces essentielles qui dirigent les données entre les divers éléments du PC … et qui sont en train de subir un changement radical. Explication de l&amp;rsquo;organisation des composants sur la carte mère.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -763,9 +954,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
       
       <guid>/tutoriels/recyclez-son-ordinateur/</guid>
-      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -774,9 +963,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
       
       <guid>/tutoriels/assemblez-votre-serveur-nas/</guid>
-      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -785,9 +972,7 @@ Développeur(s) : Wandrille K. Date : December 2017 Client : Personnal project �
       <pubDate>Wed, 05 Jan 2011 21:58:06 +0000</pubDate>
       
       <guid>/tutoriels/monter-un-mini-pc/</guid>
-      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;</description>
     </item>
     
   </channel>

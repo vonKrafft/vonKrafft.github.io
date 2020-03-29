@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mémoire on vonKrafft</title>
     <link>/tags/m%C3%A9moire/</link>
     <description>Recent content in Mémoire on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Tue, 24 Jan 2012 21:55:42 +0000</lastBuildDate>
     
 	<atom:link href="/tags/m%C3%A9moire/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
       
       <guid>/guides/quid-memoire-vive-ram/</guid>
-      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;</description>
     </item>
     
   </channel>

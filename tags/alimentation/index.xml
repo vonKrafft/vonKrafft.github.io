@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alimentation on vonKrafft</title>
     <link>/tags/alimentation/</link>
     <description>Recent content in Alimentation on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Fri, 04 May 2012 00:04:07 +0000</lastBuildDate>
     
 	<atom:link href="/tags/alimentation/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
       
       <guid>/guides/quid-de-l-alimentation-pc/</guid>
-      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;</description>
     </item>
     
   </channel>

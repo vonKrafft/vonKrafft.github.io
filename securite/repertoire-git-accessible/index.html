@@ -1,0 +1,1193 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "securite",
+        "name" : "Exploiter un \x22.git\x22 accessible sur un site Web",
+        "headline" : "Exploiter un \x22.git\x22 accessible sur un site Web",
+        "description" : "Retour d\x27expérience sur l\x27exploitation d\x27un répertoire \x22.git\x22 accessible à la racine d\x27un site Web : code source, mots de passe SQL, etc.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-03-15 12:43:46 \x2b0000 UTC",
+        "dateModified" : "2017-03-15 12:43:46 \x2b0000 UTC",
+        "url" : "\/securite\/repertoire-git-accessible\/",
+        "wordCount" : "581",
+        "keywords" : [ "Serveur","Git","Exploit","Directory Listing","Pentest","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Exploiter un &#34;.git&#34; accessible sur un site Web</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Retour d&#39;expérience sur l&#39;exploitation d&#39;un répertoire &#34;.git&#34; accessible à la racine d&#39;un site Web : code source, mots de passe SQL, etc.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploiter un &#34;.git&#34; accessible sur un site Web"/>
+<meta name="twitter:description" content="Retour d&#39;expérience sur l&#39;exploitation d&#39;un répertoire &#34;.git&#34; accessible à la racine d&#39;un site Web : code source, mots de passe SQL, etc."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Exploiter un &#34;.git&#34; accessible sur un site Web" />
+<meta property="og:description" content="Retour d&#39;expérience sur l&#39;exploitation d&#39;un répertoire &#34;.git&#34; accessible à la racine d&#39;un site Web : code source, mots de passe SQL, etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/securite/repertoire-git-accessible/" />
+<meta property="article:published_time" content="2017-03-15T12:43:46+00:00" />
+<meta property="article:modified_time" content="2017-03-15T12:54:26+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Exploiter un &#34;.git&#34; accessible sur un site Web">
+<meta itemprop="description" content="Retour d&#39;expérience sur l&#39;exploitation d&#39;un répertoire &#34;.git&#34; accessible à la racine d&#39;un site Web : code source, mots de passe SQL, etc.">
+<meta itemprop="datePublished" content="2017-03-15T12:43:46&#43;00:00" />
+<meta itemprop="dateModified" content="2017-03-15T12:54:26&#43;00:00" />
+<meta itemprop="wordCount" content="581">
+
+
+
+<meta itemprop="keywords" content="Serveur,Git,Exploit,Directory Listing,Pentest," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fsecurite%2frepertoire-git-accessible%2f&amp;text=Exploiter%20un%20%22.git%22%20accessible%20sur%20un%20site%20Web&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fsecurite%2frepertoire-git-accessible%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fsecurite%2frepertoire-git-accessible%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fsecurite%2frepertoire-git-accessible%2f&amp;title=Exploiter%20un%20%22.git%22%20accessible%20sur%20un%20site%20Web" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fsecurite%2frepertoire-git-accessible%2f&amp;title=Exploiter%20un%20%22.git%22%20accessible%20sur%20un%20site%20Web" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fsecurite%2frepertoire-git-accessible%2f&amp;title=Exploiter%20un%20%22.git%22%20accessible%20sur%20un%20site%20Web" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fsecurite%2frepertoire-git-accessible%2f&amp;description=Exploiter%20un%20%22.git%22%20accessible%20sur%20un%20site%20Web" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fsecurite%2frepertoire-git-accessible%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2017/03/a22eaab5c6227da7b38ffb1db7ba6ccd.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/securite/repertoire-git-accessible/">Exploiter un &#34;.git&#34; accessible sur un site Web</a></h1>
+            
+        
+        
+            <p>Retour d&#39;expérience sur l&#39;exploitation d&#39;un répertoire &#34;.git&#34; accessible à la racine d&#39;un site Web : code source, mots de passe SQL, etc.</p>
+        
+    </div>
+    <div class="meta meta-securite">
+        
+
+        <time class="published"
+            datetime='2017-03-15'>
+            15 mars 2017</time>
+        <span class="author"></span>
+
+        
+            <p>3 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Récemment, je suis intervenu sur un serveur web qui s’était fait compromettre. J’ai donc cherché à savoir quelle avait été la porte d’entrée sur le serveur. C’était assez folklorique : <em>chmod 777</em> sur le webroot, une flopée de SQLi, des webshell à la pelle, des configs <em>Apache</em> et <em>MySQL</em> très laxistes et surtout un répertoire <code>.git</code> avec du directory listing …</p>
+<p>Depuis, les problèmes sont résolus et je voulais vous partager l’exploitation du <code>.git</code> que j’ai trouvé assez sympa. Pour des questions de confidentialité, nous appellerons ce site « champions.fr » (parce qu’à ce niveau-là, ce sont vraiment de grands champions pour avoir un site comme celui-là en production avec une tétrachiée de données clients).</p>
+<h2 id="lets-begin">Let’s begin !</h2>
+<p>Tout d&rsquo;abord, j&rsquo;ai accès à la page suivante : <a href="http://champions.fr/.git/">http://champions.fr/.git/</a>. Comme je l’ai dit plus haut, j’ai du directory listing. L’exploitation d’un git peut se faire sans directory listing mais c’est plus facile lorsque l&rsquo;on peut lister le contenu des répertoires car aucun outil ou script particulier n&rsquo;est nécessaire. Sans directory listing, il nous faudra utiliser un script tel que <a href="https://github.com/evilpacket/DVCS-Pillage">DVCS Pillage Toolkit</a>.</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2017/03/733aa40510c54d3875c3989cd65fe2e1.png" class="image featured center">
+                <img src="/media/2017/03/733aa40510c54d3875c3989cd65fe2e1-1024x468.png" alt="Directory listing du .git">
+            </a>
+        
+        
+    </figure>
+
+
+<p>Pour « cloner » le dépôt en local, il me suffit de télécharger récursivement tous les fichiers du répertoire git :</p>
+<pre><code class="language-terminal" data-lang="terminal">root:~# wget -r http://champions.fr/.git/
+root:~# cd champions.fr
+root:~/champion.fr(git:stable_prod)#</code></pre>
+<h2 id="restaurer-avec-git">Restaurer avec git</h2>
+<p>Je me retrouve avec un dépôt git en local. Cependant, j&rsquo;ai seulement récupéré le répertoire <code>.git</code>, et donc lorsque je fais un <code>git status</code>, cela m&rsquo;informe que tous les fichiers ont été supprimés ! Qu’à cela ne tienne, Git permet de restaurer l'état du dernier commit. Pour cela, nous utiliserons la commande <code>git reset</code>.</p>
+<pre><code class="language-terminal" data-lang="terminal">root:~/champion.fr(git:stable_prod)# git reset --hard</code></pre>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2017/03/0a95e43f86e9262e800fea6b27b3d11f.png" class="image featured center">
+                <img src="/media/2017/03/0a95e43f86e9262e800fea6b27b3d11f.png" alt="Directory listing du .git">
+            </a>
+        
+        
+    </figure>
+
+
+<p>Bon, on ne parlera pas des webshells qui ont été versionnés, des dumps de base de données ou bien encore du « .bash_history » ni de « .ssh » (oui, c’est vraiment dégueulasse comme site …)</p>
+<h2 id="rechercher-un-fichier-particulier">Rechercher un fichier particulier</h2>
+<p>Ce qui nous intéresse (en plus du code source naturellement), c’est de savoir que c’est un WordPress. Les informations que nous voulons (ie. les mots de passe de la base de données), sont dans « wp-config.php ». Damned, le fichier n’existe pas ! En réalité, le fichier a été déplacé dans le répertoire parent (incroyable, il y a tout de même des notions de sécu chez les admins sys !). Mais là encore ce n’est pas grave, car nous avons le répertoire <code>.git</code> et donc il y a une chance que ce fichier ait été versionné. Pour restaurer le fichier <code>wp-config.php</code>, il faut remonter au dernier commit qui le concerne (ie le commit qui marque sa suppression).</p>
+<pre><code class="language-terminal" data-lang="terminal">root:~/champion.fr(git:stable_prod)# git checkout $(git rev-list -n 1 HEAD -- wp-config.php)^ -- wp-config.php</code></pre>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2017/03/905262a4583b7b31dfa7ffab7aa80a5a.png" class="image featured center">
+                <img src="/media/2017/03/905262a4583b7b31dfa7ffab7aa80a5a.png" alt="Directory listing du .git">
+            </a>
+        
+        
+    </figure>
+
+
+<p>Non seulement on a le mot de passe MySQL sur un serveur de dev (pour root), mais aussi celui de la production. Ces comptes et mots de passe peuvent aussi êtres utilisés pour d&rsquo;autres services, comme par exemple d&rsquo;authentification Web ou bien la connexion SSH (qui sait ?).</p>
+<p>Bon, le plus important ici, c’est le code source de du site que nous avons obtenu. Puisque c’est un WordPress, nous pouvons savoir quelle est la version utilisée, ainsi que la liste des plugins présents. Et bien sûr, nous avons accès au code du thème. Ici, c’est un thème « maison » assez lourds avec plein de requêtes SQL construites avec des concaténations bien sales d’inputs non filtrés. Mais c’est un cas particulier, vous aurez sans doute des choses un peu moins fun lors de vos expériences personnelles de tests d&rsquo;intrusion (quoique …).</p>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/securite">Securite</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/serveur">Serveur</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/git">Git</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/exploit">Exploit</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/directory-listing">Directory Listing</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/pentest">Pentest</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>1110</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+
+    
+        <li><a href="/securite/pgp-generer-des-cles-et-configurer-une-yubikey/"
+                class="button big next">PGP : Générer des clés et configurer une Yubikey</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

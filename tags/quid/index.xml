@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quid on vonKrafft</title>
     <link>/tags/quid/</link>
     <description>Recent content in Quid on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Fri, 04 May 2012 00:04:07 +0000</lastBuildDate>
     
 	<atom:link href="/tags/quid/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
       
       <guid>/guides/quid-de-l-alimentation-pc/</guid>
-      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L’alimentation est la première responsable des maux d’un PC et pour cause : malgré son importance, elle est souvent négligée devant les autres composants pour des raisons budgétaires. Et pourtant, c’est elle qui assure le fonctionnement de tous les composants.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +26,7 @@
       <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
       
       <guid>/guides/quid-processeur-cpu/</guid>
-      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,9 +35,7 @@
       <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
       
       <guid>/guides/quid-carte-mere/</guid>
-      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Clé de voute de l&amp;rsquo;ordinateur, la carte mère est le composant qu&amp;rsquo;il faut choisir avec le plus d&amp;rsquo;attention. En effet, c&amp;rsquo;est sur elle que viendront se greffer tous les autres composants du PC, internes ou externes. Voici donc un petit guide pour vous aider à choisir correctement votre carte mère.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,9 +44,7 @@
       <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
       
       <guid>/guides/quid-memoire-vive-ram/</guid>
-      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La mémoire vive, aussi appelée RAM de l&amp;rsquo;anglais Random Access Memory,  est le lieu de stockage des données en cours de traitement. La RAM définie la réactivité de votre ordinateur, son aptitude à exécuter rapidement une application. Son choix est donc important et elle ne doit en aucun cas être négligée.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +53,7 @@
       <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
       
       <guid>/guides/le-courant-porteur-en-ligne-cpl/</guid>
-      <description>&lt;p&gt;La technologie CPL permet de transmettre des données par le circuit électrique de la maison. Explication du fonctionnement du courant porteur en ligne.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La technologie CPL permet de transmettre des données par le circuit électrique de la maison. Explication du fonctionnement du courant porteur en ligne.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,9 +62,7 @@
       <pubDate>Fri, 29 Apr 2011 19:21:47 +0000</pubDate>
       
       <guid>/guides/comment-fonctionne-usb/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;em&gt;Né en 1991, le port USB s’est imposé dans le monde de l’informatique personnel, décliné sous plusieurs formes, types &amp;amp; normes … Mais comment fonctionne cette interface que nous utilisons depuis plus de 20 ans ?&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

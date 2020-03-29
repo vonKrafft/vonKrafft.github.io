@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crypto on vonKrafft</title>
+    <link>/tags/crypto/</link>
+    <description>Recent content in Crypto on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Mon, 26 Feb 2018 19:22:12 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Simple DES</title>
+      <link>/write-up/ctf-tamu-simple-des-125/</link>
+      <pubDate>Mon, 26 Feb 2018 19:22:12 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-simple-des-125/</guid>
+      <description>Larry is working on an encryption algorithm based on DES.
+He hasn&amp;rsquo;t worked out all the kinks yet, but he thinks it works.
+Your job is to confirm that you can decrypt a message, given the algorithm and parameters used.
+His system works as follows:
+ Choose a plaintext that is divisible into 12bit &amp;lsquo;blocks&amp;rsquo; Choose a key at least 8bits in length For each block from i=0 while i&amp;lt;N perform the following operations Repeat the following operations on block i, from r=0 while r&amp;lt;R Divide the block into 2 6bit sections Lr,Rr Using Rr, &amp;ldquo;expand&amp;rdquo; the value from 6bits to 8bits.</description>
+    </item>
+    
+  </channel>
+</rss>

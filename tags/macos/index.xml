@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macos on vonKrafft</title>
+    <title>MacOS on vonKrafft</title>
     <link>/tags/macos/</link>
-    <description>Recent content in Macos on vonKrafft</description>
+    <description>Recent content in MacOS on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sun, 26 Feb 2012 22:07:11 +0000</lastBuildDate>
     
 	<atom:link href="/tags/macos/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
       
       <guid>/actus/convergence-systeme-exploitation-os/</guid>
-      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis la démocratisation des smartphones puis des tablettes tactiles, le monde de l’informatique a vu naitre un nouveau type de système d&amp;rsquo;exploitation (OS) optimisé pour un usage portable et tactile. Mais ces systèmes sont aussi en train de se déporter vers nos PC portables et fixes. Quels sont les avantages et les inconvénients de cette « tablettification » des PC.&lt;/p&gt;</description>
     </item>
     
   </channel>

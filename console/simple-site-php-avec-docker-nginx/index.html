@@ -1,335 +1,613 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Un simple site en PHP avec Docker et Nginx
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Un simple site en PHP avec Docker et Nginx" />
-    <meta name="twitter:description" content="J&amp;rsquo;ai récemment revu l&amp;rsquo;organisation des containers Docker présents sur mon serveur et j&amp;rsquo;ai essayé d&amp;rsquo;utiliser le plus possible les images &amp;ldquo;officielles&amp;rdquo; des technos dont j&amp;rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" />
-  
-
-
-
-
-<link rel="canonical" href="/console/simple-site-php-avec-docker-nginx/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "console",
+        "name" : "Un simple site en PHP avec Docker et Nginx",
+        "headline" : "Un simple site en PHP avec Docker et Nginx",
+        "description" : "Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2019",
+        "datePublished": "2019-02-25 19:53:21 \x2b0000 UTC",
+        "dateModified" : "2019-02-25 19:53:21 \x2b0000 UTC",
+        "url" : "\/console\/simple-site-php-avec-docker-nginx\/",
+        "wordCount" : "1055",
+        "keywords" : [ "Docker","PHP","Nginx","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Un simple site en PHP avec Docker et Nginx</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Un simple site en PHP avec Docker et Nginx"/>
+<meta name="twitter:description" content="Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Un simple site en PHP avec Docker et Nginx" />
+<meta property="og:description" content="Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/console/simple-site-php-avec-docker-nginx/" />
+<meta property="article:published_time" content="2019-02-25T19:53:21+00:00" />
+<meta property="article:modified_time" content="2019-02-25T20:27:54+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Un simple site en PHP avec Docker et Nginx">
+<meta itemprop="description" content="Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP.">
+<meta itemprop="datePublished" content="2019-02-25T19:53:21&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-25T20:27:54&#43;00:00" />
+<meta itemprop="wordCount" content="1055">
+
+
+
+<meta itemprop="keywords" content="Docker,PHP,Nginx," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-console">
-    <header class="post-header">
-      <h1 class="post-title">Un simple site en PHP avec Docker et Nginx</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/console/">Console</a></span>
-        @vonKrafft · 25 février 2019
-      </p>
-    </header>
-    <article class="post-content"><p>J&rsquo;ai récemment revu l&rsquo;organisation des containers Docker présents sur mon serveur et j&rsquo;ai essayé d&rsquo;utiliser le plus possible les images &ldquo;officielles&rdquo; des technos dont j&rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.</p>
 
-<p></p>
+<section id="menu">
 
-<div class="alert alert-info" role="alert"><i class="fa fa-github"></i> Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur <a href="https://gist.github.com/vonKrafft/5fd248c438711148be878683f6f58b0f">gist.github.com</a>.</div>
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
 
-<h2 id="objectif-de-l-infra">Objectif de l&rsquo;infra</h2>
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
 
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f&amp;text=Un%20simple%20site%20en%20PHP%20avec%20Docker%20et%20Nginx&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f&amp;title=Un%20simple%20site%20en%20PHP%20avec%20Docker%20et%20Nginx" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f&amp;title=Un%20simple%20site%20en%20PHP%20avec%20Docker%20et%20Nginx" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f&amp;title=Un%20simple%20site%20en%20PHP%20avec%20Docker%20et%20Nginx" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f&amp;description=Un%20simple%20site%20en%20PHP%20avec%20Docker%20et%20Nginx" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fconsole%2fsimple-site-php-avec-docker-nginx%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h1>
+            
+        
+        
+            <p>Utiliser Docker pour faire tourner simplement un serveur Nginx et servir du contenu dynamique en PHP.</p>
+        
+    </div>
+    <div class="meta meta-console">
+        
+
+        <time class="published"
+            datetime='2019-02-25'>
+            25 février 2019</time>
+        <span class="author"></span>
+
+        
+            <p>5 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>J&rsquo;ai récemment revu l&rsquo;organisation des containers Docker présents sur mon serveur et j&rsquo;ai essayé d&rsquo;utiliser le plus possible les images &ldquo;officielles&rdquo; des technos dont j&rsquo;avais besoin. Ici, nous allons mettre en place un Nginx pour servir des pages statique (HTML et autres ressources) mais également en mesure de gérer du contenu PHP.</p>
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-github"></i>&nbsp;Les fichiers nécessaires et le script de mise en place des containers sont disponibles sur <a href="https://gist.github.com/vonKrafft/5fd248c438711148be878683f6f58b0f">gist.github.com</a>.
+</div>
+<h2 id="objectif-de-linfra">Objectif de l&rsquo;infra</h2>
 <p>Le but est d&rsquo;avoir un container avec Nginx pour servir du contenu statique et dynamique (PHP). Il faudra configurer Nginx pour rediriger les requêtes de ressources PHP vers un second container qui embarquera PHP-FPM (FastCGI Process Manager).</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> Je tiens à préciser que le Nginx que nous allons mettre en place sert le contenu en HTTP. Personnellement, j&rsquo;utilise un reverse-proxy qui s&rsquo;occupe de gérer HTTPS (<em>un article futur viendra peut-être pour expliquer comment faire</em>). Si vous comptez mettre en ligne votre site en utilisant Docker et la méthode ci-après, je vous recommande de modifier la configuration du Nginx pour <strong>mettre en place HTTPS</strong>.</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-circle"></i>&nbsp;Je tiens à préciser que le Nginx que nous allons mettre en place sert le contenu en HTTP. Personnellement, j&rsquo;utilise un reverse-proxy qui s&rsquo;occupe de gérer HTTPS (<em>un article futur viendra peut-être pour expliquer comment faire</em>). Si vous comptez mettre en ligne votre site en utilisant Docker et la méthode ci-après, je vous recommande de modifier la configuration du Nginx pour <strong>mettre en place HTTPS</strong>.
+</div>
 <p>Nous aurons donc besoin de deux images Docker :</p>
-
 <ul>
 <li><a href="https://hub.docker.com/_/nginx">Nginx</a>, j&rsquo;ai choisi de prendre la version Alpine stable (1.14.2 à la date de cet article) ;</li>
 <li><a href="https://hub.docker.com/_/php">PHP-FPM</a>, là encore avec Alpine et avec la dernière version disponible (7.3.2 à la date de cet article).</li>
 </ul>
-
 <p>Par préférence personnelle, nous allons utiliser <code>docker-compose</code> pour configurer les containers (<a href="https://docs.docker.com/compose/install/">Installer Docker Compose</a>).</p>
-
 <h2 id="le-container-nginx">Le container Nginx</h2>
-
 <p>Tout d&rsquo;abord, il nous faut créer l’arborescence de répertoire dont nous allons avoir besoin, ainsi que les fichiers de journalisation avec les privilèges adéquats :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">host:~# mkdir -p docker-web/www                  # Webroot dans lequel sera stocké le contenu statique du site
+<pre><code class="language-terminal" data-lang="terminal">host:~# mkdir -p docker-web/www                  # Webroot dans lequel sera stocké le contenu statique du site
 host:~# mkdir -p docker-web/log                  # Pour enregistrer les journaux de Nginx
 host:~# touch docker-web/log/{error,access}.log  # Journaux pour Nginx
-host:~# chmod a&#43;rw docker-web/log/*              # Accessible en lecture/écriture pour tous (ce n&#39;est pas l&#39;idéal, si quelqu&#39;un a une autre idée je suis preneur)
-</code></pre>
-</div>
-
+host:~# chmod a+rw docker-web/log/*              # Accessible en lecture/écriture pour tous (ce n&#39;est pas l&#39;idéal, si quelqu&#39;un a une autre idée je suis preneur)</code></pre>
 <p>Nous aurons également besoin du fichier de configuration de Nginx. Il remplacera celui par défaut présent dans le container Nginx et permettra de facilement modifier la configuration du serveur sans avoir en entrer dans le container.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">user</span>                       <span class="s">nginx</span><span class="p">;</span>
+<span class="k">worker_processes</span>           <span class="mi">1</span><span class="p">;</span>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        docker-web/nginx.conf
-    </div>
+<span class="k">error_log</span>                  <span class="s">/var/log/nginx/error.log</span> <span class="s">warn</span><span class="p">;</span>
+<span class="k">pid</span>                        <span class="s">/var/run/nginx.pid</span><span class="p">;</span>
+
+<span class="k">events</span> <span class="p">{</span>
+    <span class="kn">worker_connections</span>     <span class="mi">1024</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">http</span> <span class="p">{</span>
+    <span class="kn">include</span>                <span class="s">/etc/nginx/mime.types</span><span class="p">;</span>
+    <span class="kn">default_type</span>           <span class="s">application/octet-stream</span><span class="p">;</span>
     
-    <pre class="code"><code data-language="nginx">user                       nginx;
-worker_processes           1;
-
-error_log                  /var/log/nginx/error.log warn;
-pid                        /var/run/nginx.pid;
-
-events {
-    worker_connections     1024;
-}
-
-http {
-    include                /etc/nginx/mime.types;
-    default_type           application/octet-stream;
+    <span class="kn">log_format</span>             <span class="s">main</span>  <span class="s">&#39;</span><span class="nv">$remote_addr</span> <span class="s">-</span> <span class="nv">$remote_user</span> <span class="s">[</span><span class="nv">$time_local]</span> <span class="s">&#34;</span><span class="nv">$request&#34;</span> <span class="nv">$status</span> <span class="nv">$body_bytes_sent</span> <span class="s">&#34;</span><span class="nv">$http_referer&#34;</span> <span class="s">&#34;</span><span class="nv">$http_user_agent&#34;</span> <span class="s">&#34;</span><span class="nv">$http_x_forwarded_for&#34;&#39;</span><span class="p">;</span>
+    <span class="kn">access_log</span>             <span class="s">/var/log/nginx/access.log</span> <span class="s">main</span><span class="p">;</span>
     
-    log_format             main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; $status $body_bytes_sent &#34;$http_referer&#34; &#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
-    access_log             /var/log/nginx/access.log main;
-    
-    sendfile               on;
-    keepalive_timeout      65;
-    server_tokens          off;
+    <span class="kn">sendfile</span>               <span class="no">on</span><span class="p">;</span>
+    <span class="kn">keepalive_timeout</span>      <span class="mi">65</span><span class="p">;</span>
+    <span class="kn">server_tokens</span>          <span class="no">off</span><span class="p">;</span>
 
-    server {
-        listen             80;
-        server_name        localhost;
+    <span class="kn">server</span> <span class="p">{</span>
+        <span class="kn">listen</span>             <span class="mi">80</span><span class="p">;</span>
+        <span class="kn">server_name</span>        <span class="s">localhost</span><span class="p">;</span>
         
-        location / {
-            root           /usr/share/nginx/html;
-            index          index.html index.htm;
-        }
+        <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+            <span class="kn">root</span>           <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+            <span class="kn">index</span>          <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        error_page         500 502 503 504 /50x.html;
-        location = /50x.html {
-            root           /usr/share/nginx/html;
-        }
-    }
-}
-</code></pre>
+        <span class="kn">error_page</span>         <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span> <span class="s">/50x.html</span><span class="p">;</span>
+        <span class="kn">location</span> <span class="p">=</span> <span class="s">/50x.html</span> <span class="p">{</span>
+            <span class="kn">root</span>           <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Pour gérer nos containers, nous allons utiliser <code>docker-compose</code> plutôt que de multiples <code>docker run ...</code>. Docker Compose utilise un fichier de configuration YAML <code>docker-compose.yml</code> dans lequel sont définis nos containers et leurs options de démarrage.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Dans notre cas, le fichier <code>docker-compose.yml</code> et le répertoire <code>docker-web</code> doivent être placés dans le même répertoire parent. Vous pouvez aussi le placer dans un répertoire quelconque et remplacer les chemins relatifs des volumes partagés par des chemins absolus.</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Dans notre cas, le fichier <code>docker-compose.yml</code> et le répertoire <code>docker-web</code> doivent être placés dans le même répertoire parent. Vous pouvez aussi le placer dans un répertoire quelconque et remplacer les chemins relatifs des volumes partagés par des chemins absolus.
+</div>
 <p>On peut à présent configurer et démarrer le container Nginx :</p>
-
 <ul>
 <li>Le port TCP/80 (HTTP) est mappé sur l&rsquo;hôte (pour les tests, le port est mappé en local uniquement, veillez si possible à mettre en place du TLS sur le port TCP/443 si vous exposez le serveur sur Internet) ;</li>
 <li>Le container est nommé <code>web-nginx</code> ;</li>
@@ -337,235 +615,851 @@ http {
 <li>Le répertoire <code>./docker-web/log</code> est monté pour y stocker les journaux Nginx ;</li>
 <li>Le fichier <code>./docker-web/nginx.conf</code> est mappé en lecture seule sur le fichier de configuration Nginx du container.</li>
 </ul>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        docker-compose.yml
-    </div>
-    
-    <pre class="code"><code data-language="yaml">version: &#39;3&#39;
-
-services:
-    web-nginx:
-        image: nginx:stable-alpine
-        container_name: web-nginx
-        volumes:
-            - &#34;./docker-web/www:/usr/share/nginx/html:ro&#34;
-            - &#34;./docker-web/log:/var/log/nginx&#34;
-            - &#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;
-        ports:
-            - &#34;127.0.0.1:80:80&#34;
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">services</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">web-nginx</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>nginx<span class="p">:</span>stable-alpine<span class="w">
+</span><span class="w">        </span><span class="k">container_name</span><span class="p">:</span><span class="w"> </span>web-nginx<span class="w">
+</span><span class="w">        </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/www:/usr/share/nginx/html:ro&#34;</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/log:/var/log/nginx&#34;</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;</span><span class="w">
+</span><span class="w">        </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;127.0.0.1:80:80&#34;</span></code></pre></td></tr></table>
 </div>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">host:~# docker-compose up -d
-</code></pre>
 </div>
+<pre><code class="language-terminal" data-lang="terminal">host:~# docker-compose up -d</code></pre>
+<p>Le site est maintenant accessible sur le port TCP/80 de l&rsquo;hôte, en local. Cependant, si vous vous rendez à l&rsquo;adresse http://localhost/, vous obtiendrez une erreur <strong>403 Forbidden</strong> car notre répertoire <code>www</code> est vide. Pour simplement vérifier que tout fonctionne, il suffit de créer un fichier <code>index.html</code> :</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~# echo &#39;hello world!&#39; &gt; docker-web/www/index.html</code></pre>
 
-<p>Le site est maintenant accessible sur le port TCP/80 de l&rsquo;hôte, en local. Cependant, si vous vous rendez à l&rsquo;adresse <a href="http://localhost/">http://localhost/</a>, vous obtiendrez une erreur <strong>403 Forbidden</strong> car notre répertoire <code>www</code> est vide. Pour simplement vérifier que tout fonctionne, il suffit de créer un fichier <code>index.html</code> :</p>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
+
     
-    <pre class="code"><code data-language="console">host:~# echo &#39;hello world!&#39; &gt; docker-web/www/index.html
-</code></pre>
-</div>
-
-<figure>
-    <a href="/media/2019/02/fc35fdc70d5fc69d269883a822c7a53e.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2019/02/fc35fdc70d5fc69d269883a822c7a53e.png" alt="index.php">
-    </a>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2019/02/fc35fdc70d5fc69d269883a822c7a53e.png" class="image featured center">
+                <img src="/media/2019/02/fc35fdc70d5fc69d269883a822c7a53e.png" alt="index.php">
+            </a>
+        
+        
+    </figure>
+
 
 <h2 id="le-container-php">Le container PHP</h2>
-
 <p>Ne perdons pas de vu l&rsquo;objectif : disposer d&rsquo;un environnement Web capable d’interpréter PHP pour servir du contenu dynamique. Pour cela, nous allons mettre en place un second container qui embarquera PHP.</p>
-
 <p>Tout d&rsquo;abord, il faut modifier le fichier de configuration de Nginx pour lui préciser de rediriger les requêtes de ressources PHP vers le container que nous venons de mettre en place. Nous ajoutons <code>index.php</code> dans la directive <code>index</code> du serveur, et les instructions <code>fastcgi</code> pour les fichiers PHP (i.e. les fichiers dont l&rsquo;extension est <strong>.php</strong> : <code>location ~ \.php$</code>).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">user</span>                       <span class="s">nginx</span><span class="p">;</span>
+<span class="k">worker_processes</span>           <span class="mi">1</span><span class="p">;</span>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        docker-web/nginx.conf
-    </div>
+<span class="k">error_log</span>                  <span class="s">/var/log/nginx/error.log</span> <span class="s">warn</span><span class="p">;</span>
+<span class="k">pid</span>                        <span class="s">/var/run/nginx.pid</span><span class="p">;</span>
+
+<span class="k">events</span> <span class="p">{</span>
+    <span class="kn">worker_connections</span>     <span class="mi">1024</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">http</span> <span class="p">{</span>
+    <span class="kn">include</span>                <span class="s">/etc/nginx/mime.types</span><span class="p">;</span>
+    <span class="kn">default_type</span>           <span class="s">application/octet-stream</span><span class="p">;</span>
     
-    <pre class="code"><code data-language="nginx">user                       nginx;
-worker_processes           1;
-
-error_log                  /var/log/nginx/error.log warn;
-pid                        /var/run/nginx.pid;
-
-events {
-    worker_connections     1024;
-}
-
-http {
-    include                /etc/nginx/mime.types;
-    default_type           application/octet-stream;
+    <span class="kn">log_format</span>             <span class="s">main</span>  <span class="s">&#39;</span><span class="nv">$remote_addr</span> <span class="s">-</span> <span class="nv">$remote_user</span> <span class="s">[</span><span class="nv">$time_local]</span> <span class="s">&#34;</span><span class="nv">$request&#34;</span> <span class="nv">$status</span> <span class="nv">$body_bytes_sent</span> <span class="s">&#34;</span><span class="nv">$http_referer&#34;</span> <span class="s">&#34;</span><span class="nv">$http_user_agent&#34;</span> <span class="s">&#34;</span><span class="nv">$http_x_forwarded_for&#34;&#39;</span><span class="p">;</span>
+    <span class="kn">access_log</span>             <span class="s">/var/log/nginx/access.log</span> <span class="s">main</span><span class="p">;</span>
     
-    log_format             main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; $status $body_bytes_sent &#34;$http_referer&#34; &#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
-    access_log             /var/log/nginx/access.log main;
-    
-    sendfile               on;
-    keepalive_timeout      65;
-    server_tokens          off;
+    <span class="kn">sendfile</span>               <span class="no">on</span><span class="p">;</span>
+    <span class="kn">keepalive_timeout</span>      <span class="mi">65</span><span class="p">;</span>
+    <span class="kn">server_tokens</span>          <span class="no">off</span><span class="p">;</span>
 
-    server {
-        listen             80;
-        server_name        localhost;
+    <span class="kn">server</span> <span class="p">{</span>
+        <span class="kn">listen</span>             <span class="mi">80</span><span class="p">;</span>
+        <span class="kn">server_name</span>        <span class="s">localhost</span><span class="p">;</span>
         
-        location / {
-            root           /usr/share/nginx/html;
-            index          index.php index.html index.htm;
-        }
+        <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+            <span class="kn">root</span>           <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+            <span class="kn">index</span>          <span class="s">index.php</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        error_page         500 502 503 504 /50x.html;
-        location = /50x.html {
-            root           /usr/share/nginx/html;
-        }
+        <span class="kn">error_page</span>         <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span> <span class="s">/50x.html</span><span class="p">;</span>
+        <span class="kn">location</span> <span class="p">=</span> <span class="s">/50x.html</span> <span class="p">{</span>
+            <span class="kn">root</span>           <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        location ~ \.php$ {
-            root           /usr/share/nginx/html;
-            include        fastcgi_params;
-            fastcgi_pass   web-php:9000;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME  /script$fastcgi_script_name;
-        }
-    }
-}
-</code></pre>
+        <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+            <span class="kn">root</span>           <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+            <span class="kn">include</span>        <span class="s">fastcgi_params</span><span class="p">;</span>
+            <span class="kn">fastcgi_pass</span>   <span class="n">web-php</span><span class="p">:</span><span class="mi">9000</span><span class="p">;</span>
+            <span class="kn">fastcgi_index</span>  <span class="s">index.php</span><span class="p">;</span>
+            <span class="kn">fastcgi_param</span>  <span class="s">SCRIPT_FILENAME</span>  <span class="s">/script</span><span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Nous aurons besoin également d&rsquo;un fichier <code>index.php</code> afin de pouvoir tester que tout fonctionne une fois que le container sera en place.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">host:~# echo &#39;&lt;?php phpinfo();&#39; &gt; docker-web/www/index.php
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">host:~# echo &#39;&lt;?php phpinfo();&#39; &gt; docker-web/www/index.php</code></pre>
 <p>On peut à présent configurer et démarrer le container PHP :</p>
-
 <ul>
 <li>Le container est nommé <code>web-php</code>, ce nom doit être le même que celui utilisé dans le fichier <code>nginx.conf</code> pour la directive <code>fastcgi_pass</code> ;</li>
 <li>Le répertoire <code>./docker-web/www</code> est monté en lecture seule pour y stocker les fichiers PHP.</li>
 </ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">services</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">web-nginx</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>nginx<span class="p">:</span>stable-alpine<span class="w">
+</span><span class="w">        </span><span class="k">container_name</span><span class="p">:</span><span class="w"> </span>web-nginx<span class="w">
+</span><span class="w">        </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/www:/usr/share/nginx/html:ro&#34;</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/log:/var/log/nginx&#34;</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;</span><span class="w">
+</span><span class="w">        </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;127.0.0.1:80:80&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="k">web-php</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>php<span class="p">:</span>fpm-alpine<span class="w">
+</span><span class="w">        </span><span class="k">container_name</span><span class="p">:</span><span class="w"> </span>web-php<span class="w">
+</span><span class="w">        </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="s2">&#34;./docker-web/www:/script:ro&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<pre><code class="language-terminal" data-lang="terminal">host:~# docker-compose up -d</code></pre>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        docker-compose.yml
-    </div>
+
     
-    <pre class="code"><code data-language="yaml">version: &#39;3&#39;
+    
 
-services:
-    web-nginx:
-        image: nginx:stable-alpine
-        container_name: web-nginx
-        volumes:
-            - &#34;./docker-web/www:/usr/share/nginx/html:ro&#34;
-            - &#34;./docker-web/log:/var/log/nginx&#34;
-            - &#34;./docker-web/nginx.conf:/etc/nginx/nginx.conf:ro&#34;
-        ports:
-            - &#34;127.0.0.1:80:80&#34;
 
-    web-php:
-        image: php:fpm-alpine
-        container_name: web-php
-        volumes:
-            - &#34;./docker-web/www:/script:ro&#34;
-</code></pre>
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-check-circle"></i>&nbsp;It works!
 </div>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
+
+
     
-    <pre class="code"><code data-language="console">host:~# docker-compose up -d
-</code></pre>
-</div>
-
-<div class="alert alert-success" role="alert"><i class="fa fa-check-circle"></i> It works!</div>
-
-<figure>
-    <a href="/media/2019/02/3be2a3b771431f2096ff984899869fa6.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2019/02/3be2a3b771431f2096ff984899869fa6.png" alt="index.php">
-    </a>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
 
-<hr />
+    
+    
+    
+    
+    
 
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2019/02/3be2a3b771431f2096ff984899869fa6.png" class="image featured center">
+                <img src="/media/2019/02/3be2a3b771431f2096ff984899869fa6.png" alt="index.php">
+            </a>
+        
+        
+    </figure>
+
+
+<hr>
 <h4 id="références">Références</h4>
-
 <ol>
 <li><a href="https://hub.docker.com/_/php">PHP (Docker Official Images) - Docker Hub</a></li>
 <li><a href="https://hub.docker.com/_/nginx">Nginx (Docker Official Images) - Docker Hub</a></li>
-</ol></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/docker"><span class="tag">Docker</span></a></li>
-        
-          <li><a href="/tags/php"><span class="tag">PHP</span></a></li>
-        
-          <li><a href="/tags/nginx"><span class="tag">Nginx</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. 
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</ol>
+  </div>
 
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/console">Console</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/php">PHP</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/nginx">Nginx</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>397</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/console/interface-web-pour-irc-avec-docker/"
+                class="button big previous">Une interface Web pour IRC avec Docker</a></li>
+    
+
+    
+        <li><a href="/console/serveur-web-docker-nginx-php-postgres/"
+                class="button big next">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portable 2011 on vonKrafft</title>
+    <title>portable 2011 on vonKrafft</title>
     <link>/tags/portable-2011/</link>
-    <description>Recent content in Portable 2011 on vonKrafft</description>
+    <description>Recent content in portable 2011 on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Tue, 06 Sep 2011 20:34:29 +0000</lastBuildDate>
     
 	<atom:link href="/tags/portable-2011/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
       
       <guid>/dossiers/7-pc-portables-rentree-2011/</guid>
-      <description>&lt;p&gt;Pour bien débuter la rentrée, voici en complément du &lt;a href=&#34;/guides/guide-achat-pc-portable-2011/&#34;&gt;guide d&amp;rsquo;achat PC portable&lt;/a&gt; une sélection de sept PC portables afin de vous aider dans votre quête du PC le mieux adapté pour vous.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour bien débuter la rentrée, voici en complément du &lt;a href=&#34;/guides/guide-achat-pc-portable-2011/&#34;&gt;guide d&amp;rsquo;achat PC portable&lt;/a&gt; une sélection de sept PC portables afin de vous aider dans votre quête du PC le mieux adapté pour vous.&lt;/p&gt;</description>
     </item>
     
   </channel>

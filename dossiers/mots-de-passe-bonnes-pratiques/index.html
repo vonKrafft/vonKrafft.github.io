@@ -1,261 +1,526 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Les mots de passe : les bonnes pratiques
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Les mots de passe : les bonnes pratiques" />
-    <meta name="twitter:description" content="Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2018/01/7f81aacab375fb9fb14cc7885fdad12f.png" />
-  
-
-
-
-
-<link rel="canonical" href="/dossiers/mots-de-passe-bonnes-pratiques/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "dossiers",
+        "name" : "Les mots de passe : les bonnes pratiques",
+        "headline" : "Les mots de passe : les bonnes pratiques",
+        "description" : "Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-01-28 16:28:21 \x2b0000 UTC",
+        "dateModified" : "2018-01-28 16:28:21 \x2b0000 UTC",
+        "url" : "\/dossiers\/mots-de-passe-bonnes-pratiques\/",
+        "wordCount" : "3263",
+        "keywords" : [ "Mots de passe","hachage","chiffrement","RGPD","CNIL","vie privée","protection","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Les mots de passe : les bonnes pratiques</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Les mots de passe : les bonnes pratiques"/>
+<meta name="twitter:description" content="Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Les mots de passe : les bonnes pratiques" />
+<meta property="og:description" content="Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/dossiers/mots-de-passe-bonnes-pratiques/" />
+<meta property="article:published_time" content="2018-01-28T16:28:21+00:00" />
+<meta property="article:modified_time" content="2018-01-28T16:28:21+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Les mots de passe : les bonnes pratiques">
+<meta itemprop="description" content="Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.">
+<meta itemprop="datePublished" content="2018-01-28T16:28:21&#43;00:00" />
+<meta itemprop="dateModified" content="2018-01-28T16:28:21&#43;00:00" />
+<meta itemprop="wordCount" content="3263">
+
+
+
+<meta itemprop="keywords" content="Mots de passe,hachage,chiffrement,RGPD,CNIL,vie privée,protection," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-dossiers">
-    <header class="post-header">
-      <h1 class="post-title">Les mots de passe : les bonnes pratiques</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/dossiers/">Dossiers</a></span>
-        @vonKrafft · 28 janvier 2018
-      </p>
-    </header>
-    <article class="post-content"><p>Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.</p>
 
-<p></p>
+<section id="menu">
 
-<figure>
     
-        <img src="/media/2018/01/7f81aacab375fb9fb14cc7885fdad12f.png">
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f&amp;text=Les%20mots%20de%20passe%20%3a%20les%20bonnes%20pratiques&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f&amp;title=Les%20mots%20de%20passe%20%3a%20les%20bonnes%20pratiques" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f&amp;title=Les%20mots%20de%20passe%20%3a%20les%20bonnes%20pratiques" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f&amp;title=Les%20mots%20de%20passe%20%3a%20les%20bonnes%20pratiques" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f&amp;description=Les%20mots%20de%20passe%20%3a%20les%20bonnes%20pratiques" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fdossiers%2fmots-de-passe-bonnes-pratiques%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2018/01/7f81aacab375fb9fb14cc7885fdad12f.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/dossiers/mots-de-passe-bonnes-pratiques/">Les mots de passe : les bonnes pratiques</a></h1>
+            
+        
+        
+            <p>Entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.</p>
+        
+    </div>
+    <div class="meta meta-dossiers">
+        
+
+        <time class="published"
+            datetime='2018-01-28'>
+            28 janvier 2018</time>
+        <span class="author"></span>
+
+        
+            <p>16 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Depuis les débuts de l’informatique, le mot de passe est le moyen le répandu de protéger un espace personnel (système d’exploitation, site Web, etc.) ou des données sensibles (chiffrement). Mais entre les politiques de mots de passe non adaptées et un stockage aussi chaotique qu’hétéroclite, les accès à nos mots de passe (et par conséquent à nos comptes) sont de plus en plus vulnérables.</p>
     
     
-</figure>
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2018/01/7f81aacab375fb9fb14cc7885fdad12f.png" alt="">
+            </span>
+        
+        
+    </figure>
+
 
 <p>Aujourd’hui, avec l’expansion d’Internet et la numérisation des services et des divertissements, nous faisons face à une multitude de sites Web sur lesquels nous avons un espace personnel qu’il nous faut protéger avec un mot de passe. Or, entre l’utilisateur qui, par flemmardise, choisi un mot de passe faible et les sites Web qui chacun de leur côté implémentent une gestion des mots de passe pas toujours au top, nos espaces personnels sur Internet se retrouvent de plus en plus vulnérables.</p>
-
 <p>Je parlerai ici uniquement du mot de passe comme moyen de s’authentifier, notamment sur une application Web. Il existe d’autres moyens de s’authentifier, tels que les certificats, la délégation d’authentification (SSO par exemple), l&rsquo;empreinte biométrique, etc. Une première partie concerne principalement l’utilisateur, puis une seconde partie s’adresse plus aux développeurs.</p>
-
 <h2 id="bien-choisir-un-mot-de-passe">Bien choisir un mot de passe</h2>
-
 <p>Un mot de passe doit être individuel, secret, difficile à déterminer via une attaque de type « Brute-Force » et changé si l’on pense qu’il a été compromis. Pour répondre à ces exigences, on a déjà tous rencontré des règles imposées au moment de choisir et/ou d’utiliser un mot de passe :</p>
-
 <ul>
 <li>La taille, souvent 8 caractères minimum ;</li>
 <li>L’entropie, imposant généralement d’utiliser 3 types de signes parmi les 4 possibles (minuscule, majuscule, chiffre et caractères spéciaux) ;</li>
@@ -263,14 +528,10 @@
 <li>Le renouvellement fréquent (l’ANSSI préconise un <a href="https://www.ssi.gouv.fr/guide/mot-de-passe/">renouvellement trimestriel des mots de passe</a>), et l’impossibilité de réutiliser les N derniers mots de passe utilisés ;</li>
 <li>Changement obligatoire lorsque l’utilisateur n’a pas choisi son mot de passe (par exemple, lors de la génération d’un mot de passe temporaire lors de la procédure de réinitialisation de mot passe).</li>
 </ul>
-
-<h3 id="anecdotes">Anecdotes &hellip;</h3>
-
+<h3 id="anecdotes-">Anecdotes &hellip;</h3>
 <p>J’en profite pour pousser un coup de gueule envers les sites Web qui limitent le nombre et/ou le type de caractères que l’on peut utiliser. J’ai déjà rencontré les cas suivants :</p>
-
-<div class="pull-right hidden-xs hidden-sm"><blockquote class="twitter-tweet"><p lang="fr" dir="ltr"><a href="https://twitter.com/orange?ref_src=twsrc%5Etfw">@orange</a>, mais laissez-nous choisir nos mots de passe !!! N&#39;est-ce pas <a href="https://twitter.com/OrangeCyberdef?ref_src=twsrc%5Etfw">@OrangeCyberdef</a> ? :P <a href="https://twitter.com/hashtag/PSSI?src=hash&amp;ref_src=twsrc%5Etfw">#PSSI</a> <a href="https://twitter.com/hashtag/CyberSecurity?src=hash&amp;ref_src=twsrc%5Etfw">#CyberSecurity</a> <a href="https://twitter.com/hashtag/Password?src=hash&amp;ref_src=twsrc%5Etfw">#Password</a> <a href="https://t.co/24Tc3fAB8S">pic.twitter.com/24Tc3fAB8S</a></p>&mdash; 𝖶𝖺𝗇𝖽𝗋𝗂𝗅𝗅𝖾 𝖪𝗋𝖺𝖿𝖿𝗍 (@ellirdnaw) <a href="https://twitter.com/ellirdnaw/status/940170499354750981?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="fr" dir="ltr"><a href="https://twitter.com/orange?ref_src=twsrc%5Etfw">@orange</a>, mais laissez-nous choisir nos mots de passe !!! N&#39;est-ce pas <a href="https://twitter.com/orangecyberdef?ref_src=twsrc%5Etfw">@OrangeCyberdef</a> ? :P <a href="https://twitter.com/hashtag/PSSI?src=hash&amp;ref_src=twsrc%5Etfw">#PSSI</a> <a href="https://twitter.com/hashtag/CyberSecurity?src=hash&amp;ref_src=twsrc%5Etfw">#CyberSecurity</a> <a href="https://twitter.com/hashtag/Password?src=hash&amp;ref_src=twsrc%5Etfw">#Password</a> <a href="https://t.co/24Tc3fAB8S">pic.twitter.com/24Tc3fAB8S</a></p>&mdash; 𝓦𝓪𝓷𝓭𝓻𝓲𝓵𝓵𝓮 (@v0nKrafft) <a href="https://twitter.com/v0nKrafft/status/940170499354750981?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
 
 <ul>
 <li><strong>« <a href="https://twitter.com/von_Krafft/status/940170499354750981">Mot de passe sans accents, tirets ou espaces</a> »</strong> : Non mais sérieux ?!? Qu’est-ce qui poussent les développeurs à interdire ce genre de caractères ? L’encodage de la base de données dans lequel le mot de passe est stocké ? Parce qu’à moins de stocker mon mot de passe en clair, les caractères spéciaux dans un mot de passe ne posent aucun problème technique !</li>
@@ -278,32 +539,69 @@
 <li><strong>« Vous avez oublié votre mot de passe, il vous a été renvoyé par mail »</strong> pardon ? Ah oui, mon mot de passe en clair dans un mail &hellip; Faîtes attention, l’entrée en vigueur du <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">RGPD</a> c’est en mai 2018 &hellip;</li>
 <li><strong>« Vous avez oublié votre mot de passe, un nouveau mot de passe temporaire vous a été envoyé par mail »</strong> Très bien. Je me connecte donc avec ce mot de passe temporaire et je serais forcé de le changer &hellip; et non ! Du coup je ne vois pas trop ce qu’il a de « temporaire » ce mot de passe &hellip;</li>
 </ul>
-
 <p>Bref, laissez-nous choisir les mots de passe que l’on veut, pour peu qu’ils respectent les règles de sécurité citées plus haut. Et par pitié, supprimez vos règles contre-productives sur la sécurité d’un mot de passe !</p>
-
-<h4 id="quid-des-règles-actuelles-de-politique-de-mot-de-passe">Quid des règles actuelles de politique de mot de passe ?</h4>
-
+<h4 id="quid-des-règles-actuelles-de-politique-de-mot-de-passe-">Quid des règles actuelles de politique de mot de passe ?</h4>
 <p>Parce que oui, les règles citées ci-dessus sont présentes depuis un certain temps et sont peu à peu entrées dans l’inconscient collectif. Mais ces règles sont-elles efficaces ? Le débat est encore ouvert à l’heure actuelle, mais certaines personnes, comme moi, doutent de leur efficacité en termes de robustesse et sécurité.</p>
-
 <p>Prenons par exemple le mot de passe <code>P@ssword01</code> : c’est un mot de passe de 10 caractères avec des minuscules, une majuscule, des chiffres et un caractère spécial. Bref, d’après les règles actuelles, c’est un mot de passe « robuste ». Oui &hellip; mais non, vous vous doutez bien qu’un tel mot de passe se devine facilement. Des dictionnaires de mots de passe fréquemment utilisés existent et permettre de deviner (très) rapidement ce genre de mot de passe.</p>
-
 <p>Vous me direz qu’il suffit de complexifier le mot de passe, par exemple <code>k4dUj@gD_8</code> (pardon, j’ai éternué sur mon clavier). Hum &hellip; d’accord, et comment retenir ce mot de passe ? Parce que si nous n’avions seulement qu’un seul mot de passe à retenir ça serait réalisable, mais nous utilisons des dizaines de comptes !</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> Si vous utilisez un seul mot de passe pour tous vos comptes, j’espère au moins que vous culpabilisez &hellip; Quoi qu&rsquo;il en soit, je vous invite à rapidement changer tous vos mots de passe et à définir un mot de passe unique pour chacun de vos comptes !</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-warning"></i>&nbsp;Si vous utilisez un seul mot de passe pour tous vos comptes, j’espère au moins que vous culpabilisez &hellip; Quoi qu&rsquo;il en soit, je vous invite à rapidement changer tous vos mots de passe et à définir un mot de passe unique pour chacun de vos comptes !
+</div>
 <p>Bref, un mot de passe ne peut pas à la fois se retenir facilement, respecter la règle de 8 caractères dont 3 types de signes parmi les 4 possibles, et être absent des dictionnaires de mots de passe. Les politiques de mots de passe établies depuis ces dernières années forcent les utilisateurs à choisir des mots de passe difficiles à mémoriser et faciles à casser &hellip;</p>
 
-<figure>
-    <a href="/media/2018/01/68de6ae4ad54fc3bfc1a8677117dc605.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2018/01/68de6ae4ad54fc3bfc1a8677117dc605.png" alt="xkcd">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2018/01/68de6ae4ad54fc3bfc1a8677117dc605.png" class="image featured center">
+                <img src="/media/2018/01/68de6ae4ad54fc3bfc1a8677117dc605.png" alt="xkcd">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Un autre point à prendre en compte est l’entropie. L’entropie correspond à la quantité d’information contenue dans le mot de passe. On peut la comparer à l’incertitude que l’on a sur ce dernier. Il existe plusieurs méthodes pour calculer l’entropie d’un mot de passe, certains calculs prenant en comptes des répétitions de caractères successifs ou encore intégrant des dictionnaires de mots de passe fréquents.</p>
-
-<p>Dans notre cas, nous prendrons <code>H = log<sub>2</sub>(N<sup>L</sup>) = L &times; ( log(N) / log(2) )</code>.</p>
-
+<p>Dans notre cas, nous prendrons <code>H = log2(N^L) = L × ( log(N) / log(2) )</code>.</p>
 <table>
 <thead>
 <tr>
@@ -313,7 +611,6 @@
 <th>Entropie (H)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>P@ssword01</td>
@@ -321,28 +618,24 @@
 <td>10</td>
 <td>32</td>
 </tr>
-
 <tr>
 <td>k4dUj@gD_8</td>
 <td>10</td>
 <td>10</td>
 <td>33</td>
 </tr>
-
 <tr>
 <td>MonSuperMotDePasse</td>
 <td>13</td>
 <td>18</td>
 <td>67</td>
 </tr>
-
 <tr>
 <td>Tr0ub4dor&amp;3</td>
 <td>10</td>
 <td>11</td>
 <td>37</td>
 </tr>
-
 <tr>
 <td>correcthorsebatterystaple</td>
 <td>13</td>
@@ -351,288 +644,1074 @@
 </tr>
 </tbody>
 </table>
-
 <p>On voit bien qu’un mot de passe simple à retenir de 18 caractères mêlant uniquement minuscule et majuscule possède une entropie nettement plus élevée que notre mot de passe <code>k4dUj@gD_8</code>.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-lightbulb-o"></i> La longueur d’un mot de passe est à privilégier par rapport à la diversité de ses caractères.</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-lightbulb-o"></i>&nbsp;La longueur d’un mot de passe est à privilégier par rapport à la diversité de ses caractères.
+</div>
 <p>Attention, je ne dis pas qu’il ne faut pas utiliser des caractères variés pour un mot de passe : un mot de passe constitué d&rsquo;un seul caractère répété N fois a une entropie de 1 ! L&rsquo;idéal est de choisir plusieurs mots que l&rsquo;on colle les uns après les autres. Le mot de passe est donc amené à devenir une phrase de passe (passphrase en anglais), plus facile à retenir pour un utilisateur et plus long à casser pour un ordinateur.</p>
-
 <p>Dernier point : le renouvellement fréquent des mots de passe. C’est une fausse bonne idée. En effet, un utilisateur qui doit changer tous les trimestres son mot de passe sera plus enclin à choisir un mot de passe faible, voire même incrémenter un compteur placé à la fin d’un mot de passe invariant.</p>
-
 <p>Si le mot de passe est robuste et qu’il n’y a pas de raison de penser qu’il a été compromis, pourquoi le changer ? Toute la difficulté réside dans les moyens mis en place pour forcer l’utilisateur à choisir un mot de passe robuste.</p>
-
 <h3 id="guider-le-choix-mots-de-passe">Guider le choix mots de passe</h3>
-
 <p>Simplement imposer des règles ne suffit pas pour le choix d’un mot de passe. L’utilisateur va voir ces règles comme une nuisance et va mettre en place une stratégie d’évitement, préférant choisir le mot de passe le plus simple satisfaisant les règles imposées (tel que <code>P@ssword01</code>).</p>
-
 <p>Pour éviter ce genre de mot de passe, on peut envisager l’utilisation de dictionnaire lors du choix du mot de passe (j’ai déjà vu certains sites faire ça en JavaScript). Mais cela impose d’avoir recours à des ressources volumineuses (les dictionnaires comptant souvent quelques Gigas de données) et n’est pas forcément adapté à une application Web.</p>
-
 <p>Une solution qui a fait ses preuves est le nudge (<a href="https://www.ece.cmu.edu/~lbauer/papers/2012/usenix2012-meters.pdf">source</a>). Terme anglais qui n’a pas d’équivalent en français, un nudge est une modification infime de notre environnement qui modifie de façon concrète notre comportement. Sans le savoir, vous en avez déjà croisé :</p>
 
-<figure class="gallery gallery-column-3">
-	<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/4f660580d0116a21be0d100add83ee49.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/4f660580d0116a21be0d100add83ee49.png" alt="Guide gare">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/d1d7e52f82413b010434fa7ec3baf4fb.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/d1d7e52f82413b010434fa7ec3baf4fb.png" alt="Escaliers piano">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/4edf1d11f265ddfa22bf2ac2f6ec4b43.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/4edf1d11f265ddfa22bf2ac2f6ec4b43.png" alt="Radar éducatif">
-        </a>
-    </div>
-</div>
 
-	<figcaption class="clearfix"><h4>Exemples de nudge (en gare, pour encourager l&#39;utilisation des escalier, pour adapter sa vitesse)</h4></figcaption>
-</figure>
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2018/01/4f660580d0116a21be0d100add83ee49.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//4f660580d0116a21be0d100add83ee49.png' alt="Guide gare">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/d1d7e52f82413b010434fa7ec3baf4fb.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//d1d7e52f82413b010434fa7ec3baf4fb.png' alt="Escaliers piano">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/4edf1d11f265ddfa22bf2ac2f6ec4b43.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//4edf1d11f265ddfa22bf2ac2f6ec4b43.png' alt="Radar éducatif">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        <figcaption class="image-caption">Exemples de nudge (en gare, pour encourager l&#39;utilisation des escalier, pour adapter sa vitesse)</figcaption>
+    </figure>
+
+
 
 <p>Nous avons vu plus haut la notion d’entropie. On peut facilement mettre en place une échelle qui évolue selon l’entropie du mot de passe saisi par l’utilisateur. Google, KeePass, WordPress et d’autres ont déjà mis en place ce type d’indicateur pour inciter l’utilisateur à choisir un mot de passe fort.</p>
 
-<figure class="gallery gallery-column-2">
-	<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/897181580aa3737af3def1f474307b6f.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/897181580aa3737af3def1f474307b6f-300x175.png" alt="Nudge Gmail">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/7a57fa91e73a2dc47397fa055e803a10.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/7a57fa91e73a2dc47397fa055e803a10-300x175.png" alt="Nudge KeePass">
-        </a>
-    </div>
-</div>
 
-	
-</figure>
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2018/01/897181580aa3737af3def1f474307b6f.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//897181580aa3737af3def1f474307b6f-300x175.png' alt="Nudge Gmail">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/7a57fa91e73a2dc47397fa055e803a10.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//7a57fa91e73a2dc47397fa055e803a10-300x175.png' alt="Nudge KeePass">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        
+    </figure>
+
+
 
 <h3 id="les-gestionnaire-de-mot-de-passe">Les gestionnaire de mot de passe</h3>
-
 <p>Une dernière problématique est la diversité de ses mots de passe. En effet, face aux multiples sites Web pour lesquels nous avons besoin d’un mot de passe, il est facile de se dire « je vais mettre le même mot de passe partout ». Surtout, ne faîtes pas ça !</p>
-
 <p>Une première solution consiste à enregistrer le mot de passe dans le navigateur (Firefox, Chrome, Safari, Edge, etc.). Mais attention, en fonction du navigateur et de la configuration de ce dernier, vos mots de passes ne sont pas forcément protégés en cas de compromission de votre PC.</p>
-
 <p>L’autre solution est d’utiliser un gestionnaire de mot de passe dédié, tel que KeePass, LastPass, Dashlane, 1Password, etc. Ces gestionnaires vous permettront de générer, gérer et stocker vos mots de passe, ces derniers pouvant alors être longs, complexes et uniques. Vous n’avez plus qu’à retenir un seul mot de passe, celui permettant de déverrouiller votre gestionnaire. Bien évidemment, ce dernier devra être robuste, comme une passphrase par exemple. Pour ce qui est du gestionnaire, je vous laisse choisir parmi ceux qui existent.</p>
 
-<figure class="gallery gallery-column-4">
-	<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/a1bcf0f19351f0fa1f9f8e89a49ac1e0.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/a1bcf0f19351f0fa1f9f8e89a49ac1e0-150x150.png" alt="KeePass">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/72265d7ad91adbfc58fbe93ea8687a55.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/72265d7ad91adbfc58fbe93ea8687a55-150x150.png" alt="LastPass">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/f11f23a4304b75f7428d21c4f46e189c.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/f11f23a4304b75f7428d21c4f46e189c-150x150.png" alt="Dashlane">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2018/01/91c4c74435e0a2548471d1f6533c102c.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2018/01/91c4c74435e0a2548471d1f6533c102c-150x150.png" alt="1Password">
-        </a>
-    </div>
-</div>
 
-	<figcaption class="clearfix"><h4>KeePass, LastPass, Dashlane et 1Password</h4></figcaption>
-</figure>
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2018/01/a1bcf0f19351f0fa1f9f8e89a49ac1e0.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//a1bcf0f19351f0fa1f9f8e89a49ac1e0-150x150.png' alt="KeePass">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/72265d7ad91adbfc58fbe93ea8687a55.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//72265d7ad91adbfc58fbe93ea8687a55-150x150.png' alt="LastPass">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/f11f23a4304b75f7428d21c4f46e189c.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//f11f23a4304b75f7428d21c4f46e189c-150x150.png' alt="Dashlane">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2018/01/91c4c74435e0a2548471d1f6533c102c.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2018/01//91c4c74435e0a2548471d1f6533c102c-150x150.png' alt="1Password">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        <figcaption class="image-caption">KeePass, LastPass, Dashlane et 1Password</figcaption>
+    </figure>
+
+
 
 <h2 id="la-gestion-des-mots-de-passes-coté-serveur">La gestion des mots de passes coté serveur</h2>
-
 <p>Un mot de passe est une information sensible strictement personnelle, considéré comme tel par la <a href="https://fr.wikipedia.org/wiki/Commission_nationale_de_l%27informatique_et_des_libert%C3%A9s_(France)">CNIL</a> et dans le <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">RGPD</a>. Par conséquent, les sites Web qui vous demandent de protéger votre compte avec un mot de passe doivent suivre certaines règles.</p>
-
-<h3 id="comment-ne-pas-stocker-un-mot-de-passe">Comment (ne pas) stocker un mot de passe ?</h3>
-
+<h3 id="comment-ne-pas-stocker-un-mot-de-passe-">Comment (ne pas) stocker un mot de passe ?</h3>
 <p>Lorsque vous souhaitez vous connecter à votre espace personnel sur une application Web, ce dernier doit pouvoir vérifier que vous êtes capable de lui donner le bon mot de passe. Par conséquent, l’application Web doit stocker des informations concernant votre mot passe.</p>
+<p>Le plus simple est d’enregistrer votre mot de passe dans une base de données, tout comme le reste de vos informations personnelles (nom, prénom, mail, etc.). C’est facile, et puis en plus, si l’utilisateur a oublié son mot de passe, l’application Web est en mesure de lui renvoyer par mail. MAUVAISE IDEÉ !!!</p>
 
-<p>Le plus simple est d’enregistrer votre mot de passe dans une base de données, tout comme le reste de vos informations personnelles (nom, prénom, mail, etc.). C’est facile, et puis en plus, si l’utilisateur a oublié son mot de passe, l’application Web est en mesure de lui renvoyer par mail. MAUVAISE IDE&Eacute; !!!</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> Un mot de passe ne doit jamais, je dis bien <strong>JAMAIS</strong>, être stocké en clair !</div>
+    
+    
 
+
+
+
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-circle"></i>&nbsp;Un mot de passe ne doit jamais, je dis bien <strong>JAMAIS</strong>, être stocké en clair !
+</div>
 <p>Imaginez qu’une faille du site permette d’accéder à l’ensemble de la base de données (injections SQL (<a href="https://www.owasp.org/index.php/SQL_Injection">OWASP</a>), administrateur réseau malveillant, etc.) et votre mot de passe est alors compromis.</p>
-
 <p>Si un site vous envoie votre mot de passe en clair lorsque vous cliquez sur « mot de passe oublié », cela signifie probablement que ce dernier est stocké en clair dans une base de données.</p>
-
 <p>Je dis « probablement », car votre mot de passe peut également être stocké chiffré. Une clé de chiffrement permet de chiffrer votre mot de passe, et sans clé de déchiffrement, votre mot de passe chiffré est inutilisable s’il venait à être volé. Cependant, les clés de chiffrement sont souvent stockées sur le serveur hébergeant la base de données, et donc une faille pourrait mener, comme avec un stockage en clair, à une divulgation de votre mot de passe.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> Chiffrer les mots de passe est une fausse bonne idée &hellip;</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-circle"></i>&nbsp;Chiffrer les mots de passe est une fausse bonne idée &hellip;
+</div>
 <p>Mais alors comment l’application peut-elle stocker votre mot de passe sans que celui-ci ne puisse être lu par une tierce personne ? Et bien il suffit que l’application stocke le condensat du mot de passe, et non le mot de passe lui-même.</p>
-
 <h3 id="hacher-les-mots-de-passes">Hacher les mots de passes</h3>
-
 <p>Un condensat (en anglais hash), est une chaîne de caractère de taille fixe obtenue à partir d’une entrée quelconque (chaîne de caractères, binaire, image, vidéo, etc.) à l’aide d’une fonction de hachage. Une telle fonction doit respecter les propriétés suivantes :</p>
-
 <ul>
 <li>Pour une entrée donnée, le condensat obtenu sera toujours le même, quelques soient la machine et le système d’exploitation sur lesquels la fonction est exécutée ;</li>
 <li>La sortie doit être de taille fixe ;</li>
 <li>Une légère modification de l’entrée doit produire un condensat sensiblement différent ;</li>
 <li>Il ne doit pas être possible, dans la pratique, de retrouver l’entrée à partir du condensat, et deux entrées différentes ne peuvent pas produire le même condensat (je dis « dans la pratique », et non « théoriquement », car il est trivial d’un point de vue mathématiques de montrer que cette propriété est irréalisable étant donné la caractéristique de taille fixe de la sortie).</li>
 </ul>
-
 <p>Parmi les fonctions les plus connues, je citerais MD5, SHA-1 et SHA-2. Certains de ces algorithmes ne satisfont plus l’ensemble des propriétés, notamment les collisions (deux entrées qui produisent le même condensat) qui ont été prouvées comme réalisables pour MD5 et SHA-1.</p>
-
 <p>Vous avez remarqué qu’un condensat est une chaîne de caractères de taille fixe. J’y ajouterai que ces caractères sont alphanumériques. Donc si une application Web limite la taille des mots de passe, ou interdit certains caractères spéciaux, cela signifie probablement que ce dernier est stocké en clair dans une base de données.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-lightbulb-o"></i> Il est donc recommander de stocker les condensats des mots de passe et d’utiliser la fonction de hachage SHA-2, ou ses dérivés (SHA-256, SHA-224, SHA-512 ou SHA-384).</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-lightbulb-o"></i>&nbsp;Il est donc recommander de stocker les condensats des mots de passe et d’utiliser la fonction de hachage SHA-2, ou ses dérivés (SHA-256, SHA-224, SHA-512 ou SHA-384).
+</div>
 <h3 id="assaisonnons-les-condensats">Assaisonnons les condensats</h3>
-
 <p>Les mots de passe sont à présents stockés hachés dans la base de données de l’application, mais des problèmes de sécurité subsistent :</p>
-
 <ul>
 <li>Deux utilisateurs qui ont le même mot de passe ont donc le même condensat. En triant la liste des utilisateurs selon les valeurs des condensats, il sera facile de savoir quels mots de passe attaquer en priorité.</li>
 <li>Des dictionnaires existent pour les algorithmes de hachage, permettant de se passer des étapes de calcul du condensat et permettant de retrouver les mots de passes les plus fréquemment utilisés.</li>
 </ul>
-
 <p>Que faire ? Et bien il suffit de « saler » le mot de passe, voire même le « poivrer ».</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-question-circle"></i> Non mais attends, on n’est pas dans un cours de cuisine ici ...</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;Non mais attends, on n’est pas dans un cours de cuisine ici &hellip;
+</div>
 <p>Afin de pallier au premier problème et éviter que deux utilisateurs avec le même mot de passe aient le même condensat, il suffit de concaténer le mot de passe avec une chaîne aléatoire propre à chaque utilisateur, que l’on appelle « sel » (en anglais salt).</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="python">hash_pwd = SHA512(clear_pwd &#43; salt)
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">hash_pwd</span> <span class="o">=</span> <span class="n">SHA512</span><span class="p">(</span><span class="n">clear_pwd</span> <span class="o">+</span> <span class="n">salt</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Il est également possible de concaténer une seconde chaîne de caractère commune à tous les utilisateurs : le « poivre » (en anglais pepper). Le poivre ne doit JAMAIS être stocké dans la base de données. Ainsi, si la base de données venait à être compromise (et uniquement la base de données), alors les condensats salés et poivrés seraient inexploitables.</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="python">hash_pwd = SHA512(clear_pwd &#43; salt &#43; pepper)
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">hash_pwd</span> <span class="o">=</span> <span class="n">SHA512</span><span class="p">(</span><span class="n">clear_pwd</span> <span class="o">+</span> <span class="n">salt</span> <span class="o">+</span> <span class="n">pepper</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Enfin, une dernière mesure de protection qu’il est possible de mettre en place est l’itération. Hacher une fois le mot de passe salé et poivré, c’est bien, et le hacher 1000 fois, c’est mieux. Cela rallongera le temps nécessaire pour casser le condensat du mot de passe.</p>
-
-<h3 id="des-fonctions-de-hachages-sécurisées">Des fonctions de hachages « sécurisées »</h3>
-
+<h3 id="des-fonctions-de-hachages--sécurisées-">Des fonctions de hachages « sécurisées »</h3>
 <p>Maintenant que l’on a listé les bonnes et mauvaises pratiques qu’un site Web peut mettre en œuvre pour protéger votre mot de passe, je vous propose trois petites fonctions pour résumer tout ça :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pepper</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;PEPPER&#39;</span><span class="p">]</span>
 
-<div class="code-container">
-	
-    <pre class="code"><code data-language="python">pepper = conf[&#39;PEPPER&#39;]
+<span class="k">def</span> <span class="nf">hash_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+	<span class="n">hashed_password</span> <span class="o">=</span> <span class="n">password</span> <span class="o">+</span> <span class="n">salt</span> <span class="o">+</span> <span class="n">pepper</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+		<span class="n">hashed_password</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span><span class="p">(</span><span class="n">hashed_password</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">hashed_password</span>
 
-def hash_password(password, salt, iterations=1000):
-	hashed_password = password &#43; salt &#43; pepper
-	for i in range(iterations):
-		hashed_password = hashlib.sha512(hashed_password)
-	return hashed_password
+<span class="k">def</span> <span class="nf">create_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+	<span class="n">salt</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
+	<span class="k">return</span> <span class="n">hash_password</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">salt</span>
 
-def create_password(password, iterations=1000):
-	salt = uuid.uuid4().hex
-	return hash_password(password, salt, iterations) &#43; &#39;:&#39; &#43; salt
-
-def check_password(hashed_password, user_password, iterations=1000):
-	password, salt = hash_password.split(&#39;:&#39;)
-	return password == hash_password(user_password, salt, iterations)
-</code></pre>
+<span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">hashed_password</span><span class="p">,</span> <span class="n">user_password</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+	<span class="n">password</span><span class="p">,</span> <span class="n">salt</span> <span class="o">=</span> <span class="n">hash_password</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">password</span> <span class="o">==</span> <span class="n">hash_password</span><span class="p">(</span><span class="n">user_password</span><span class="p">,</span> <span class="n">salt</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span></code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Selon les langages de programmation, des fonctions de hachage existent déjà et ce n&rsquo;est pas obligatoire de réinventer la roue. Parmi les fonctions les plus connues, je peux citer <a href="https://fr.wikipedia.org/wiki/Bcrypt">Bcrypt</a>, <a href="https://fr.wikipedia.org/wiki/Argon2">Argon2</a>, <a href="https://fr.wikipedia.org/wiki/Scrypt">Scrypt</a> ou encore <a href="https://fr.wikipedia.org/wiki/PBKDF2">PBKDF2</a>. Il faudra néanmoins fournir le sel en paramètre, fournir le poivre dans le mot de passe, et certaines fonction limite la taille de l&rsquo;entrée (comme <a href="https://fr.wikipedia.org/wiki/Bcrypt">Bcrypt</a> par exemple).</p>
-
 <h3 id="le-transport-du-mot-de-passe">Le transport du mot de passe</h3>
-
 <p>Lorsque vous saisissez votre mot de passe dans le formulaire d’authentification d’un site Web puis que vous validez, il est alors envoyé vers le serveur hébergeant ce site. Votre mot de passe est alors vulnérable, et tout comme lors de son stockage, il doit être protégé lors de son transport entre vous et le serveur.</p>
-
 <p>La première chose à faire est de mettre en place HTTPS sur le serveur de l’application. Cela permettra de chiffrer les communications entre votre navigateur et le site Web vers lequel vous envoyez votre mot de passe. L’article ne portant pas sur HTTPS, je ne vais pas m’attarder sur ce point. Sachez simplement qu’en 2018, c’est tellement simple d’obtenir un certificat (avec des entités telles que <a href="https://letsencrypt.org/">Let’s Encrypt</a>) que tout, je dis bien TOUT les site Web impliquant le transfert de données sensible doivent imposer l’utilisation du protocole HTTPS avec une configuration durcie.</p>
-
 <p>Enfin, une mesure de protection supplémentaire consiste à hacher le mot de passe coté client en utilisant du JavaScript. Ainsi, même si la requête HTTP est interceptée, le condensat qu’elle comporte ne sera pas (ou difficilement) exploitable. Pour cela, il nécessaire d’envoyer le sel au client pour le calcul du condensat salé. Il est aussi possible de ne pas salé le mot de passe coté client et simplement le hacher.</p>
-
 <ul>
 <li>Coté client : <code>client_pwd = SHA512(pwd)</code></li>
 <li>Coté serveur : <code>server_pwd = SHA512(client_pwd + salt + pepper)</code></li>
 </ul>
-
 <p>Si vous avez bien suivi, le poivre est secret et ne doit pas quitter le serveur sur lequel il a été généré. Il ne faut surtout pas envoyer le poivre au client !</p>
-
 <h1 id="conclusion">Conclusion</h1>
-
-<p>Le mot de passe est souvent maltraité, accusé d&rsquo;être le maillon faible de la protection des espaces personnels. Mais il suffirait de revoir les politiques de mots de passe et s&rsquo;assurer du bon stockage de ce dernier :</p>
-
+<p>Le mot de passe est souvent maltraité, accusé d'être le maillon faible de la protection des espaces personnels. Mais il suffirait de revoir les politiques de mots de passe et s&rsquo;assurer du bon stockage de ce dernier :</p>
 <ul>
 <li>Stocker des condensats de mots de passe salés et poivrés, en utilisant un algorithme de hachage robuste (bannir MD5 et SHA-1) ;</li>
 <li>Définir de nouvelles règles pour la création d&rsquo;une « phrase de passe » :
-
 <ul>
 <li>Imposer une taille de 15 ou 20 caractères, forçant l&rsquo;utilisateur à choisir une phrase plutôt qu&rsquo;un mot ;</li>
 <li>Ne plus imposer la compléxité mais la « nudger », en modifiant l&rsquo;interface de choix du mot de passe à l&rsquo;aide de nudges pour guider l&rsquo;utilisateur via des indicateurs ;</li>
 <li>Le renouveller seulement lorsque l&rsquo;on suspecte que le mot de passe a été compromis ;</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+<p>Vous savez quoi faire ;)<br>
+Si vous avez d&rsquo;autres idées, des conseils ou des remarques concernant cet article, n&rsquo;hésitez pas à me le faire savoir !</p>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/dossiers">Dossiers</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/mots-de-passe">Mots de passe</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/hachage">hachage</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/chiffrement">chiffrement</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/rgpd">RGPD</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/cnil">CNIL</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/vie-priv%C3%A9e">vie privée</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/protection">protection</a></li>
+                
+            
+        
+    </ul>
+  </li>
 </ul>
 
-<p>Vous savez quoi faire ;)<br />
-Si vous avez d&rsquo;autres idées, des conseils ou des remarques concernant cet article, n&rsquo;hésitez pas à me le faire savoir !</p></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/mots-de-passe"><span class="tag">Mots De Passe</span></a></li>
-        
-          <li><a href="/tags/hachage"><span class="tag">Hachage</span></a></li>
-        
-          <li><a href="/tags/chiffrement"><span class="tag">Chiffrement</span></a></li>
-        
-          <li><a href="/tags/rgpd"><span class="tag">RGPD</span></a></li>
-        
-          <li><a href="/tags/cnil"><span class="tag">CNIL</span></a></li>
-        
-          <li><a href="/tags/vie-priv%C3%A9e"><span class="tag">Vie Privée</span></a></li>
-        
-          <li><a href="/tags/protection"><span class="tag">Protection</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>414</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </footer>
 
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>791</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/dossiers/systeme-de-fichier-emergence-btrfs/"
+                class="button big previous">Système de fichier : l&#39;émergence de btrfs ?</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

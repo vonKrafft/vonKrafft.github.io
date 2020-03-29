@@ -1,334 +1,1126 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Un morpion en Javascript
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Un morpion en Javascript" />
-    <meta name="twitter:description" content="On est parfois ammener à s&amp;rsquo;oocuper comme on peu lorsqu&amp;rsquo;on ne trouve rien à faire. C&amp;rsquo;est ainsi que j&amp;rsquo;ai implémenté un Morpion codé en JavaScript.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2013/12/86d8663b4bb62cbe6de841cb80991e60-1024x614.png" />
-  
-
-
-
-
-<link rel="canonical" href="/tutoriels/un-morpion-en-javascript/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "tutoriels",
+        "name" : "Un morpion en Javascript",
+        "headline" : "Un morpion en Javascript",
+        "description" : "Explication rapide du code source JavaScript d\x27un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2013",
+        "datePublished": "2013-12-12 17:23:50 \x2b0000 UTC",
+        "dateModified" : "2013-12-12 17:23:50 \x2b0000 UTC",
+        "url" : "\/tutoriels\/un-morpion-en-javascript\/",
+        "wordCount" : "440",
+        "keywords" : [ "Morpion","JavaScript","Jeu","CSS","jQuery","Tic Tac Toe","HTML","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Un morpion en Javascript</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Explication rapide du code source JavaScript d&#39;un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Un morpion en Javascript"/>
+<meta name="twitter:description" content="Explication rapide du code source JavaScript d&#39;un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Un morpion en Javascript" />
+<meta property="og:description" content="Explication rapide du code source JavaScript d&#39;un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/tutoriels/un-morpion-en-javascript/" />
+<meta property="article:published_time" content="2013-12-12T17:23:50+00:00" />
+<meta property="article:modified_time" content="2013-12-12T18:35:51+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Un morpion en Javascript">
+<meta itemprop="description" content="Explication rapide du code source JavaScript d&#39;un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien.">
+<meta itemprop="datePublished" content="2013-12-12T17:23:50&#43;00:00" />
+<meta itemprop="dateModified" content="2013-12-12T18:35:51&#43;00:00" />
+<meta itemprop="wordCount" content="440">
+
+
+
+<meta itemprop="keywords" content="Morpion,JavaScript,Jeu,CSS,jQuery,Tic Tac Toe,HTML," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-tutoriels">
-    <header class="post-header">
-      <h1 class="post-title">Un morpion en Javascript</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
-        @vonKrafft · 12 décembre 2013
-      </p>
-    </header>
-    <article class="post-content"><p>On est parfois ammener à s&rsquo;oocuper comme on peu lorsqu&rsquo;on ne trouve rien à faire. C&rsquo;est ainsi que j&rsquo;ai implémenté un Morpion codé en JavaScript.</p>
 
-<p></p>
+<section id="menu">
 
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2ftutoriels%2fun-morpion-en-javascript%2f&amp;text=Un%20morpion%20en%20Javascript&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2ftutoriels%2fun-morpion-en-javascript%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2ftutoriels%2fun-morpion-en-javascript%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2ftutoriels%2fun-morpion-en-javascript%2f&amp;title=Un%20morpion%20en%20Javascript" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2ftutoriels%2fun-morpion-en-javascript%2f&amp;title=Un%20morpion%20en%20Javascript" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2ftutoriels%2fun-morpion-en-javascript%2f&amp;title=Un%20morpion%20en%20Javascript" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2ftutoriels%2fun-morpion-en-javascript%2f&amp;description=Un%20morpion%20en%20Javascript" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2ftutoriels%2fun-morpion-en-javascript%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2013/12/86d8663b4bb62cbe6de841cb80991e60-1024x614.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/tutoriels/un-morpion-en-javascript/">Un morpion en Javascript</a></h1>
+            
+        
+        
+            <p>Explication rapide du code source JavaScript d&#39;un jeu du morpion. Ce code source est aussi téléchargeable en suivant ce lien.</p>
+        
+    </div>
+    <div class="meta meta-tutoriels">
+        
+
+        <time class="published"
+            datetime='2013-12-12'>
+            12 décembre 2013</time>
+        <span class="author"></span>
+
+        
+            <p>3 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>On est parfois ammener à s&rsquo;oocuper comme on peu lorsqu&rsquo;on ne trouve rien à faire. C&rsquo;est ainsi que j&rsquo;ai implémenté un Morpion codé en JavaScript.</p>
 <h2 id="le-jeu-du-morpion">Le jeu du Morpion</h2>
-
 <p>Le <strong>morpion</strong> est un jeu de réflexion se pratiquant à deux joueurs au tour par tour et dont le but est de créer le premier un alignement de trois symbole sur une grille de 3 x 3.</p>
-
 <ul>
 <li>Vous pouvez y jouer sur <a href="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5/">cette page</a></li>
 <li>Vous pouvez télécharger le code source avec <a href="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5.zip">ce lien</a></li>
 </ul>
 
-<figure>
+
+
     
-        <img src="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5.jpg">
+    
+        
+        
+        
+        
+        
+    
+
     
     
-        <figcaption>
-            <h4>Aperçu du jeu</h4>
-        </figcaption>
     
-</figure>
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <span class="image center">
+                <img src="/media/2013/12/8cfd9cdead69b491836fe8caf58234c5.jpg" alt="">
+            </span>
+        
+        <figcaption class="image-caption">Aperçu du jeu</figcaption>
+    </figure>
+
 
 <h2 id="la-page-html">La page HTML</h2>
-
 <p>Elle comporte une zone de jeu et une colonne latérale pour les points et les messages. Chaque balise HTML possède un id pour pouvoir être manipulée par le script JavaScript. La zone de jeu est une balise &ldquo;canvas&rdquo;. Elle est utilisée en tant que zone de dessin.</p>
-
 <h2 id="le-script-js">Le script JS</h2>
-
 <p>Pour ce jeu du morpion, j&rsquo;ai utilisé la bibliothèque jQuery.</p>
-
 <h3 id="la-zone-de-jeu">La zone de jeu</h3>
-
 <p>Pour dessiner la grille de jeux, j&rsquo;ai implémenté un fonction <code>drawGrid()</code>. Elle dessine quatre segments grâce à la méthode <code>lineTo()</code>. Cette méthode est également utilisée pour tracer la croix du joueur 1. Pour le cercle du joueur 2, j&rsquo;ai utilisé la méthode <code>arc()</code>.</p>
-
-<h3 id="déroulement-d-une-action">Déroulement d&rsquo;une action</h3>
-
+<h3 id="déroulement-dune-action">Déroulement d&rsquo;une action</h3>
 <p>Je récupère l’événement d&rsquo;un clique de la souris grâce au code <code>$(&quot;#canvas&quot;).click(function(e){})</code>. Lorsque l&rsquo;on clique sur la zone de jeu, le script calcule les coordonnées du centre de la case la plus proche. Ensuite, si la case est libre, on appelle la fonction <code>drawSector()</code>. En fonction du joueur qui est en train de jouer, cette fonction dessine une croix ou un cercle, permute le numéro du joueur en train de jouer et actualise le message d&rsquo;information. Enfin, elle vérifie si une ligne est complète. Si c&rsquo;est le cas, le script appelle la fonction <code>theEnd()</code>. Si un joueur a gagné, on incrémente son compteur de points. S&rsquo;il y a match nul, seul le compteur de manche est incrémenté. Enfin, le message d&rsquo;information est actualisé et deux boutons s&rsquo;affichent : &ldquo;Nouvelle manche&rdquo; et &ldquo;Nouvelle partie&rdquo;.</p>
-
 <h3 id="nouvelle-manche-ou-partie">Nouvelle manche ou partie</h3>
-
 <p>A la fin de chaque manche, deux boutons apparaissent afin de commencer une nouvelle manche ou une nouvelle partie. Pour la nouvelle manche, on exécute la fonction <code>newMatch()</code>. La grille est redessinée, le tableau contenant la liste des cases occupées et réinitialisé et le message d&rsquo;information est actualisé. Pour la nouvelle partie, on exécute la fonction <code>newGame()</code>. Cette fonction appelle la fonction <code>newMatch()</code> et en plus, les compteurs de points et de manches sont remis à zéro.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> Vous êtes libre d&rsquo;utiliser librement ce code. Seulement, si vous le diffusez, merci de citer vos sources et de conserver les commentaires des fichiers HTML, JavaScript et CSS.</div></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/morpion"><span class="tag">Morpion</span></a></li>
-        
-          <li><a href="/tags/javascript"><span class="tag">JavaScript</span></a></li>
-        
-          <li><a href="/tags/jeu"><span class="tag">Jeu</span></a></li>
-        
-          <li><a href="/tags/css"><span class="tag">CSS</span></a></li>
-        
-          <li><a href="/tags/jquery"><span class="tag">JQuery</span></a></li>
-        
-          <li><a href="/tags/tic-tac-toe"><span class="tag">Tic Tac Toe</span></a></li>
-        
-          <li><a href="/tags/html"><span class="tag">HTML</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1922</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;Vous êtes libre d&rsquo;utiliser librement ce code. Seulement, si vous le diffusez, merci de citer vos sources et de conserver les commentaires des fichiers HTML, JavaScript et CSS.
+</div>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/tutoriels">Tutoriels</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/morpion">Morpion</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/javascript">JavaScript</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/jeu">Jeu</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/css">CSS</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/jquery">jQuery</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/tic-tac-toe">Tic Tac Toe</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/html">HTML</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>2299</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/tutoriels/recyclez-vos-disquettes-pot-a-crayons/"
+                class="button big previous">Recyclez vos disquettes en pot à crayons</a></li>
+    
+
+    
+        <li><a href="/tutoriels/prises-conectees-sonoff-tasmota/"
+                class="button big next">Des prises connectées Sonoff avec Tasmota</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

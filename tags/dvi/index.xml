@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dvi on vonKrafft</title>
+    <title>DVI on vonKrafft</title>
     <link>/tags/dvi/</link>
-    <description>Recent content in Dvi on vonKrafft</description>
+    <description>Recent content in DVI on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 05 Nov 2011 21:46:35 +0000</lastBuildDate>
     
 	<atom:link href="/tags/dvi/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
       
       <guid>/tutoriels/gerer-double-ecran/</guid>
-      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Avec Windows qui permet de gérer jusqu’à huit écran simultanément, pourquoi ne pas profiter, sans aller jusqu’à huit, du confort d’un double écran. D’autant que la plupart des cartes graphiques autorise l’affichage sur deux écrans, idéal pour travailler. Ainsi, vous pourrez profiter d’un tableur Excel en plein écran tout en tapant un rapport avec Word sur le second. Les manipulations qui suivent sont illustrées avec Windows 7 mais elles sont facilement transposables aux versions antérieures.&lt;/p&gt;</description>
     </item>
     
   </channel>

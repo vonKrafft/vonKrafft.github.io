@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gnupg on vonKrafft</title>
+    <title>GnuPG on vonKrafft</title>
     <link>/tags/gnupg/</link>
-    <description>Recent content in Gnupg on vonKrafft</description>
+    <description>Recent content in GnuPG on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Wed, 18 Jul 2018 23:40:17 +0000</lastBuildDate>
     
 	<atom:link href="/tags/gnupg/index.xml" rel="self" type="application/rss+xml" />
@@ -14,31 +13,59 @@
     
     <item>
       <title>Gérer ses mots de passe avec PGP</title>
-      <link>/console/gerer-ses-mots-de-passe-avec-pgp/</link>
+      <link>/securite/gerer-ses-mots-de-passe-avec-pgp/</link>
       <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/console/gerer-ses-mots-de-passe-avec-pgp/</guid>
-      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&amp;rsquo;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>/securite/gerer-ses-mots-de-passe-avec-pgp/</guid>
+      <description>&lt;p&gt;Si de nouvelles méthodes d&amp;rsquo;authentification font peu à peu leur apparition, les mots de passe sont encore largement utilisés. J&#39;évoquais déjà dans mon article sur &lt;a href=&#34;/dossiers/mots-de-passe-bonnes-pratiques/&#34;&gt;les bonnes pratiques en matière de mot de passe&lt;/a&gt; comment stocker convenablement les mots de passe sur un serveur de base de données. Mais nos identifiants ont beau bénéficier de la meilleure protection possible en termes de stockage sur ces serveurs, cela n&amp;rsquo;empêchera pas l&amp;rsquo;utilisateur de choisir un mot de passe faible ou de le stocker en clair sur son ordinateur &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PGP : Générer des clés et configurer une Yubikey</title>
-      <link>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</link>
+      <link>/securite/pgp-generer-des-cles-et-configurer-une-yubikey/</link>
       <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
       
-      <guid>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</guid>
+      <guid>/securite/pgp-generer-des-cles-et-configurer-une-yubikey/</guid>
       <description>&lt;p&gt;Ayant récemment acquis une &lt;a href=&#34;https://www.yubico.com/product/yubikey-neo/&#34;&gt;Yubikey NEO&lt;/a&gt;, j&amp;rsquo;ai souhaité me créer de (nouvelles) clés GPG, les stocker sur ma Yubikey et configurer l&amp;rsquo;authentification SSH pour utiliser la clé présente sur la Yubikey. Après avoir lu pas mal d&amp;rsquo;articles et croisé les différentes sources qui étaient parfois incomplètes ou dédiées à d&amp;rsquo;autres environnement UNIX, je suis enfin parvenu à configurer ma clé. Je regroupe ici les différentes étapes qui m&amp;rsquo;ont permis d&amp;rsquo;y arriver (on ne sait jamais, ça pourra servir à d&amp;rsquo;autres, ou me resservir si je dois configurer un nouveau PC ou reformater ma Yubikey).&lt;/p&gt;
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg&#34;&gt;
-    
-    
-&lt;/figure&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;span class=&#34;image center&#34;&gt;
+                &lt;img src=&#34;/media/2018/06/3d693b8cc27de08455d746df6295da08.jpg&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
   </channel>

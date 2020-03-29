@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apple on vonKrafft</title>
     <link>/tags/apple/</link>
     <description>Recent content in Apple on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Thu, 13 Sep 2012 19:30:43 +0000</lastBuildDate>
     
 	<atom:link href="/tags/apple/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
       <guid>/actus/iphone-5-apple-en-mal-de-revolution/</guid>
-      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Bientôt un an que Steve Jobs a quitté ce monde, et Apple. Or, la firme de Cupertino a effrayé le monde informatique avec le Nouvel iPad qui se rapprochait plus de « l’évolution » que de la « révolution ». Et malheureusement, Apple n&amp;rsquo;a pas su créer la susprise en ce 12 septembre. En effet, même si cette **Keynote **s’est accompagnée de l&amp;rsquo;iPhone 5, d’une nouvelle gamme d’iPod Nano et Touch, ainsi que de nouveaux écouteurs et un nouveau connecteur, ces nouveautés n&amp;rsquo;ont fait que confirmer les rumeurs sans apporter de « révolution ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,16 +26,48 @@
       <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
       
       <guid>/dossiers/proces-samsung-apple-consequences/</guid>
-      <description>&lt;figure&gt;
-    &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a-1024x471.jpg&#34;&gt;
-    &lt;/a&gt;
+      <description>&lt;p&gt;Le tribunal californien chargé de l’affaire &amp;ldquo;Samsung-Apple&amp;rdquo; a rendu ce week-end son &lt;a href=&#34;http://www.scribd.com/fullscreen/103860673?access_key=key-1ho669app2expaa7tptr&#34;&gt;verdict&lt;/a&gt; et condamne le constructeur coréen à 1,049 milliard de dommages et intérêts. Quant à la firme de Steve Jobs, elle n’écope d’aucunes condamnations. Cette défaite de Samsung aura de lourdes conséquences sur le marché du smartphone.Voilà qui clôture plusieurs mois de débats qui ont secoués la planète numérique : Samsung a été condamné à versé plus d’un milliard de dollars à Apple pour avoir utilisé illégalement plusieurs de ses brevets. Un record pour une affaire de violation de propriété intellectuelle.&lt;/p&gt;
+
+
+
     
-&lt;/figure&gt;
+    
+        
+        
+        
+        
+        
+        
+    
 
-&lt;p&gt;Le tribunal californien chargé de l’affaire &amp;ldquo;Samsung-Apple&amp;rdquo; a rendu ce week-end son &lt;a href=&#34;http://www.scribd.com/fullscreen/103860673?access_key=key-1ho669app2expaa7tptr&#34;&gt;verdict&lt;/a&gt; et condamne le constructeur coréen à 1,049 milliard de dommages et intérêts. Quant à la firme de Steve Jobs, elle n’écope d’aucunes condamnations. Cette défaite de Samsung aura de lourdes conséquences sur le marché du smartphone.Voilà qui clôture plusieurs mois de débats qui ont secoués la planète numérique : Samsung a été condamné à versé plus d’un milliard de dollars à Apple pour avoir utilisé illégalement plusieurs de ses brevets. Un record pour une affaire de violation de propriété intellectuelle.&lt;/p&gt;
+    
+    
+    
+    
+    
 
-&lt;p&gt;&lt;/p&gt;</description>
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;figure&gt;
+        
+            &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; class=&#34;image featured center&#34;&gt;
+                &lt;img src=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a-1024x471.jpg&#34; alt=&#34;&#34;&gt;
+            &lt;/a&gt;
+        
+        
+    &lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -47,9 +76,7 @@
       <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
       
       <guid>/actus/une-rentree-high-tech-qui-sannonce-riche/</guid>
-      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,11 +85,8 @@
       <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
       
       <guid>/actus/ipad-3-le-nouvel-ipad-troisieme-du-nom/</guid>
-      <description>&lt;h2 id=&#34;ipad-3-et-non-le-nouvel-ipad&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;ipad-3--et-non--le-nouvel-ipad-&#34;&gt;iPad 3 &amp;hellip; et non, &lt;em&gt;« Le Nouvel iPad »&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Comment passer à coté de l&amp;rsquo;annonce de l&amp;rsquo;un des produits les plus attendus du moment. Après de nombreuses rumeurs sur la date et les caractéristiques du remplaçant de l&amp;rsquo;iPad deuxième du nom, Apple a annoncé il y a quelques jour sa prochaine Keynote qui aura lieue ce soir : « We have something you really have to see. And touch. » : présentation de l&amp;rsquo;iPad 3 alias le « Nouvel iPad ».&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,9 +95,7 @@
       <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
       
       <guid>/actus/steve-jobs-1955-2011/</guid>
-      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans la nuit du 5 au 6 octobre 2011, Apple annonce le décès de son ex-PDG et co-fondateur, Steve Jobs. Retour sur l’histoire de ce personnage charismatique, innovant toujours afin de révolutionner le monde informatique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -82,16 +104,17 @@
       <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
       
       <guid>/actus/un-ecran-apple-exploitant-le-port-thunderbolt/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; data-lightbox=&#34;post-gallery&#34; target=&#34;_blank&#34;&gt;
-        &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
-    &lt;/a&gt;
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;a href=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547.jpg&#34; class=&#34;image featured left&#34;&gt;
+                &lt;img src=&#34;/media/2011/10/39dfad92125acee288ad0d14a61f6547-300x184.jpg&#34; alt=&#34;Un écran Apple exploitant le port Thunderbolt&#34;&gt;
+            &lt;/a&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Apple innove avec un écran d’un nouveau genre. En effet, il n’utilise aucuns des connecteurs vidéo standard, mais la prise Thunderbolt d’Intel. Cette spécificité lui confère des possibilités uniques.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -100,9 +123,7 @@
       <pubDate>Sun, 19 Jun 2011 21:34:09 +0000</pubDate>
       
       <guid>/actus/cure-de-minceur-pour-le-macbook-air/</guid>
-      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Un poids de 1 Kg pour une épaisseur allant de 0,3 à 1,7 mm, le nouveau MacBook Air sortit en octobre 2010 est l’un des PC le plus fin du monde. Visite en image dans les entrailles de la machine.&lt;/p&gt;</description>
     </item>
     
   </channel>

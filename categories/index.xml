@@ -1,41 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on vonKrafft</title>
     <link>/categories/</link>
     <description>Recent content in Categories on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Wed, 27 Dec 2017 18:39:41 +0000</lastBuildDate>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Actus</title>
-      <link>/categories/actus/</link>
-      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      <title>Tutoriels</title>
+      <link>/categories/tutoriels/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/categories/actus/</guid>
+      <guid>/categories/tutoriels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Write-up</title>
+      <link>/categories/write-up/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
+      
+      <guid>/categories/write-up/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Console</title>
       <link>/categories/console/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
       <guid>/categories/console/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dossiers</title>
-      <link>/categories/dossiers/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/categories/dossiers/</guid>
       <description></description>
     </item>
     
@@ -49,11 +48,29 @@
     </item>
     
     <item>
-      <title>Tutoriels</title>
-      <link>/categories/tutoriels/</link>
-      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
+      <title>Securite</title>
+      <link>/categories/securite/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/categories/tutoriels/</guid>
+      <guid>/categories/securite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dossiers</title>
+      <link>/categories/dossiers/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/categories/dossiers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Actus</title>
+      <link>/categories/actus/</link>
+      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      
+      <guid>/categories/actus/</guid>
       <description></description>
     </item>
     

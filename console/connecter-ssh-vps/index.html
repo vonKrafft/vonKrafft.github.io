@@ -1,275 +1,517 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Se connecter en SSH à son VPS
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Se connecter en SSH à son VPS" />
-    <meta name="twitter:description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2016/01/597378aff3d794da6abd242d9a708295.jpg" />
-  
-
-
-
-
-<link rel="canonical" href="/console/connecter-ssh-vps/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "console",
+        "name" : "Se connecter en SSH à son VPS",
+        "headline" : "Se connecter en SSH à son VPS",
+        "description" : "Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2016",
+        "datePublished": "2016-01-19 12:19:17 \x2b0000 UTC",
+        "dateModified" : "2016-01-19 12:19:17 \x2b0000 UTC",
+        "url" : "\/console\/connecter-ssh-vps\/",
+        "wordCount" : "1630",
+        "keywords" : [ "VPS","Admin Système","SSH","RSA","Authentification","Clé","Sécurité","Serveur","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Se connecter en SSH à son VPS</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Se connecter en SSH à son VPS"/>
+<meta name="twitter:description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS"/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Se connecter en SSH à son VPS" />
+<meta property="og:description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/console/connecter-ssh-vps/" />
+<meta property="article:published_time" content="2016-01-19T12:19:17+00:00" />
+<meta property="article:modified_time" content="2016-05-11T21:01:43+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Se connecter en SSH à son VPS">
+<meta itemprop="description" content="Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS">
+<meta itemprop="datePublished" content="2016-01-19T12:19:17&#43;00:00" />
+<meta itemprop="dateModified" content="2016-05-11T21:01:43&#43;00:00" />
+<meta itemprop="wordCount" content="1630">
+
+
+
+<meta itemprop="keywords" content="VPS,Admin Système,SSH,RSA,Authentification,Clé,Sécurité,Serveur," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-console">
-    <header class="post-header">
-      <h1 class="post-title">Se connecter en SSH à son VPS</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/console/">Console</a></span>
-        @vonKrafft · 19 janvier 2016
-      </p>
-    </header>
-    <article class="post-content"><p>Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.</p>
 
-<p></p>
+<section id="menu">
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Un serveur VPS, une connexion SSH, mais qu’est-ce que c‘est ?</div>
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
 
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fconsole%2fconnecter-ssh-vps%2f&amp;text=Se%20connecter%20en%20SSH%20%c3%a0%20son%20VPS&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fconsole%2fconnecter-ssh-vps%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fconsole%2fconnecter-ssh-vps%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fconsole%2fconnecter-ssh-vps%2f&amp;title=Se%20connecter%20en%20SSH%20%c3%a0%20son%20VPS" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fconsole%2fconnecter-ssh-vps%2f&amp;title=Se%20connecter%20en%20SSH%20%c3%a0%20son%20VPS" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fconsole%2fconnecter-ssh-vps%2f&amp;title=Se%20connecter%20en%20SSH%20%c3%a0%20son%20VPS" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fconsole%2fconnecter-ssh-vps%2f&amp;description=Se%20connecter%20en%20SSH%20%c3%a0%20son%20VPS" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fconsole%2fconnecter-ssh-vps%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2016/01/597378aff3d794da6abd242d9a708295.jpg)"></div>
+    <div class="title">
+        
+            <h1><a href="/console/connecter-ssh-vps/">Se connecter en SSH à son VPS</a></h1>
+            
+        
+        
+            <p>Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS</p>
+        
+    </div>
+    <div class="meta meta-console">
+        
+
+        <time class="published"
+            datetime='2016-01-19'>
+            19 janvier 2016</time>
+        <span class="author"></span>
+
+        
+            <p>8 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Dans le tutoriel suivant, nous allons voir comment nous connecter en SSH à un serveur VPS, une manière simple et sécurisée pour administrer le serveur à distance.</p>
+    
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;Un serveur VPS, une connexion SSH, mais qu’est-ce que c‘est ?
+</div>
 <p>Un serveur VPS (de l’anglais Virtual Private Server) est une façon de partitionner un serveur en plusieurs serveurs virtuels indépendants qui ont chacun les caractéristiques logicielles d&rsquo;un serveur dédié, en utilisant des techniques de virtualisation. Chaque serveur peut fonctionner avec un système d&rsquo;exploitation différent et redémarrer indépendamment.</p>
-
 <p>L’administration d’un VPS se fait à distance, et dans notre cas nous utiliserons SSH. Le protocole SSH (de l&rsquo;anglais Secure Shell) impose une authentification lors de la création de la connexion. Une fois cette connexion établie, les échanges se font de façon sécurisée entre le client (nous) et le serveur (notre VPS).</p>
-
 <p>Dans la suite des manipulations, j’aurais la configuration suivante :</p>
-
 <ul>
 <li>Notre machine client depuis laquelle nous nous connecterons à notre serveur : elle porte le nom de “stargazer” ;</li>
 <li>Notre serveur VPS qui tourne via le logiciel VirtualBox sur notre machine client : il porte le nom de “farragut” avec l’adresse <code>farragut.server</code>.</li>
 </ul>
-
 <p>Un client et un serveur SSH sont respectivement installés sur “stargazer” et “farragut”. L’utilisateur client est “vonkrafft” et un autre utilisateur “vonkrafft” existe sur le VPS.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-circle"></i> <strong>ASTUCE</strong> : Comme vous pouvez le voir, j’ai une adresse personnalisée pour mon VPS alors que je travail en local (càd sur mon réseau privé derrière ma box Internet). Pour en savoir plus, je vous invite à lire <a href="/console/donner-nom-dns-a-serveur-local/">comment renommer votre serveur sur votre réseau local</a>.</div>
 
-<h2 id="connexion-au-serveur">Connexion au serveur</h2>
-
-<p>Pour nous connecter au serveur, rien de plus simple. Je me connecte grâce par SSH en tant que “vonkrafft” sur le VPS. Après avoir exécuté la commande, le serveur me demande mon mot de passe, je le saisi et c’est terminé : me voilà connecté au serveur.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
     
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
+    
+
+
+
+
+
+<div class="alert alert-success" role="alert">
+    <i class="fa fa-check-circle"></i>&nbsp;<strong>ASTUCE</strong> : Comme vous pouvez le voir, j’ai une adresse personnalisée pour mon VPS alors que je travail en local (càd sur mon réseau privé derrière ma box Internet). Pour en savoir plus, je vous invite à lire <a href="/console/donner-nom-dns-a-serveur-local/">comment renommer votre serveur sur votre réseau local</a>.
+</div>
+<h2 id="connexion-au-serveur">Connexion au serveur</h2>
+<p>Pour nous connecter au serveur, rien de plus simple. Je me connecte grâce par SSH en tant que “vonkrafft” sur le VPS. Après avoir exécuté la commande, le serveur me demande mon mot de passe, je le saisi et c’est terminé : me voilà connecté au serveur.</p>
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
 vonkrafft@farragut.server&#39;s password:
 
 The programs included with the Debian GNU/Linux system are free software;
@@ -280,32 +522,26 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 You have mail.
 Last login: Thu Dec 18 18:08:28 2015 from stargazer
-vonkrafft@farragut:~$
-</code></pre>
-</div>
-
+vonkrafft@farragut:~$</code></pre>
 <p>Comme vous pouvez le constater, j’ai du rentrer mon mot de passe, et cela va être le cas à chaque fois que je vais me connecter. Pour me faciliter les choses, nous allons mettre en place une authentification par clé.</p>
-
 <h2 id="générer-une-paire-de-clés-rsa">Générer une paire de clés RSA</h2>
-
 <p>Avant toute chose, il nous faut une paire de clés RSA privée/publiques.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Une clé RSA, c’est quoi, et pour quoi faire ?</div>
 
-<p>Le chiffrement RSA (nommé par les initiales de ses trois inventeurs Ronald Rivest, Adi Shamir et Leonard Adleman) est un algorithme de cryptographie asymétrique. Il repose sur l&rsquo;utilisation d&rsquo;une clé publique (qui est diffusée) et d&rsquo;une clé privée (gardée secrète), l&rsquo;une permettant de chiffrer le message et l&rsquo;autre de le déchiffrer. Ainsi, l&rsquo;expéditeur peut utiliser la clé publique du destinataire pour chiffrer un message que seul le destinataire (en possession de la clé privée) peut déchiffrer, garantissant la confidentialité du contenu.</p>
-
-<p>Il existe 2 types de clés : RSA et DSA. Chacune pouvant être de longueur différente : 1024, 2048, 4096 bits (les clés inférieures à 1024 bits sont à proscrire&hellip; surtout les RSA). Pour créer une clé DSA de 2048 bits : <code>ssh-keygen -t dsa -b 2048</code>. Sans paramètres, les options par défaut sont type RSA en 2048 bits.</p>
-
-<p>Pour générer notre paire de clés, il suffit d’utiliser l&rsquo;outil mis à disposition par le paquet SSH. Nous allons donc créer deux clés RSA de 4096 bits que je stocke sur ma machine client dans le répertoire <code>/home/vonkrafft/.ssh</code> :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
     
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-keygen -t rsa -b 4096
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;Une clé RSA, c’est quoi, et pour quoi faire ?
+</div>
+<p>Le chiffrement RSA (nommé par les initiales de ses trois inventeurs Ronald Rivest, Adi Shamir et Leonard Adleman) est un algorithme de cryptographie asymétrique. Il repose sur l&rsquo;utilisation d&rsquo;une clé publique (qui est diffusée) et d&rsquo;une clé privée (gardée secrète), l&rsquo;une permettant de chiffrer le message et l&rsquo;autre de le déchiffrer. Ainsi, l&rsquo;expéditeur peut utiliser la clé publique du destinataire pour chiffrer un message que seul le destinataire (en possession de la clé privée) peut déchiffrer, garantissant la confidentialité du contenu.</p>
+<p>Il existe 2 types de clés : RSA et DSA. Chacune pouvant être de longueur différente : 1024, 2048, 4096 bits (les clés inférieures à 1024 bits sont à proscrire&hellip; surtout les RSA). Pour créer une clé DSA de 2048 bits : <code>ssh-keygen -t dsa -b 2048</code>. Sans paramètres, les options par défaut sont type RSA en 2048 bits.</p>
+<p>Pour générer notre paire de clés, il suffit d’utiliser l&rsquo;outil mis à disposition par le paquet SSH. Nous allons donc créer deux clés RSA de 4096 bits que je stocke sur ma machine client dans le répertoire <code>/home/vonkrafft/.ssh</code> :</p>
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh-keygen -t rsa -b 4096
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/vonkrafft/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
@@ -313,187 +549,120 @@ Enter same passphrase again:
 Your identification has been saved in /home/vonkrafft/.ssh/id_rsa.
 Your public key has been saved in /home/vonkrafft/.ssh/id_rsa.pub.
 The key fingerprint is:
-09:69:5a:98:af:43:0f:72:1b:e7:fd:58:1b:41:d0:26 vonkrafft@stargazer
-</code></pre>
+09:69:5a:98:af:43:0f:72:1b:e7:fd:58:1b:41:d0:26 vonkrafft@stargazer</code></pre>
+
+
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;<strong>NOTE :</strong> J’ai choisi une taille de clé RSA de 4096 bits, vous pouvez bien évidement choisir DSA et/ou une autre taille de clé.
 </div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE :</strong> J’ai choisi une taille de clé RSA de 4096 bits, vous pouvez bien évidement choisir DSA et/ou une autre taille de clé.</div>
-
 <p>Lors de la génération des clés, je suis invité à renseigner une passphrase.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Une passphrase, mais qu’est-ce que c’est encore que ça ?</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;Une passphrase, mais qu’est-ce que c’est encore que ça ?
+</div>
 <p>Vous connaissez déjà les password (ou mot de passe dans la langue de Molière). Les passphrase sont des mots de passe très long qui ont été nommé ainsi pour les différencier des des mots de passe plus courts. Aisni, nous avaons les phrases (longues) de passe, et les mots (courts) de passe. Cela permet à l’utilisateur de saisir une phrase de quelques mots facile à retenir mais difficile à casser. Pourquoi donc ? Parce que le niveau de complexité augmente de façon plus qu’exponentielle avec le nombre des caractères, en particulier quand on commence à découper en mots.</p>
-
 <p>La passphrase est optionnelle. Mais je vous conseille d&rsquo;entrer une passphrase: elle sert à chiffrer symétriquement la clé privée, ajoutant ainsi une couche de sécurité supplémentaire.</p>
-
-<h2 id="activer-l-authentification-par-clé">Activer l’authentification par clé</h2>
-
+<h2 id="activer-lauthentification-par-clé">Activer l’authentification par clé</h2>
 <p>Voilà, on a une paire de clés, c’est bien beau tout ça mais j’en fais quoi ? Je vais commencé par copier ma clé publique sur le serveur VPS. Deux façon de faire ça. La première est de copier la clé manuellement :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ scp ~/.ssh/id_rsa.pub vonkrafft@farragut.server:/home/vonkrafft/.ssh/authorized_keys
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ scp ~/.ssh/id_rsa.pub vonkrafft@farragut.server:/home/vonkrafft/.ssh/authorized_keys</code></pre>
 <p>Ou alors, mieux, nous utilisons la commande <code>ssh-copy-id</code> :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-copy-id -i ~/.ssh/id_rsa.pub vonkrafft@farragut.server
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh-copy-id -i ~/.ssh/id_rsa.pub vonkrafft@farragut.server</code></pre>
 <p>Du coté de notre VPS maintenant. Nous avons récupéré la clé publique du client, il faut maintenant paramétrer le daemon SSH pour qu’il accepte les connexions avec une clé. Pour cela, il suffit de modifier le fichier <code>/etc/ssh/sshd_config</code>. Il faut ensuite rechercher les options suivantes pour leur attribuer les bonnes valeurs :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        /etc/ssh/sshd_config
-    </div>
-    
-    <pre class="code"><code data-language="plaintext">PubkeyAuthentication            yes
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">PubkeyAuthentication            yes
 AuthorizedKeysFile              %h/.ssh/authorized_keys
-ChallengeResponseAuthentication yes
-</code></pre>
+ChallengeResponseAuthentication yes</code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Au passage, nous pouvons en profiter pour désactiver la connexion SSH en tant que root afin de réduiore la surface d&rsquo;attaque de notre serveur. Si vous avez besoin de vous connecter à votre VPS en tant que root, ne désactivez pas cette option, mais à vos risques et périls.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        /etc/ssh/sshd_config
-    </div>
-    
-    <pre class="code"><code data-language="plaintext">PermitRootLogin no
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">PermitRootLogin no</code></pre></td></tr></table>
+</div>
 </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <strong>NOTE</strong> : Il est possible de désactiver l’authentification par mot de passe sur le VPS afin que seuls les clients avec une clé soient autorisés à se connecter. Pour cela il faut modifier la valeur de <code>PasswordAuthentication</code> à <code>no</code>.</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-info-circle"></i>&nbsp;<strong>NOTE</strong> : Il est possible de désactiver l’authentification par mot de passe sur le VPS afin que seuls les clients avec une clé soient autorisés à se connecter. Pour cela il faut modifier la valeur de <code>PasswordAuthentication</code> à <code>no</code>.
+</div>
 <p>J’indique au daemon SSH qu’il trouvera la clé publique dans le fichier <code>~/.ssh/authorized_keys</code> de l’utilisateur concerné. Il faut ensuite redémarrer le daemon SSH pour appliquer les modifications :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@farragut:~$ sudo service ssh reload
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@farragut:~$ sudo service ssh reload</code></pre>
 <p>Voilà tout est prêt ! Je test la connexion et … on me demande ma passphrase. Nous avons donc troqué un mot de passe contre une passphrase encore plus longue à saisir …</p>
-
 <h2 id="ssh-agent">ssh-agent</h2>
-
 <p>Le serveur SSH est maintenant plus sécurisé, mais taper des passphrases à longueur de journée peut se révéler être très pénible surtout si on a choisi une « vraie » et longue passphrase.</p>
-
 <p>L&rsquo;agent SSH permet de taper la passphrase une seule fois et de la conserver en mémoire pendant tout son fonctionnement. Les déchiffrement de la clé privée se fera donc de façon transparente en local.</p>
-
 <p>Pour lancer l’agent SSH, il suffit d’exécuter la commande <code>ssh-agent</code>. Ensuite, nous ajoutons notre clé privée à l’agent avec <code>ssh-add</code> :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh-agent
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh-agent
 vonkrafft@stargazer:~$ ssh-add
 Enter passphrase for /home/vonkrafft/.ssh/id_rsa:
-Identity added: /home/vonkrafft/.ssh/id_rsa (/home/vonkrafft/.ssh/id_rsa)
-</code></pre>
-</div>
-
+Identity added: /home/vonkrafft/.ssh/id_rsa (/home/vonkrafft/.ssh/id_rsa)</code></pre>
 <p>Et lorsque nous nous reconnectons à notre VPS, nous n’avonsi plus besoin de saisir ni mot de passe ni passphrase.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh vonkrafft@farragut.server
 Last login: Fri Dec 18 18:40:15 2015 from stargazer
-vonkrafft@farragut:~$
-</code></pre>
-</div>
-
+vonkrafft@farragut:~$</code></pre>
 <p>Voilà, la connexion à notre VPS se fait de manière sécurisée grâce à nos clés RSA (4096 bits ça fait une bonne sécurité, bonne chance pour décrypter les communications …) et nous n’aurons plus besoin de saisir la passphrase tant que l’agent SSH tournera.</p>
-
-<h2 id="conclusion-se-connecter-en-ssh">Conclusion : se connecter en SSH</h2>
-
+<h2 id="conclusion--se-connecter-en-ssh">Conclusion : se connecter en SSH</h2>
 <p>Nous avons donc vu comment sécuriser une connexion SSH grâce à une authentification par clé, et nous avons mis en place un agent SSH pour nous connecter sans avoir à saisir notre passphrase plusieurs fois. Petit rappel de la procédure :</p>
-
 <ul>
 <li>Générer une paire de clés RSA, sécurisé par une passphrase, et les stocker dans <code>~/.ssh</code> sur le poste du client</li>
 <li>Copier la clé publique dans le répertoire <code>~/.ssh</code> du VPS avec le nom <code>~/.ssh/authorized_keys</code></li>
 <li>Activer l’authentification par clé sur le VPS et indiquer au deamon ssh où trouver la clé publique du client</li>
 <li>Utiliser un agent ssh sur le client pour mémoriser la passphrase et éviter de la saisir plusieurs fois.</li>
 </ul>
-
 <h2 id="aller-plus-loin">Aller plus loin</h2>
-
 <h3 id="préciser-le-port-utilisé">Préciser le port utilisé</h3>
-
 <p>Par défaut, le protocole SSH utilise le port 22. Mais il est tout à fait possible de configurer son serveur pour que le deamon ssh écoute sur un port différent. Ensuite, pour se connecter au serveur, nous devons utiliser l’option <code>-p</code> suivie du numéro de port :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh -p 4242 vonkrafft@voyager.server
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh -p 4242 vonkrafft@voyager.server</code></pre>
 <h3 id="plusieurs-clés-pour-plusieurs-serveurs-ssh">Plusieurs clés pour plusieurs serveurs SSH</h3>
-
 <p>Il est possible de spécifier quelle clé il faut utiliser lors de la connexion SSH. Pour cela, il faut utiliser l’option <code>-i</code> suivie du chemin de la clé :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh -i ~/.ssh/id_rsa_farragut vonkrafft@farragut.server
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh -i ~/.ssh/id_rsa_farragut vonkrafft@farragut.server</code></pre>
 <h3 id="simplifier-les-connexions-avec-un-fichier-de-config">Simplifier les connexions avec un fichier de config</h3>
-
 <p>Vous me direz que c’est fastidieux de devoir saisir les options, l’utilisateur et l&rsquo;hôte à chaque fois, et vous aurez bien raison. Mais rassurez-vous, il existe une façon de mémoriser ce choix. Pour cela, nous allons créer le fichier <code>~/.ssh/config</code> sur le poste client et y inscrire les lignes suivantes :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-file-text-o"></i>
-        ~/.ssh/config
-    </div>
-    
-    <pre class="code"><code data-language="plaintext">Host farragut
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Host farragut
     HostName farragut.server
     User vonkrafft
     IdentityFile ~/.ssh/id_rsa
@@ -501,71 +670,587 @@ Host voyager
     HostName voyager.server
     User vonkrafft
     Port 4242
-    IdentityFile ~/.ssh/id_rsa_home
-</code></pre>
+    IdentityFile ~/.ssh/id_rsa_home</code></pre></td></tr></table>
 </div>
-
+</div>
 <p>Nous pouvons à présent nous connecter rapidement à deux hôtes (farragut et voyager) avec deux clés différentes et sans préciser d’option lors de la connexion.</p>
+<pre><code class="language-terminal" data-lang="terminal">vonkrafft@stargazer:~$ ssh farragut</code></pre>
+  </div>
 
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/console">Console</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/vps">VPS</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/admin-syst%C3%A8me">Admin Système</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/ssh">SSH</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/rsa">RSA</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/authentification">Authentification</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/cl%C3%A9">Clé</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/s%C3%A9curit%C3%A9">Sécurité</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/serveur">Serveur</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>1417</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/console/donner-nom-dns-a-serveur-local/"
+                class="button big previous">Donner un nom DNS à son serveur local</a></li>
+    
+
+    
+        <li><a href="/console/activer-http2-nginx-debian/"
+                class="button big next">Activer HTTP2 avec Nginx sous Debian</a></li>
+    
+</ul>
+
+
     </div>
     
-    <pre class="code"><code data-language="console">vonkrafft@stargazer:~$ ssh farragut
-</code></pre>
-</div></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/vps"><span class="tag">VPS</span></a></li>
-        
-          <li><a href="/tags/admin-syst%C3%A8me"><span class="tag">Admin Système</span></a></li>
-        
-          <li><a href="/tags/ssh"><span class="tag">SSH</span></a></li>
-        
-          <li><a href="/tags/rsa"><span class="tag">RSA</span></a></li>
-        
-          <li><a href="/tags/authentification"><span class="tag">Authentification</span></a></li>
-        
-          <li><a href="/tags/cl%C3%A9"><span class="tag">Clé</span></a></li>
-        
-          <li><a href="/tags/s%C3%A9curit%C3%A9"><span class="tag">Sécurité</span></a></li>
-        
-          <li><a href="/tags/serveur"><span class="tag">Serveur</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1041</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<section id="sidebar">
 
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

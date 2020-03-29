@@ -1,0 +1,1358 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "write-up",
+        "name" : "[EN] [CTF] TAMU - Scenario MCCU",
+        "headline" : "[EN] [CTF] TAMU - Scenario MCCU",
+        "description" : "Write-up for challenge \x27Scenario MCCU\x27 (Forensics, 700 pts) from TAMU CTF 2018.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-02-27 19:34:07 \x2b0000 UTC",
+        "dateModified" : "2018-02-27 19:34:07 \x2b0000 UTC",
+        "url" : "\/write-up\/ctf-tamu-scenario-mccu-700\/",
+        "wordCount" : "1843",
+        "keywords" : [ "CTF","Forensics","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[EN] [CTF] TAMU - Scenario MCCU</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Write-up for challenge &#39;Scenario MCCU&#39; (Forensics, 700 pts) from TAMU CTF 2018.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[EN] [CTF] TAMU - Scenario MCCU"/>
+<meta name="twitter:description" content="Write-up for challenge &#39;Scenario MCCU&#39; (Forensics, 700 pts) from TAMU CTF 2018."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="[EN] [CTF] TAMU - Scenario MCCU" />
+<meta property="og:description" content="Write-up for challenge &#39;Scenario MCCU&#39; (Forensics, 700 pts) from TAMU CTF 2018." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/write-up/ctf-tamu-scenario-mccu-700/" />
+<meta property="article:published_time" content="2018-02-27T19:34:07+00:00" />
+<meta property="article:modified_time" content="2018-02-27T20:12:54+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[EN] [CTF] TAMU - Scenario MCCU">
+<meta itemprop="description" content="Write-up for challenge &#39;Scenario MCCU&#39; (Forensics, 700 pts) from TAMU CTF 2018.">
+<meta itemprop="datePublished" content="2018-02-27T19:34:07&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-27T20:12:54&#43;00:00" />
+<meta itemprop="wordCount" content="1843">
+
+
+
+<meta itemprop="keywords" content="CTF,Forensics," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f&amp;text=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Scenario%20MCCU&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Scenario%20MCCU" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Scenario%20MCCU" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Scenario%20MCCU" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f&amp;description=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Scenario%20MCCU" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fwrite-up%2fctf-tamu-scenario-mccu-700%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2018/02/32e3da5062e6e33f0a2a930faab52bc0.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/write-up/ctf-tamu-scenario-mccu-700/">[EN] [CTF] TAMU - Scenario MCCU</a></h1>
+            
+        
+        
+            <p>Write-up for challenge &#39;Scenario MCCU&#39; (Forensics, 700 pts) from TAMU CTF 2018.</p>
+        
+    </div>
+    <div class="meta meta-write-up">
+        
+
+        <time class="published"
+            datetime='2018-02-27'>
+            27 février 2018</time>
+        <span class="author"></span>
+
+        
+            <p>9 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>This was a series of challenges that involved a compromised WordPress website. Several proofs (screenshots, log extracts, WordPress archive, etc.) allowed us to answer questions.</p>
+<h3 id="00_intrusion-scenario---mccu-25pt">00_intrusion (Scenario - MCCU, 25pt)</h3>
+<blockquote>
+<p>The financial institution MCCU received a call from a Karen Brebs. Ms. Brebs told an employee that she was a cyber-security jounalist, and that the MCCU website had been compromised. Ms. Brebs emailed the attached screenshot.</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>Is this a real threat (yes/no)?</li>
+<li>What&rsquo;s our next step (A: take the website offline and reinstall the website, B: leave the website up and investigate further, C: take the website offline and investigate further)?</li>
+</ol>
+</blockquote>
+<p>The screenshot shows a webshell accessible from the URL <a href="https://midcoastfcu.com/wp-content/plugins/hello.php">https://midcoastfcu.com/wp-content/plugins/hello.php</a>. This is a real threat for MCCU. Because the site is a WordPress, the safest way to eliminate the threat is to take the site offline and reinstall the site.</p>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. yes
+2. A</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="01_logs-scenario---mccu-50pt">01_logs (Scenario - MCCU, 50pt)</h3>
+<blockquote>
+<p>We&rsquo;ve made contact with the system administrator of the MCCU website - this is not something they developed.</p>
+<p>We are waiting on more details from the administrator about the website&rsquo;s configuration. All we know is that it has two services - Web and SSH.</p>
+<p>The only thing we&rsquo;ve received so far are the logs for the web server and ssh server. MCCU really wants to know how they were compromised.</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>Which service was used to compromise the server (web/ssh)?</li>
+<li>Which log file led you to this conclusion (access.log, error.log, auth.log)?</li>
+<li>What was the IP of the suspected attacker?</li>
+<li>What was the date of the suspected compromise (MM/DD-HH:MM:SS)?</li>
+<li>If the attack was web based, what was the URI of the request (/images/pic.png)? Or If the attack was ssh based, what was the username the attacker compromised?</li>
+</ol>
+</blockquote>
+<p>The server has been compromised through the website. It can be seen in the log file <code>access.log</code> which lists the HTTP requests received by the server. At first shy, the attacker (172.16.20.24) tests several potential flaws (HTTP downgrade, WordPress xmlrpc, etc.) before finding a vulnerable PHP page. In the <code>auth.log</code> file, we can see that a new user &ldquo;admin&rdquo; was created at 20:35:21. The server was probably compromised before that date. When we look at the received HTTP requests a bit earlier, we see a PHP file in the upload directory (<code>/wp-content/uploads/EYcNS.php</code>). The attacker thus found a way to upload this file, and by going back again the history, we identify the source of the compromise: <code>/wp-content/plugins/wpshop/includes/ajax.php</code>.</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Nov  8 20:35:21 midcoastfcu useradd[1499]: new group: name=admin, GID=1000
+Nov  8 20:35:21 midcoastfcu useradd[1499]: new user: name=admin, UID=1000, GID=1000, home=/home/admin, shell=/bin/sh</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">172.16.20.24 - - [08/Nov/2017:20:32:49 -0900] &#34;POST /wp-content/plugins/wpshop/includes/ajax.php HTTP/1.1&#34; 200 61 &#34;-&#34; &#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)&#34;
+172.16.20.24 - - [08/Nov/2017:20:32:54 -0900] &#34;GET /wp-content/uploads/EYcNS.php HTTP/1.1&#34; 499 0 &#34;-&#34; &#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)&#34;</code></pre></td></tr></table>
+</div>
+</div></p>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. web
+2. access.log
+3. 172.16.20.24
+4. 11/08-20:32:49
+5. /wp-content/plugins/wpshop/includes/ajax.php</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="02_analysis-scenario---mccu-75pt">02_Analysis (Scenario - MCCU, 75pt)</h3>
+<blockquote>
+<p>The administrator informed us that the server is an Ubuntu server running nginx 1.1.19 with a Wordpress 4.1.0 install.</p>
+<p>The administrator also sent a tar of the Wordpress installation (attached).</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>List the plugins and their versions in lexicographic order separated by commas (alpha.1.3.4,bravo.5.4,charlie.0.3,&hellip;).</li>
+<li>List the plugins connected to the intrusion and their versions the same way as in questions 1 (alpha.1.3.4,charlie.0.3,&hellip;).</li>
+<li>List any CWEs for said plugins and their versions in lexicographic (CWE-NUMBER).</li>
+</ol>
+</blockquote>
+<p>We now have the complete archive of the compromised Wordpress. So we just use <code>grep</code> to list the versions of the different plugins. The versions in the PHP files are not necessarily correct, so you have to look in the <code>readme.txt</code> files for the stable tag.</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ grep -nr &#34;Stable tag&#34; ./*
+./akismet/readme.txt:6:Stable tag: 3.0.4
+./contact-form-7/readme.txt:7:Stable tag: 3.1.1
+./duplicate-post/readme.txt:6:Stable tag: 0.5
+./jetpack/readme.txt:6:Stable tag: 2.0.7
+./jetpack/modules/contact-form/readme.txt:4:Stable tag: 2.3
+./jetpack/modules/sharedaddy/readme.txt:6:Stable tag: trunk
+./jetpack/modules/shortcodes/videopress.php:19:Stable tag: 1.5.4
+./ninja-forms/readme.txt:7:Stable tag: 1.3.5
+./w3-total-cache/readme.txt:6:Stable tag: 0.7
+./wpshop/readme.txt:7:Stable tag: 1.3.9.5
+./wp-super-cache/readme.txt:5:Stable tag: 0.3</code></pre>
+<p>We saw during the previous challenge that the entry point was the wpshop plugin. A small search allows to obtain the following link: <a href="https://wpvulndb.com/vulnerabilities/7830">https://wpvulndb.com/vulnerabilities/7830</a></p>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. akismet.3.0.4,contact-form-7.3.1.1,duplicate-post.0.5,jetpack.2.0.7,ninja-forms.1.3.5,w3-total-cache.0.7,wp-super-cache.0.3,wpshop.1.3.9.5
+2. wpshop.1.3.9.5
+3. CWE-434</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="03_forensics-scenario---mccu-100pt">03_Forensics (Scenario - MCCU, 100pt)</h3>
+<blockquote>
+<p>Now that we have some idea of how the intrusion took place, let&rsquo;s take a look at what&rsquo;s changed since the attack.</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>List file paths from wordpress/ (e.g. readme.txt,wp-admin/index.php) that were created after the attack time found in challenge 01 lexicographic and separated by commas (dir/file1,dir/file2,&hellip;).</li>
+<li>List any files that have any evidence that points to them be exfiltrated by the attacker as in question 2 (dir/file1,dir/file2,&hellip;).</li>
+<li>List all unique sha1 hashes of these files in lexicographic order separated by commas (hash1,hash2).</li>
+<li>What shell was used to get command execution? (e.g. /bin/bash, /bin/sh, /bin/ksh, etc&hellip;)?</li>
+</ol>
+<p>This challenge uses the file found in challenge 02.</p>
+</blockquote>
+<p>A simple search by filtering on the last edit date of the files allows to obtain the list of files created by the attacker. In the <code>access.log</code> file, we can see that only the <code>.mysql.db</code> file has been exfiltrated from the server. Finally, when we look at the content of PHP files created, we find that the shell used was <code>/bin/dsh</code>.</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">172.16.20.24 - - [08/Nov/2017:20:38:41 -0900] &#34;GET /.mysql.db HTTP/1.1&#34; 200 186411 &#34;-&#34; &#34;Wget/1.18 (linux-gnu)&#34;</code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">$shell=&#39;uname -a;w;id;pwd;/bin/dsh&#39;;</code></pre></td></tr></table>
+</div>
+</div></p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ find . -type f -newermt &#39;2017-11-08 20:32:49&#39; -ls
+   410155    184 -rw-r--r--   1 root     www-data   186411 Nov  9 06:38 ./.mysql.db
+   414710      4 -rw-rw-rw-   1 www-data www-data      538 Nov  8 23:08 ./wp-content/w3tc-cache/index.php
+   414709      4 -rw-rw-rw-   1 www-data www-data      199 Nov  8 23:08 ./wp-content/w3tc-cache/.htaccess
+   414711      4 -rw-rw-rw-   1 www-data www-data      342 Nov  8 23:08 ./wp-content/advanced-cache.php
+   410700      8 -rw-rw-rw-   1 www-data www-data     4572 Nov  8 23:08 ./wp-content/w3-total-cache-config.php
+   413876      4 -rw-r--r--   1 www-data www-data     1851 Nov  9 06:39 ./wp-content/plugins/hello.php
+   414713      4 -rw-rw-rw-   1 www-data www-data      295 Nov  8 23:08 ./wp-content/db.php
+   410152      4 -rw-r--r--   1 www-data www-data     1851 Nov  9 06:39 ./.wp-config.php
+   410154      4 -rw-r--r--   1 www-data www-data     1851 Nov  9 06:39 ./wp-register.php
+   410150      4 -rw-r--r--   1 www-data www-data     1851 Nov  9 06:39 ./wp-logout.php</code></pre>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. .mysql.db,.wp-config.php,wp-content/plugins/hello.php,wp-logout.php,wp-register.php
+2. .mysql.db
+3. 05ed0336f549d3dc47e6430e9ae85e9d25402e21
+4. /bin/dsh</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="04_privilege_escalation-scenario---mccu-125pt">04_Privilege_Escalation (Scenario - MCCU, 125pt)</h3>
+<blockquote>
+<p>Now that we have a better understanding of how the attacker got in to the system, and that they had shell access, let&rsquo;s figure out what level of access they were able to obtain.</p>
+<p>Attached are all history files that were found on the hard drive and the shell file you identified in challenge 03.</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>What was the highest level of access the attacker able to obtain (username)?</li>
+<li>List the sha1 hash of any files that may have been used to gain the higher level of access (hash0,hash1,hash2,&hellip;).</li>
+<li>What CVE was used to escalate privileges (CVE-YYYY-NUMBER OR MSYY-NUMBER)?</li>
+</ol>
+<p>This challenge also uses the same image from challenge 02.</p>
+</blockquote>
+<p>The attacker was able to obtain a root access on the server. He uploaded a webshell using the <code>ajax.php</code> file from the wpshop plugin, then he uploaded and executed the<code> / tmp / dc64</code> file. Then he elevated his privileges using DirtyCow root escalation privilege.</p>
+<pre><code class="language-terminal" data-lang="terminal">host:~$ sha1sum 02\_analysis/evidence\_2/wordpress/wp-content/plugins/wpshop/includes/ajax.php
+4efaa331787b5cc077892ded823509967287efb0  02\_analysis/evidence\_2/wordpress/wp-content/plugins/wpshop/includes/ajax.php
+host:~$ sha1sum 04\_Privilege\_Escalation/evidence/dsh
+4cbf8cb09a9627a1ee596df0988a99e48376b9df  04\_Privilege\_Escalation/evidence/dsh
+host:~$ xxd 04\_Privilege\_Escalation/evidence/dsh | grep -C 2 Dirty
+000a42b0: 7267 6574 2074 6f20 7265 7374 6f72 6520  rget to restore 
+000a42c0: 2f74 6d70 2f62 616b 0000 0000 0000 0000  /tmp/bak........
+000a42d0: 4469 7274 7943 6f77 2072 6f6f 7420 7072  DirtyCow root pr
+000a42e0: 6976 696c 6567 6520 6573 6361 6c61 7469  ivilege escalati
+000a42f0: 6f6e 0000 0000 0000 5261 6369 6e67 2c74  on......Racing,t</code></pre>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. root
+2. 4cbf8cb09a9627a1ee596df0988a99e48376b9df,4efaa331787b5cc077892ded823509967287efb0
+3. CVE-2016-5195</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="05_backdoor-scenario---mccu-150pt">05_backdoor (Scenario - MCCU, 150pt)</h3>
+<blockquote>
+<p>The administrator sent over the following netstat output, does anything look bad?</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>What IP address is the malicious program using?</li>
+<li>What port is the malicious program using?</li>
+<li>What is the filename of the malicious program?</li>
+<li>What is the PID of the malicious program?</li>
+</ol>
+</blockquote>
+<p>We have the result of the <code>netstat</code> command. We know the IP address of the attacker (172.16.20.24) and therefore we can see the network connections established between him and the server.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 172.16.20.132:49815     172.16.20.24:4444       ESTABLISHED 889/php-fpm: pool w
+tcp        0      0 172.16.20.132:49811     172.16.20.24:4444       ESTABLISHED 1448/php-fpm: pool 
+tcp        0      0 172.16.20.132:80        172.16.20.24:54912      ESTABLISHED 868/nginx: worker p</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. 172.16.20.24
+2. 4444
+3. php-fpm
+4. 889</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="06_persistence-scenario---mccu-175pt">06_persistence (Scenario - MCCU, 175pt)</h3>
+<blockquote>
+<p>The administrator has went ahead and updated all the Wordpress plugins, quarantined the files made by the user, and changed system credentials.</p>
+<p>The administrator has also informed us that the admin user doesn&rsquo;t look familiar to them, so they sent over /etc/passwd and /etc/group.</p>
+<p>To complete this challenge, answer the following question(s):</p>
+<ol>
+<li>When was the admin user created (MM/DD-HH:MM:SS)?</li>
+<li>Was this user created after the intrusion (yes/no)?</li>
+<li>List the groups this user is a part of in lexicographic order separated by commas (group1,group2,&hellip;).</li>
+<li>Is it probable this user was created by the attacker (yes/no)?</li>
+</ol>
+<p>This challenge uses evidence found in previous challenges.</p>
+</blockquote>
+<p>To answer these questions, we need to go back to the log files. In the <code>auth.log</code> file, we can see that an &ldquo;admin&rdquo; user is created, then delete, and then create again at 20:35:29. The <code>root.bash\_history</code> file confirms this creation, first with the<code> useradd</code> command and then with <code>adduser</code>. The user &ldquo;admin&rdquo; is then added to the group &ldquo;sudo&rdquo;. Then the attacker tries an SSH connection and the <code>sudo su</code> command to make sure of its persistence.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Nov  8 20:35:21 midcoastfcu useradd[1499]: new group: name=admin, GID=1000
+Nov  8 20:35:21 midcoastfcu useradd[1499]: new user: name=admin, UID=1000, GID=1000, home=/home/admin, shell=/bin/sh
+Nov  8 20:35:26 midcoastfcu userdel[1507]: delete user &#39;admin&#39;
+Nov  8 20:35:26 midcoastfcu userdel[1507]: removed group &#39;admin&#39; owned by &#39;admin&#39;
+Nov  8 20:35:29 midcoastfcu groupadd[1513]: group added to /etc/group: name=admin, GID=1000
+Nov  8 20:35:29 midcoastfcu groupadd[1513]: group added to /etc/gshadow: name=admin
+Nov  8 20:35:29 midcoastfcu groupadd[1513]: new group: name=admin, GID=1000
+Nov  8 20:35:29 midcoastfcu useradd[1517]: new user: name=admin, UID=1000, GID=1000, home=/home/admin, shell=/bin/bash
+Nov  8 20:35:42 midcoastfcu passwd[1524]: pam\_unix(passwd:chauthtok): password changed for admin
+Nov  8 20:35:44 midcoastfcu chfn[1525]: changed user &#39;admin&#39; information
+Nov  8 20:36:04 midcoastfcu usermod[1529]: add &#39;admin&#39; to group &#39;sudo&#39;
+Nov  8 20:36:04 midcoastfcu usermod[1529]: add &#39;admin&#39; to shadow group &#39;sudo&#39;
+Nov  8 20:36:45 midcoastfcu sshd[1537]: Accepted password for admin from 172.16.20.24 port 43646 ssh2
+Nov  8 20:36:45 midcoastfcu sshd[1537]: pam\_unix(sshd:session): session opened for user admin by (uid=0)
+Nov  8 20:36:51 midcoastfcu sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/su
+Nov  8 20:36:51 midcoastfcu sudo: pam\_unix(sudo:session): session opened for user root by admin(uid=1000)
+Nov  8 20:36:51 midcoastfcu su[1765]: Successful su for root by root
+Nov  8 20:36:51 midcoastfcu su[1765]: + /dev/pts/0 root:root
+Nov  8 20:36:51 midcoastfcu su[1765]: pam\_unix(su:session): session opened for user root by admin(uid=0)</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>Answers</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">1. 11/08-20:35:29
+2. yes
+3. admin,sudo
+4. yes</code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/write-up">Write-up</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/ctf">CTF</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/forensics">Forensics</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>760</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/write-up/ctf-tamu-simple-des-125/"
+                class="button big previous">[EN] [CTF] TAMU - Simple DES</a></li>
+    
+
+    
+        <li><a href="/write-up/ctf-ndh-shreddinger-500/"
+                class="button big next">[EN] [CTF] NDH - Schreddinger</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

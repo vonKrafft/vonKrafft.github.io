@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Réinstallation on vonKrafft</title>
     <link>/tags/r%C3%A9installation/</link>
     <description>Recent content in Réinstallation on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Tue, 20 Mar 2012 19:07:03 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r%C3%A9installation/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
       
       <guid>/tutoriels/reinstaller-windows-pc/</guid>
-      <description>&lt;p&gt;Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ça y’est, c’est le printemps, accompagné de sa traditionnelle époque du grand ménage. Et celui-ci passe aussi par les disques durs de nos ordinateurs : pourquoi ne pas en profiter pour réinstaller Windows ? Libre à vous de faire du tri dans vos fichiers, je vais vous donner ici quelques conseils pour faire une réinstallation de Windows efficace.&lt;/p&gt;</description>
     </item>
     
   </channel>

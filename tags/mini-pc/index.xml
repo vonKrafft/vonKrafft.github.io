@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mini Pc on vonKrafft</title>
+    <title>Mini PC on vonKrafft</title>
     <link>/tags/mini-pc/</link>
-    <description>Recent content in Mini Pc on vonKrafft</description>
+    <description>Recent content in Mini PC on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 22 Jan 2011 22:32:02 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mini-pc/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
       
       <guid>/tutoriels/recyclez-son-ordinateur/</guid>
-      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;L&amp;rsquo;homme numérique est ingrat. Le premier PC qui lui a permis de jouer à ses premiers jeux vidéo, qui lui a ouvert les portes d&amp;rsquo;internet, qui lui a fait découvrir parfois les retouches photo, le montage vidéo &amp;hellip; Ce PC dort dans la cave ou au grenier depuis que son successeur lui a pris sa place. Trop vieux, trop lent, trop moche et trop gros &amp;hellip; oui mais pas moins utile. Du salon au garage, il existe mille façons d&amp;rsquo;exprimer votre gratitude à votre machine et de recyclez votre PC.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +26,7 @@
       <pubDate>Wed, 05 Jan 2011 21:58:06 +0000</pubDate>
       
       <guid>/tutoriels/monter-un-mini-pc/</guid>
-      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;On trouve les mini-PC partout dans le commerce mais rien ne vous empêche de faire le vôtre. Un ordinateur miniature, suffisant pour toutes les tâches du quotidien ; la bureautique, internet &amp;amp; mails et le visionnage de films  &amp;hellip; et peu gourmand en énergie.&lt;/p&gt;</description>
     </item>
     
   </channel>

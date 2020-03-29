@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kobo on vonKrafft</title>
     <link>/tags/kobo/</link>
     <description>Recent content in Kobo on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Thu, 01 Dec 2016 10:52:27 +0000</lastBuildDate>
     
 	<atom:link href="/tags/kobo/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
       
       <guid>/guides/trucs-astuces-liseuses-kobo/</guid>
-      <description>&lt;p&gt;Si vous aussi vous avez franchi le pas du numérique et que vous avez acheté une liseuse pour pouvoir enfin emporter plus de 3 livres pour vos vacances et si vous aussi vous avez choisi la Kobo (créée par qui vous savez), cet article est écrit tout juste pour vous.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Si vous aussi vous avez franchi le pas du numérique et que vous avez acheté une liseuse pour pouvoir enfin emporter plus de 3 livres pour vos vacances et si vous aussi vous avez choisi la Kobo (créée par qui vous savez), cet article est écrit tout juste pour vous.&lt;/p&gt;</description>
     </item>
     
   </channel>

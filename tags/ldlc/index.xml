@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ldlc on vonKrafft</title>
+    <title>LDLC on vonKrafft</title>
     <link>/tags/ldlc/</link>
-    <description>Recent content in Ldlc on vonKrafft</description>
+    <description>Recent content in LDLC on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 18 Jun 2011 19:56:58 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ldlc/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
       
       <guid>/actus/nouveau-defi-recyclage-informatique/</guid>
-      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Que devient un PC en fin de vie, que faire de nos appareils électroniques lorsqu’on ne s’en sert plus ? Le recyclage de nos compagnons high-tech devient primordial, alors voici ce qu’il en est aujourd’hui et ce qu’il faut faire.&lt;/p&gt;</description>
     </item>
     
   </channel>

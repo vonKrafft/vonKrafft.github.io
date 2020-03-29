@@ -1,385 +1,619 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Assemblez votre serveur NAS de A à Z
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Assemblez votre serveur NAS de A à Z" />
-    <meta name="twitter:description" content="Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&amp;rsquo;inclure dans votre réseau domestique.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2011/01/356a8667d4d5192ba470210640d8e32e.jpg" />
-  
-
-
-
-
-<link rel="canonical" href="/tutoriels/assemblez-votre-serveur-nas/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "tutoriels",
+        "name" : "Assemblez votre serveur NAS de A à Z",
+        "headline" : "Assemblez votre serveur NAS de A à Z",
+        "description" : "Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l\x27inclure dans votre réseau domestique.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2011",
+        "datePublished": "2011-01-21 22:15:29 \x2b0000 UTC",
+        "dateModified" : "2011-01-21 22:15:29 \x2b0000 UTC",
+        "url" : "\/tutoriels\/assemblez-votre-serveur-nas\/",
+        "wordCount" : "2331",
+        "keywords" : [ "tuto","NAS","Montage PC","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Assemblez votre serveur NAS de A à Z</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&#39;inclure dans votre réseau domestique.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Assemblez votre serveur NAS de A à Z"/>
+<meta name="twitter:description" content="Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&#39;inclure dans votre réseau domestique."/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Assemblez votre serveur NAS de A à Z" />
+<meta property="og:description" content="Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&#39;inclure dans votre réseau domestique." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/tutoriels/assemblez-votre-serveur-nas/" />
+<meta property="article:published_time" content="2011-01-21T22:15:29+00:00" />
+<meta property="article:modified_time" content="2011-01-21T22:15:29+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Assemblez votre serveur NAS de A à Z">
+<meta itemprop="description" content="Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&#39;inclure dans votre réseau domestique.">
+<meta itemprop="datePublished" content="2011-01-21T22:15:29&#43;00:00" />
+<meta itemprop="dateModified" content="2011-01-21T22:15:29&#43;00:00" />
+<meta itemprop="wordCount" content="2331">
+
+
+
+<meta itemprop="keywords" content="tuto,NAS,Montage PC," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-tutoriels">
-    <header class="post-header">
-      <h1 class="post-title">Assemblez votre serveur NAS de A à Z</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/tutoriels/">Tutoriels</a></span>
-        @vonKrafft · 21 janvier 2011
-      </p>
-    </header>
-    <article class="post-content"><p>Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&rsquo;inclure dans votre réseau domestique.</p>
 
-<p></p>
+<section id="menu">
 
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f&amp;text=Assemblez%20votre%20serveur%20NAS%20de%20A%20%c3%a0%20Z&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2ftutoriels%2fassemblez-votre-serveur-nas%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f&amp;title=Assemblez%20votre%20serveur%20NAS%20de%20A%20%c3%a0%20Z" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f&amp;title=Assemblez%20votre%20serveur%20NAS%20de%20A%20%c3%a0%20Z" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f&amp;title=Assemblez%20votre%20serveur%20NAS%20de%20A%20%c3%a0%20Z" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2ftutoriels%2fassemblez-votre-serveur-nas%2f&amp;description=Assemblez%20votre%20serveur%20NAS%20de%20A%20%c3%a0%20Z" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2ftutoriels%2fassemblez-votre-serveur-nas%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2011/01/356a8667d4d5192ba470210640d8e32e.jpg)"></div>
+    <div class="title">
+        
+            <h1><a href="/tutoriels/assemblez-votre-serveur-nas/">Assemblez votre serveur NAS de A à Z</a></h1>
+            
+        
+        
+            <p>Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&#39;inclure dans votre réseau domestique.</p>
+        
+    </div>
+    <div class="meta meta-tutoriels">
+        
+
+        <time class="published"
+            datetime='2011-01-21'>
+            21 janvier 2011</time>
+        <span class="author"></span>
+
+        
+            <p>11 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Comment monter un serveur de fichiers à la maison, pour sauvegarder ses données et les rendre accessibles facilement ? Un guide de montage étape par étape pour vous aider à assembler votre propre serveur NAS de données et l&rsquo;inclure dans votre réseau domestique.</p>
 <h2 id="une-époque-dangereuse">Une époque dangereuse</h2>
-
 <p>L’informatique est bel et bien installée chez nous et s’il y a une vingtaine d’années, avoir un ordinateur était un luxe, aujourd’hui, on en a deux ou trois chez nous. De plus, changer de PC ou de disque dur est problématique aussi : celui qui a déjà grillé un disque dur sait de quoi je parle, et celui qui a déjà essayé de transférer des gros volumes de données (&gt; 300Go) d’un PC à un autre le sait aussi&hellip; Donc comment faire pour s’y retrouver ?</p>
-
 <p>Simple : la solution c’est le NAS ! Un stockage en réseau NAS, ou un NAS (de l&rsquo;anglais Network Attached Storage), est un serveur de fichiers autonome, relié à un réseau qui vous permet d’accéder à vos fichiers partout chez vous, voire même partout dans le monde si l’on sait un peu se débrouiller.</p>
-
 <p>Aujourd’hui, la situation se résume à ça : un utilisateur lambda d’un PC possède environ 500 à 750 Giga de données, voire beaucoup plus ! Vous avez sûrement sur votre ordinateur vos photos de vacances, vos archives personnelles, vos documents de travail, votre collection de mp3 achetés bien légalement sur iTunes, etc&hellip; Et là, deux options :</p>
-
 <ul>
-<li>Soit vous n’avez qu’un seul PC et donc toutes vos données sont au même endroit.<br />
-<strong>Avantage</strong> : vos fichiers ne sont pas éparpillés entre plusieurs ordinateurs même si c’est un peu le bazar dans votre disque dur.<br />
+<li>Soit vous n’avez qu’un seul PC et donc toutes vos données sont au même endroit.<br>
+<strong>Avantage</strong> : vos fichiers ne sont pas éparpillés entre plusieurs ordinateurs même si c’est un peu le bazar dans votre disque dur.<br>
 <strong>Inconvénient</strong> : un disque dur, passé 4 à 5 ans, cela peut claquer à chaque instant (précisément à chaque démarrage/arrêt). Et là vous me dites « facile, je grave des DVD »&hellip; Double erreur. D’une part, vous faites confiance à un support ayant une durée de vie de 15 à 20 ans. D’autre part, QUI a encore la patience de copier ses fichiers sur des galettes de 7 Go avec un disque dur de 750 Go ? En tous cas, pas moi.</li>
-<li>Soit vous avez plusieurs PC, et là encore, c’est compliqué.<br />
-<strong>Avantage</strong> : vos fichiers sont sûrement en double et donc si un PC lâche, il vous en reste au moins un autre.<br />
+<li>Soit vous avez plusieurs PC, et là encore, c’est compliqué.<br>
+<strong>Avantage</strong> : vos fichiers sont sûrement en double et donc si un PC lâche, il vous en reste au moins un autre.<br>
 <strong>Inconvénient</strong> : vos fichiers sont éparpillés entre plusieurs ordinateurs, et donc vous ne vous y retrouvez plus. Là encore vous me dites : « je copie tout sur mon disque externe USB ». Mais ce n’est pas très pro, ça prend du temps, et en plus, si vous avez plusieurs PCs, c’est compliqué pour se passer le disque. Surtout cela reste un disque dur donc, si le disque externe vous lâche, vous perdez vos données.</li>
 </ul>
-
 <p>Maintenant, observons votre lieu de travail : il y a de fortes chances pour qu’au boulot, vous ayez accès à un « disque réseau partagé ». Un espace de stockage sur serveur, accessible via le réseau, et sur lequel vous stockez vos PowerPoint, vos PDF, vos documents, vos images débiles, vos films de vacances, et même quelques fichiers pour le travail&hellip;</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-question-circle"></i> Pourquoi ne pas monter son serveur à la maison ?</div>
 
+    
+    
+
+
+
+
+
+<div class="alert alert-warning" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;Pourquoi ne pas monter son serveur à la maison ?
+</div>
 <h2 id="intégrer-un-nas-dans-son-réseau">Intégrer un NAS dans son réseau</h2>
-
 <p>Après une introduction un peu longue, nous allons pouvoir commencer. Je supposerai par la suite que vous avez lu le guide <a href="/monter-son-pc/">Monter son PC</a> et donc je passerais très vite sur le montage.</p>
-
 <p>NOTE : Il existe des serveurs NAS « clef en main » à acheter dans le commerce. En dehors du fait qu’ils prennent rarement en charge le RAID, ils sont souvent plus chers que la solution proposée ici. Et souvent, ils ne sont pas évolutifs. Pas moyen d’y ajouter plus de deux disques (pour les premiers prix).</p>
 
-<figure>
-    <a href="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png">
-    </a>
+
+
     
-        <figcaption>
-            <h4>Exemple de réseau domestique</h4>
-        </figcaption>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png" class="image featured center">
+                <img src="/media/2011/01/0f4036499be2e755d0fae2c749664b65.png" alt="">
+            </a>
+        
+        <figcaption class="image-caption">Exemple de réseau domestique</figcaption>
+    </figure>
+
 
 <p>Pour commencer, il va falloir « monter » un serveur NAS. Pour ce faire, vous avez besoin d’une carte mère, un peu de RAM, un processeur, une carte graphique (elle peut être intégrée à la carte mère), d’un boîtier, d’une alimentation, de deux disques durs de grosse capacité (tant qu’à faire), d’un Operating System dédié et d’une clef USB&hellip; C’est tout !</p>
-
 <p>Si vous avez un vieux PC dans un coin, c’est le moment de le recycler. N’importe quelle vieille machine avec un Pentium II démodé et 64Mo de RAM ou plus fera parfaitement l’affaire, du moment que vous pouvez y brancher deux disques durs (si possible SATA).</p>
-
 <h2 id="montez-un-nas-classique">Montez un NAS classique</h2>
-
-<div class="supply-panel clearfix">
-    <div class="supply-header">
-        <div class="supply-title">Matériel</div>
-        <div class="supply-cost">350 <span>euros</span></div>
-        <div class="supply-level supply-level-3">
-            <label>Difficulté</label>
-            <span class="level-1">1</span>
-            <span class="level-2">2</span>
-            <span class="level-3">3</span>
-            <span class="level-4">4</span>
-            <span class="level-5">5</span>
-        </div>
+<div class="supply">
+    <div class="supply-body">
+        <p class="supply-cost">350 <span>euros</span></p>
+        <p class="supply-item"><b>Temps estimé :</b> <span>1 à 3 heures</span></p>
+        <p class="supply-item"><b>Il vous faut :</b> <span>Processeur AMD Sempron 145 (35€ env.), carte mère Gigabyte GA-M68MT-S2 (50€ env.), mémoire vive 1Go DDR3-1333 (20€ env.), disque dur 2x1To RAID1 (140€ env.), alimentation silencieuse (80€ env.), boîtier entrée de gamme (35€ env.)</span></p>
     </div>
-    <div class="supply-content">
-        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
-        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Processeur AMD Sempron 145 (35€ env.), carte mère Gigabyte GA-M68MT-S2 (50€ env.), mémoire vive 1Go DDR3-1333 (20€ env.), disque dur 2x1To RAID1 (140€ env.), alimentation silencieuse (80€ env.), boîtier entrée de gamme (35€ env.)</span></div>
-    </div>
+    <ul class="supply-level">
+        <li class='level-1 '>1</li>
+        <li class='level-2 '>2</li>
+        <li class='level-3 active'>3</li>
+        <li class='level-4 '>4</li>
+        <li class='level-5 '>5</li>
+    </ul>
 </div>
-
 <h3 id="les-composants">Les composants</h3>
-
 <p>Niveau composant, un NAS ne requière pas du haut de gamme. les prix plancher feront l&rsquo;affaire. Je vous conseil d&rsquo;opter pour un boîtier Micro-ATX, ainsi que pour la carte mère qui va avec (attention, veillez à prendre de la DDR3). Libre à vous de voir plus grand, en choisissant un boîtier ATX, mais il est évident qu&rsquo;un petit NAS se casera plus facilement qu&rsquo;un grand. Pour le processeur, un Intel Celeron ou un AMD Sempron suffira, à vous de choisir en fonction de vos préférences entre les deux constructeur. Enfin, ajoutez environ 1 Go de mémoire vive DDR3 (2 Go maximum, après c&rsquo;est inutile), Et pensez à acheter une clé USB, ou retrouvez-en une au fond d&rsquo;un de vos tiroirs. Si vous en achetez une, je vous conseillerais 128 Mo, mais ça ne se fabrique plus (si vous avez une clé de 128 Mo chez vous, c&rsquo;est parfait) &hellip; donc prenez 1 Go pour être tranquille.</p>
-
-<h3 id="le-stockage-et-le-système-d-exploitation">Le stockage et le système d&rsquo;exploitation</h3>
-
+<h3 id="le-stockage-et-le-système-dexploitation">Le stockage et le système d&rsquo;exploitation</h3>
 <p>C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
-
-<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
-
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d'être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
 <h2 id="montez-un-nas-miniature">Montez un NAS miniature</h2>
-
-<div class="supply-panel clearfix">
-    <div class="supply-header">
-        <div class="supply-title">Matériel</div>
-        <div class="supply-cost">460 <span>euros</span></div>
-        <div class="supply-level supply-level-3">
-            <label>Difficulté</label>
-            <span class="level-1">1</span>
-            <span class="level-2">2</span>
-            <span class="level-3">3</span>
-            <span class="level-4">4</span>
-            <span class="level-5">5</span>
-        </div>
+<div class="supply">
+    <div class="supply-body">
+        <p class="supply-cost">460 <span>euros</span></p>
+        <p class="supply-item"><b>Temps estimé :</b> <span>1 à 3 heures</span></p>
+        <p class="supply-item"><b>Il vous faut :</b> <span>Processeur AMD Atom D525 intégré, carte mère Asus AT5IONT-I Mini-ITX (155€ env.), mémoire vive 1Go So-Dimm DDR3-800 (25€ env.), disque dur 2x1To RAID1 (190€ env.), alimentation intégrée, boîtier Antec ISK 100 (80€ env.)</span></p>
     </div>
-    <div class="supply-content">
-        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
-        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Processeur AMD Atom D525 intégré, carte mère Asus AT5IONT-I Mini-ITX (155€ env.), mémoire vive 1Go So-Dimm DDR3-800 (25€ env.), disque dur 2x1To RAID1 (190€ env.), alimentation intégrée, boîtier Antec ISK 100 (80€ env.)</span></div>
-    </div>
+    <ul class="supply-level">
+        <li class='level-1 '>1</li>
+        <li class='level-2 '>2</li>
+        <li class='level-3 active'>3</li>
+        <li class='level-4 '>4</li>
+        <li class='level-5 '>5</li>
+    </ul>
 </div>
-
 <h3 id="les-composants-1">Les composants</h3>
-
 <p>L&rsquo;objectif est de réduire la taille du NAS basique afin d&rsquo;obtenir un mini serveur domestique (un peu comme un <a href="/tutoriels/monter-un-mini-pc/">mini PC</a>). Niveau composant, il faudra opter pour un boîtier Mini-ITX ainsi que pour la carte mère qui va avec (attention, veillez à prendre de la DDR3). Pour le processeur, un Intel Atom intégré suffira, et ajoutez à ça environ 1 Go de mémoire vive DDR3 (2 Go maximum, après c&rsquo;est inutile). Enfin, pensez à acheter une clé USB, ou retrouvez-en une au fond d&rsquo;un de vos tiroirs. 128 Mo suffise, mais je vous conseil 1 Go pour être tranquille.</p>
-
-<h3 id="le-stockage-et-le-système-d-exploitation-1">Le stockage et le système d&rsquo;exploitation</h3>
-
+<h3 id="le-stockage-et-le-système-dexploitation-1">Le stockage et le système d&rsquo;exploitation</h3>
 <p>Là encore, il faut réduire, donc opter pour des disque 2.5&rdquo; qui sont plus chers mais permettent une économie de place non négligeable. C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
-
-<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
-
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d'être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
 <h2 id="recyclez-votre-vieux-pc-en-nas">Recyclez votre vieux PC en NAS</h2>
-
-<div class="supply-panel clearfix">
-    <div class="supply-header">
-        <div class="supply-title">Matériel</div>
-        <div class="supply-cost">150 <span>euros</span></div>
-        <div class="supply-level supply-level-3">
-            <label>Difficulté</label>
-            <span class="level-1">1</span>
-            <span class="level-2">2</span>
-            <span class="level-3">3</span>
-            <span class="level-4">4</span>
-            <span class="level-5">5</span>
-        </div>
+<div class="supply">
+    <div class="supply-body">
+        <p class="supply-cost">150 <span>euros</span></p>
+        <p class="supply-item"><b>Temps estimé :</b> <span>1 à 3 heures</span></p>
+        <p class="supply-item"><b>Il vous faut :</b> <span>Votre vieux PC, disque dur 2x1To RAID1 (140€ env.), une clé USB (10€ env.)</span></p>
     </div>
-    <div class="supply-content">
-        <div class="supply-item clearfix"><strong>Temps estimé :</strong> <span>1 à 3 heures</span></div>
-        <div class="supply-item clearfix"><strong>Il vous faut :</strong> <span>Votre vieux PC, disque dur 2x1To RAID1 (140€ env.), une clé USB (10€ env.)</span></div>
-    </div>
+    <ul class="supply-level">
+        <li class='level-1 '>1</li>
+        <li class='level-2 '>2</li>
+        <li class='level-3 active'>3</li>
+        <li class='level-4 '>4</li>
+        <li class='level-5 '>5</li>
+    </ul>
 </div>
-
 <h3 id="le-vieux-pc">Le vieux PC</h3>
-
 <p>Si un vieux PC triane chez vous, il est temps d&rsquo;en faire quelque chose : un NAS par exemple ! Pré-requis : il faut minimum deux ports S-ATA et des composants pas trop bruyants. Coté processeur, un pentium 4 première génération suffira, ou un vieil AMD. Vous pouvez si vous le souhaitez changer l&rsquo;alimentation pour un modèle plus silencieux : optez pour une alimentation d&rsquo;environ 200 W, ça suffit. Pour le processeur, pourquoi pas investir dans un ventirad passif, limitant le bruit et la consommation électrique de votre NAS. Mais inutile de changer trop de composants, car dans ce cas là, un NAS monté de A à Z sera plus rentable.</p>
-
-<h3 id="le-stockage-et-le-système-d-exploitation-2">Le stockage et le système d&rsquo;exploitation</h3>
-
+<h3 id="le-stockage-et-le-système-dexploitation-2">Le stockage et le système d&rsquo;exploitation</h3>
 <p>C&rsquo;est le plus important ! La rapidité des disques n’est pas un critère, car vous serez limité par la vitesse de votre équipement réseau (et de votre carte wifi). Achetez de bonnes marques, le disque, c’est le cœur de votre serveur.</p>
-
-<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d&rsquo;être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
-
+<p>Et le système d&rsquo;exploitation ? Vous avez le chois entre la distribution Windows avec Home Server (env. 110€) et la distribution Linux avec Freenas (gratuit). Le premier a l&rsquo;avantage d'être simple d&rsquo;utilisation et donc très facilement aprivoisable par quiconque, mais il est payant (je dirais même cher). Donc j&rsquo;opterais pour le dernier : Freenas est un bon serveur de fichiers, stable, sympa d’utilisation &hellip; mais il demande un peu plus de capacité d&rsquo;adaptation. Il est téléchargeable gratuitement sur <a href="http://www.freenas.org/">www.Freenas.com</a>. Freenas démarre très bien sur une clef USB, et la plupart des BIOS sont capables de booter sur un périphérique USB depuis quelques temps.</p>
 <h2 id="montage-du-nas">Montage du NAS</h2>
-
-<p>Donc, c’est très simple : montez votre NAS. Si vous recyclez votre vieux PC, passez à l&rsquo;étape n°8 directement. Pour plus dinfo sur le montage, rendez-vous <a href="/monter-son-pc/">ici</a>.</p>
-
+<p>Donc, c’est très simple : montez votre NAS. Si vous recyclez votre vieux PC, passez à l'étape n°8 directement. Pour plus dinfo sur le montage, rendez-vous <a href="/monter-son-pc/">ici</a>.</p>
 <ol>
 <li>Trouvez un tournevis cruciforme, un tournevis plat, une table solide et bien protégée contre les rayures ;</li>
 <li>Montez le boîtier, branchez son alimentation ;</li>
@@ -392,11 +626,8 @@
 <li>Ayez un câble RJ45 à portée de la main, pour brancher votre serveur sur le modem ADSL ou votre routeur wifi,</li>
 <li>Votre serveur est prêt sur le plan « hardware ».</li>
 </ol>
-
 <h2 id="finalisation-et-réglages-systèmes">Finalisation et réglages systèmes</h2>
-
 <p>Copiez, depuis votre PC fixe, Freenas sur votre clef USB en suivant les instructions du <a href="http://www.freenas.org/">site</a>.</p>
-
 <ol>
 <li>Débranchez écran et claviez, et branchez-les sur le « serveur »,</li>
 <li>Configurez le BIOS du serveur pour démarrer sur la clef USB,</li>
@@ -405,57 +636,584 @@
 <li>Petit conseil : imprimez une <a href="http://philoxserver.homelinux.org:8080/philoxsvr/file/freenas.pdf">doc de Freenas</a>, et stockez-la à côté du serveur. On ne sait jamais !</li>
 <li>Reste à configurer le routeur pour attribuer une adresse IP à votre serveur. Par exemple <code>192.1.68.1.5</code>. Vous pouvez aussi laisser le NAS et votre box ADSL faire joujou tous seuls &hellip;</li>
 </ol>
-
 <p>Ensuite, vous pourrez vous connecter au serveur depuis votre PC fixe via un explorateur web style Firefox pour configurer la matrice RAID et le système de fichier (LISEZ <a href="http://freenas.org/documentation:setup_and_user_guide">la documentation de Freenas</a>). Une fois ceci fait, vous pourrez créer un drive partagé sur le réseau, que tous les PC de la maison pourront voir. Il sera bien au chaud derrière le Firewall de votre routeur. En outre, Freenas étant un OS très simple et sans autres applications sur le serveur, les risques de piratage et/ou infection sont quasi nuls (enfin n’oubliez pas d’inclure le nouveau lecteur dans vos recherches de virus périodiques).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-question-circle"></i> <strong>NOTE :</strong> Il y a une fonction « recycle bin » / poubelle dans Freenas, pour créer une « poubelle » comme dans Windows (un espace où sont conservés les fichiers « effacés » par vos soins et éventuellement par mégarde).</div>
 
-<h2 id="conclusion">Conclusion</h2>
-
-<p>Et voilà : vous avez maintenant un serveur de fichiers, d’une capacité de 1000 Go, qui démarre sur clef USB. Il contient toutes vos données en double, vous pouvez y accéder de partout dans la maison, de n’importe quel ordi. N’importe qui venant chez vous avec un ordinateur portable peut s’y connecter via votre modem/routeur. En le laissant tourner pendant que vous n’êtes pas chez vous, et moyennant quelques bricolages, vous pourrez même y accéder depuis internet &hellip; (je ne développerais pas ce point dans ce tuto).</p>
-
-<p>Si vous grillez un des disques, voici ce que je conseille : comme 3-4 ans se seront écoulés, achetez deux autres disques d’une capacité double ou triple (c’est le principe de la course aux armements), branchez-les dedans, construisez une nouvelle matrice RAID, et copiez les données du vieux disque&hellip;</p>
-
-<p><strong><em>Voilà, c’est donc fini. Vous avez à présent vos données rangées au même endroit et sécurisées.</em></strong></p></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
-        
-          <li><a href="/tags/tuto"><span class="tag">Tuto</span></a></li>
-        
-          <li><a href="/tags/nas"><span class="tag">NAS</span></a></li>
-        
-          <li><a href="/tags/montage-pc"><span class="tag">Montage PC</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>2978</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
     
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
 
+
+
+
+
+<div class="alert alert-info" role="alert">
+    <i class="fa fa-question-circle"></i>&nbsp;<strong>NOTE :</strong> Il y a une fonction « recycle bin » / poubelle dans Freenas, pour créer une « poubelle » comme dans Windows (un espace où sont conservés les fichiers « effacés » par vos soins et éventuellement par mégarde).
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Et voilà : vous avez maintenant un serveur de fichiers, d’une capacité de 1000 Go, qui démarre sur clef USB. Il contient toutes vos données en double, vous pouvez y accéder de partout dans la maison, de n’importe quel ordi. N’importe qui venant chez vous avec un ordinateur portable peut s’y connecter via votre modem/routeur. En le laissant tourner pendant que vous n’êtes pas chez vous, et moyennant quelques bricolages, vous pourrez même y accéder depuis internet &hellip; (je ne développerais pas ce point dans ce tuto).</p>
+<p>Si vous grillez un des disques, voici ce que je conseille : comme 3-4 ans se seront écoulés, achetez deux autres disques d’une capacité double ou triple (c’est le principe de la course aux armements), branchez-les dedans, construisez une nouvelle matrice RAID, et copiez les données du vieux disque&hellip;</p>
+<p><em><strong>Voilà, c’est donc fini. Vous avez à présent vos données rangées au même endroit et sécurisées.</strong></em></p>
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/tutoriels">Tutoriels</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/tuto">tuto</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/nas">NAS</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/montage-pc">Montage PC</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+    Cet article a été publié il y a <strong>3354</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/tutoriels/monter-un-mini-pc/"
+                class="button big previous">Monter un Mini-PC</a></li>
+    
+
+    
+        <li><a href="/tutoriels/recyclez-son-ordinateur/"
+                class="button big next">Recyclez son ordinateur</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

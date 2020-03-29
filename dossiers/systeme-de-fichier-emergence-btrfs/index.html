@@ -1,269 +1,496 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<!DOCTYPE HTML>
 
-  <meta charset="utf-8" />
-
-  
-  <title>
-    vonKrafft | Système de fichier : l&#39;émergence de btrfs ?
-</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="vonKrafft" />
-  <meta name="description" content="Parmi les systèmes de fichiers actuels, Btrfs (B-tree File System, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.
-
-" />
-
-  
-  
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@v0nkrafft" />
-    <meta name="twitter:title" content="Système de fichier : l&#39;émergence de btrfs ?" />
-    <meta name="twitter:description" content="Parmi les systèmes de fichiers actuels, Btrfs (B-tree File System, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.
-
-" />
-    <meta name="twitter:image" content="https://vonkrafft.fr/media/2014/11/5cf3430fb3844c2b4715dd14230391ab.png" />
-  
-
-
-
-
-<link rel="canonical" href="/dossiers/systeme-de-fichier-emergence-btrfs/" />
-<link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-
-
-
-
-<link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png" />
-
-
-<link rel="stylesheet" href="/css/bundle.css" />
-<link rel="stylesheet" href="/css/font-awesome.min.css" />
-<link rel="stylesheet" href="/css/lightbox.css" />
-<link rel="stylesheet" href="/css/rajdhani.css" />
-<link rel="stylesheet" href="/css/rainbow-wibb.css" />
-<link rel="stylesheet" href="/css/wibb.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <script src="/js/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="/js/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="/js/ofi.min.js"></script>
-
-
-<script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "dossiers",
+        "name" : "Système de fichier : l\x27émergence de btrfs ?",
+        "headline" : "Système de fichier : l\x27émergence de btrfs ?",
+        "description" : "Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2014",
+        "datePublished": "2014-11-20 14:52:49 \x2b0000 UTC",
+        "dateModified" : "2014-11-20 14:52:49 \x2b0000 UTC",
+        "url" : "\/dossiers\/systeme-de-fichier-emergence-btrfs\/",
+        "wordCount" : "5657",
+        "keywords" : [ "Veille technologique","Système de fichier","Btrfs","ZFS","ext4","Blog" ]
+    }
+    </script>
         
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+            
+                <title>Système de fichier : l&#39;émergence de btrfs ?</title>
+            
         
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <a href="/" class="brand"><img class="avatar" src="/img/avatar.jpg" alt="Avatar"></a>
-  
-  <h2 class="title">von<span class="text-primary">Krafft</span></h2>
-  
-  <p class="subtitle">Chronicles of a cybersecurity engineer</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-      
-      
-        <li class="menu-item  is-active">
-          <a href="/">Blog</a>
-          <div class="menu-icon"><i class='fa fa-newspaper-o'></i></div>
-          <ul class="menu-sublist">
-            
-              <li class="menu-subitem menu-actus">
-                <a href="/categories/actus/">Actus</a>
-              </li>
-            
-              <li class="menu-subitem menu-dossiers">
-                <a href="/categories/dossiers/">Dossiers</a>
-              </li>
-            
-              <li class="menu-subitem menu-guides">
-                <a href="/categories/guides/">Guides</a>
-              </li>
-            
-              <li class="menu-subitem menu-tutoriels">
-                <a href="/categories/tutoriels/">Tutoriels</a>
-              </li>
-            
-              <li class="menu-subitem menu-console">
-                <a href="/categories/console/">Console</a>
-              </li>
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/works/">Works</a>
-          <div class="menu-icon"><i class='fa fa-rocket'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-        <li class="menu-item ">
-          <a href="/contact/">Contact</a>
-          <div class="menu-icon"><i class='fa fa-id-card-o'></i></div>
-          <ul class="menu-sublist">
-            
-          </ul>
-        </li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-  
-    <ul class="social-list">
- 
-     <li class="social-item">
-         <a href="mailto:contact%20at%20vonkrafft.fr" title="Email"><span class="icon icon-email"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//github.com/vonKrafft" title="GitHub"><span class="icon icon-github"></span></a>
-     </li>
- 
-     <li class="social-item">
-         <a href="//twitter.com/v0nkrafft" title="Twitter"><span class="icon icon-twitter"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="//www.linkedin.com/in/wandrillekrafft" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-     </li>
- 
-     
- 
-     
- 
-     
- 
-     <li class="social-item">
-         <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-     </li>
- 
-    </ul>  
 
-  </nav>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+        
+            <meta name="description" content="Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Système de fichier : l&#39;émergence de btrfs ?"/>
+<meta name="twitter:description" content="Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation"/>
+<meta name="twitter:site" content="@v0nkrafft"/>
+
+        <meta property="og:title" content="Système de fichier : l&#39;émergence de btrfs ?" />
+<meta property="og:description" content="Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/dossiers/systeme-de-fichier-emergence-btrfs/" />
+<meta property="article:published_time" content="2014-11-20T14:52:49+00:00" />
+<meta property="article:modified_time" content="2014-11-20T14:52:49+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Système de fichier : l&#39;émergence de btrfs ?">
+<meta itemprop="description" content="Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation">
+<meta itemprop="datePublished" content="2014-11-20T14:52:49&#43;00:00" />
+<meta itemprop="dateModified" content="2014-11-20T14:52:49&#43;00:00" />
+<meta itemprop="wordCount" content="5657">
+
+
+
+<meta itemprop="keywords" content="Veille technologique,Système de fichier,Btrfs,ZFS,ext4," />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-  <section class="main post-detail post-dossiers">
-    <header class="post-header">
-      <h1 class="post-title">Système de fichier : l&#39;émergence de btrfs ?</h1>
-      <p class="post-meta">
-        <span class="category"><a href="/categories/dossiers/">Dossiers</a></span>
-        @vonKrafft · 20 novembre 2014
-      </p>
-    </header>
-    <article class="post-content"><p>Parmi les systèmes de fichiers actuels, Btrfs (<em>B-tree File System</em>, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.</p>
 
-<p></p>
+<section id="menu">
 
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-02-25'>
+                                    25 février 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f&amp;text=Syst%c3%a8me%20de%20fichier%20%3a%20l%27%c3%a9mergence%20de%20btrfs%20%3f&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f&amp;title=Syst%c3%a8me%20de%20fichier%20%3a%20l%27%c3%a9mergence%20de%20btrfs%20%3f" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f&amp;title=Syst%c3%a8me%20de%20fichier%20%3a%20l%27%c3%a9mergence%20de%20btrfs%20%3f" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f&amp;title=Syst%c3%a8me%20de%20fichier%20%3a%20l%27%c3%a9mergence%20de%20btrfs%20%3f" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f&amp;description=Syst%c3%a8me%20de%20fichier%20%3a%20l%27%c3%a9mergence%20de%20btrfs%20%3f" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fdossiers%2fsysteme-de-fichier-emergence-btrfs%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2014/11/5cf3430fb3844c2b4715dd14230391ab.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/dossiers/systeme-de-fichier-emergence-btrfs/">Système de fichier : l&#39;émergence de btrfs ?</a></h1>
+            
+        
+        
+            <p>Présentation des fonctionnalités offertes par Btrfs, comparaison de ses performances avec d’autres systèmes de fichiers et exemples d’utilisation</p>
+        
+    </div>
+    <div class="meta meta-dossiers">
+        
+
+        <time class="published"
+            datetime='2014-11-20'>
+            20 novembre 2014</time>
+        <span class="author"></span>
+
+        
+            <p>27 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <p>Parmi les systèmes de fichiers actuels, Btrfs (<em>B-tree File System</em>, à prononcer « Butter-FS ») commence à se faire un nom. S’il est encore en phase de développement, il doit à terme remplacer Ext4 (utilisé par défaut sur la plupart des distributions GNU/Linux) et offrir une alternative à ZFS. Nous allons donc détailler les fonctionnalités offertes par Btrfs, comparer ses performances avec d’autres systèmes de fichiers et enfin donner des exemples d’utilisation.</p>
 <h2 id="btrfs-et-les-autres-systèmes-de-fichiers">Btrfs et les autres systèmes de fichiers</h2>
-
 <p>Traditionnellement, les systèmes GNU/Linux utilisent les systèmes de fichiers de la famille des Ext. Actuellement, Ext4 est la version utilisée par défaut sur beaucoup de système, mais est considérée par ses développeurs comme une version de transition en attendant l’arrivée d’un successeur plus « révolutionnaire » : Btrfs.</p>
-
 <p>Le projet Btrfs voit le jour fin 2007 et a pour but de créer un système de fichier combinant toutes les couches utilisées par Ext4 (mdadm, lvm, fs&hellip;) en un produit unique. Ainsi, le système de fichiers est capable de gérer tous les cas d’utilisation sans recquérir de logiciels externes plus ou moins bien implémentés. L’un des buts de Btrfs est de proposer les mêmes fonctionnalités que ZFS, tout en étant mieux intégrés au sein des noyaux Linux. Le projet est placé sous licence GNU GPL, et est développé conjointemenet par plusieurs grandes entreprises (Intel, Linux Fondation, Oracle, Red Hat, Suse, etc.) et par des développeurs particuliers.</p>
-
 <h3 id="un-point-sur-zfs">Un point sur ZFS</h3>
-
 <p>ZFS est actuellement l&rsquo;un des systèmes de fichiers les plus performants. Il offre toutes les fonctionnalités de Btrfs, et d’autres non encore implémentée dans Btrfs. Cependant, il souffre de deux inconvénients majeurs : sa licence le rend incompatible avec le noyau Linux, ce qui rend son implémentation officielle dans les projets GNU/Linux impossible, et il consomme beaucoup de mémoire (surtout sur les systèmes GNU/Linux, en partie du fait de sa mauvaise intégration). Ainsi, s’il est possible d’utiliser ZFS ou un portage avec GNU/Linux, il est en pratique délicat de maintenir une telle installation, ce qui rend l’usage de ZFS impossible en production sur des parcs GNU/Linux.</p>
-
 <h3 id="btrfs-un-projet-toujours-en-développement">Btrfs, un projet toujours en développement</h3>
-
 <p>Btrfs est actuellement en phase active de développement. Il est conseillé de toujours maintenir son noyau Linux à jour si on souhaite profiter de toutes les fonctionnalités et des bonnes performances de Btrfs. Cependant, un certain nombre des fonctionnalités sont considérées stables, notamment les instantannés et certains RAID ; par ailleurs, les risques de problème important amenant une perte de données sont considérés comme faibles si l’utilisateur ne se sert pas des outils considérés comme non-stables.</p>
-
 <p>Btrfs est supporté par beaucoup des distributions les plus populaires : Debian, Ubuntu, OpenSuSE (qui en a fait son système de fichier par défaut depuis OpenSuSE 13.2), etc. Par ailleurs, deux entreprises proposent du support pour Btrfs : SUSE Enterprise Linux (depuis SLES11 SP2) et Oracle (depuis Oracle Linux 5).</p>
-
-<h2 id="btrfs-la-base">Btrfs : la base</h2>
-
+<h2 id="btrfs--la-base">Btrfs : la base</h2>
 <h3 id="structure">Structure</h3>
-
-<p>Btrfs utilise une structure de type arbre B pour stocker les métadonnées. Un arbre B a l&rsquo;avantage d&rsquo;être toujours équilibré ce qui garantit un temps de recherche et d&rsquo;insertion en log base B de la hauteur de l&rsquo;arbre.
+<p>Btrfs utilise une structure de type arbre B pour stocker les métadonnées. Un arbre B a l&rsquo;avantage d'être toujours équilibré ce qui garantit un temps de recherche et d&rsquo;insertion en log base B de la hauteur de l&rsquo;arbre.
 Toutes les données ne sont pas stockées dans le même arbre, Btrfs utilise plusieurs arbres pour stocker séparément :</p>
-
 <ul>
 <li>Les racines des autres arbres</li>
 <li>les parties des périphériques alloués et leurs types</li>
@@ -271,191 +498,112 @@ Toutes les données ne sont pas stockées dans le même arbre, Btrfs utilise plu
 <li>les sommes de contrôle (plusieurs arbres distincts)</li>
 <li>les informations sur le système de fichiers, les fichiers et les répertoires</li>
 </ul>
-
 <p>Les informations sont classées par clefs dans l’arbre, les données ne sont situées que dans les feuilles, comme dans un arbre de type B+, mais sans les liens entre les feuilles. Chaque clef est l’association d’un identifiant d’objet, d’un type et d’un offset, sous la forme [id, type, offset].</p>
-
 <p>Dans le cas des fichiers, l’identifiant d’objet correspond au numéro d’inode. Chacune des informations spécifiques à un inode a le même numéro inode comme identifiant, mais avec un type et un offset différent. Ainsi toutes les métadonnées en lien avec un inode sont stockées proches les unes des autres dans l’arbre.</p>
-
 <p>Un des grands avantages de btrfs est la possibilité de stocker les petits fichiers entièrement dans les feuilles, ce qui permet de minimiser l’espace utilisée, l’allocation dans les feuilles n’étant pas faite par blocs. La lecture et l’écriture de petits fichiers se fait rapidement car les données sont ainsi directement dans l’arbre, ce qui diminue le nombre de requêtes et les temps d’accès aux données.</p>
-
 <p>Btrfs fonctionne avec des volumes et des fichiers de taille inférieure ou égale à 16 EiB, et accepte un nombre illimité de fichiers. Ceux-ci ont un nom allant jusqu’à 255 caractères, et ne contenant pas les caractères « / » et « \0 ».</p>
-
-<h3 id="mode-d-allocation-l-extent">Mode d&rsquo;allocation : l&rsquo;<em>extent</em></h3>
-
+<h3 id="mode-dallocation--lextent">Mode d&rsquo;allocation : l&rsquo;<em>extent</em></h3>
 <p>Les anciens systèmes de fichiers (jusqu’à Ext3) utilisent l’adressage par blocs : le support de stockage est découpé en blocs de taille fixe (généralement 512, 1024 ou 2048ko), qui sont alloués aux fichiers en cours d’écriture. Comme les fichiers sont souvent plus grands que les blocs, il est nécessaire d’allouer plusieurs blocs pour un même fichier, ce qui améne la fragmentation et la gestion des différents blocs par l’intermédiaire des métadonnées, qui peuvent être de tailles importantes et dont l’écriture peut ralentir le système.</p>
-
 <p>Les sytèmes de fichiers plus récents (entre autes Ext4, ZFS, Btrfs) se basent sur la notion d’<em>extent</em> : l’espace de stockage n’est pas alloué sous la forme de blocs, mais d’ensembles contigus de blocs, ce qui réduit grandement la fragmentation. De plus, la gestion des métadonnées est simplifiée, car au lieu d’une liste de blocs, il suffit de sauvegarder la taille de la portion de fichier et le numéro du premier bloc de données.</p>
-
 <p>Lors de l’écriture d’un fichier sur le disque, un <em>extent</em> lui est alloué. Par la suite, si le fichier est modifié, les nouvelles données sont ajoutées à la suite, dans le même <em>extent</em> ; quand celui-ci est plein, un nouvel <em>extent</em> est alloué. Cette méthode permet de réduire les temps d’accès pour les gros fichiers, et rend les opérations modifiant les métadonnées (par exemple la suppression) beaucoup plus rapides, car moins de métadonnées sont à modifier.</p>
-
 <h3 id="copie-sur-écriture">Copie sur écriture</h3>
-
 <p>La copie sur écriture (souvent désignée par son acronyme COW, pour <em>Copy-On-Write</em>) est une optimisation utilisée principalement en base de donnée et dans certains systèmes de fichiers (notamment ZFS et Btrfs). Son principe est le suivant : si plusieurs processus demandent l’accès à la même ressource, le système de fichier leur fournit à tous le même pointeur, sans que la ressource ne soit dupliquée. En cas d’écriture de la part de l’un des processus, une « copie privée » de la ressource est effectuée et est allouée au processus ayant initié l’écriture, le tout de manière transparente.</p>
-
 <p>La copie sur écriture apporte deux améliorations à Btrfs. Premièrement, dans le cadre d’une utilisation classique, elle permet de diminuer l’utilisation de la mémoire cache, car les ressources utilisées n’y sont copiées qu’une seule fois même si plusieurs processus y accédent, jusqu’à ce que des modifications soient apportées par un processus. L’autre utilisation se fait en parallèle avec les instantannées (voir section suivante).</p>
-
 <h3 id="commandes-de-base">Commandes de base</h3>
-
 <p>La création d’une partition Btrfs se fait classiquement :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# mkfs.btrfs *dev*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# mkfs.btrfs *dev*</code></pre>
 <p>Cette commande admet un grand nombre d’options, listées sur <a href="https://btrfs.wiki.kernel.org/index.php/Mount_options">le site officiel</a>. Nous allons détailler plusieurs de ces options par la suite.</p>
-
 <p>Btrfs propose aussi la commande <em>btrfs</em> (<a href="https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs">manuel officiel</a>), qui permet d’effectuer plusieurs actions sur les systèmes de fichiers Btrfs. Nous allons en aborder plusieurs dans la suite lorsqu’elles concerneront des fonctionnalités intéressantes ; cependant, quelques commandes simples méritent d’être citées.</p>
-
 <p>Ainsi, Btrfs propose l’équivalent de la commande <em>df</em>, avec plus d’informations :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem df *filesystem*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem df *filesystem*</code></pre>
 <p>Pour obtenir plus de détails sur un système Btrfs, il faut utiliser la commande suivante :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem show *filesystem*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem show *filesystem*</code></pre>
 <p>Enfin, il est possible de défragementer un système Btrfs entier ou uniquement quelques fichiers avec la commande :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem defragment *[filesystem|files]*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem defragment *[filesystem|files]*</code></pre>
 <h2 id="les-fonctionnalités-implémentées">Les fonctionnalités implémentées</h2>
-
-<h3 id="conversion-depuis-ext2-3-4">Conversion depuis Ext2/3/4</h3>
-
+<h3 id="conversion-depuis-ext234">Conversion depuis Ext2/3/4</h3>
 <p>Btrfs possède très peu de métadonnées enregistrées à des emplacements fixes, ce qui facilite la conversion depuis d&rsquo;autres systèmes de fichiers. La copie sur écriture autorise Btrfs à conserver une copie originale du système de fichier précédent, permettant ainsi à l&rsquo;administrateur d&rsquo;annuler la conversion même après avoir effectué des modifications dans le système Btrfs converti.</p>
-
 <p>Btrfs possède un programme de conversion, <em>btrfs-convert</em>, qui lit les métadonnées de Ext4 et utilise l&rsquo;espace libre d&rsquo;Ext4 pour y implementer le nouveau système de fichier Btrfs.</p>
-
 <h4 id="conversion">Conversion</h4>
-
 <p>La convertion depuis Ext2/3/4 se déroule ainsi :</p>
-
 <ul>
 <li>duplication du premier méga-octet du disque ;</li>
-<li>duplication des répertoires et des in&oelig;uds, création des fichiers Btrfs ;</li>
+<li>duplication des répertoires et des inœuds, création des fichiers Btrfs ;</li>
 <li>création de références aux blocs de données d&rsquo;Ext4 depuis les fichiers Btrfs.</li>
 </ul>
-
 <p>Cette conversion engendre une copie de toutes les métadonnées d&rsquo;Ext4, mais les fichiers Btrfs pointent seulement sur les mêmes blocs de données que les fichiers Ext4. Ainsi, l&rsquo;utilisation d&rsquo;une grande partie des blocs de données est partagée entre les deux système de fichiers. De plus, l’utilisation de la copie sur écriture permet la conservation de la version originale des fichiers d&rsquo;Ext4.</p>
-
 <p>Le premier méga-octet du disque est copié à un autre emplacement afin que les métadonnées Btrfs puissent y être écrites. Ainsi, lors de l&rsquo;annulation de la conversion, une simple copie de ces fichiers à leur emplacement initial permettra de restaurer les métadonnées d&rsquo;Ext4.</p>
-
 <p>Le schéma suivant illustre l&rsquo;organisation du disque après la conversion :</p>
 
-<figure>
-    <a href="/media/2014/11/31168275dcaac634489082b54c4c66d0.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/31168275dcaac634489082b54c4c66d0.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/31168275dcaac634489082b54c4c66d0.png" class="image featured center">
+                <img src="/media/2014/11/31168275dcaac634489082b54c4c66d0.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <h4 id="utilisation">Utilisation</h4>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs-convert [-d] [-n] [-i] [-r] &amp;lt;dev&amp;gt;
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs-convert [-d] [-n] [-i] [-r] &amp;lt;dev&amp;gt;</code></pre>
 <p>Definition des paramètres les plus fréquemment utilisés :</p>
-
 <ul>
 <li><code>-d</code> désactive le calcul des sommes de contrôle de données. La conversion sera plus rapide.</li>
 <li><code>-n</code> désactive l&rsquo;empaquettage des petits fichiers.</li>
 <li><code>-i</code> ignore les ACL (&ldquo;Access Control List&rdquo; : Gestion avancée des droits sous linux)</li>
 <li><code>-r</code> permet de revenir au système de fichier Ext2/3/4.</li>
 </ul>
-
 <h3 id="redimmensionnement-à-chaud">Redimmensionnement à chaud</h3>
-
 <p>Il est possible de redimmensionner les partitions Btrfs montées grâce à la commande suivante :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem resize &amp;lt;taille&amp;gt; /mnt/btrfs
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem resize &amp;lt;taille&amp;gt; /mnt/btrfs</code></pre>
 <p>L’option <strong>taille</strong> doit être renseignée, et peut être utilisée de trois manières : en mettant <code>+</code> devant, pour agrandir la partition, <code>-</code> pour la diminuer, et enfin en spécifiant uniquement la taille finale souhaitée. Par exemple, pour réduire de 3 Go la partition :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem resize -3g /mnt/btrfs
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem resize -3g /mnt/btrfs</code></pre>
 <h3 id="sous-volumes">Sous-volumes</h3>
-
 <h4 id="définition-et-principe">Définition et principe</h4>
-
 <p>Un système de fichiers Unix classique contient une arborescence unique avec une seule racine. Par défaut, un système de fichiers Btrfs est organisé de la même façon. Les sous-volumes changent cette organisation en créant des racines alternatives qui fonctionnent comme des systèmes de fichiers indépendants ayant leurs propres droits.</p>
-
 <p>Un sous-volume est traité par le système de fichier comme étant sur un support physique distinct. On peut ainsi le monter indépendament des autres sous-volumes et le traiter comme son propre système de fichiers. Il est tout à fait possible de créer toute une série de sous-volumes, monter chacun séparément et de se retrouver avec un ensemble de systèmes de fichiers indépendants partageant tous le même périphérique de stockage.</p>
-
 <p>La racine du disque doit être montée pour pouvoir y créer des sous-volumes. Mais une fois ceux-ci créés, il est tout à fait possible de monter les sous-volumes sans avoir à monter la racine.</p>
-
 <p>Un quota de blocs peut être affecté à un sous-volume. Une fois ce quota atteint, les nouvelles écritures ne sont plus autorisées.</p>
-
 <h4 id="création-et-manipulations">Création et manipulations</h4>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# mkfs.btrfs /dev/sdb5
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# mkfs.btrfs /dev/sdb5
 root@debian:~# mount /dev/sdb5 /mnt/1
 root@debian:~# cd /mnt/1
-root@debian:~# touch a
-</code></pre>
-</div>
-
+root@debian:~# touch a</code></pre>
 <p>Nous avons donc un système de fichiers Btrfs classique contenant un seul fichier &ldquo;<code>a</code>&rdquo;. Nous pouvons à présent créer un sous-volume et y ajouter un fichier :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs subvolume create subv
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs subvolume create subv
 root@debian:~# touch subv/b
 root@debian:~# tree
 .
@@ -463,320 +611,329 @@ root@debian:~# tree
 └── subv
     └── b
 
-    1 directory, 2 files
-</code></pre>
-</div>
-
+    1 directory, 2 files</code></pre>
 <p>Nous avons créé un sous-volume &ldquo;<code>subv</code>&rdquo; et nous y avons ajouté le fichier &ldquo;<code>b</code>&rdquo; en précisant qu&rsquo;il devait se trouver dans ce sous-volume. Cette création ressemble très fortement à la création d&rsquo;un répertoire &ldquo;<code>subv</code>&rdquo; dans lequel nous aurions placé le fichier &ldquo;<code>b</code>&rdquo;. Mais l&rsquo;on constatera des différences lors de l&rsquo;utilisation et de la manipulation des sous-volumes. Par exemple :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# ln a subv/
-ln: failed to create hard link ‘subv/a’ =&gt; ‘a’: Invalid cross-device link
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# ln a subv/
+ln: failed to create hard link ‘subv/a’ =&gt; ‘a’: Invalid cross-device link</code></pre>
 <p>Ainsi, même si le sous-volume ressemble à un répertoire ordinaire, il est traité par le système de fichier comme étant sur un support physique distinct. Se déplacer dans &ldquo;<code>subv</code>&rdquo; revient à traverser un point de montage Unix classique. Il est d&rsquo;ailleurs possible de monter le sous-volume de façon indépendante :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs subvolume list /mnt/1
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs subvolume list /mnt/1
 ID 257 gen 8 top level 5 path subv
 root@debian:~# mount -o subvolid=257 /dev/sdb5 /mnt/2
 root@debian:~# tree /mnt/2
 /mnt/2
 └── b
 
-0 directories, 1 file
-</code></pre>
-</div>
-
+0 directories, 1 file</code></pre>
 <p>Normalement, Btrfs va monter la racine par défault à moins que nous lui disions de faire autrement avec l&rsquo;option <code>subvolid=&amp;lt;mount option&amp;gt;</code>. Pour modifier le volume ou le sous-volume à monter par défaut, il faut utiliser la commande :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs subvolume set-default 257 /mnt/1
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs subvolume set-default 257 /mnt/1</code></pre>
 <p>Par la suite, monter <code>/dev/sdb5</code> sans préciser d&rsquo;options de montage avec <code>subvolid=&amp;lt;mount option&amp;gt;</code> reviendra à monter le sous-volume qui possède l&rsquo;identifiant #257 (ici &ldquo;<code>subv</code>&rdquo;). Le volume racine possède l&rsquo;identifiant #0.</p>
-
 <p>Pour supprimer un sous-volume, il faut premièrement supprimer tous les fichiers qu&rsquo;il contient, puis utiliser la commande suivante :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs subvolume delete &amp;lt;path&amp;gt;
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs subvolume delete &amp;lt;path&amp;gt;</code></pre>
 <h3 id="compression">Compression</h3>
-
 <p>La compression permet de sauvegarder de l&rsquo;espace disque, mais aussi de limiter les ralentissements causés par un disque dur trop lent (moins de données à transférer du disque dur vers la mémoire cache). Elle se fait de manière transparente lors de l’écriture et la lecture. Si la plupart du temps ces opérations n’impactent pas les performances de manière visible, il arrive que ce soit le cas. Par exemple, comme la compression se fait par bloc de données de 128 KiB, l’accès à un octet situé au milieu de ce bloc nécessitera la décompression de tout le bloc.</p>
-
 <h4 id="implémentation-dans-btrfs">Implémentation dans Btrfs</h4>
-
 <p>Btrfs utilise actuellement deux algorithmes : ZLIB (par défaut) et LZO. Le premier est plus lent, mais compresse plus que LZO, qui a été conçu pour être rapide. La compression se fait en découpant les fichiers en morceaux de 128kb et en faisant traiter ces derniers par des threads, ce qui permet de diviser la charge de travail sur tous les CPUs même dans le cas d’un seul fichier. L’utilisation de la compression et le choix de la méthode se font simplement lors du montage de la partition :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# mount -o compress=lzo,zlib *dev* /mnt/btrfs
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# mount -o compress=lzo,zlib *dev* /mnt/btrfs</code></pre>
 <p>Tous les fichiers compressibles écrits après le montage se feront avec la méthode de compression choisie. Pour forcer la compression même sur les fichiers peu compressibles, il faut utiliser l’option <em>compress-force</em>. De plus, il est possible de compresser les fichiers déjà présents sur le volume grâce à la commande suivante :</p>
-
-<p><div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem defragment -c zlib,lzo
-</code></pre>
-</div>
-.</p>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem defragment -c zlib,lzo</code></pre>
 <h3 id="gestion-des-quotas">Gestion des quotas</h3>
-
 <h4 id="définition-et-principe-1">Définition et principe</h4>
-
 <p>Les quotas permmettent de fixer une limite d&rsquo;utilisation des vlocs et ainsi répartir l&rsquo;utilisation du support de stockage entre les différents utilisateurs, groupes et/ou sous-volumes.</p>
-
-<p>La gestion des quotas dans Btrfs est implémentée au niveau des sous-volumes par l&rsquo;utilisation de &ldquo;groupes de quotas&rdquo; (<code>qgroup</code>). Cette gestion n&rsquo;étant pas présente depuis le début du développement de Btrfs, il est possible de scanner le système de fichier de sorte que les sous-volumes crées avant les gestion des quotas puissent en bénéficier. Dans ce sytème de quotas, chaque sous-volume est assigné à un <code>qgroup</code> de la forme <code>0/&amp;lt;ID du sous-volume&amp;gt;</code>. Il est possible de créer un groupe de quotas identifié par un nombre quelconque mais l&rsquo;ID du sous-volume est utilisé par défaut.</p>
-
+<p>La gestion des quotas dans Btrfs est implémentée au niveau des sous-volumes par l&rsquo;utilisation de &ldquo;groupes de quotas&rdquo; (<code>qgroup</code>). Cette gestion n'étant pas présente depuis le début du développement de Btrfs, il est possible de scanner le système de fichier de sorte que les sous-volumes crées avant les gestion des quotas puissent en bénéficier. Dans ce sytème de quotas, chaque sous-volume est assigné à un <code>qgroup</code> de la forme <code>0/&amp;lt;ID du sous-volume&amp;gt;</code>. Il est possible de créer un groupe de quotas identifié par un nombre quelconque mais l&rsquo;ID du sous-volume est utilisé par défaut.</p>
 <h4 id="activer-les-quotas">Activer les quotas</h4>
-
 <p>Activer les quotas sur un sous-volume Btrfs nouvellement créer se fait uniquement grâce à :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs quota enable &amp;lt;path&amp;gt;
-</code></pre>
-</div>
-
-<p>Sur un sous-volume existant, il faut d&rsquo;abord activer les quotas et vérifier si la commande &ldquo;`<code>&quot; retourne quelque chose. Si ce n'est pas le cas, alors Btrfs n'a pas créé automatiquement le</code>qgroup` et il va falloir le créer manuellement :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs quota enable &amp;lt;path&amp;gt;
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs quota enable &amp;lt;path&amp;gt;</code></pre>
+<p>Sur un sous-volume existant, il faut d&rsquo;abord activer les quotas et vérifier si la commande &ldquo;``&rdquo; retourne quelque chose. Si ce n&rsquo;est pas le cas, alors Btrfs n&rsquo;a pas créé automatiquement le <code>qgroup</code> et il va falloir le créer manuellement :</p>
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs quota enable &amp;lt;path&amp;gt;
 root@debian:~# btrfs subvolume list &amp;lt;path&amp;gt; | cut -d&#39; &#39; -f2 | xargs -I{} -n1 btrfs qgroup create 0/{} &amp;lt;path&amp;gt;
-root@debian:~# btrfs quota rescan &amp;lt;path&amp;gt;
-</code></pre>
-</div>
-
+root@debian:~# btrfs quota rescan &amp;lt;path&amp;gt;</code></pre>
 <h3 id="gestion-de-volumes-multiples">Gestion de volumes multiples</h3>
-
 <p>Btrfs implémente directement une gestion des volumes. Les différents volumes peuvent ainsi être organisés en RAID (Redundant Array Of Independant Disks) grâce différentes techniques permettant de répartir les données sur plusieurs disques durs de manière transparente pour l’utilisateur. Chaque type de RAID a pour but d’apporter une plus grande fiabilité (RAID 1), d’augmenter les performances en lecture/écriture (RAID 0), ou les deux (RAID 5, RAID 0+1, RAID 1+0), parfois au détriment d’autres facteurs (moins performant pour la reconstruction en cas de perte, nécessité de beaucoup de disque dur simultanément, etc.).</p>
-
 <p>Pour le moment, Btrfs n’est officiellement stable que pour les RAID 0, 1 et 1+0, même si les RAID 5 et 6 sont déjà supportés. Nous allons donc rapidement présenter les RAID stables, avant de voir comment Btrfs implémente le RAID.</p>
-
 <h4 id="raid-0">RAID 0</h4>
-
 <p>Le RAID 0 a pour but d’augmenter les performances et la capacité de stockage. Dans cette configuration, les données à écrire sont séparées en bandes (<em>strip</em>, d’où l’autre nom du RAID 0 : <em>striping</em>), chacune étant écrite sur un disque différent. Ainsi, s’il y a <em>n</em> disques, chacun d’entre eux ne devra écrire que 1/<em>n</em> des données, et la capacité totale de stockage sera de <em>n</em> fois celle du disque le plus petit. Voici un exemple avec deux disques :</p>
 
-<figure>
-    <a href="/media/2014/11/6e1cf4aee5712cfedbb1d569e992f5bb.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/6e1cf4aee5712cfedbb1d569e992f5bb.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/6e1cf4aee5712cfedbb1d569e992f5bb.png" class="image featured center">
+                <img src="/media/2014/11/6e1cf4aee5712cfedbb1d569e992f5bb.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Ce RAID utilise tous l’espace de stockage (pas de redondance des données), ce qui le rend peu onéreux. Cependant, la perte d’un seul disque entraine la corruption de toutes les données.</p>
-
 <h4 id="raid-1">RAID 1</h4>
-
 <p>Ce RAID repose lui aussi sur l’utilisation de <em>n</em> disques, mais cette fois-ci les données sont écrit de manière redondante sur chaque disque. Voici un exemple avec deux disques :</p>
 
-<figure>
-    <a href="/media/2014/11/a4259c6031ccb9e4492845d44935a175.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/a4259c6031ccb9e4492845d44935a175.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/a4259c6031ccb9e4492845d44935a175.png" class="image featured center">
+                <img src="/media/2014/11/a4259c6031ccb9e4492845d44935a175.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Cette méthode accepte une défaillance de <em>n-1</em> disques, ce qui offre une très fiabilité. Cependant, elle est coûteuse en espace de stockage et n’améliore en rien les performances.</p>
-
-<h4 id="raid-1-0">RAID 1+0</h4>
-
+<h4 id="raid-10">RAID 1+0</h4>
 <p>Ce RAID est la combinaison entre les deux RAID précédents. Les disques sont séparés en grappes RAID 1 d’au moins deux disques (donc il en faut au minimum 4). Les données sont écrites simultanément sur les différentes grappes selon la technique du RAID 0 ; au sein de chaque sous-grappe, elles sont écrites sur les différents disques de manière redondante (RAID 1). Voici un exemple avec quatre disques :</p>
 
-<figure>
-    <a href="/media/2014/11/bdaac16231053c86dc9c3a9ec7455b1d.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/bdaac16231053c86dc9c3a9ec7455b1d.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/bdaac16231053c86dc9c3a9ec7455b1d.png" class="image featured center">
+                <img src="/media/2014/11/bdaac16231053c86dc9c3a9ec7455b1d.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Cette technique regroupe les avantages des deux RAID précédents : rapidité d’écriture et fiabilité. Pour qu’une perte de données survienne, il faut que chaque grappe perde le même disque.</p>
-
 <h4 id="implémentation-dans-btrfs-1">Implémentation dans Btrfs</h4>
-
 <p>L’implémentation des RAID dans Btrfs est classique. Cependant, Btrfs traite les données et les métadonnées séparément, et lors de la création d’un RAID il est possible d’indiquer un type de RAID (ou la non-utilisation du RAID) pour les données ou les métadonnées. Ainsi, il serait possible de stocker les données avec un RAID 0 (pour privilégier les performances) tout en utilisant un RAID 1 pour les métadonnées (dont la perte peut menacer l’intégrité du système tout entier). Cette stratégie de protection des métadonnées est aussi valable pour les systèmes sur un seul disque, où les métadonnées sont dupliquées pour parrer à la défaillance d’un secteur.</p>
-
 <p>Le nombre de disques durs impliqués dans un RAID, ainsi que les paramètres de celui-ci (type de RAID, gestion des métadonnées, etc.) peuvent être changés à tout moment et à chaud, sans nécessiter de démontage du système. Les RAID nécessitant des nombres spécifiques de disques (par exemple le RAID 10) ne peuvent bien sûr n’être utilisés que lorsque les conditions sont satisfaites.</p>
-
 <p>La commande pour créer un RAID est la suivante :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# mkfs.btrfs [-d mode] [-m mode] *dev1 dev2* ...
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# mkfs.btrfs [-d mode] [-m mode] *dev1 dev2* ...</code></pre>
 <p>C’est donc la même commande que pour créer un volume Btrfs, mais avec des options en plus. « -d mode » indique le mode de RAID pour les données ; « -m mode » celui pour les métadonnées. <em>mode</em> peut donc valoir <em>raid0</em>, <em>raid1</em>,<em>raid10</em>, ou un autre type de RAID implémenté mais non stable (<em>raid5</em>, <em>raid6</em>). La commande permettant de lister les disques impliqués dans le RAID est :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs filesystem show *dev*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs filesystem show *dev*</code></pre>
 <p>Pour ajouter ou supprimer le volume <em>/dev/sdd1</em>, il faut utiliser les commandes suivantes :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs device add /dev/sdd1 /mnt         //ajout
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs device add /dev/sdd1 /mnt         //ajout
 root@debian:~# btrfs device delete /dev/sdd1 /mnt      //suppression
-root@debian:~# btrfs balance start -d -m /mnt          //reconfiguration du RAID pour prendre en compte la modification
-</code></pre>
-</div>
-
+root@debian:~# btrfs balance start -d -m /mnt          //reconfiguration du RAID pour prendre en compte la modification</code></pre>
 <p>Enfin, la conversion peut s’effectuer sans démonter le système grâce à la commande suivante :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs balance start -dconvert=*mode* -mconvert=*mode* /mnt
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs balance start -dconvert=*mode* -mconvert=*mode* /mnt</code></pre>
 <p>Comme btrfs doit copier beaucoup de données et recalculer toutes les sommes de contrôle correspondantes, l’opération peut prendre du temps. Enfin, btrfs est capable de reconnaitre de lui-même la présence d’un disque dur ne fonctionnant plus et peut monter le RAID en « mode dégradé » afin de pouvoir lancer les opérations de recouvrement des données et de ré-équilibrage du RAID :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs device delete missing /mnt/disque_defaillant
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs device delete missing /mnt/disque_defaillant</code></pre>
 <h3 id="instantanés">Instantanés</h3>
-
 <p>Un instantanné est l’état du système à un moment donné. À l’inverse d’une sauvegarde, les données ne sont enregistrées que lorsque elles sont modifiées par le système actif. Si on veut se servir de cette méthode pour faire une sauvegarde totale du système, il convient donc de faire une sauvegarde traditionnelle préalablement, en copiant l’intégralité des données sur le suppprt de sauvegarde. Ensuite, à chaque prise d’instantanné, seules les données ayant été modifiées seront copiées, d’où une limitation de l’espace et des ressources utilisés.</p>
-
 <p>Btrfs utilise la copie sur écriture pour gérer les instantannés. En effet, les données ne sont pas dupliquées par l’instantanné tant que le système de fichier actif ne les modifies pas, ce qui permet de diminuer l’espace disque utilisé.</p>
-
 <p>Par exemple, juste avant que le système actif ne modifie la donnée D, voici la situation :</p>
 
-<figure>
-    <a href="/media/2014/11/534f372ff118b0ce10716cc1924171e9.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/534f372ff118b0ce10716cc1924171e9-300x230.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/534f372ff118b0ce10716cc1924171e9.png" class="image featured center">
+                <img src="/media/2014/11/534f372ff118b0ce10716cc1924171e9-300x230.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <p>Puis le mécanisme de copie sur écriture créé une copie privée pour l&rsquo;instantanné, et le système actif peut modifier la donnée sans que l’instantanné ne soit modifié :</p>
 
-<figure>
-    <a href="/media/2014/11/ce344378b5a0fb007a9caa4fbca15598.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/ce344378b5a0fb007a9caa4fbca15598-300x230.png">
-    </a>
+
+
     
-</figure>
+    
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/ce344378b5a0fb007a9caa4fbca15598.png" class="image featured center">
+                <img src="/media/2014/11/ce344378b5a0fb007a9caa4fbca15598-300x230.png" alt="">
+            </a>
+        
+        
+    </figure>
+
 
 <p>La création d’un instantanné se fait grâce à la commande suivante :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# subvolume snapshot *source* [*dest*/]*name*
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# subvolume snapshot *source* [*dest*/]*name*</code></pre>
 <p>Les autres opérations de gestion d’un instantanné (suppression, défragmentation, quotas) se font de la même manière que pour un sous-volume classique.</p>
-
 <h3 id="sommes-de-contrôles-vérifications-et-réparations">Sommes de contrôles, vérifications et réparations</h3>
-
 <p>À la différence de Ext4, qui n’effectue des sommes de contrôle que sur les métadonnées, Btrfs en fait aussi sur les données. Cela permet de détecter à chaud les corruptions du système et donc de les corriger rapidement. Btrfs utilise l’algorithme crc32c pour les sommes de contrôles, qui sont vérifiées pour toutes les lectures et recalculées à chaque écritures. Comme pour la compression, les calculs sont séparés en threads afin de ne pas impacter les performances du système. De plus, elles peuvent être désactivées lors du montage avec l’option <em>-o nodatasum</em>. Les différentes sommes de contrôles (données, métadonnées) sont stockées séparément. En cas de détection d’erreur, Btrfs essaie tout d’abord de récupérer des copies valides (notamment en cas d’utilisation de RAID 1 ou 10), et sinon alerte l’utilisateur du problème.</p>
-
 <p>Pour vérifier les sommes de contrôles de l’ensemble du système (opération souvent appelée <em>scrub</em>), il faut utiliser la commande <em>btrfs scrub</em>, par exemple :</p>
-
-<div class="code-container">
-	
-    <pre class="code"><code data-language="console">root@debian:~# btrfs scrub start /mnt/btrfs
-</code></pre>
-</div>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs scrub start /mnt/btrfs</code></pre>
 <p>Il est conseillé de lancer réguliérement cette commande pour détecter rapidement une défaillance. En cas d’erreurs, il existe la commande <em>btrfsck</em> ; cependant, celle-ci est récente et est déconseillée pour les données sensibles. Ainsi, avant de l’utiliser il convient d’essayer les commandes suivantes :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs rescue chunk-recover *dev*
-root@debian:~# btrfs restore -l *dev*
-</code></pre>
-</div>
-
-<h2 id="btrfs-installation-amp-démonstration">Btrfs : Installation &amp; Démonstration</h2>
-
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs rescue chunk-recover *dev*
+root@debian:~# btrfs restore -l *dev*</code></pre>
+<h2 id="btrfs--installation-amp-démonstration">Btrfs : Installation &amp; Démonstration</h2>
 <p>Afin de pouvoir expérimenter les diverses fonctionnalités de Btrfs, nous avons installé Debian sur une machine virtuelle.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">Debian 7.7 Wheezy sur VirtualBox
+<pre><code class="language-terminal" data-lang="terminal">Debian 7.7 Wheezy sur VirtualBox
 Disque : 15 Go
 sda1    Amorce  Primaire    ext4      298,85 Mo
 sda5    NC      Logique     btrfs   13799,27 Mo
 sda6    NC      Logique     swap     2004,88 Mo
-Linux debian 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2&#43;deb7u1 x86_64 GNU/Linux
-</code></pre>
-</div>
+Linux debian 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2+deb7u1 x86_64 GNU/Linux</code></pre>
+<h3 id="installer-debian-77-sur-un-système-de-fichiers-btrfs">Installer Debian 7.7 sur un système de fichiers Btrfs</h3>
+<p>Btrfs, bien qu'étant un système de fichier encore en développement, est intégré à l&rsquo;image d&rsquo;installation de Debian. Il suffit simplement de sélectionner Btrfs lors du partitionnement des disques.</p>
 
-<h3 id="installer-debian-7-7-sur-un-système-de-fichiers-btrfs">Installer Debian 7.7 sur un système de fichiers Btrfs</h3>
 
-<p>Btrfs, bien qu&rsquo;étant un système de fichier encore en développement, est intégré à l&rsquo;image d&rsquo;installation de Debian. Il suffit simplement de sélectionner Btrfs lors du partitionnement des disques.</p>
-
-<div class="alert alert-danger" role="alert"><strong>ATTENTION</strong> : GRUB ne supportant pas encore Btrfs, il faut impérativement créer une partition indépendante en Ext4 pour monter <code>/boot</code> !</div>
-
-<h3 id="les-sous-volumes">Les sous-volumes</h3>
-
-<p>Nous avons créé à la racine :</p>
-
-<ul>
-<li>Un fichier &ldquo;<code>a</code>&ldquo;</li>
-<li>Un répertoire &ldquo;<code>subr</code>&rdquo; contenant un fichier &ldquo;<code>b</code>&ldquo;</li>
-<li>Un sous-volume &ldquo;<code>subv</code>&rdquo; contenant aussi un fichier &ldquo;<code>b</code>&ldquo;</li>
-</ul>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
     
-    <pre class="code"><code data-language="console">root@debian:~# touch a
+    
+
+
+
+
+
+<div class="alert alert-danger" role="alert">
+    <i class="fa fa-"></i>&nbsp;<strong>ATTENTION</strong> : GRUB ne supportant pas encore Btrfs, il faut impérativement créer une partition indépendante en Ext4 pour monter <code>/boot</code> !
+</div>
+<h3 id="les-sous-volumes">Les sous-volumes</h3>
+<p>Nous avons créé à la racine :</p>
+<ul>
+<li>Un fichier &ldquo;<code>a</code>&rdquo;</li>
+<li>Un répertoire &ldquo;<code>subr</code>&rdquo; contenant un fichier &ldquo;<code>b</code>&rdquo;</li>
+<li>Un sous-volume &ldquo;<code>subv</code>&rdquo; contenant aussi un fichier &ldquo;<code>b</code>&rdquo;</li>
+</ul>
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# touch a
 root@debian:~# btrfs subvolume create subv
 Create subvolume &#39;./subv&#39;
 root@debian:~# touch subv/b
@@ -795,20 +952,9 @@ root@debian:~# ls -l
 total 4
 -rw-r--r-- 1 root root 24 nov.  12 19:22 a
 drwxr-xr-x 1 root root  2 nov.  12 20:13 subr
-drwx------ 1 root root  2 nov.  12 19:23 subv
-</code></pre>
-</div>
-
+drwx------ 1 root root  2 nov.  12 19:23 subv</code></pre>
 <p>Ensuite, nous avons pu voir que même si le sous-volume apparait comme un répertoire, il n&rsquo;en était pas un : test avec <code>ln</code> puis montage du sous-volume.</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# ln a subv/
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# ln a subv/
 ln: impossible de créer le lien direct « subv/a » =&gt; « a »: Lien croisé de périphéque invalide
 root@debian:~# ln a subr/
 root@debian:~# tree
@@ -828,22 +974,10 @@ root@debian:~# tree /mnt/subv/
 /mnt/subv/
 └── b
 
-0 directories, 1 file
-</code></pre>
-</div>
-
+0 directories, 1 file</code></pre>
 <h3 id="les-instantanés">Les instantanés</h3>
-
-<p>Nous avons créé un sous-volume &ldquo;<code>subv</code>&rdquo; contenant un fichier &ldquo;<code>b</code>&rdquo; dans lequel nous avons écrit &laquo; Je suis le fichier &ldquo;b&rdquo; &raquo;. Puis nous avons pris un instantané (nommé <code>subvSS</code>)de ce sous volume grâce à la commande suivante :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# btrfs subvolume snapshot subv/ subvSS
+<p>Nous avons créé un sous-volume &ldquo;<code>subv</code>&rdquo; contenant un fichier &ldquo;<code>b</code>&rdquo; dans lequel nous avons écrit « Je suis le fichier &ldquo;b&rdquo; ». Puis nous avons pris un instantané (nommé <code>subvSS</code>)de ce sous volume grâce à la commande suivante :</p>
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs subvolume snapshot subv/ subvSS
 Create a snapshot of &#39;subv/&#39; in &#39;./subvSS&#39;
 root@debian:~# tree
 .
@@ -853,22 +987,10 @@ root@debian:~# tree
 └── subvSS
 └── b
 
-2 directories, 3 files
-</code></pre>
-</div>
-
+2 directories, 3 files</code></pre>
 <p>Les fichiers &ldquo;<code>b</code>&rdquo; contenus dans &ldquo;<code>subv</code>&rdquo; et &ldquo;<code>subvSS</code>&rdquo; sont alors identiques. Note : Il est possible de déplacer et renommer l&rsquo;instantané.</p>
-
 <p>Nous avons ensuite modifié le fichier &ldquo;<code>subv/b</code>&rdquo; et lui avons ajouté une ligne de texte. Puis nous avons restauré l&rsquo;instantané :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# cat subv/b
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# cat subv/b
 Je suis le fichier &#34;b&#34;.
 Je suis une modif faite après la snapshot !
 root@debian:~# cat subvSS/b
@@ -887,33 +1009,53 @@ root@debian:~# tree
 
 1 directory, 2 files
 root@debian:~# cat subv/b
-Je suis le fichier &#34;b&#34;.
-</code></pre>
-</div>
+Je suis le fichier &#34;b&#34;.</code></pre>
+<h3 id="la-convertion-ext4btrfs">La convertion Ext4/Btrfs</h3>
 
-<h3 id="la-convertion-ext4-btrfs">La convertion Ext4/Btrfs</h3>
 
-<figure>
-    <a href="/media/2014/11/b59395ede55b41af3ce7530227d4e73b.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/b59395ede55b41af3ce7530227d4e73b-1024x293.png">
-    </a>
+
     
-        <figcaption>
-            <h4>État du disque avant la convertion en Btrfs</h4>
-        </figcaption>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/b59395ede55b41af3ce7530227d4e73b.png" class="image featured center">
+                <img src="/media/2014/11/b59395ede55b41af3ce7530227d4e73b-1024x293.png" alt="">
+            </a>
+        
+        <figcaption class="image-caption">État du disque avant la convertion en Btrfs</figcaption>
+    </figure>
+
 
 <p>On considère le contenu suivant sur un disque (ici <code>/dev/sdb1</code>) :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:/mnt/test/ext4# tree
+<pre><code class="language-terminal" data-lang="terminal">root@debian:/mnt/test/ext4# tree
 .
 ├── Bureau
 ├── Documents
@@ -943,31 +1085,52 @@ Je suis le fichier &#34;b&#34;.
 ├── m
 └── n
 
-8 directories, 19 files
-</code></pre>
-</div>
+8 directories, 19 files</code></pre>
 
-<figure>
-    <a href="/media/2014/11/7ef40194f24306128c19b5ac12f71faa.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/7ef40194f24306128c19b5ac12f71faa-1024x293.png">
-    </a>
+
+
     
-        <figcaption>
-            <h4>État du disque après la convertion en Btrfs</h4>
-        </figcaption>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/7ef40194f24306128c19b5ac12f71faa.png" class="image featured center">
+                <img src="/media/2014/11/7ef40194f24306128c19b5ac12f71faa-1024x293.png" alt="">
+            </a>
+        
+        <figcaption class="image-caption">État du disque après la convertion en Btrfs</figcaption>
+    </figure>
+
 
 <p>Nous avons ensuite démonté le volume, convertit puis remonté. Nous pouvons voir que la conversion s&rsquo;est bien déroulée. Un instantané a aussi été créé au cas où nous voudrions revenir à Ext4 :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:~# umount /mnt/test/ext4/
+<pre><code class="language-terminal" data-lang="terminal">root@debian:~# umount /mnt/test/ext4/
 root@debian:~# btrfs-convert /dev/sdb1
 creating btrfs metadata.
 creating ext2fs image file.
@@ -1009,31 +1172,52 @@ root@debian:/mnt/test/btrfs# tree
 
 9 directories, 20 files
 root@debian:/mnt/test/btrfs# btrfs sub list ext2_saved/
-ID 256 top level 5 path ext2_saved
-</code></pre>
-</div>
+ID 256 top level 5 path ext2_saved</code></pre>
 
-<figure>
-    <a href="/media/2014/11/aee11ff9a2e8ca5ba9070d2a5e877a75.png" data-lightbox="post-gallery" target="_blank">
-        <img src="/media/2014/11/aee11ff9a2e8ca5ba9070d2a5e877a75-1024x293.png">
-    </a>
+
+
     
-        <figcaption>
-            <h4>État du disque après la reconvertion en Ext4</h4>
-        </figcaption>
     
-</figure>
+        
+        
+        
+        
+        
+        
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        
+            <a href="/media/2014/11/aee11ff9a2e8ca5ba9070d2a5e877a75.png" class="image featured center">
+                <img src="/media/2014/11/aee11ff9a2e8ca5ba9070d2a5e877a75-1024x293.png" alt="">
+            </a>
+        
+        <figcaption class="image-caption">État du disque après la reconvertion en Ext4</figcaption>
+    </figure>
+
 
 <p>Nous avons fait des moficications sur le disque, puis nous avons reconvertit le disque en Ext4 :</p>
-
-<div class="code-container">
-	
-    <div class="code-title">
-        <i class="fa fa-code"></i>
-        Console
-    </div>
-    
-    <pre class="code"><code data-language="console">root@debian:/mnt/test/btrfs# mv Documents/a Musique/a
+<pre><code class="language-terminal" data-lang="terminal">root@debian:/mnt/test/btrfs# mv Documents/a Musique/a
 root@debian:/mnt/test/btrfs# mv Public/* Téléchargements/
 root@debian:/mnt/test/btrfs# rm Vidéos/k
 root@debian:/mnt/test/btrfs# touch Documents/z
@@ -1105,88 +1289,112 @@ root@debian:/mnt/test/ext4# tree
 ├── m
 └── n
 
-8 directories, 19 files
-</code></pre>
-</div>
-
+8 directories, 19 files</code></pre>
 <h2 id="benchmark-mesures-de-performances">Benchmark, mesures de performances</h2>
-
 <p>L’efficacité d’un système de fichiers peut se mesurer à sa réactivité lors d’opération de lecture, d’écriture. Selon l’utilisation qu’aura la machine le type d’utilisation du système de fichiers varie. Par exemple pour un serveur proxy ou un serveur web, le système devra lire/écrire de très nombreux petits fichiers, créer des arborescences parfois très complexes. Les accès vont se faire aléatoirement, on mesure alors les débits en lecture/écriture aléatoire.</p>
-
 <p>En revanche, dans le cas du stockage d’archives, de films, images système, … les fichiers deviennent vite très volumineux, le débit de lecture/écriture est alors le plus important. Pour ce type d’utilisation on mesurera les accès séquentiels.</p>
-
 <p>Nous nous baserons sur des bench récupérés en partie sur openbenchmarking.org.</p>
-
 <h3 id="performance-des-différents-modes-de-raid">Performance des différents modes de RAID</h3>
-
 <p>Basé sur : <a href="http://openbenchmarking.org/result/1411054-LI-BTRFSRAID55">http://openbenchmarking.org/result/1411054-LI-BTRFSRAID55</a></p>
-
 <h4 id="test-de-débits-séquentiels">Test de débits séquentiels</h4>
-
 <p>Les tests de lecture ont échoués en partie, mais on peut voir que l’implémentation du RAID 6 de btrfs est assez performante (environ 15% plus rapide en écriture). Plus globalement btrfs se démarque bien en écriture, dans toutes les configurations exceptées en RAID 0. En plus de n’être déjà pas très bon avec mdadm pour gérer le RAID 0, les performances en écriture se dégradent encore quand on utilise la gestion native du RAID 0.</p>
 
-<figure class="gallery gallery-column-2">
-	<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2014/11/1eb88773a85bfb9d0535473987ced4ac.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2014/11/1eb88773a85bfb9d0535473987ced4ac-300x388.png">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2014/11/22dfd04a2f4e16400e0a61158433fcd0.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2014/11/22dfd04a2f4e16400e0a61158433fcd0-300x387.png">
-        </a>
-    </div>
-</div>
 
-	
-</figure>
+
 
 <h4 id="test-de-débits-aléatoires">Test de débits aléatoires</h4>
-
 <p>Ici encore on peut voir que le RAID 0 natif de btrfs souffre encore de quelques lacunes par rapport à celui de mdadm en lecture, mais étonnamment le débit d’écriture est le meilleur relevé. Contrairement aux tests en séquentiel, le RAID 6 natif de btrfs donne les pires performances du comparatif en lecture aléatoire, avec un écart de près de 25% par rapport au concurrent suivant qui est le système de fichiers que btrfs est sensé remplacer. Heureusement, couplé à mdadm il décroche la troisième place.</p>
-
 <p>Le RAID 10 n’est pas non plus à son avantage mais reste devant XFS de 20%, et laissant mdadm gérer le RAID, on retrouve des performances équivalentes à ext4.</p>
-
 <p>Pour ce qui est des RAID 5 et 1, toutes les configurations sont à peu près équivalentes. Du coté de l’écriture aléatoire donne les meilleurs résultats avec btrfs, et ce quelque soit la configuration.</p>
 
-<figure class="gallery gallery-column-2">
-	<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2014/11/d2eb2a64b75bc3c027d69d1005e46c2d.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2014/11/d2eb2a64b75bc3c027d69d1005e46c2d-300x385.png">
-        </a>
-    </div>
-</div>
-<div class="gallery-item">
-    <div class="gallery-image">
-        <a href="/media/2014/11/86e02e9dcc4f24c7b51610195a8f5e7a.png" data-lightbox="post-gallery" target="_blank">
-            <img src="/media/2014/11/86e02e9dcc4f24c7b51610195a8f5e7a-300x386.png">
-        </a>
-    </div>
-</div>
 
-	
-</figure>
 
-<h3 id="configuration-avec-un-seul-disque-ssd">Configuration avec un seul disque (SSD)</h3>
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <figure>
+        <div class='gallery gallery-nowrap'>
+        
+        
+        
+        
+            
+                
+                    <a href="/media/2014/11/d2eb2a64b75bc3c027d69d1005e46c2d.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2014/11//d2eb2a64b75bc3c027d69d1005e46c2d-300x385.png' alt="">
+                    </a>
+                
+                
+            
+            
+        
+            
+                
+                    <a href="/media/2014/11/86e02e9dcc4f24c7b51610195a8f5e7a.png" class="image fit featured">
+                    
+                
+            
+            
+        
+            
+                
+                    
+                
+            
+            
+        
+            
+                
+                    <img src='/media/2014/11//86e02e9dcc4f24c7b51610195a8f5e7a-300x386.png' alt="">
+                    </a>
+                
+                
+            
+            
+        
+        </div>
+        <figcaption class="image-caption">Configuration avec un seul disque (SSD)</figcaption>
+    </figure>
+
+
 
 <p>Basé sur : <a href="http://openbenchmarking.org/result/1102238-IV-1102232IV10">http://openbenchmarking.org/result/1102238-IV-1102232IV10</a> et <a href="http://openbenchmarking.org/result/1203144-BY-UBUNTUFS745">http://openbenchmarking.org/result/1203144-BY-UBUNTUFS745</a></p>
-
 <p>Depuis le premier benchmark (noyau 2.6) on peut voir clairement que btrfs a bien progressé. Lors du premier ses performances étaient bien en dessous de celles d’ext4, alors qu’on peut voir que dans le plus récent des bench, btrfs est beaucoup plus souvent au même niveau qu’ext4. On peut donc espérer que ses performances continueront d’augmenter pour arriver à dépasser largement celles d’ext4.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>Bien que lancé en même temps que ZFS, le projet Btrfs est moins avancé, les développeurs s’étant aussi concentrés sur Ext4. Cependant, la base est déjà stable, et de nouvelles fonctionnalités sont arrivées récemment et promettent de devenir stables d’ici peu. Ainsi, Btrfs offre déjà la plupart des fonctions des systèmes de fichiers « nouvelles générations » (gestion des gros volumes et des gros fichiers, sous-volumes, instantannés, compression, RAID, etc.) de manière native tout en étant fiable.</p>
-
 <p>Si pour le moment les performances sont légérement en deça de ce qui peut être trouvé sur les autres systèmes de fichiers, nous pouvons constater des améliorations à chaque mises à jour. Le développement est encore actif et est dans une phase de stabilisation du code, nous pouvons donc espérer que Btrfs puisse bientôt concurrencer les autres systèmes de fichiers dans le domaine des performances, ce qu’il fait déjà pour ce qui concerne les fonctionnalités.</p>
-
-<p>L’actualité montre une accélération de l’adoption de Btrfs. Des entreprises en proposent le support, d’autres (<a href=http://www.phoronix.com/scan.php?page=news_item&px=MTY0NDk>telle que Facebook</a>) ont commencé à tester et à mettre en prodution le système de fichier. Au fur et à mesure que l’usage se répand, le nombre de contributeurs et de testeurs augmente aussi et laisse présager un cercle vertueux qui aménerait la stabilité totale et à terme la maturité du projet. Ainsi, si nous ne pouvons le conseiller à des entreprises stockant des données sensibles et ne souhaitant pas perdre de temps à cause de la technologie utilisée, nous encourageons toute société voulant rester à la pointe à tester Btrfs, et pourquoi pas à l’adopter en production.</p>
-
+<p>L’actualité montre une accélération de l’adoption de Btrfs. Des entreprises en proposent le support, d’autres (<a href="http://www.phoronix.com/scan.php?page=news_item&amp;px=MTY0NDk">telle que Facebook</a>) ont commencé à tester et à mettre en prodution le système de fichier. Au fur et à mesure que l’usage se répand, le nombre de contributeurs et de testeurs augmente aussi et laisse présager un cercle vertueux qui aménerait la stabilité totale et à terme la maturité du projet. Ainsi, si nous ne pouvons le conseiller à des entreprises stockant des données sensibles et ne souhaitant pas perdre de temps à cause de la technologie utilisée, nous encourageons toute société voulant rester à la pointe à tester Btrfs, et pourquoi pas à l’adopter en production.</p>
 <h2 id="sources-et-références">Sources et références</h2>
-
 <ul>
 <li>(<code>en</code>) <a href="http://btrfs.wiki.kernel.org/">btrfs.wiki.kernel.org</a></li>
 <li>(<code>en</code>) <a href="https://lwn.net/Articles/576276/">The Btrfs filesystem</a> sur lwn.net</li>
@@ -1198,51 +1406,575 @@ root@debian:/mnt/test/ext4# tree
 <li>(<code>en</code>) <a href="https://en.wikipedia.org/wiki/Btrfs">Btrfs</a> sur wikipedia.org</li>
 <li>(<code>en</code>) <a href="http://marc.merlins.org/perso/btrfs/post_2014-05-21_My-Btrfs-Talk-at-Linuxcon-JP-2014.html">My Btrfs Talk at Linuxcon JP 2014 </a></li>
 </ul>
+<hr>
+<p>Recherches &amp; rédaction : Jake, Wandrille et Thom</p>
+  </div>
 
-<p><small class="align-right">Recherches &amp; rédaction : Jake, Wandrille et Thom</small></p></article>
-    <footer class="post-footer">
-      
-      <ul class="post-tags">
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
         
-          <li><a href="/tags/veille-technologique"><span class="tag">Veille Technologique</span></a></li>
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/dossiers">Dossiers</a></li>
+                
+            
         
-          <li><a href="/tags/syst%C3%A8me-de-fichier"><span class="tag">Système De Fichier</span></a></li>
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
         
-          <li><a href="/tags/btrfs"><span class="tag">Btrfs</span></a></li>
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/veille-technologique">Veille technologique</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/syst%C3%A8me-de-fichier">Système de fichier</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/btrfs">Btrfs</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/zfs">ZFS</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/ext4">ext4</a></li>
+                
+            
         
-          <li><a href="/tags/zfs"><span class="tag">ZFS</span></a></li>
-        
-          <li><a href="/tags/ext4"><span class="tag">Ext4</span></a></li>
-        
-      </ul>
-      
-      <p class="post-copyright">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>. Cet article a été publié il y a <strong>1579</strong> jours, son contenu peut-être inexact, voire érroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
-      </p>
-    </footer>
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
-      <div id="disqus_thread"></div>
-<script type="text/javascript" src="/js/disqus.js"></script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    Cet article a été publié il y a <strong>1956</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
+  </div>
 
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/dossiers/systeme-de-fichier-zsf-btrfs-ou-ext4/"
+                class="button big previous">Système de fichier : zfs, btrfs ou ext4 ?</a></li>
+    
+
+    
+        <li><a href="/dossiers/mots-de-passe-bonnes-pratiques/"
+                class="button big next">Les mots de passe : les bonnes pratiques</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
     
   </section>
-  <footer class="site-footer">
-  <p>© 2017-2019 vonKrafft</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>.</p>
-</footer>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
+              </h3>
+              
+              <time class="published" datetime='2019-02-25'>
+                25 février 2019
+              </time>
+            </header>
+            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bundle.js"></script>
-<script type="text/javascript" src="/js/lightbox.js"></script>
-<script type="text/javascript" src="/js/rainbow.js"></script>
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
 
-<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-24449159-3" async></script>
-<script type="text/javascript" src="/js/gtag.js"></script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
   </body>
 </html>
+

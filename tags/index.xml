@@ -1,347 +1,148 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on vonKrafft</title>
     <link>/tags/</link>
     <description>Recent content in Tags on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Wed, 06 Nov 2013 10:05:57 +0000</lastBuildDate>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>2013</title>
-      <link>/tags/2013/</link>
-      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
+      <title>Domotique</title>
+      <link>/tags/domotique/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/2013/</guid>
+      <guid>/tags/domotique/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>80 Plus</title>
-      <link>/tags/80-plus/</link>
-      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      <title>ESP8266</title>
+      <link>/tags/esp8266/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/80-plus/</guid>
+      <guid>/tags/esp8266/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>A5x</title>
-      <link>/tags/a5x/</link>
-      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
+      <title>Google</title>
+      <link>/tags/google/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/a5x/</guid>
+      <guid>/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Achat</title>
-      <link>/tags/achat/</link>
-      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      <title>Google Home</title>
+      <link>/tags/google-home/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/achat/</guid>
+      <guid>/tags/google-home/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Admin Système</title>
-      <link>/tags/admin-syst%C3%A8me/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
+      <title>Sonoff</title>
+      <link>/tags/sonoff/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/admin-syst%C3%A8me/</guid>
+      <guid>/tags/sonoff/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Alimentation</title>
-      <link>/tags/alimentation/</link>
-      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      <title>Tasmota</title>
+      <link>/tags/tasmota/</link>
+      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
-      <guid>/tags/alimentation/</guid>
+      <guid>/tags/tasmota/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Anniversaire</title>
-      <link>/tags/anniversaire/</link>
-      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      <title>CTF</title>
+      <link>/tags/ctf/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/anniversaire/</guid>
+      <guid>/tags/ctf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Apple</title>
-      <link>/tags/apple/</link>
-      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      <title>LFI</title>
+      <link>/tags/lfi/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/apple/</guid>
+      <guid>/tags/lfi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Arci Midi</title>
-      <link>/tags/arci-midi/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      <title>Proxychains</title>
+      <link>/tags/proxychains/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/arci-midi/</guid>
+      <guid>/tags/proxychains/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Assemblage</title>
-      <link>/tags/assemblage/</link>
-      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      <title>RCE</title>
+      <link>/tags/rce/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/assemblage/</guid>
+      <guid>/tags/rce/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Astuce</title>
-      <link>/tags/astuce/</link>
-      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      <title>Tomcat</title>
+      <link>/tags/tomcat/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/astuce/</guid>
+      <guid>/tags/tomcat/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Asus</title>
-      <link>/tags/asus/</link>
-      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/asus/</guid>
+      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Asus Noob Overclocking Challenge</title>
-      <link>/tags/asus-noob-overclocking-challenge/</link>
-      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
+      <title>Nginx</title>
+      <link>/tags/nginx/</link>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/asus-noob-overclocking-challenge/</guid>
+      <guid>/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Atx</title>
-      <link>/tags/atx/</link>
-      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      <title>PHP</title>
+      <link>/tags/php/</link>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/atx/</guid>
+      <guid>/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Authentification</title>
-      <link>/tags/authentification/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
+      <title>PostgreSQL</title>
+      <link>/tags/postgresql/</link>
+      <pubDate>Mon, 18 Mar 2019 20:21:54 +0000</pubDate>
       
-      <guid>/tags/authentification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Batterie</title>
-      <link>/tags/batterie/</link>
-      <pubDate>Sun, 25 Sep 2011 21:04:15 +0000</pubDate>
-      
-      <guid>/tags/batterie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Boitier</title>
-      <link>/tags/boitier/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
-      
-      <guid>/tags/boitier/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Boitier Pc</title>
-      <link>/tags/boitier-pc/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
-      
-      <guid>/tags/boitier-pc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Booster</title>
-      <link>/tags/booster/</link>
-      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
-      
-      <guid>/tags/booster/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bricolage</title>
-      <link>/tags/bricolage/</link>
-      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
-      
-      <guid>/tags/bricolage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Btrfs</title>
-      <link>/tags/btrfs/</link>
-      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
-      
-      <guid>/tags/btrfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Carte Graphique</title>
-      <link>/tags/carte-graphique/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
-      
-      <guid>/tags/carte-graphique/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Carte Mère</title>
-      <link>/tags/carte-m%C3%A8re/</link>
-      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
-      
-      <guid>/tags/carte-m%C3%A8re/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chiffrement</title>
-      <link>/tags/chiffrement/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/tags/chiffrement/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chipset</title>
-      <link>/tags/chipset/</link>
-      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
-      
-      <guid>/tags/chipset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chromebook</title>
-      <link>/tags/chromebook/</link>
-      <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
-      
-      <guid>/tags/chromebook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cloud</title>
-      <link>/tags/cloud/</link>
-      <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
-      
-      <guid>/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Clé</title>
-      <link>/tags/cl%C3%A9/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
-      
-      <guid>/tags/cl%C3%A9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cm</title>
-      <link>/tags/cm/</link>
-      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
-      
-      <guid>/tags/cm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cnil</title>
-      <link>/tags/cnil/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/tags/cnil/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Concurrence</title>
-      <link>/tags/concurrence/</link>
-      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
-      
-      <guid>/tags/concurrence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configs</title>
-      <link>/tags/configs/</link>
-      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
-      
-      <guid>/tags/configs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>/tags/configuration/</link>
-      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
-      
-      <guid>/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cpl</title>
-      <link>/tags/cpl/</link>
-      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
-      
-      <guid>/tags/cpl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cpu</title>
-      <link>/tags/cpu/</link>
-      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
-      
-      <guid>/tags/cpu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Css</title>
-      <link>/tags/css/</link>
-      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
-      
-      <guid>/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datacenter</title>
-      <link>/tags/datacenter/</link>
-      <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
-      
-      <guid>/tags/datacenter/</guid>
+      <guid>/tags/postgresql/</guid>
       <description></description>
     </item>
     
@@ -364,128 +165,254 @@
     </item>
     
     <item>
-      <title>Deee</title>
-      <link>/tags/deee/</link>
-      <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
       
-      <guid>/tags/deee/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Dhcp</title>
-      <link>/tags/dhcp/</link>
-      <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
+      <title>Python 3.7</title>
+      <link>/tags/python-3.7/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
       
-      <guid>/tags/dhcp/</guid>
+      <guid>/tags/python-3.7/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Directory Listing</title>
-      <link>/tags/directory-listing/</link>
-      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      <title>Stretch</title>
+      <link>/tags/stretch/</link>
+      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
       
-      <guid>/tags/directory-listing/</guid>
+      <guid>/tags/stretch/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Disquette</title>
-      <link>/tags/disquette/</link>
-      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      <title>Glowing Bear</title>
+      <link>/tags/glowing-bear/</link>
+      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
       
-      <guid>/tags/disquette/</guid>
+      <guid>/tags/glowing-bear/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Dns</title>
-      <link>/tags/dns/</link>
-      <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
+      <title>IRC</title>
+      <link>/tags/irc/</link>
+      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
       
-      <guid>/tags/dns/</guid>
+      <guid>/tags/irc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
+      <title>WeeChat</title>
+      <link>/tags/weechat/</link>
+      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
       
-      <guid>/tags/docker/</guid>
+      <guid>/tags/weechat/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Double Écran</title>
-      <link>/tags/double-%C3%A9cran/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/double-%C3%A9cran/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Dvi</title>
-      <link>/tags/dvi/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      <title>GnuPG</title>
+      <link>/tags/gnupg/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/dvi/</guid>
+      <guid>/tags/gnupg/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ecran</title>
-      <link>/tags/ecran/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      <title>GPG</title>
+      <link>/tags/gpg/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/ecran/</guid>
+      <guid>/tags/gpg/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Exploit</title>
-      <link>/tags/exploit/</link>
-      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      <title>OpenPGP</title>
+      <link>/tags/openpgp/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/exploit/</guid>
+      <guid>/tags/openpgp/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ext4</title>
-      <link>/tags/ext4/</link>
-      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
+      <title>Pass</title>
+      <link>/tags/pass/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/ext4/</guid>
+      <guid>/tags/pass/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Fabriquer</title>
-      <link>/tags/fabriquer/</link>
-      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      <title>PGP</title>
+      <link>/tags/pgp/</link>
+      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
       
-      <guid>/tags/fabriquer/</guid>
+      <guid>/tags/pgp/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Fin Du Pc</title>
-      <link>/tags/fin-du-pc/</link>
-      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      <title>SSH</title>
+      <link>/tags/ssh/</link>
+      <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
       
-      <guid>/tags/fin-du-pc/</guid>
+      <guid>/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Fractal Design</title>
-      <link>/tags/fractal-design/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      <title>Yubikey</title>
+      <link>/tags/yubikey/</link>
+      <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
       
-      <guid>/tags/fractal-design/</guid>
+      <guid>/tags/yubikey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OCR</title>
+      <link>/tags/ocr/</link>
+      <pubDate>Mon, 02 Apr 2018 21:34:07 +0000</pubDate>
+      
+      <guid>/tags/ocr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PIL</title>
+      <link>/tags/pil/</link>
+      <pubDate>Mon, 02 Apr 2018 21:34:07 +0000</pubDate>
+      
+      <guid>/tags/pil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forensics</title>
+      <link>/tags/forensics/</link>
+      <pubDate>Tue, 27 Feb 2018 19:34:07 +0000</pubDate>
+      
+      <guid>/tags/forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crypto</title>
+      <link>/tags/crypto/</link>
+      <pubDate>Mon, 26 Feb 2018 19:22:12 +0000</pubDate>
+      
+      <guid>/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DES</title>
+      <link>/tags/des/</link>
+      <pubDate>Mon, 26 Feb 2018 19:22:12 +0000</pubDate>
+      
+      <guid>/tags/des/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chiffrement</title>
+      <link>/tags/chiffrement/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/chiffrement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CNIL</title>
+      <link>/tags/cnil/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/cnil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hachage</title>
+      <link>/tags/hachage/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/hachage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mots de passe</title>
+      <link>/tags/mots-de-passe/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/mots-de-passe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>protection</title>
+      <link>/tags/protection/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/protection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RGPD</title>
+      <link>/tags/rgpd/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/rgpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vie privée</title>
+      <link>/tags/vie-priv%C3%A9e/</link>
+      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      
+      <guid>/tags/vie-priv%C3%A9e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Fri, 05 Jan 2018 08:43:46 +0000</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WordPress</title>
+      <link>/tags/wordpress/</link>
+      <pubDate>Fri, 05 Jan 2018 08:43:46 +0000</pubDate>
+      
+      <guid>/tags/wordpress/</guid>
       <description></description>
     </item>
     
@@ -499,11 +426,128 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>/tags/git/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
+      <title>Image</title>
+      <link>/tags/image/</link>
+      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
       
-      <guid>/tags/git/</guid>
+      <guid>/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JPG</title>
+      <link>/tags/jpg/</link>
+      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
+      
+      <guid>/tags/jpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PNG</title>
+      <link>/tags/png/</link>
+      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
+      
+      <guid>/tags/png/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anniversaire</title>
+      <link>/tags/anniversaire/</link>
+      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      
+      <guid>/tags/anniversaire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tuto</title>
+      <link>/tags/tuto/</link>
+      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      
+      <guid>/tags/tuto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tuto Wibb</title>
+      <link>/tags/tuto-wibb/</link>
+      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
+      
+      <guid>/tags/tuto-wibb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Directory Listing</title>
+      <link>/tags/directory-listing/</link>
+      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      
+      <guid>/tags/directory-listing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploit</title>
+      <link>/tags/exploit/</link>
+      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      
+      <guid>/tags/exploit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pentest</title>
+      <link>/tags/pentest/</link>
+      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      
+      <guid>/tags/pentest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serveur</title>
+      <link>/tags/serveur/</link>
+      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
+      
+      <guid>/tags/serveur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Astuce</title>
+      <link>/tags/astuce/</link>
+      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      
+      <guid>/tags/astuce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>/tags/configuration/</link>
+      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      
+      <guid>/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kobo</title>
+      <link>/tags/kobo/</link>
+      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      
+      <guid>/tags/kobo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liseuse</title>
+      <link>/tags/liseuse/</link>
+      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
+      
+      <guid>/tags/liseuse/</guid>
       <description></description>
     </item>
     
@@ -526,24 +570,6 @@
     </item>
     
     <item>
-      <title>Glowing Bear</title>
-      <link>/tags/glowing-bear/</link>
-      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
-      
-      <guid>/tags/glowing-bear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gnupg</title>
-      <link>/tags/gnupg/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
-      
-      <guid>/tags/gnupg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Gogs</title>
       <link>/tags/gogs/</link>
       <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
@@ -553,92 +579,119 @@
     </item>
     
     <item>
-      <title>Google</title>
-      <link>/tags/google/</link>
-      <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
+      <title>Script</title>
+      <link>/tags/script/</link>
+      <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
       
-      <guid>/tags/google/</guid>
+      <guid>/tags/script/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Gpg</title>
-      <link>/tags/gpg/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
+      <title>HTTP</title>
+      <link>/tags/http/</link>
+      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
-      <guid>/tags/gpg/</guid>
+      <guid>/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Guide Dachat</title>
-      <link>/tags/guide-dachat/</link>
-      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      <title>HTTP2</title>
+      <link>/tags/http2/</link>
+      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
-      <guid>/tags/guide-dachat/</guid>
+      <guid>/tags/http2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Guide Pc</title>
-      <link>/tags/guide-pc/</link>
-      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
+      <title>HTTPS</title>
+      <link>/tags/https/</link>
+      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
-      <guid>/tags/guide-pc/</guid>
+      <guid>/tags/https/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hachage</title>
-      <link>/tags/hachage/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      <title>SSL</title>
+      <link>/tags/ssl/</link>
+      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
       
-      <guid>/tags/hachage/</guid>
+      <guid>/tags/ssl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hd</title>
-      <link>/tags/hd/</link>
-      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      <title>Admin Système</title>
+      <link>/tags/admin-syst%C3%A8me/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
-      <guid>/tags/hd/</guid>
+      <guid>/tags/admin-syst%C3%A8me/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hdmi</title>
-      <link>/tags/hdmi/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      <title>Authentification</title>
+      <link>/tags/authentification/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
-      <guid>/tags/hdmi/</guid>
+      <guid>/tags/authentification/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hisoire</title>
-      <link>/tags/hisoire/</link>
-      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      <title>Clé</title>
+      <link>/tags/cl%C3%A9/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
-      <guid>/tags/hisoire/</guid>
+      <guid>/tags/cl%C3%A9/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Histoire Du Pc</title>
-      <link>/tags/histoire-du-pc/</link>
-      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      <title>RSA</title>
+      <link>/tags/rsa/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
-      <guid>/tags/histoire-du-pc/</guid>
+      <guid>/tags/rsa/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Home Cinéma</title>
-      <link>/tags/home-cin%C3%A9ma/</link>
-      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      <title>Sécurité</title>
+      <link>/tags/s%C3%A9curit%C3%A9/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
       
-      <guid>/tags/home-cin%C3%A9ma/</guid>
+      <guid>/tags/s%C3%A9curit%C3%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VPS</title>
+      <link>/tags/vps/</link>
+      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
+      
+      <guid>/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DHCP</title>
+      <link>/tags/dhcp/</link>
+      <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
+      
+      <guid>/tags/dhcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>/tags/dns/</link>
+      <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
+      
+      <guid>/tags/dns/</guid>
       <description></description>
     </item>
     
@@ -652,88 +705,7 @@
     </item>
     
     <item>
-      <title>Hotmail</title>
-      <link>/tags/hotmail/</link>
-      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
-      
-      <guid>/tags/hotmail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html</title>
-      <link>/tags/html/</link>
-      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
-      
-      <guid>/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>/tags/http/</link>
-      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
-      
-      <guid>/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http2</title>
-      <link>/tags/http2/</link>
-      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
-      
-      <guid>/tags/http2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Https</title>
-      <link>/tags/https/</link>
-      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
-      
-      <guid>/tags/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Fri, 05 Jan 2018 08:43:46 +0000</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Imac</title>
-      <link>/tags/imac/</link>
-      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
-      
-      <guid>/tags/imac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Image</title>
-      <link>/tags/image/</link>
-      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
-      
-      <guid>/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ios</title>
-      <link>/tags/ios/</link>
-      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
-      
-      <guid>/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ip</title>
+      <title>IP</title>
       <link>/tags/ip/</link>
       <pubDate>Sat, 12 Dec 2015 10:22:06 +0000</pubDate>
       
@@ -742,61 +714,70 @@
     </item>
     
     <item>
-      <title>Ipad</title>
-      <link>/tags/ipad/</link>
-      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
+      <title>Btrfs</title>
+      <link>/tags/btrfs/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
-      <guid>/tags/ipad/</guid>
+      <guid>/tags/btrfs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Iphone</title>
-      <link>/tags/iphone/</link>
-      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      <title>ext4</title>
+      <link>/tags/ext4/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
-      <guid>/tags/iphone/</guid>
+      <guid>/tags/ext4/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Iphone 5</title>
-      <link>/tags/iphone-5/</link>
-      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      <title>Système de fichier</title>
+      <link>/tags/syst%C3%A8me-de-fichier/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
-      <guid>/tags/iphone-5/</guid>
+      <guid>/tags/syst%C3%A8me-de-fichier/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ipod Nano</title>
-      <link>/tags/ipod-nano/</link>
-      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      <title>Veille technologique</title>
+      <link>/tags/veille-technologique/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
-      <guid>/tags/ipod-nano/</guid>
+      <guid>/tags/veille-technologique/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ipod Touch</title>
-      <link>/tags/ipod-touch/</link>
-      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      <title>ZFS</title>
+      <link>/tags/zfs/</link>
+      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
       
-      <guid>/tags/ipod-touch/</guid>
+      <guid>/tags/zfs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Irc</title>
-      <link>/tags/irc/</link>
-      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
+      <title>CSS</title>
+      <link>/tags/css/</link>
+      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
-      <guid>/tags/irc/</guid>
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Javascript</title>
+      <title>HTML</title>
+      <link>/tags/html/</link>
+      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
+      
+      <guid>/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
       <link>/tags/javascript/</link>
       <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
@@ -814,155 +795,11 @@
     </item>
     
     <item>
-      <title>Jeu Vidéo</title>
-      <link>/tags/jeu-vid%C3%A9o/</link>
-      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
-      
-      <guid>/tags/jeu-vid%C3%A9o/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jpg</title>
-      <link>/tags/jpg/</link>
-      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
-      
-      <guid>/tags/jpg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jquery</title>
+      <title>jQuery</title>
       <link>/tags/jquery/</link>
       <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
       <guid>/tags/jquery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kobo</title>
-      <link>/tags/kobo/</link>
-      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
-      
-      <guid>/tags/kobo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ldlc</title>
-      <link>/tags/ldlc/</link>
-      <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
-      
-      <guid>/tags/ldlc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lg</title>
-      <link>/tags/lg/</link>
-      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
-      
-      <guid>/tags/lg/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Liseuse</title>
-      <link>/tags/liseuse/</link>
-      <pubDate>Thu, 01 Dec 2016 10:52:27 +0000</pubDate>
-      
-      <guid>/tags/liseuse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logiciels</title>
-      <link>/tags/logiciels/</link>
-      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
-      
-      <guid>/tags/logiciels/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macbook Air</title>
-      <link>/tags/macbook-air/</link>
-      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
-      
-      <guid>/tags/macbook-air/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macbook Pro</title>
-      <link>/tags/macbook-pro/</link>
-      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
-      
-      <guid>/tags/macbook-pro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macos</title>
-      <link>/tags/macos/</link>
-      <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
-      
-      <guid>/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mail</title>
-      <link>/tags/mail/</link>
-      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
-      
-      <guid>/tags/mail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Messagerie</title>
-      <link>/tags/messagerie/</link>
-      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
-      
-      <guid>/tags/messagerie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microsoft</title>
-      <link>/tags/microsoft/</link>
-      <pubDate>Sat, 27 Oct 2012 12:15:09 +0000</pubDate>
-      
-      <guid>/tags/microsoft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mini Pc</title>
-      <link>/tags/mini-pc/</link>
-      <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
-      
-      <guid>/tags/mini-pc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mise À Jour</title>
-      <link>/tags/mise-%C3%A0-jour/</link>
-      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
-      
-      <guid>/tags/mise-%C3%A0-jour/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Montage Pc</title>
-      <link>/tags/montage-pc/</link>
-      <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
-      
-      <guid>/tags/montage-pc/</guid>
       <description></description>
     </item>
     
@@ -976,83 +813,29 @@
     </item>
     
     <item>
-      <title>Mots De Passe</title>
-      <link>/tags/mots-de-passe/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
+      <title>Tic Tac Toe</title>
+      <link>/tags/tic-tac-toe/</link>
+      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
       
-      <guid>/tags/mots-de-passe/</guid>
+      <guid>/tags/tic-tac-toe/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mémoire</title>
-      <link>/tags/m%C3%A9moire/</link>
-      <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
+      <title>2013</title>
+      <link>/tags/2013/</link>
+      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
-      <guid>/tags/m%C3%A9moire/</guid>
+      <guid>/tags/2013/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Nas</title>
-      <link>/tags/nas/</link>
-      <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
+      <title>jeu vidéo</title>
+      <link>/tags/jeu-vid%C3%A9o/</link>
+      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
-      <guid>/tags/nas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nexus 7</title>
-      <link>/tags/nexus-7/</link>
-      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
-      
-      <guid>/tags/nexus-7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>/tags/nginx/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
-      
-      <guid>/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Openpgp</title>
-      <link>/tags/openpgp/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
-      
-      <guid>/tags/openpgp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ordinateur</title>
-      <link>/tags/ordinateur/</link>
-      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
-      
-      <guid>/tags/ordinateur/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Outlook</title>
-      <link>/tags/outlook/</link>
-      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
-      
-      <guid>/tags/outlook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Overclocking</title>
-      <link>/tags/overclocking/</link>
-      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
-      
-      <guid>/tags/overclocking/</guid>
+      <guid>/tags/jeu-vid%C3%A9o/</guid>
       <description></description>
     </item>
     
@@ -1066,52 +849,7 @@
     </item>
     
     <item>
-      <title>Pass</title>
-      <link>/tags/pass/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
-      
-      <guid>/tags/pass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pc</title>
-      <link>/tags/pc/</link>
-      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
-      
-      <guid>/tags/pc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pc Portable</title>
-      <link>/tags/pc-portable/</link>
-      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
-      
-      <guid>/tags/pc-portable/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pentest</title>
-      <link>/tags/pentest/</link>
-      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
-      
-      <guid>/tags/pentest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pgp</title>
-      <link>/tags/pgp/</link>
-      <pubDate>Wed, 18 Jul 2018 23:40:17 +0000</pubDate>
-      
-      <guid>/tags/pgp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pgw</title>
+      <title>PGW</title>
       <link>/tags/pgw/</link>
       <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
@@ -1120,97 +858,7 @@
     </item>
     
     <item>
-      <title>Php</title>
-      <link>/tags/php/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
-      
-      <guid>/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Png</title>
-      <link>/tags/png/</link>
-      <pubDate>Sun, 31 Dec 2017 09:14:06 +0000</pubDate>
-      
-      <guid>/tags/png/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Portable 2011</title>
-      <link>/tags/portable-2011/</link>
-      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
-      
-      <guid>/tags/portable-2011/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Portal 2</title>
-      <link>/tags/portal-2/</link>
-      <pubDate>Wed, 18 Jul 2012 11:20:55 +0000</pubDate>
-      
-      <guid>/tags/portal-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Postgresql</title>
-      <link>/tags/postgresql/</link>
-      <pubDate>Sat, 09 Mar 2019 10:21:54 +0000</pubDate>
-      
-      <guid>/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pot À Crayons</title>
-      <link>/tags/pot-%C3%A0-crayons/</link>
-      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
-      
-      <guid>/tags/pot-%C3%A0-crayons/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Printemps</title>
-      <link>/tags/printemps/</link>
-      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
-      
-      <guid>/tags/printemps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Processeur</title>
-      <link>/tags/processeur/</link>
-      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
-      
-      <guid>/tags/processeur/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Procès</title>
-      <link>/tags/proc%C3%A8s/</link>
-      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
-      
-      <guid>/tags/proc%C3%A8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Protection</title>
-      <link>/tags/protection/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/tags/protection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ps4</title>
+      <title>PS4</title>
       <link>/tags/ps4/</link>
       <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
@@ -1219,398 +867,29 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
+      <title>Xbox One</title>
+      <link>/tags/xbox-one/</link>
+      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>/tags/xbox-one/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Python 3.7</title>
-      <link>/tags/python-3.7/</link>
-      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
+      <title>DataCenter</title>
+      <link>/tags/datacenter/</link>
+      <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
       
-      <guid>/tags/python-3.7/</guid>
+      <guid>/tags/datacenter/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Quid</title>
-      <link>/tags/quid/</link>
-      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      <title>Microsoft</title>
+      <link>/tags/microsoft/</link>
+      <pubDate>Sat, 27 Oct 2012 12:15:09 +0000</pubDate>
       
-      <guid>/tags/quid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ram</title>
-      <link>/tags/ram/</link>
-      <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
-      
-      <guid>/tags/ram/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recyclage</title>
-      <link>/tags/recyclage/</link>
-      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
-      
-      <guid>/tags/recyclage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recycler</title>
-      <link>/tags/recycler/</link>
-      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
-      
-      <guid>/tags/recycler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rentree 2011</title>
-      <link>/tags/rentree-2011/</link>
-      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
-      
-      <guid>/tags/rentree-2011/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rgpd</title>
-      <link>/tags/rgpd/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/tags/rgpd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rsa</title>
-      <link>/tags/rsa/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
-      
-      <guid>/tags/rsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Réinstallation</title>
-      <link>/tags/r%C3%A9installation/</link>
-      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
-      
-      <guid>/tags/r%C3%A9installation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Réseau</title>
-      <link>/tags/r%C3%A9seau/</link>
-      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
-      
-      <guid>/tags/r%C3%A9seau/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Samsung</title>
-      <link>/tags/samsung/</link>
-      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
-      
-      <guid>/tags/samsung/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sauvegarde</title>
-      <link>/tags/sauvegarde/</link>
-      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
-      
-      <guid>/tags/sauvegarde/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Script</title>
-      <link>/tags/script/</link>
-      <pubDate>Sun, 02 Oct 2016 08:45:28 +0000</pubDate>
-      
-      <guid>/tags/script/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Seconde Vie</title>
-      <link>/tags/seconde-vie/</link>
-      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
-      
-      <guid>/tags/seconde-vie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Serveur</title>
-      <link>/tags/serveur/</link>
-      <pubDate>Wed, 15 Mar 2017 12:43:46 +0000</pubDate>
-      
-      <guid>/tags/serveur/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssd</title>
-      <link>/tags/ssd/</link>
-      <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
-      
-      <guid>/tags/ssd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssh</title>
-      <link>/tags/ssh/</link>
-      <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
-      
-      <guid>/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssl</title>
-      <link>/tags/ssl/</link>
-      <pubDate>Tue, 10 May 2016 16:46:15 +0000</pubDate>
-      
-      <guid>/tags/ssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Steve Jobs</title>
-      <link>/tags/steve-jobs/</link>
-      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
-      
-      <guid>/tags/steve-jobs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stockage</title>
-      <link>/tags/stockage/</link>
-      <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
-      
-      <guid>/tags/stockage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stretch</title>
-      <link>/tags/stretch/</link>
-      <pubDate>Mon, 04 Mar 2019 19:43:46 +0000</pubDate>
-      
-      <guid>/tags/stretch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Surcouf</title>
-      <link>/tags/surcouf/</link>
-      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
-      
-      <guid>/tags/surcouf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Surface</title>
-      <link>/tags/surface/</link>
-      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
-      
-      <guid>/tags/surface/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Système De Fichier</title>
-      <link>/tags/syst%C3%A8me-de-fichier/</link>
-      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
-      
-      <guid>/tags/syst%C3%A8me-de-fichier/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sécurité</title>
-      <link>/tags/s%C3%A9curit%C3%A9/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
-      
-      <guid>/tags/s%C3%A9curit%C3%A9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tablette</title>
-      <link>/tags/tablette/</link>
-      <pubDate>Mon, 02 Jul 2012 23:24:44 +0000</pubDate>
-      
-      <guid>/tags/tablette/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Technique</title>
-      <link>/tags/technique/</link>
-      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
-      
-      <guid>/tags/technique/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/tags/test/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
-      
-      <guid>/tags/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thunderbolt</title>
-      <link>/tags/thunderbolt/</link>
-      <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
-      
-      <guid>/tags/thunderbolt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tic Tac Toe</title>
-      <link>/tags/tic-tac-toe/</link>
-      <pubDate>Thu, 12 Dec 2013 17:23:50 +0000</pubDate>
-      
-      <guid>/tags/tic-tac-toe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tour</title>
-      <link>/tags/tour/</link>
-      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
-      
-      <guid>/tags/tour/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tuto</title>
-      <link>/tags/tuto/</link>
-      <pubDate>Fri, 02 Mar 2012 19:46:55 +0000</pubDate>
-      
-      <guid>/tags/tuto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tuto Wibb</title>
-      <link>/tags/tuto-wibb/</link>
-      <pubDate>Wed, 27 Dec 2017 18:39:41 +0000</pubDate>
-      
-      <guid>/tags/tuto-wibb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Usb</title>
-      <link>/tags/usb/</link>
-      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
-      
-      <guid>/tags/usb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Valve</title>
-      <link>/tags/valve/</link>
-      <pubDate>Wed, 18 Jul 2012 11:20:55 +0000</pubDate>
-      
-      <guid>/tags/valve/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Veille Technologique</title>
-      <link>/tags/veille-technologique/</link>
-      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
-      
-      <guid>/tags/veille-technologique/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ventilateur</title>
-      <link>/tags/ventilateur/</link>
-      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
-      
-      <guid>/tags/ventilateur/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vga</title>
-      <link>/tags/vga/</link>
-      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
-      
-      <guid>/tags/vga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vidéo</title>
-      <link>/tags/vid%C3%A9o/</link>
-      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
-      
-      <guid>/tags/vid%C3%A9o/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vie Privée</title>
-      <link>/tags/vie-priv%C3%A9e/</link>
-      <pubDate>Sun, 28 Jan 2018 16:28:21 +0000</pubDate>
-      
-      <guid>/tags/vie-priv%C3%A9e/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vps</title>
-      <link>/tags/vps/</link>
-      <pubDate>Tue, 19 Jan 2016 12:19:17 +0000</pubDate>
-      
-      <guid>/tags/vps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Weechat</title>
-      <link>/tags/weechat/</link>
-      <pubDate>Thu, 04 Oct 2018 18:43:12 +0000</pubDate>
-      
-      <guid>/tags/weechat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wibb</title>
-      <link>/tags/wibb/</link>
-      <pubDate>Fri, 02 Mar 2012 19:46:55 +0000</pubDate>
-      
-      <guid>/tags/wibb/</guid>
+      <guid>/tags/microsoft/</guid>
       <description></description>
     </item>
     
@@ -1633,38 +912,794 @@
     </item>
     
     <item>
-      <title>Wordpress</title>
-      <link>/tags/wordpress/</link>
-      <pubDate>Fri, 05 Jan 2018 08:43:46 +0000</pubDate>
+      <title>Apple</title>
+      <link>/tags/apple/</link>
+      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
-      <guid>/tags/wordpress/</guid>
+      <guid>/tags/apple/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Xbox One</title>
-      <link>/tags/xbox-one/</link>
-      <pubDate>Wed, 06 Nov 2013 10:05:57 +0000</pubDate>
+      <title>iPhone</title>
+      <link>/tags/iphone/</link>
+      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
-      <guid>/tags/xbox-one/</guid>
+      <guid>/tags/iphone/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Yubikey</title>
-      <link>/tags/yubikey/</link>
-      <pubDate>Fri, 22 Jun 2018 18:07:17 +0000</pubDate>
+      <title>iPhone 5</title>
+      <link>/tags/iphone-5/</link>
+      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
-      <guid>/tags/yubikey/</guid>
+      <guid>/tags/iphone-5/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Zfs</title>
-      <link>/tags/zfs/</link>
-      <pubDate>Thu, 20 Nov 2014 14:52:49 +0000</pubDate>
+      <title>iPod Nano</title>
+      <link>/tags/ipod-nano/</link>
+      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
       
-      <guid>/tags/zfs/</guid>
+      <guid>/tags/ipod-nano/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iPod Touch</title>
+      <link>/tags/ipod-touch/</link>
+      <pubDate>Thu, 13 Sep 2012 19:30:43 +0000</pubDate>
+      
+      <guid>/tags/ipod-touch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>achat</title>
+      <link>/tags/achat/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/tags/achat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guide d&#39;achat</title>
+      <link>/tags/guide-dachat/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/tags/guide-dachat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ordinateur</title>
+      <link>/tags/ordinateur/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/tags/ordinateur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PC</title>
+      <link>/tags/pc/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/tags/pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PC portable</title>
+      <link>/tags/pc-portable/</link>
+      <pubDate>Tue, 28 Aug 2012 13:53:11 +0000</pubDate>
+      
+      <guid>/tags/pc-portable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concurrence</title>
+      <link>/tags/concurrence/</link>
+      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
+      
+      <guid>/tags/concurrence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Procès</title>
+      <link>/tags/proc%C3%A8s/</link>
+      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
+      
+      <guid>/tags/proc%C3%A8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Samsung</title>
+      <link>/tags/samsung/</link>
+      <pubDate>Tue, 28 Aug 2012 12:29:22 +0000</pubDate>
+      
+      <guid>/tags/samsung/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arci Midi</title>
+      <link>/tags/arci-midi/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/arci-midi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boitier</title>
+      <link>/tags/boitier/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/boitier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boitier PC</title>
+      <link>/tags/boitier-pc/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/boitier-pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fractal Design</title>
+      <link>/tags/fractal-design/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/fractal-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/tags/test/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tour</title>
+      <link>/tags/tour/</link>
+      <pubDate>Mon, 27 Aug 2012 11:47:31 +0000</pubDate>
+      
+      <guid>/tags/tour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asus</title>
+      <link>/tags/asus/</link>
+      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
+      
+      <guid>/tags/asus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LG</title>
+      <link>/tags/lg/</link>
+      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
+      
+      <guid>/tags/lg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nexus 7</title>
+      <link>/tags/nexus-7/</link>
+      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
+      
+      <guid>/tags/nexus-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Surface</title>
+      <link>/tags/surface/</link>
+      <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
+      
+      <guid>/tags/surface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hotmail</title>
+      <link>/tags/hotmail/</link>
+      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
+      
+      <guid>/tags/hotmail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mail</title>
+      <link>/tags/mail/</link>
+      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
+      
+      <guid>/tags/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Messagerie</title>
+      <link>/tags/messagerie/</link>
+      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
+      
+      <guid>/tags/messagerie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outlook</title>
+      <link>/tags/outlook/</link>
+      <pubDate>Thu, 02 Aug 2012 22:54:11 +0000</pubDate>
+      
+      <guid>/tags/outlook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portal 2</title>
+      <link>/tags/portal-2/</link>
+      <pubDate>Wed, 18 Jul 2012 11:20:55 +0000</pubDate>
+      
+      <guid>/tags/portal-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Valve</title>
+      <link>/tags/valve/</link>
+      <pubDate>Wed, 18 Jul 2012 11:20:55 +0000</pubDate>
+      
+      <guid>/tags/valve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tablette</title>
+      <link>/tags/tablette/</link>
+      <pubDate>Mon, 02 Jul 2012 23:24:44 +0000</pubDate>
+      
+      <guid>/tags/tablette/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bricolage</title>
+      <link>/tags/bricolage/</link>
+      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      
+      <guid>/tags/bricolage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disquette</title>
+      <link>/tags/disquette/</link>
+      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      
+      <guid>/tags/disquette/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pot à crayons</title>
+      <link>/tags/pot-%C3%A0-crayons/</link>
+      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      
+      <guid>/tags/pot-%C3%A0-crayons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recyclage</title>
+      <link>/tags/recyclage/</link>
+      <pubDate>Fri, 08 Jun 2012 21:40:16 +0000</pubDate>
+      
+      <guid>/tags/recyclage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assemblage</title>
+      <link>/tags/assemblage/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tags/assemblage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configs</title>
+      <link>/tags/configs/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tags/configs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HD</title>
+      <link>/tags/hd/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tags/hd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Home cinéma</title>
+      <link>/tags/home-cin%C3%A9ma/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tags/home-cin%C3%A9ma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vidéo</title>
+      <link>/tags/vid%C3%A9o/</link>
+      <pubDate>Fri, 25 May 2012 23:32:20 +0000</pubDate>
+      
+      <guid>/tags/vid%C3%A9o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>80 Plus</title>
+      <link>/tags/80-plus/</link>
+      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      
+      <guid>/tags/80-plus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alimentation</title>
+      <link>/tags/alimentation/</link>
+      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      
+      <guid>/tags/alimentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quid</title>
+      <link>/tags/quid/</link>
+      <pubDate>Fri, 04 May 2012 00:04:07 +0000</pubDate>
+      
+      <guid>/tags/quid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asus Noob Overclocking Challenge</title>
+      <link>/tags/asus-noob-overclocking-challenge/</link>
+      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
+      
+      <guid>/tags/asus-noob-overclocking-challenge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Overclocking</title>
+      <link>/tags/overclocking/</link>
+      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
+      
+      <guid>/tags/overclocking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Surcouf</title>
+      <link>/tags/surcouf/</link>
+      <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
+      
+      <guid>/tags/surcouf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logiciels</title>
+      <link>/tags/logiciels/</link>
+      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
+      
+      <guid>/tags/logiciels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Printemps</title>
+      <link>/tags/printemps/</link>
+      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
+      
+      <guid>/tags/printemps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Réinstallation</title>
+      <link>/tags/r%C3%A9installation/</link>
+      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
+      
+      <guid>/tags/r%C3%A9installation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sauvegarde</title>
+      <link>/tags/sauvegarde/</link>
+      <pubDate>Tue, 20 Mar 2012 19:07:03 +0000</pubDate>
+      
+      <guid>/tags/sauvegarde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CPU</title>
+      <link>/tags/cpu/</link>
+      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
+      
+      <guid>/tags/cpu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Processeur</title>
+      <link>/tags/processeur/</link>
+      <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
+      
+      <guid>/tags/processeur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A5X</title>
+      <link>/tags/a5x/</link>
+      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
+      
+      <guid>/tags/a5x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>/tags/ios/</link>
+      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
+      
+      <guid>/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iPad</title>
+      <link>/tags/ipad/</link>
+      <pubDate>Wed, 07 Mar 2012 19:21:35 +0000</pubDate>
+      
+      <guid>/tags/ipad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wibb</title>
+      <link>/tags/wibb/</link>
+      <pubDate>Fri, 02 Mar 2012 19:46:55 +0000</pubDate>
+      
+      <guid>/tags/wibb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
+      
+      <guid>/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>/tags/macos/</link>
+      <pubDate>Sun, 26 Feb 2012 22:07:11 +0000</pubDate>
+      
+      <guid>/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ATX</title>
+      <link>/tags/atx/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/tags/atx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Carte mère</title>
+      <link>/tags/carte-m%C3%A8re/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/tags/carte-m%C3%A8re/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chipset</title>
+      <link>/tags/chipset/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/tags/chipset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CM</title>
+      <link>/tags/cm/</link>
+      <pubDate>Sat, 04 Feb 2012 22:00:27 +0000</pubDate>
+      
+      <guid>/tags/cm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mémoire</title>
+      <link>/tags/m%C3%A9moire/</link>
+      <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
+      
+      <guid>/tags/m%C3%A9moire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RAM</title>
+      <link>/tags/ram/</link>
+      <pubDate>Tue, 24 Jan 2012 21:55:42 +0000</pubDate>
+      
+      <guid>/tags/ram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iMac</title>
+      <link>/tags/imac/</link>
+      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
+      
+      <guid>/tags/imac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacBook Air</title>
+      <link>/tags/macbook-air/</link>
+      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
+      
+      <guid>/tags/macbook-air/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacBook Pro</title>
+      <link>/tags/macbook-pro/</link>
+      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
+      
+      <guid>/tags/macbook-pro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steve Jobs</title>
+      <link>/tags/steve-jobs/</link>
+      <pubDate>Sun, 06 Nov 2011 19:06:46 +0000</pubDate>
+      
+      <guid>/tags/steve-jobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Carte graphique</title>
+      <link>/tags/carte-graphique/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/carte-graphique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Double écran</title>
+      <link>/tags/double-%C3%A9cran/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/double-%C3%A9cran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DVI</title>
+      <link>/tags/dvi/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/dvi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ecran</title>
+      <link>/tags/ecran/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/ecran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HDMI</title>
+      <link>/tags/hdmi/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/hdmi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VGA</title>
+      <link>/tags/vga/</link>
+      <pubDate>Sat, 05 Nov 2011 21:46:35 +0000</pubDate>
+      
+      <guid>/tags/vga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fin du PC</title>
+      <link>/tags/fin-du-pc/</link>
+      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      
+      <guid>/tags/fin-du-pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hisoire</title>
+      <link>/tags/hisoire/</link>
+      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      
+      <guid>/tags/hisoire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>histoire du PC</title>
+      <link>/tags/histoire-du-pc/</link>
+      <pubDate>Sun, 23 Oct 2011 20:32:09 +0000</pubDate>
+      
+      <guid>/tags/histoire-du-pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thunderbolt</title>
+      <link>/tags/thunderbolt/</link>
+      <pubDate>Sun, 09 Oct 2011 21:40:20 +0000</pubDate>
+      
+      <guid>/tags/thunderbolt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Booster</title>
+      <link>/tags/booster/</link>
+      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
+      
+      <guid>/tags/booster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mise à jour</title>
+      <link>/tags/mise-%C3%A0-jour/</link>
+      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
+      
+      <guid>/tags/mise-%C3%A0-jour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recycler</title>
+      <link>/tags/recycler/</link>
+      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
+      
+      <guid>/tags/recycler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seconde vie</title>
+      <link>/tags/seconde-vie/</link>
+      <pubDate>Wed, 05 Oct 2011 21:16:06 +0000</pubDate>
+      
+      <guid>/tags/seconde-vie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Batterie</title>
+      <link>/tags/batterie/</link>
+      <pubDate>Sun, 25 Sep 2011 21:04:15 +0000</pubDate>
+      
+      <guid>/tags/batterie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>guide PC</title>
+      <link>/tags/guide-pc/</link>
+      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
+      
+      <guid>/tags/guide-pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>portable 2011</title>
+      <link>/tags/portable-2011/</link>
+      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
+      
+      <guid>/tags/portable-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rentree 2011</title>
+      <link>/tags/rentree-2011/</link>
+      <pubDate>Tue, 06 Sep 2011 20:34:29 +0000</pubDate>
+      
+      <guid>/tags/rentree-2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChromeBook</title>
+      <link>/tags/chromebook/</link>
+      <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
+      
+      <guid>/tags/chromebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEEE</title>
+      <link>/tags/deee/</link>
+      <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
+      
+      <guid>/tags/deee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LDLC</title>
+      <link>/tags/ldlc/</link>
+      <pubDate>Sat, 18 Jun 2011 19:56:58 +0000</pubDate>
+      
+      <guid>/tags/ldlc/</guid>
       <description></description>
     </item>
     
@@ -1678,11 +1713,110 @@
     </item>
     
     <item>
-      <title>Électronique</title>
+      <title>SSD</title>
+      <link>/tags/ssd/</link>
+      <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
+      
+      <guid>/tags/ssd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stockage</title>
+      <link>/tags/stockage/</link>
+      <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
+      
+      <guid>/tags/stockage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CPL</title>
+      <link>/tags/cpl/</link>
+      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
+      
+      <guid>/tags/cpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Réseau</title>
+      <link>/tags/r%C3%A9seau/</link>
+      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
+      
+      <guid>/tags/r%C3%A9seau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technique</title>
+      <link>/tags/technique/</link>
+      <pubDate>Wed, 18 May 2011 18:53:38 +0000</pubDate>
+      
+      <guid>/tags/technique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fabriquer</title>
+      <link>/tags/fabriquer/</link>
+      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      
+      <guid>/tags/fabriquer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>USB</title>
+      <link>/tags/usb/</link>
+      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      
+      <guid>/tags/usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ventilateur</title>
+      <link>/tags/ventilateur/</link>
+      <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
+      
+      <guid>/tags/ventilateur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>électronique</title>
       <link>/tags/%C3%A9lectronique/</link>
       <pubDate>Wed, 18 May 2011 13:02:44 +0000</pubDate>
       
       <guid>/tags/%C3%A9lectronique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mini PC</title>
+      <link>/tags/mini-pc/</link>
+      <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
+      
+      <guid>/tags/mini-pc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NAS</title>
+      <link>/tags/nas/</link>
+      <pubDate>Sat, 22 Jan 2011 22:32:02 +0000</pubDate>
+      
+      <guid>/tags/nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Montage PC</title>
+      <link>/tags/montage-pc/</link>
+      <pubDate>Fri, 21 Jan 2011 22:15:29 +0000</pubDate>
+      
+      <guid>/tags/montage-pc/</guid>
       <description></description>
     </item>
     

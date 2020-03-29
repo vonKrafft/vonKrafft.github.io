@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overclocking on vonKrafft</title>
     <link>/tags/overclocking/</link>
     <description>Recent content in Overclocking on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sat, 31 Mar 2012 00:20:11 +0000</lastBuildDate>
     
 	<atom:link href="/tags/overclocking/index.xml" rel="self" type="application/rss+xml" />
@@ -18,16 +17,17 @@
       <pubDate>Sat, 31 Mar 2012 00:20:11 +0000</pubDate>
       
       <guid>/actus/asus-noob-overclocking-challenge-2012/</guid>
-      <description>&lt;figure class=&#34;pull-left&#34;&gt;
-    
-        &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; height=&#34;150px&#34;&gt;
-    
-    
-&lt;/figure&gt;
+      <description>&lt;figure&gt;
+        
+            &lt;span class=&#34;image left&#34;&gt;
+                &lt;img src=&#34;/media/2012/03/7ec9d4471da595d37f40036e1a08d821-300x444.png&#34; alt=&#34;&#34;&gt;
+            &lt;/span&gt;
+        
+        
+    &lt;/figure&gt;
 
-&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&amp;rsquo;était sur place ; bilan et score du Challenge.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Aujourd&amp;rsquo;hui, 31 Mars 2012, s&amp;rsquo;est tenue la seconde édition de l&amp;rsquo;Asus Noob Overclocking Challenge au Surcouf Daumesnil, une compétition entre quatre équipes composées d&amp;rsquo;un pro et d&amp;rsquo;un débutant en Overclocking. Chaque duo devait obtenir le meilleur score à divers benchs (tests de performance) tout en conservant un système stable. j&#39;était sur place ; bilan et score du Challenge.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,9 +36,7 @@
       <pubDate>Sat, 10 Mar 2012 19:15:49 +0000</pubDate>
       
       <guid>/guides/quid-processeur-cpu/</guid>
-      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le CPU, pour Central Process Unit, effectue l’ensemble des calculs nécessaires à l’exécution des tâches sur votre PC. C’est lui, entre autre, qui détermine vélocité de votre ordinateur. Il est donc important de bien choisir son processeur en fonction de ses besoins. Dans cette optique, voici un petit guide pour vous aider à choisir correctement votre CPU.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,9 +45,7 @@
       <pubDate>Sat, 17 Sep 2011 20:48:51 +0000</pubDate>
       
       <guid>/tutoriels/overclocker-son-cpu/</guid>
-      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Il y a quelques années, l&amp;rsquo;overclocking demandait beaucoup de moyens et était réservé aux informaticiens expérimentés. Mais depuis, les choses ont bien changées et overclocker son CPU est devenu plus facile. Pour plus de fluidité ou pour faire renaître un vieux processeur, voici comment augmenter la fréquence de son CPU.&lt;/p&gt;</description>
     </item>
     
   </channel>

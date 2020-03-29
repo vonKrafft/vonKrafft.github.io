@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on vonKrafft</title>
     <link>/tags/google/</link>
     <description>Recent content in Google on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Sat, 20 Apr 2013 11:31:43 +0000</lastBuildDate>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
     
 	<atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,9 +17,7 @@
       <pubDate>Sat, 20 Apr 2013 11:31:43 +0000</pubDate>
       
       <guid>/actus/visitez-les-data-center-de-google/</guid>
-      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Journée portes ouvertes pour les data-centers de chez Google, ou du moins virtuellement. Le géant de Moutain View propose depuis octobre dernier un voyage en image dans les sites - sécurisés comme des sites militaires ! - où sont stockées les serveurs, routeurs, switchs et autres équipements réseau qui gèrent les données nécessaires à la navigation web.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,9 +26,7 @@
       <pubDate>Mon, 27 Aug 2012 10:31:54 +0000</pubDate>
       
       <guid>/actus/une-rentree-high-tech-qui-sannonce-riche/</guid>
-      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Chaque année, la rentrée scolaire s’accompagne de toute une panoplie de nouveautés technologiques. Mais ce cru 2012 s’annonce particulièrement riche, notamment chez Microsoft, Apple, Google et Samsung. Et la compétition sera rude car le marché des smartphone et des tablettes est en pleine explosion. Entre &lt;strong&gt;prises de risques&lt;/strong&gt; et &lt;strong&gt;révolutions high-tech&lt;/strong&gt;, cette rentrée ne ménagera pas la planète numérique.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,9 +35,7 @@
       <pubDate>Tue, 05 Jul 2011 21:40:46 +0000</pubDate>
       
       <guid>/actus/le-samsung-serie-5-le-premier-chomebook/</guid>
-      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Le Samsung Serie 5 n’est autre que le premier ordinateur portable qui embarque le tout nouveau système d’exploitation de Google : Chrome OS. Petit tour d’horizon en image de ce PC portable …&lt;/p&gt;</description>
     </item>
     
   </channel>

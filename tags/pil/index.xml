@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PIL on vonKrafft</title>
+    <link>/tags/pil/</link>
+    <description>Recent content in PIL on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Mon, 02 Apr 2018 21:34:07 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/pil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[EN] [CTF] NDH - Schreddinger</title>
+      <link>/write-up/ctf-ndh-shreddinger-500/</link>
+      <pubDate>Mon, 02 Apr 2018 21:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-ndh-shreddinger-500/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;The infamous Shredder tried to destroy important documents!
+Please, help us recover them and prevents their evil scheme.&lt;/p&gt;
+&lt;p&gt;Points      500&lt;br&gt;
+Category    Dev&lt;br&gt;
+Validation  11&lt;br&gt;
+URL         &lt;a href=&#34;http://shreddinger.challs.malice.fr/&#34;&gt;http://shreddinger.challs.malice.fr/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

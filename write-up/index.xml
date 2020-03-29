@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Write-up on vonKrafft</title>
+    <link>/write-up/</link>
+    <description>Recent content in Write-up on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 07 Apr 2019 20:21:54 +0000</lastBuildDate>
+    
+	<atom:link href="/write-up/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[CTF] ESGI - My Name is Rookie</title>
+      <link>/write-up/ctf-esgi-my-name-is-rookie-350/</link>
+      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
+      
+      <guid>/write-up/ctf-esgi-my-name-is-rookie-350/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;M0th3r &amp;gt; Quelque chose me perturbe. Comment un Androïde a pu passer le test des pirates cybernétique. Duke le premier de son genre n’a été crée par personne du gouvernement. Aujourd’hui disparu je veux retrouver son core. Si tu veux m’aider, tu dois passer le test des pirate Cybernétique. C’est le test que Duke-083 a passé haut la main. Récupère tout ce que tu sais sur Zedcorp.&lt;/p&gt;
+&lt;p&gt;http = ctf.hacklab-esgi.org:5008 \&lt;br&gt;
+ssh = ctf.hacklab-esgi.org:5007&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] NDH - Schreddinger</title>
+      <link>/write-up/ctf-ndh-shreddinger-500/</link>
+      <pubDate>Mon, 02 Apr 2018 21:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-ndh-shreddinger-500/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;The infamous Shredder tried to destroy important documents!
+Please, help us recover them and prevents their evil scheme.&lt;/p&gt;
+&lt;p&gt;Points      500&lt;br&gt;
+Category    Dev&lt;br&gt;
+Validation  11&lt;br&gt;
+URL         &lt;a href=&#34;http://shreddinger.challs.malice.fr/&#34;&gt;http://shreddinger.challs.malice.fr/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Scenario MCCU</title>
+      <link>/write-up/ctf-tamu-scenario-mccu-700/</link>
+      <pubDate>Tue, 27 Feb 2018 19:34:07 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-scenario-mccu-700/</guid>
+      <description>&lt;p&gt;This was a series of challenges that involved a compromised WordPress website. Several proofs (screenshots, log extracts, WordPress archive, etc.) allowed us to answer questions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Simple DES</title>
+      <link>/write-up/ctf-tamu-simple-des-125/</link>
+      <pubDate>Mon, 26 Feb 2018 19:22:12 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-simple-des-125/</guid>
+      <description>Larry is working on an encryption algorithm based on DES.
+He hasn&amp;rsquo;t worked out all the kinks yet, but he thinks it works.
+Your job is to confirm that you can decrypt a message, given the algorithm and parameters used.
+His system works as follows:
+ Choose a plaintext that is divisible into 12bit &amp;lsquo;blocks&amp;rsquo; Choose a key at least 8bits in length For each block from i=0 while i&amp;lt;N perform the following operations Repeat the following operations on block i, from r=0 while r&amp;lt;R Divide the block into 2 6bit sections Lr,Rr Using Rr, &amp;ldquo;expand&amp;rdquo; the value from 6bits to 8bits.</description>
+    </item>
+    
+  </channel>
+</rss>

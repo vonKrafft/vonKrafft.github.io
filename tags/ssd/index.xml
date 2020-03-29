@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ssd on vonKrafft</title>
+    <title>SSD on vonKrafft</title>
     <link>/tags/ssd/</link>
-    <description>Recent content in Ssd on vonKrafft</description>
+    <description>Recent content in SSD on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language>
-    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <language>fr-fr</language>
     <lastBuildDate>Sun, 29 May 2011 19:44:18 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ssd/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Sun, 29 May 2011 19:44:18 +0000</pubDate>
       
       <guid>/guides/bien-choisir-disque-ssd/</guid>
-      <description>&lt;p&gt;Annoncé comme l’avenir du stockage des informations, le SSD est un élément qui doit vous inciter à la plus grande prudence et à une grande réflexion avant l&amp;rsquo;achat. Voici quelques pistes pour vous aider dans ce choix.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Annoncé comme l’avenir du stockage des informations, le SSD est un élément qui doit vous inciter à la plus grande prudence et à une grande réflexion avant l&amp;rsquo;achat. Voici quelques pistes pour vous aider dans ce choix.&lt;/p&gt;</description>
     </item>
     
   </channel>

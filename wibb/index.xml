@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tuto Wibb on vonKrafft</title>
+    <link>/wibb/</link>
+    <description>Recent content in Tuto Wibb on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Thu, 28 Nov 2013 21:18:17 +0000</lastBuildDate>
+    
+	<atom:link href="/wibb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

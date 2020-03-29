@@ -1,14 +1,179 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutoriels/prises-conectees-sonoff-tasmota/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/domotique/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/esp8266/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/google/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/google-home/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sonoff/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tasmota/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/tutoriels/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutoriels/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/ctf-esgi-my-name-is-rookie-350/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ctf/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lfi/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/proxychains/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rce/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tomcat/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/write-up/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/</loc>
+    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/console/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/console/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/php/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/postgresql/</loc>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/console/serveur-web-docker-nginx-php-postgres/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
+    <lastmod>2019-04-10T20:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/debian-9/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/guides/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/guides/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
   </url>
   
   <url>
     <loc>/guides/installer-python-3.7-debian-9-strecth/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python-3.7/</loc>
+    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/stretch/</loc>
     <lastmod>2019-03-04T19:54:26+00:00</lastmod>
   </url>
   
@@ -18,18 +183,148 @@
   </url>
   
   <url>
+    <loc>/tags/glowing-bear/</loc>
+    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/irc/</loc>
+    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/console/interface-web-pour-irc-avec-docker/</loc>
     <lastmod>2018-10-04T18:43:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/console/gerer-ses-mots-de-passe-avec-pgp/</loc>
+    <loc>/tags/weechat/</loc>
+    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
     <lastmod>2018-07-18T23:40:17+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/console/pgp-generer-des-cles-et-configurer-une-yubikey/</loc>
+    <loc>/tags/gnupg/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/gpg/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/securite/gerer-ses-mots-de-passe-avec-pgp/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/openpgp/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pass/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pgp/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/securite/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/securite/</loc>
+    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/securite/pgp-generer-des-cles-et-configurer-une-yubikey/</loc>
     <lastmod>2018-06-22T18:07:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ssh/</loc>
+    <lastmod>2018-06-22T18:07:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/yubikey/</loc>
+    <lastmod>2018-06-22T18:07:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/ctf-ndh-shreddinger-500/</loc>
+    <lastmod>2018-04-03T20:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ocr/</loc>
+    <lastmod>2018-04-03T20:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pil/</loc>
+    <lastmod>2018-04-03T20:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/ctf-tamu-scenario-mccu-700/</loc>
+    <lastmod>2018-02-27T20:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/forensics/</loc>
+    <lastmod>2018-02-27T20:12:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/ctf-tamu-simple-des-125/</loc>
+    <lastmod>2018-02-26T20:54:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/crypto/</loc>
+    <lastmod>2018-02-26T20:54:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/des/</loc>
+    <lastmod>2018-02-26T20:54:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/chiffrement/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cnil/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dossiers/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/dossiers/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hachage/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
   </url>
   
   <url>
@@ -38,8 +333,58 @@
   </url>
   
   <url>
+    <loc>/tags/mots-de-passe/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/protection/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rgpd/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vie-priv%C3%A9e/</loc>
+    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2018-01-05T08:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/guides/migrer-wordpress-vers-hugo/</loc>
     <lastmod>2018-01-05T08:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/wordpress/</loc>
+    <lastmod>2018-01-05T08:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/gist/</loc>
+    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/image/</loc>
+    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jpg/</loc>
+    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/png/</loc>
+    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
   </url>
   
   <url>
@@ -48,13 +393,18 @@
   </url>
   
   <url>
-    <loc>/contact-en/</loc>
-    <lastmod>2017-12-28T15:58:06+00:00</lastmod>
+    <loc>/categories/actus/</loc>
+    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/contact/</loc>
-    <lastmod>2017-12-28T15:58:06+00:00</lastmod>
+    <loc>/actus/</loc>
+    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/anniversaire/</loc>
+    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
   </url>
   
   <url>
@@ -63,8 +413,58 @@
   </url>
   
   <url>
-    <loc>/console/repertoire-git-accessible/</loc>
+    <loc>/tags/tuto/</loc>
+    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tuto-wibb/</loc>
+    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/directory-listing/</loc>
     <lastmod>2017-03-15T12:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/exploit/</loc>
+    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/securite/repertoire-git-accessible/</loc>
+    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pentest/</loc>
+    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/serveur/</loc>
+    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/astuce/</loc>
+    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/configuration/</loc>
+    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/kobo/</loc>
+    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/liseuse/</loc>
+    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
   </url>
   
   <url>
@@ -73,18 +473,28 @@
   </url>
   
   <url>
-    <loc>/console/script-apercu-dun-projet-git/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2016-10-02T08:49:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/works/</loc>
-    <lastmod>2017-12-17T21:58:06+00:00</lastmod>
+    <loc>/tags/gitlab/</loc>
+    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/works-en/</loc>
-    <lastmod>2017-12-17T21:58:06+00:00</lastmod>
+    <loc>/tags/gogs/</loc>
+    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/script/</loc>
+    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/console/script-apercu-dun-projet-git/</loc>
+    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
   </url>
   
   <url>
@@ -93,8 +503,68 @@
   </url>
   
   <url>
+    <loc>/tags/http/</loc>
+    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/http2/</loc>
+    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/https/</loc>
+    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ssl/</loc>
+    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/admin-syst%C3%A8me/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/authentification/</loc>
+    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cl%C3%A9/</loc>
+    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rsa/</loc>
+    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/console/connecter-ssh-vps/</loc>
     <lastmod>2016-05-11T21:01:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/s%C3%A9curit%C3%A9/</loc>
+    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vps/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dhcp/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dns/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
   </url>
   
   <url>
@@ -103,7 +573,102 @@
   </url>
   
   <url>
+    <loc>/tags/host/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ip/</loc>
+    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/finitions-conclusion/</loc>
+    <lastmod>2015-09-21T17:11:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/verifications-tests/</loc>
+    <lastmod>2015-09-21T17:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/mise-en-place-dune-carte-fille/</loc>
+    <lastmod>2015-09-21T17:02:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/carte-mere-branchements/</loc>
+    <lastmod>2015-09-21T16:59:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/fixation-de-lalimentation/</loc>
+    <lastmod>2015-09-21T16:49:01+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/installation-des-disques/</loc>
+    <lastmod>2015-09-21T16:46:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/preparation-du-boitier/</loc>
+    <lastmod>2015-09-21T16:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/installation-de-la-memoire-vive/</loc>
+    <lastmod>2015-09-21T16:39:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/fixation-du-ventirad/</loc>
+    <lastmod>2015-09-21T16:39:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/pose-du-processeur/</loc>
+    <lastmod>2015-09-21T16:39:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/deballage-de-la-carte-mere/</loc>
+    <lastmod>2015-09-21T16:38:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/presentation-outillage/</loc>
+    <lastmod>2015-09-21T16:38:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/btrfs/</loc>
+    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ext4/</loc>
+    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/syst%C3%A8me-de-fichier/</loc>
+    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/dossiers/systeme-de-fichier-emergence-btrfs/</loc>
+    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/veille-technologique/</loc>
+    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/zfs/</loc>
     <lastmod>2014-11-20T14:52:49+00:00</lastmod>
   </url>
   
@@ -113,8 +678,108 @@
   </url>
   
   <url>
+    <loc>/tags/css/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/html/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jeu/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jquery/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/morpion/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tic-tac-toe/</loc>
+    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/un-morpion-en-javascript/</loc>
     <lastmod>2013-12-12T18:35:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/monter-son-pc/</loc>
+    <lastmod>2015-09-21T16:38:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/saloon-hd/</loc>
+    <lastmod>2015-12-15T22:26:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/carre-vip/</loc>
+    <lastmod>2015-12-15T22:24:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/gamer-zone/</loc>
+    <lastmod>2015-12-15T22:24:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/family/</loc>
+    <lastmod>2015-12-15T22:19:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/bureautik/</loc>
+    <lastmod>2015-12-15T22:16:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/les-configs-pc/</loc>
+    <lastmod>2015-12-15T22:09:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/wibb/</loc>
+    <lastmod>2015-09-21T08:21:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/2013/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jeu-vid%C3%A9o/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/paris-games-week/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pgw/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ps4/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
   </url>
   
   <url>
@@ -123,8 +788,33 @@
   </url>
   
   <url>
+    <loc>/tags/xbox-one/</loc>
+    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/datacenter/</loc>
+    <lastmod>2013-04-20T19:19:59+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/visitez-les-data-center-de-google/</loc>
     <lastmod>2013-04-20T19:19:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/microsoft/</loc>
+    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/windows-8/</loc>
+    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
   </url>
   
   <url>
@@ -133,8 +823,43 @@
   </url>
   
   <url>
+    <loc>/tags/apple/</loc>
+    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/iphone/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/iphone-5/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/iphone-5-apple-en-mal-de-revolution/</loc>
     <lastmod>2012-09-13T19:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ipod-nano/</loc>
+    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ipod-touch/</loc>
+    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/achat/</loc>
+    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/guide-dachat/</loc>
+    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
   </url>
   
   <url>
@@ -143,8 +868,58 @@
   </url>
   
   <url>
+    <loc>/tags/ordinateur/</loc>
+    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pc/</loc>
+    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pc-portable/</loc>
+    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/concurrence/</loc>
+    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/proc%C3%A8s/</loc>
+    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/dossiers/proces-samsung-apple-consequences/</loc>
     <lastmod>2016-01-11T18:52:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/samsung/</loc>
+    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/arci-midi/</loc>
+    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/boitier/</loc>
+    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/boitier-pc/</loc>
+    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/fractal-design/</loc>
+    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
   </url>
   
   <url>
@@ -153,8 +928,58 @@
   </url>
   
   <url>
+    <loc>/tags/test/</loc>
+    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tour/</loc>
+    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/asus/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lg/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nexus-7/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/surface/</loc>
+    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/une-rentree-high-tech-qui-sannonce-riche/</loc>
     <lastmod>2016-01-11T18:56:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hotmail/</loc>
+    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mail/</loc>
+    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/messagerie/</loc>
+    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/outlook/</loc>
+    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
   </url>
   
   <url>
@@ -163,7 +988,17 @@
   </url>
   
   <url>
+    <loc>/tags/portal-2/</loc>
+    <lastmod>2012-07-18T22:43:02+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/dossiers/test-de-portal-2-sur-pc/</loc>
+    <lastmod>2012-07-18T22:43:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/valve/</loc>
     <lastmod>2012-07-18T22:43:02+00:00</lastmod>
   </url>
   
@@ -173,8 +1008,38 @@
   </url>
   
   <url>
+    <loc>/tags/tablette/</loc>
+    <lastmod>2012-07-02T23:24:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/bricolage/</loc>
+    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/disquette/</loc>
+    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pot-%C3%A0-crayons/</loc>
+    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/recyclage/</loc>
+    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/recyclez-vos-disquettes-pot-a-crayons/</loc>
     <lastmod>2012-06-08T21:40:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/assemblage/</loc>
+    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
   </url>
   
   <url>
@@ -183,8 +1048,48 @@
   </url>
   
   <url>
+    <loc>/tags/configs/</loc>
+    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hd/</loc>
+    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/home-cin%C3%A9ma/</loc>
+    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vid%C3%A9o/</loc>
+    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/80-plus/</loc>
+    <lastmod>2012-05-04T00:04:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/alimentation/</loc>
+    <lastmod>2012-05-04T00:04:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/quid/</loc>
+    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/guides/quid-de-l-alimentation-pc/</loc>
     <lastmod>2012-05-04T00:04:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/asus-noob-overclocking-challenge/</loc>
+    <lastmod>2012-03-31T00:20:11+00:00</lastmod>
   </url>
   
   <url>
@@ -193,8 +1098,48 @@
   </url>
   
   <url>
+    <loc>/tags/overclocking/</loc>
+    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/surcouf/</loc>
+    <lastmod>2012-03-31T00:20:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/logiciels/</loc>
+    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/printemps/</loc>
+    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r%C3%A9installation/</loc>
+    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/reinstaller-windows-pc/</loc>
     <lastmod>2016-01-11T19:07:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sauvegarde/</loc>
+    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cpu/</loc>
+    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/processeur/</loc>
+    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
   </url>
   
   <url>
@@ -203,8 +1148,28 @@
   </url>
   
   <url>
+    <loc>/tags/a5x/</loc>
+    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ios/</loc>
+    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ipad/</loc>
+    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/ipad-3-le-nouvel-ipad-troisieme-du-nom/</loc>
     <lastmod>2016-01-11T19:21:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/wibb/</loc>
+    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
   </url>
   
   <url>
@@ -213,8 +1178,38 @@
   </url>
   
   <url>
+    <loc>/tags/cloud/</loc>
+    <lastmod>2012-02-26T22:07:11+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/convergence-systeme-exploitation-os/</loc>
     <lastmod>2012-02-26T22:07:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/macos/</loc>
+    <lastmod>2012-02-26T22:07:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/atx/</loc>
+    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/carte-m%C3%A8re/</loc>
+    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/chipset/</loc>
+    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cm/</loc>
+    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
   </url>
   
   <url>
@@ -223,8 +1218,38 @@
   </url>
   
   <url>
+    <loc>/tags/m%C3%A9moire/</loc>
+    <lastmod>2012-01-24T21:55:42+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/guides/quid-memoire-vive-ram/</loc>
     <lastmod>2012-01-24T21:55:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ram/</loc>
+    <lastmod>2012-01-24T21:55:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/imac/</loc>
+    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/macbook-air/</loc>
+    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/macbook-pro/</loc>
+    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/steve-jobs/</loc>
+    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
   </url>
   
   <url>
@@ -238,8 +1263,58 @@
   </url>
   
   <url>
+    <loc>/tags/carte-graphique/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/double-%C3%A9cran/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dvi/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ecran/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hdmi/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vga/</loc>
+    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/dossiers/changement-depoque-la-fin-du-regne-du-pc/</loc>
     <lastmod>2011-10-23T20:32:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/fin-du-pc/</loc>
+    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hisoire/</loc>
+    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/histoire-du-pc/</loc>
+    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/thunderbolt/</loc>
+    <lastmod>2011-10-09T21:40:20+00:00</lastmod>
   </url>
   
   <url>
@@ -248,8 +1323,33 @@
   </url>
   
   <url>
+    <loc>/tags/booster/</loc>
+    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/donnez-seconde-vie-pc/</loc>
     <lastmod>2011-10-05T21:16:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mise-%C3%A0-jour/</loc>
+    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/recycler/</loc>
+    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/seconde-vie/</loc>
+    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/batterie/</loc>
+    <lastmod>2011-09-25T21:04:15+00:00</lastmod>
   </url>
   
   <url>
@@ -273,8 +1373,28 @@
   </url>
   
   <url>
+    <loc>/tags/guide-pc/</loc>
+    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/portable-2011/</loc>
+    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rentree-2011/</loc>
+    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/guides/guide-achat-pc-portable-2011/</loc>
     <lastmod>2011-08-26T20:20:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/chromebook/</loc>
+    <lastmod>2011-07-05T21:40:46+00:00</lastmod>
   </url>
   
   <url>
@@ -288,7 +1408,22 @@
   </url>
   
   <url>
+    <loc>/tags/deee/</loc>
+    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ldlc/</loc>
+    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/actus/nouveau-defi-recyclage-informatique/</loc>
+    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%C3%A9cologie/</loc>
     <lastmod>2011-06-18T19:56:58+00:00</lastmod>
   </url>
   
@@ -298,12 +1433,57 @@
   </url>
   
   <url>
+    <loc>/tags/ssd/</loc>
+    <lastmod>2011-05-29T19:44:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/stockage/</loc>
+    <lastmod>2011-05-29T19:44:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cpl/</loc>
+    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/guides/le-courant-porteur-en-ligne-cpl/</loc>
     <lastmod>2011-05-18T18:53:38+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/r%C3%A9seau/</loc>
+    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/technique/</loc>
+    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/fabriquer/</loc>
+    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/fabriquez-ventilateur-usb/</loc>
+    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/usb/</loc>
+    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ventilateur/</loc>
+    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/%C3%A9lectronique/</loc>
     <lastmod>2011-05-18T23:20:22+00:00</lastmod>
   </url>
   
@@ -318,6 +1498,16 @@
   </url>
   
   <url>
+    <loc>/tags/mini-pc/</loc>
+    <lastmod>2011-01-22T22:32:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nas/</loc>
+    <lastmod>2011-01-22T22:32:02+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/recyclez-son-ordinateur/</loc>
     <lastmod>2011-01-22T22:32:02+00:00</lastmod>
   </url>
@@ -328,1202 +1518,29 @@
   </url>
   
   <url>
+    <loc>/tags/montage-pc/</loc>
+    <lastmod>2011-01-21T22:15:29+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutoriels/monter-un-mini-pc/</loc>
     <lastmod>2011-01-05T21:58:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/2013/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/contact/</loc>
   </url>
   
   <url>
-    <loc>/tags/80-plus/</loc>
-    <lastmod>2012-05-04T00:04:07+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/contact/en/</loc>
   </url>
   
   <url>
-    <loc>/tags/a5x/</loc>
-    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/works/</loc>
   </url>
   
   <url>
-    <loc>/tags/achat/</loc>
-    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/actus/</loc>
-    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/actus/</loc>
-    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/admin-syst%C3%A8me/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/alimentation/</loc>
-    <lastmod>2012-05-04T00:04:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/anniversaire/</loc>
-    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/apple/</loc>
-    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/arci-midi/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/assemblage/</loc>
-    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/astuce/</loc>
-    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/asus/</loc>
-    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/asus-noob-overclocking-challenge/</loc>
-    <lastmod>2012-03-31T00:20:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/atx/</loc>
-    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/authentification/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/batterie/</loc>
-    <lastmod>2011-09-25T21:04:15+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/boitier/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/boitier-pc/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/booster/</loc>
-    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/bricolage/</loc>
-    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/btrfs/</loc>
-    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/carte-graphique/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/carte-m%C3%A8re/</loc>
-    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/chiffrement/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/chipset/</loc>
-    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/chromebook/</loc>
-    <lastmod>2011-07-05T21:40:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cloud/</loc>
-    <lastmod>2012-02-26T22:07:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cl%C3%A9/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cm/</loc>
-    <lastmod>2012-02-04T22:00:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cnil/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/concurrence/</loc>
-    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/configs/</loc>
-    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/configuration/</loc>
-    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/console/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/console/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cpl/</loc>
-    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cpu/</loc>
-    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/css/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/datacenter/</loc>
-    <lastmod>2013-04-20T19:19:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/debian/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/debian-9/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/deee/</loc>
-    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dhcp/</loc>
-    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/directory-listing/</loc>
-    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/disquette/</loc>
-    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dns/</loc>
-    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/dossiers/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dossiers/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/double-%C3%A9cran/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/dvi/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ecran/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/exploit/</loc>
-    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ext4/</loc>
-    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/fabriquer/</loc>
-    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/fin-du-pc/</loc>
-    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/fractal-design/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gist/</loc>
-    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/github/</loc>
-    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gitlab/</loc>
-    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/glowing-bear/</loc>
-    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gnupg/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gogs/</loc>
-    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/google/</loc>
-    <lastmod>2013-04-20T19:19:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gpg/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/guide-dachat/</loc>
-    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/guide-pc/</loc>
-    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/guides/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/guides/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hachage/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hd/</loc>
-    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hdmi/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hisoire/</loc>
-    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/histoire-du-pc/</loc>
-    <lastmod>2011-10-23T20:32:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/home-cin%C3%A9ma/</loc>
-    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/host/</loc>
-    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hotmail/</loc>
-    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/html/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/http/</loc>
-    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/http2/</loc>
-    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/https/</loc>
-    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2018-01-05T08:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/imac/</loc>
-    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/image/</loc>
-    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ios/</loc>
-    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ip/</loc>
-    <lastmod>2016-05-11T21:02:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ipad/</loc>
-    <lastmod>2016-01-11T19:21:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/iphone/</loc>
-    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/iphone-5/</loc>
-    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ipod-nano/</loc>
-    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ipod-touch/</loc>
-    <lastmod>2012-09-13T19:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/irc/</loc>
-    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/javascript/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/jeu/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/jeu-vid%C3%A9o/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/jpg/</loc>
-    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/jquery/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/kobo/</loc>
-    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ldlc/</loc>
-    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/lg/</loc>
-    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/liseuse/</loc>
-    <lastmod>2016-12-01T10:53:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/logiciels/</loc>
-    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/macbook-air/</loc>
-    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/macbook-pro/</loc>
-    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/macos/</loc>
-    <lastmod>2012-02-26T22:07:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mail/</loc>
-    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/messagerie/</loc>
-    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/microsoft/</loc>
-    <lastmod>2012-10-27T19:19:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mini-pc/</loc>
-    <lastmod>2011-01-22T22:32:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mise-%C3%A0-jour/</loc>
-    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/montage-pc/</loc>
-    <lastmod>2011-01-21T22:15:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/morpion/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/mots-de-passe/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/m%C3%A9moire/</loc>
-    <lastmod>2012-01-24T21:55:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nas/</loc>
-    <lastmod>2011-01-22T22:32:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nexus-7/</loc>
-    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nginx/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/openpgp/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ordinateur/</loc>
-    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/outlook/</loc>
-    <lastmod>2012-08-02T22:54:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/overclocking/</loc>
-    <lastmod>2012-03-31T00:20:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/paris-games-week/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pass/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pc/</loc>
-    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pc-portable/</loc>
-    <lastmod>2012-08-28T19:14:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pentest/</loc>
-    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pgp/</loc>
-    <lastmod>2018-07-18T23:40:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pgw/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/php/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/png/</loc>
-    <lastmod>2017-12-31T10:36:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/portable-2011/</loc>
-    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/portal-2/</loc>
-    <lastmod>2012-07-18T22:43:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/postgresql/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pot-%C3%A0-crayons/</loc>
-    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/printemps/</loc>
-    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/processeur/</loc>
-    <lastmod>2016-01-11T19:15:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/proc%C3%A8s/</loc>
-    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/protection/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ps4/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/python/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/python-3.7/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/quid/</loc>
-    <lastmod>2012-05-04T00:04:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ram/</loc>
-    <lastmod>2012-01-24T21:55:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/recyclage/</loc>
-    <lastmod>2012-06-08T21:40:16+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/recycler/</loc>
-    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rentree-2011/</loc>
-    <lastmod>2011-09-06T20:34:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rgpd/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rsa/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r%C3%A9installation/</loc>
-    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r%C3%A9seau/</loc>
-    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/samsung/</loc>
-    <lastmod>2016-01-11T18:52:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/sauvegarde/</loc>
-    <lastmod>2016-01-11T19:07:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/script/</loc>
-    <lastmod>2016-10-02T08:49:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/seconde-vie/</loc>
-    <lastmod>2011-10-05T21:16:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/serveur/</loc>
-    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ssd/</loc>
-    <lastmod>2011-05-29T19:44:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ssh/</loc>
-    <lastmod>2018-06-22T18:07:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ssl/</loc>
-    <lastmod>2016-05-11T21:01:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/steve-jobs/</loc>
-    <lastmod>2011-11-06T19:06:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/stockage/</loc>
-    <lastmod>2011-05-29T19:44:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/stretch/</loc>
-    <lastmod>2019-03-04T19:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/surcouf/</loc>
-    <lastmod>2012-03-31T00:20:11+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/surface/</loc>
-    <lastmod>2016-01-11T18:56:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/syst%C3%A8me-de-fichier/</loc>
-    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/s%C3%A9curit%C3%A9/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tablette/</loc>
-    <lastmod>2012-07-02T23:24:44+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/technique/</loc>
-    <lastmod>2011-05-18T18:53:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/test/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/thunderbolt/</loc>
-    <lastmod>2011-10-09T21:40:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tic-tac-toe/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tour/</loc>
-    <lastmod>2012-08-27T22:42:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tuto/</loc>
-    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tuto-wibb/</loc>
-    <lastmod>2017-12-27T18:39:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tutoriels/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/tutoriels/</loc>
-    <lastmod>2013-12-12T18:35:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/usb/</loc>
-    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/valve/</loc>
-    <lastmod>2012-07-18T22:43:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/veille-technologique/</loc>
-    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ventilateur/</loc>
-    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vga/</loc>
-    <lastmod>2011-11-05T21:46:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vid%C3%A9o/</loc>
-    <lastmod>2012-05-25T23:32:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vie-priv%C3%A9e/</loc>
-    <lastmod>2018-01-28T16:28:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/vps/</loc>
-    <lastmod>2016-05-11T21:01:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/weechat/</loc>
-    <lastmod>2018-10-04T18:43:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/wibb/</loc>
-    <lastmod>2016-01-11T19:46:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/windows/</loc>
-    <lastmod>2012-10-27T19:19:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/windows-8/</loc>
-    <lastmod>2012-10-27T19:19:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/wordpress/</loc>
-    <lastmod>2018-01-05T08:54:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/xbox-one/</loc>
-    <lastmod>2013-11-06T18:43:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/yubikey/</loc>
-    <lastmod>2018-06-22T18:07:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/zfs/</loc>
-    <lastmod>2014-11-20T14:52:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-03-09T10:38:07+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%C3%A9cologie/</loc>
-    <lastmod>2011-06-18T19:56:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/%C3%A9lectronique/</loc>
-    <lastmod>2011-05-18T23:20:22+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/works/en/</loc>
   </url>
   
 </urlset>
