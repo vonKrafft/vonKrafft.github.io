@@ -53,7 +53,7 @@
 
     &lt;figure&gt;
         
-            &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; class=&#34;image featured center&#34;&gt;
+            &lt;a href=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a.jpg&#34; class=&#34;image featured center&#34; data-fancybox=&#34;gallery&#34;&gt;
                 &lt;img src=&#34;/media/2012/08/c7161344758092b2199b0e6d03faaf1a-1024x471.jpg&#34; alt=&#34;&#34;&gt;
             &lt;/a&gt;
         
