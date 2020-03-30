@@ -6,10 +6,19 @@
     <description>Recent content in Categories on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 12:22:12 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Write-up</title>
+      <link>/categories/write-up/</link>
+      <pubDate>Mon, 30 Mar 2020 12:22:12 +0000</pubDate>
+      
+      <guid>/categories/write-up/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tutoriels</title>
@@ -17,15 +26,6 @@
       <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
       <guid>/categories/tutoriels/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Write-up</title>
-      <link>/categories/write-up/</link>
-      <pubDate>Sun, 07 Apr 2019 20:21:54 +0000</pubDate>
-      
-      <guid>/categories/write-up/</guid>
       <description></description>
     </item>
     

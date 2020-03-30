@@ -3,8 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/write-up/ctf-tamu-obituary-500/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
-    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ctf/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pentest/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vim/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/write-up/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
   </url>
   
   <url>
@@ -38,11 +78,6 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/tasmota/</loc>
     <lastmod>2020-03-29T18:35:51+00:00</lastmod>
   </url>
@@ -58,17 +93,7 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-03-29T18:35:51+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/write-up/ctf-esgi-my-name-is-rookie-350/</loc>
-    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ctf/</loc>
     <lastmod>2019-04-08T21:32:30+00:00</lastmod>
   </url>
   
@@ -89,16 +114,6 @@
   
   <url>
     <loc>/tags/tomcat/</loc>
-    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/write-up/</loc>
-    <lastmod>2019-04-08T21:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/write-up/</loc>
     <lastmod>2019-04-08T21:32:30+00:00</lastmod>
   </url>
   
@@ -434,11 +449,6 @@
   
   <url>
     <loc>/securite/repertoire-git-accessible/</loc>
-    <lastmod>2017-03-15T12:54:26+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/pentest/</loc>
     <lastmod>2017-03-15T12:54:26+00:00</lastmod>
   </url>
   

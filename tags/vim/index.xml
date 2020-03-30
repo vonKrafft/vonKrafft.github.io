@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on vonKrafft</title>
+    <link>/tags/vim/</link>
+    <description>Recent content in vim on vonKrafft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Mon, 30 Mar 2020 12:22:12 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[EN] [CTF] TAMU - Obituary</title>
+      <link>/write-up/ctf-tamu-obituary-500/</link>
+      <pubDate>Mon, 30 Mar 2020 12:22:12 +0000</pubDate>
+      
+      <guid>/write-up/ctf-tamu-obituary-500/</guid>
+      <description>Hey, shoot me over your latest version of the code. I have a simple nc session up, just pass it over when you&amp;rsquo;re ready. You&amp;rsquo;re using vim, right? You should use it; it&amp;rsquo;ll change your life. I basically depend on it for everything these days!
+NOTE: This challenge is two parts. Flag one belongs to mwazoski. Flag two belongs to root.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  client nobind dev tap remote-cert-tls server float explicit-exit-notify remote obituary.</description>
+    </item>
+    
+  </channel>
+</rss>

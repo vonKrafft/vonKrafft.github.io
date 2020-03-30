@@ -849,13 +849,6 @@ a.image.featured img {
 	transition: transform 0.2s ease-out;
 }
 
-a.image.featured:hover img {
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
-}
-
 .image.main {
 	display: block;
 	margin: 0 0 3em 0;
@@ -1257,13 +1250,6 @@ dl dd {
 	width: 100%;
 }
 
-.mini-post .image:hover img {
-	-moz-transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
-}
-
 .mini-post .image.featured {
 	margin: 0;
 }
@@ -1520,13 +1506,6 @@ dl dd {
 	-webkit-transition: -webkit-transform 0.2s ease-out;
 	-ms-transition: -ms-transform 0.2s ease-out;
 	transition: transform 0.2s ease-out;
-}
-
-.post > .image.featured:hover img {
-	-moz-transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
 }
 
 .post > footer {
@@ -1827,13 +1806,6 @@ dl dd {
 	-webkit-transition: -webkit-transform 0.2s ease-out;
 	-ms-transition: -ms-transform 0.2s ease-out;
 	transition: transform 0.2s ease-out;
-}
-
-.itemized > .image.featured:hover img {
-	-moz-transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	transform: scale(1.05);
 }
 
 .itemized > footer {

