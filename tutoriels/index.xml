@@ -6,10 +6,23 @@
     <description>Recent content in Tutoriels on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 29 Mar 2020 15:23:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 09:27:31 +0000</lastBuildDate>
     
 	<atom:link href="/tutoriels/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installer Domoticz et Homebridge sur un Raspberry Pi</title>
+      <link>/tutoriels/installer-domoticz-homebridge-raspberry-pi/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tutoriels/installer-domoticz-homebridge-raspberry-pi/</guid>
+      <description>Domoticz est, parmi tant d&amp;rsquo;autres solutions, un système permettant de centraliser la gestion des prises connectées, mais aussi des autres équipements domotiques. Cet article fait suite à un premier tutoriel expliquant comment installer Tasmota sur des prises Sonoff.
+50 euros
+Temps estimé : 30 minutes
+Il vous faut : Un Raspberry Pi 3B&amp;#43; (ou équivalent)
+12345 Installation de Domoticz sur un Raspberry Pi Commençons par télécharger Raspbian.</description>
+    </item>
     
     <item>
       <title>Des prises connectées Sonoff avec Tasmota</title>

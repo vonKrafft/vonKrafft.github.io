@@ -3,13 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/write-up/ctf-tamu-obituary-500/</loc>
-    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
+    <loc>/tags/domoticz/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/domotique/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/google/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/google-home/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/homebridge/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutoriels/installer-domoticz-homebridge-raspberry-pi/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/raspberry-pi/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/tutoriels/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutoriels/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-05-09T15:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/write-up/ctf-tamu-obituary-500/</loc>
+    <lastmod>2020-03-30T18:11:58+00:00</lastmod>
   </url>
   
   <url>
@@ -23,18 +78,8 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/vim/</loc>
     <lastmod>2020-03-30T18:11:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
   </url>
   
   <url>
@@ -53,22 +98,7 @@
   </url>
   
   <url>
-    <loc>/tags/domotique/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/esp8266/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/google/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/google-home/</loc>
     <lastmod>2020-05-09T14:47:11+00:00</lastmod>
   </url>
   
@@ -79,16 +109,6 @@
   
   <url>
     <loc>/tags/tasmota/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tutoriels/</loc>
-    <lastmod>2020-05-09T14:47:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutoriels/</loc>
     <lastmod>2020-05-09T14:47:11+00:00</lastmod>
   </url>
   

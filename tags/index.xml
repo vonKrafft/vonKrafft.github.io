@@ -6,10 +6,64 @@
     <description>Recent content in Tags on vonKrafft</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 30 Mar 2020 12:22:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 09:27:31 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Domoticz</title>
+      <link>/tags/domoticz/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/domoticz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Domotique</title>
+      <link>/tags/domotique/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/domotique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>/tags/google/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Home</title>
+      <link>/tags/google-home/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/google-home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homebridge</title>
+      <link>/tags/homebridge/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/homebridge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>/tags/raspberry-pi/</link>
+      <pubDate>Sat, 09 May 2020 09:27:31 +0000</pubDate>
+      
+      <guid>/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CTF</title>
@@ -39,38 +93,11 @@
     </item>
     
     <item>
-      <title>Domotique</title>
-      <link>/tags/domotique/</link>
-      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
-      
-      <guid>/tags/domotique/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ESP8266</title>
       <link>/tags/esp8266/</link>
       <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
       
       <guid>/tags/esp8266/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>/tags/google/</link>
-      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
-      
-      <guid>/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google Home</title>
-      <link>/tags/google-home/</link>
-      <pubDate>Sun, 29 Mar 2020 15:23:50 +0000</pubDate>
-      
-      <guid>/tags/google-home/</guid>
       <description></description>
     </item>
     
