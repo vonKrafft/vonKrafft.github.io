@@ -5,7 +5,7 @@
     <title>Une interface Web pour IRC avec Docker :: vonKrafft.fr</title>
 
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
     <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
@@ -418,7 +418,6 @@ if (!doNotTrack) {
         <time class="published"
             datetime='2018-10-04'>
             4 octobre 2018</time>
-        <span class="author"></span>
 
         
             <p>7 minutes de lecture</p>
@@ -518,7 +517,7 @@ if (!doNotTrack) {
 
 
 <div class="alert alert-warning" role="alert">
-    <i class="fa fa-exclamation-circle"></i>&nbsp;J&rsquo;ai défini l&rsquo;uid et le gid du compte <code>weechat</code> à <em>1000</em>. La valeur de ces uid/gid importent peu pour notre images, à condition d'être supérieurs ou égaux à <em>1000</em>. Par la suite, nous allons créer un utilisateur sur l&rsquo;hôte avec les mêmes uid/gid, donc assurez vous que ces valeurs sont disponibles sur l&rsquo;hôte et changez-les si besoin.
+    <i class="fa fa-exclamation-circle"></i>&nbsp;J&rsquo;ai défini l&rsquo;uid et le gid du compte <code>weechat</code> à <em>1000</em>. La valeur de ces uid/gid importent peu pour notre images, à condition d&rsquo;être supérieurs ou égaux à <em>1000</em>. Par la suite, nous allons créer un utilisateur sur l&rsquo;hôte avec les mêmes uid/gid, donc assurez vous que ces valeurs sont disponibles sur l&rsquo;hôte et changez-les si besoin.
 </div>
 <p>Ensuite, il nous suffit de construire notre image avec la commande <code>docker build</code> (attention de ne pas oublier le point à la fin de la commande) :</p>
 <pre><code class="language-terminal" data-lang="terminal">debian:~$ docker build -t vonkrafft/weechat:latest .
@@ -643,7 +642,7 @@ debian:~$ rm -r /docker/web-irc/www/.git</code></pre>
 
 
 <div class="alert alert-danger" role="alert">
-    <i class="fa fa-exclamation-triangle"></i>&nbsp;Attention !!! En l'état, le conteneur Nginx héberge votre serveur HTTP sur le port TCP/80, donc non chiffré. Je vous conseille fortement de mettre en place le HTTPS (surtout si votre site est exposé sur Internet). Par exemple, vous pouvez utiliser un proxy : <a href="https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/">LetsEncrypt container to use with nginx as proxy</a>.
+    <i class="fa fa-exclamation-triangle"></i>&nbsp;Attention !!! En l&rsquo;état, le conteneur Nginx héberge votre serveur HTTP sur le port TCP/80, donc non chiffré. Je vous conseille fortement de mettre en place le HTTPS (surtout si votre site est exposé sur Internet). Par exemple, vous pouvez utiliser un proxy : <a href="https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/">LetsEncrypt container to use with nginx as proxy</a>.
 </div>
 
 
@@ -792,7 +791,7 @@ debian:~$ rm -r /docker/web-irc/www/.git</code></pre>
   <div class="post-copyright">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
-    Cet article a été publié il y a <strong>543</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    Cet article a été publié il y a <strong>582</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
     
   </div>
 
@@ -1021,21 +1020,6 @@ debian:~$ rm -r /docker/web-irc/www/.git</code></pre>
               </time>
             </header>
             <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
-              </h3>
-              
-              <time class="published" datetime='2019-03-04'>
-                4 mars 2019
-              </time>
-            </header>
-            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
             
 
           </article>

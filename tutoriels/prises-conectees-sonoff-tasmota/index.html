@@ -5,7 +5,7 @@
     <title>Des prises connectées Sonoff avec Tasmota :: vonKrafft.fr</title>
 
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
     <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
@@ -33,7 +33,7 @@
     
 
         <meta name="author" content='' />
-        <meta name="description" content="Ayant vendu mon âme au diable à Big Brother fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&#39;était pas très éloigné d&amp;rsquo;une enceinte Bluetooth classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.
+        <meta name="description" content="Ayant vendu mon âme au diable à Big Brother fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&amp;rsquo;était pas très éloigné d&amp;rsquo;une enceinte Bluetooth classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.
 " />
 
         
@@ -43,7 +43,7 @@
 
         <meta name="twitter:site" content="@" />
         <meta name="twitter:title" content="Des prises connectées Sonoff avec Tasmota" />
-        <meta name="twitter:description" content="Ayant vendu mon âme au diable à Big Brother fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&#39;était pas très éloigné d&amp;rsquo;une enceinte Bluetooth classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.
+        <meta name="twitter:description" content="Ayant vendu mon âme au diable à Big Brother fin 2019 lors de l&amp;rsquo;acquisition d&amp;rsquo;un Google Home Mini, je me suis vite aperçu que l&amp;rsquo;usage que j&amp;rsquo;en avais n&amp;rsquo;était pas très éloigné d&amp;rsquo;une enceinte Bluetooth classique. Désireux d&amp;rsquo;en faire plus, je me suis mis en tête d&amp;rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.
 " />
 
     
@@ -420,7 +420,6 @@ if (!doNotTrack) {
         <time class="published"
             datetime='2020-03-29'>
             29 mars 2020</time>
-        <span class="author"></span>
 
         
             <p>6 minutes de lecture</p>
@@ -434,8 +433,8 @@ if (!doNotTrack) {
   
 
   <div id="content">
-    <p>Ayant vendu mon âme <del>au diable</del> à <em>Big Brother</em> fin 2019 lors de l&rsquo;acquisition d&rsquo;un Google Home Mini, je me suis vite aperçu que l&rsquo;usage que j&rsquo;en avais n'était pas très éloigné d&rsquo;une enceinte <em>Bluetooth</em> classique. Désireux d&rsquo;en faire plus, je me suis mis en tête d&rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.</p>
-<p>Mais alors là, plusieurs soucis. Premièrement <strong>ces prises coûtent les yeux de la tête !</strong> Non mais 30 euros minimum pour un module <code>ESP8266</code> et un (plus ou moins) joli boîtier, c&rsquo;est un peu abusé &hellip; De plus, ces prises font souvent parti de <strong>l'écosystème du fabriquant</strong>, vous obligeant à acheter tous vos appareils domotiques chez le même constructeur, avec le risque dans le cas contraire de vous retrouver avec de multiples comptes sur les différentes plate-forme en ligne. Et voilà le dernier gros soucis : le <em>Cloud</em>. Relier les appareils de <strong>mon réseau local sur Internet</strong>, impliquant souvent d&rsquo;ouvrir des ports sur la box, ça me tente pas trop &hellip;</p>
+    <p>Ayant vendu mon âme <del>au diable</del> à <em>Big Brother</em> fin 2019 lors de l&rsquo;acquisition d&rsquo;un Google Home Mini, je me suis vite aperçu que l&rsquo;usage que j&rsquo;en avais n&rsquo;était pas très éloigné d&rsquo;une enceinte <em>Bluetooth</em> classique. Désireux d&rsquo;en faire plus, je me suis mis en tête d&rsquo;acheter des prises connectées pour contrôler mes lumières à la voix.</p>
+<p>Mais alors là, plusieurs soucis. Premièrement <strong>ces prises coûtent les yeux de la tête !</strong> Non mais 30 euros minimum pour un module <code>ESP8266</code> et un (plus ou moins) joli boîtier, c&rsquo;est un peu abusé &hellip; De plus, ces prises font souvent parti de <strong>l&rsquo;écosystème du fabriquant</strong>, vous obligeant à acheter tous vos appareils domotiques chez le même constructeur, avec le risque dans le cas contraire de vous retrouver avec de multiples comptes sur les différentes plate-forme en ligne. Et voilà le dernier gros soucis : le <em>Cloud</em>. Relier les appareils de <strong>mon réseau local sur Internet</strong>, impliquant souvent d&rsquo;ouvrir des ports sur la box, ça me tente pas trop &hellip;</p>
 <h2 id="une-prise-connectée-fait-maison">Une prise connectée &ldquo;fait maison&rdquo;</h2>
 <p>Pour se fabriquer une prise connectée, il me faut un relais et un module <code>ESP8266</code>. Oui mais mon module et le signal de commande du relais fonctionnent en courant faible, il me faut donc également un transformateur pour passer du <em>230V 50Hz</em> au <em>5V continu</em>. Et c&rsquo;est là qu&rsquo;est le problème.</p>
 
@@ -452,8 +451,8 @@ if (!doNotTrack) {
 </div>
 <p>Achetés séparément et en petite quantité (je n&rsquo;ai pas besoin de centaines de prises connectées), tous ces composants coûtent finalement cher et on se rapproche des tarifs d&rsquo;une prise commercialisée pour le grand public. De plus, ces composants prennent de la place, et j&rsquo;aimerais ne pas avoir une boîte à chaussure au pied de chacune de mes lampes &hellip;</p>
 <h2 id="sonoff--tasmota-la-solution">Sonoff + Tasmota, la solution</h2>
-<p>Lorsqu&rsquo;on cherche comment faire de la domotique <em>DIY</em>, on tombe rapidement sur la pléthore de Tutos expliquant comment flasher un module <strong>Sonoff</strong>. Ces modules, basés sur un <code>ESP8285</code> (variante du <code>ESP8266</code> avec 1Mo de mémoire), ne diffèrent pas beaucoup des prises connectées classiques et disposent elles aussi d&rsquo;un écosystème <em>Cloud</em>. Mais ils ont l&rsquo;avantage d'être bon marché, facilement démontables et peu encombrants.</p>
-<p>Je me suis donc tourné vers l&rsquo;achat de deux <strong><a href="https://www.amazon.fr/gp/product/B082W4ZWLW/">Sonoff Basic R2</a></strong> pour tester cette solution. Le module est constitué d&rsquo;un relais, une puce <code>ESP8285</code> (Wi-Fi 802.11 b/g/n, 1Mo Built-in Flash), un transformateur <em>90-250V &gt; 5V</em> et fonctionne par conséquent sur le <em>230V 50Hz</em> européen. Pour s&rsquo;affranchir de l'écosystème <em>eWeLink</em> mis à disposition par <em>Sonoff</em>, il est également possible de facilement flasher le firmware du microcontrôleur pour en utiliser un autre. Et c&rsquo;est ce que j&rsquo;ai fait en m&rsquo;orientant vers <strong><a href="https://github.com/arendst/Tasmota">Tasmota</a></strong>.</p>
+<p>Lorsqu&rsquo;on cherche comment faire de la domotique <em>DIY</em>, on tombe rapidement sur la pléthore de Tutos expliquant comment flasher un module <strong>Sonoff</strong>. Ces modules, basés sur un <code>ESP8285</code> (variante du <code>ESP8266</code> avec 1Mo de mémoire), ne diffèrent pas beaucoup des prises connectées classiques et disposent elles aussi d&rsquo;un écosystème <em>Cloud</em>. Mais ils ont l&rsquo;avantage d&rsquo;être bon marché, facilement démontables et peu encombrants.</p>
+<p>Je me suis donc tourné vers l&rsquo;achat de deux <strong><a href="https://www.amazon.fr/gp/product/B082W4ZWLW/">Sonoff Basic R2</a></strong> pour tester cette solution. Le module est constitué d&rsquo;un relais, une puce <code>ESP8285</code> (Wi-Fi 802.11 b/g/n, 1Mo Built-in Flash), un transformateur <em>90-250V &gt; 5V</em> et fonctionne par conséquent sur le <em>230V 50Hz</em> européen. Pour s&rsquo;affranchir de l&rsquo;écosystème <em>eWeLink</em> mis à disposition par <em>Sonoff</em>, il est également possible de facilement flasher le firmware du microcontrôleur pour en utiliser un autre. Et c&rsquo;est ce que j&rsquo;ai fait en m&rsquo;orientant vers <strong><a href="https://github.com/arendst/Tasmota">Tasmota</a></strong>.</p>
 <div class="supply">
     <div class="supply-body">
         <p class="supply-cost">10 <span>euros</span></p>
@@ -792,7 +791,7 @@ Host is up (0.0097s latency).</code></pre>
     </figure>
 
 
-<p>Et voilà, une <strong>prise connectée</strong> peu onéreuse qui nous permet de commander une lampe ou tout type d&rsquo;appareil 230V (10A max.) ! Personnellement, je ne me suis pas arrêté là et je me suis installé une centrale domotique sur un <em>Raspberry Pi</em> que j&rsquo;ai relié à ma <em>Google Home Mini</em> pour un contrôle à la voix, mais ce sera l&rsquo;objet d&rsquo;un autre article :)</p>
+<p>Et voilà, une <strong>prise connectée</strong> peu onéreuse qui nous permet de commander une lampe ou tout type d&rsquo;appareil 230V (10A max.) ! Personnellement, je ne me suis pas arrêté là et je me suis installé une centrale domotique sur un <em>Raspberry Pi</em> que j&rsquo;ai relié à ma <em>Google Home Mini</em> pour un contrôle à la voix, mais c&rsquo;est&rsquo; l&rsquo;objet d&rsquo;un <a href="/tutoriels/installer-domoticz-homebridge-raspberry-pi/">autre article</a> :)</p>
   </div>
 
   <footer>
@@ -1068,21 +1067,6 @@ Host is up (0.0097s latency).</code></pre>
               </time>
             </header>
             <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
-              </h3>
-              
-              <time class="published" datetime='2019-03-04'>
-                4 mars 2019
-              </time>
-            </header>
-            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
             
 
           </article>

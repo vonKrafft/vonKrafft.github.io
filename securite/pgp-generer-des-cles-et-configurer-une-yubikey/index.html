@@ -5,7 +5,7 @@
     <title>PGP : Générer des clés et configurer une Yubikey :: vonKrafft.fr</title>
 
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
     <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
@@ -420,7 +420,6 @@ if (!doNotTrack) {
         <time class="published"
             datetime='2018-06-22'>
             22 juin 2018</time>
-        <span class="author"></span>
 
         
             <p>13 minutes de lecture</p>
@@ -599,10 +598,10 @@ uid                   [ultimate] Wandrille &amp;lt;contact at vonkrafft dot fr&a
 <div class="alert alert-info" role="alert">
     <i class="fa fa-info-circle"></i>&nbsp;J&rsquo;ai mis une date d&rsquo;expiration de ma clé primaire à un an car je suis masochiste et j&rsquo;adore générer des clés PGP tous les ans &hellip; Blague à part, j&rsquo;ai généré cette nouvelle clé PGP pour ma Yubikey à des fins de test, et je vais très probablement générer une nouvelle clé dans l&rsquo;année.
 </div>
-<p>L'étape suivante est de générer nos trois sous-clés :</p>
+<p>L&rsquo;étape suivante est de générer nos trois sous-clés :</p>
 <pre><code class="language-terminal" data-lang="terminal">debian:~$ gpg2 --expert --edit-key 788FC46C8BB350B8
 gpg&gt; addkey</code></pre>
-<p>GnuPG dispose d&rsquo;une interface de commande pour l'édition des clés. Pour ajouter une clé, saisir <code>addkey</code>, puis choisir l&rsquo;option <strong>(8) RSA (set your own capabilities)</strong>, désactiver tous les rôles sauf <strong>Sign</strong> et générer une clé de 2048 bits.</p>
+<p>GnuPG dispose d&rsquo;une interface de commande pour l&rsquo;édition des clés. Pour ajouter une clé, saisir <code>addkey</code>, puis choisir l&rsquo;option <strong>(8) RSA (set your own capabilities)</strong>, désactiver tous les rôles sauf <strong>Sign</strong> et générer une clé de 2048 bits.</p>
 
 
     
@@ -614,7 +613,7 @@ gpg&gt; addkey</code></pre>
 
 <div class="alert alert-warning" role="alert">
     <i class="fa fa-question-circle"></i>&nbsp;<strong>Mais pourquoi utiliser RSA 2048 bits ?</strong><br>
-La Yubikey NEO, à l&rsquo;heure où j'écris ces lignes, ne supporte que RSA 2048 and ECC p256. J&rsquo;ai utilisé ici des clés RSA, mais libre à vous de générer des clés ECC en sélectionnant l&rsquo;option <strong>(11) ECC (set your own capabilities)</strong>.
+La Yubikey NEO, à l&rsquo;heure où j&rsquo;écris ces lignes, ne supporte que RSA 2048 and ECC p256. J&rsquo;ai utilisé ici des clés RSA, mais libre à vous de générer des clés ECC en sélectionnant l&rsquo;option <strong>(11) ECC (set your own capabilities)</strong>.
 </div>
 <p>Répéter l&rsquo;opération pour générer les deux autres clés avec les rôles <strong>Encrypt</strong> et <strong>Authenticate</strong>, puis enregistrer les modifications :</p>
 <pre><code class="language-terminal" data-lang="terminal">gpg&gt; quit
@@ -682,9 +681,9 @@ Commit? (y/n) [n]: y</code></pre>
 <p>La dernière étape consiste à personnaliser la clé. Vous pouvez y renseigner votre nom, langue, pseudo, sexe et l&rsquo;URL à laquelle votre clé publique est disponible (nous verrons sans doute dans un autre article comment mettre notre clé publique en ligne).</p>
 <pre><code class="language-terminal" data-lang="terminal">debian:~$ gpg2 --card-edit</code></pre>
 <p>Le plus important ici est de <strong>modifier les codes PIN par défaut</strong>. Et oui, ça ne sert pas à grand-chose de protéger ses clés privées sur une Yubikey si tout le monde peut les utiliser (à condition de détenir physiquement votre Yubikey).</p>
-<p>Dans l&rsquo;interface d'édition de la Yubikey, tapez <code>admin</code> afin d&rsquo;activer les commandes d&rsquo;administration. Ensuite, tapez <code>passwd</code> pour changer le code PIN et le code PIN admin. Par défaut, le PIN est <code>123456</code> et le PIN admin est <code>12345678</code> Sauvegardez vos modifications et quitter l&rsquo;interface d'édition de la Yubikey.</p>
+<p>Dans l&rsquo;interface d&rsquo;édition de la Yubikey, tapez <code>admin</code> afin d&rsquo;activer les commandes d&rsquo;administration. Ensuite, tapez <code>passwd</code> pour changer le code PIN et le code PIN admin. Par défaut, le PIN est <code>123456</code> et le PIN admin est <code>12345678</code> Sauvegardez vos modifications et quitter l&rsquo;interface d&rsquo;édition de la Yubikey.</p>
 <h3 id="importer-nos-clés-sur-la-yubikey">Importer nos clés sur la Yubikey</h3>
-<p>Dernière étape : importer les trois sous-clés sur la Yubikey. Pour cela, il nous faut la console d'édition de notre clé PGP.</p>
+<p>Dernière étape : importer les trois sous-clés sur la Yubikey. Pour cela, il nous faut la console d&rsquo;édition de notre clé PGP.</p>
 <pre><code class="language-terminal" data-lang="terminal">debian:~$ gpg2 --edit-key 788FC46C8BB350B8
 pub  rsa4096/0x788FC46C8BB350B8
 created: 2018-06-15  expires: 2019-06-15  usage: C   
@@ -764,7 +763,7 @@ debian:~$ echo &#34;source ~/.gpg-yubikey&#34; &gt;&gt; ~/.zshrc                
 ssh-rsa AAAA[...]UhB9OUWmkFt5DFMrJpYAhSuz cardno:000..........
 ecdsa-sha2-nistp521 AAAA[...]EHrYHEkXOQ== ~/.ssh/id_ecdsa
 ssh-rsa AAA[...]ZC0ktDvMBKLKHdp9iIJnbswm3 ~/.ssh/id_rsa</code></pre>
-<p>Il ne nous reste plus qu'à exporter la clé publique et la copier sur le serveur dans le fichier <code>~/.ssh/authorized_keys</code>.</p>
+<p>Il ne nous reste plus qu&rsquo;à exporter la clé publique et la copier sur le serveur dans le fichier <code>~/.ssh/authorized_keys</code>.</p>
 <pre><code class="language-terminal" data-lang="terminal">debian:~$ gpg2 --export-ssh-key 788FC46C8BB350B8 &gt; ~/.ssh/yubikey.pub</code></pre>
 <p>Vous pouvez également modifier votre fichier de configuration <code>~/.ssh/config</code> pour utiliser la clé publique et l&rsquo;agent GPG se chargera du reste &hellip;</p>
 <div class="highlight"><div class="chroma">
@@ -855,7 +854,7 @@ Reader ...........: Yubico Yubikey NEO OTP CCID 00 00
   <div class="post-copyright">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
-    Cet article a été publié il y a <strong>647</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    Cet article a été publié il y a <strong>686</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
     
   </div>
 
@@ -1084,21 +1083,6 @@ Reader ...........: Yubico Yubikey NEO OTP CCID 00 00
               </time>
             </header>
             <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
-              </h3>
-              
-              <time class="published" datetime='2019-03-04'>
-                4 mars 2019
-              </time>
-            </header>
-            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
             
 
           </article>

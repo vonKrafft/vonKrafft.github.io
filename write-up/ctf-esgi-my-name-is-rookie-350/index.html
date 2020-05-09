@@ -5,7 +5,7 @@
     <title>[CTF] ESGI - My Name is Rookie :: vonKrafft.fr</title>
 
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
     <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
@@ -424,7 +424,6 @@ if (!doNotTrack) {
         <time class="published"
             datetime='2019-04-07'>
             7 avril 2019</time>
-        <span class="author"></span>
 
         
             <p>10 minutes de lecture</p>
@@ -444,7 +443,7 @@ if (!doNotTrack) {
 ssh = ctf.hacklab-esgi.org:5007</p>
 </blockquote>
 <h2 id="le-site-web-de-zedcorp">Le site Web de ZedCorp</h2>
-<p>L'énoncé nous donne deux ports TCP, un service HTTP et un accès SSH. Nous pouvons donc d&rsquo;ores et déjà supposer que nous trouverons de quoi nous connecter en SSH via le site Web.</p>
+<p>L&rsquo;énoncé nous donne deux ports TCP, un service HTTP et un accès SSH. Nous pouvons donc d&rsquo;ores et déjà supposer que nous trouverons de quoi nous connecter en SSH via le site Web.</p>
 
 
 
@@ -645,7 +644,7 @@ trobin:x:1004:1004:Thibaud Robin,8,0145674356,0145674356,Trainee full stack deve
 </div>
 </div></p>
 <h2 id="se-connecter-en-ssh">Se connecter en SSH</h2>
-<p>N&rsquo;oublions pas que l'énoncé comportait un port SSH (TCP/5007). Précédement, nous avons vu qu&rsquo;il y a deux utilisateurs sur le serveur : <strong>test</strong> et <strong>trobin</strong>. En utilisant la LFI, nous pouvons trouver les clés RSA de l&rsquo;utilisateur <strong>test</strong> dans le répertoire <code>/home/test/.ssh</code> :</p>
+<p>N&rsquo;oublions pas que l&rsquo;énoncé comportait un port SSH (TCP/5007). Précédement, nous avons vu qu&rsquo;il y a deux utilisateurs sur le serveur : <strong>test</strong> et <strong>trobin</strong>. En utilisant la LFI, nous pouvons trouver les clés RSA de l&rsquo;utilisateur <strong>test</strong> dans le répertoire <code>/home/test/.ssh</code> :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -825,7 +824,7 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters</code></pre></td></tr></table>
 </div>
 </div>
-<p>Comme quoi, la RCE n'était pas forcément utile &hellip;</p>
+<p>Comme quoi, la RCE n&rsquo;était pas forcément utile &hellip;</p>
 <h2 id="scan-du-réseau-interne">Scan du réseau interne</h2>
 <p>En utilisant Proxychains et Nmap, nous pouvons cartographier le réseau interne de <em>ZedCorp</em> :</p>
 <p><pre><code class="language-terminal" data-lang="terminal">host:~$ proxychains nmap 10.0.0.2
@@ -902,7 +901,7 @@ Nmap done: 1 IP address (1 host up) scanned in 4.59 seconds</code></pre></p>
 <p>Hop, <code>ceo:ceo</code> et nous sommes authentifié ! Mais nous obtenons le message <em>&ldquo;ERROR: CEO session is currently deactivated for maintenance&rdquo;</em>.</p>
 <p>Autre information sur la TODO-list : il est mentionné la mise en place de backup FTP, et effectivement le compte <strong>backup</strong> existe sur le service FTP du serveur d&rsquo;administration.</p>
 <blockquote>
-<p>Après avoir passé pas mal de temps sur ce formulaire, je me décide à aller voir l&rsquo;auteur du challenge qui m&rsquo;informe que le comportement du formulaire d&rsquo;authentification n'était pas intentionnel.</p>
+<p>Après avoir passé pas mal de temps sur ce formulaire, je me décide à aller voir l&rsquo;auteur du challenge qui m&rsquo;informe que le comportement du formulaire d&rsquo;authentification n&rsquo;était pas intentionnel.</p>
 </blockquote>
 <h2 id="rce-tomcat">RCE Tomcat</h2>
 <p>Les pages d&rsquo;erreur obtenue sur le serveur Tomcat nous divulguent sur la version : <strong>Apache Tomcat 7.0.41</strong>. Une petite recherche rapide sur Internet nous informe que cette version est vulnérable à la <a href="https://www.cvedetails.com/cve-details.php?t=1&amp;cve_id=CVE-2017-12617"><strong>CVE-2017-12617</strong></a> si jamais la méthode PUT est acceptée &hellip; Et elle l&rsquo;est. Nous poussons donc notre Webshell JSP sur le serveur :</p>
@@ -1146,6 +1145,8 @@ host:~$ cat credentials.txt</code></pre>
   <div class="post-copyright">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
+    Cet article a été publié il y a <strong>396</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    
   </div>
 
 </article>
@@ -1373,21 +1374,6 @@ host:~$ cat credentials.txt</code></pre>
               </time>
             </header>
             <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
-              </h3>
-              
-              <time class="published" datetime='2019-03-04'>
-                4 mars 2019
-              </time>
-            </header>
-            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
             
 
           </article>

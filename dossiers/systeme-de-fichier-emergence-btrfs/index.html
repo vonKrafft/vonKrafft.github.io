@@ -5,7 +5,7 @@
     <title>Système de fichier : l&#39;émergence de btrfs ? :: vonKrafft.fr</title>
 
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     <link rel="shortcut icon" href='/img/favicon.png' type="image/png" />
     <link rel="apple-touch-icon" href='/img/apple-touch-icon.png' />
@@ -420,7 +420,6 @@ if (!doNotTrack) {
         <time class="published"
             datetime='2014-11-20'>
             20 novembre 2014</time>
-        <span class="author"></span>
 
         
             <p>27 minutes de lecture</p>
@@ -445,7 +444,7 @@ if (!doNotTrack) {
 <p>Btrfs est supporté par beaucoup des distributions les plus populaires : Debian, Ubuntu, OpenSuSE (qui en a fait son système de fichier par défaut depuis OpenSuSE 13.2), etc. Par ailleurs, deux entreprises proposent du support pour Btrfs : SUSE Enterprise Linux (depuis SLES11 SP2) et Oracle (depuis Oracle Linux 5).</p>
 <h2 id="btrfs--la-base">Btrfs : la base</h2>
 <h3 id="structure">Structure</h3>
-<p>Btrfs utilise une structure de type arbre B pour stocker les métadonnées. Un arbre B a l&rsquo;avantage d'être toujours équilibré ce qui garantit un temps de recherche et d&rsquo;insertion en log base B de la hauteur de l&rsquo;arbre.
+<p>Btrfs utilise une structure de type arbre B pour stocker les métadonnées. Un arbre B a l&rsquo;avantage d&rsquo;être toujours équilibré ce qui garantit un temps de recherche et d&rsquo;insertion en log base B de la hauteur de l&rsquo;arbre.
 Toutes les données ne sont pas stockées dans le même arbre, Btrfs utilise plusieurs arbres pour stocker séparément :</p>
 <ul>
 <li>Les racines des autres arbres</li>
@@ -595,7 +594,7 @@ root@debian:~# tree /mnt/2
 <h3 id="gestion-des-quotas">Gestion des quotas</h3>
 <h4 id="définition-et-principe-1">Définition et principe</h4>
 <p>Les quotas permmettent de fixer une limite d&rsquo;utilisation des vlocs et ainsi répartir l&rsquo;utilisation du support de stockage entre les différents utilisateurs, groupes et/ou sous-volumes.</p>
-<p>La gestion des quotas dans Btrfs est implémentée au niveau des sous-volumes par l&rsquo;utilisation de &ldquo;groupes de quotas&rdquo; (<code>qgroup</code>). Cette gestion n'étant pas présente depuis le début du développement de Btrfs, il est possible de scanner le système de fichier de sorte que les sous-volumes crées avant les gestion des quotas puissent en bénéficier. Dans ce sytème de quotas, chaque sous-volume est assigné à un <code>qgroup</code> de la forme <code>0/&amp;lt;ID du sous-volume&amp;gt;</code>. Il est possible de créer un groupe de quotas identifié par un nombre quelconque mais l&rsquo;ID du sous-volume est utilisé par défaut.</p>
+<p>La gestion des quotas dans Btrfs est implémentée au niveau des sous-volumes par l&rsquo;utilisation de &ldquo;groupes de quotas&rdquo; (<code>qgroup</code>). Cette gestion n&rsquo;étant pas présente depuis le début du développement de Btrfs, il est possible de scanner le système de fichier de sorte que les sous-volumes crées avant les gestion des quotas puissent en bénéficier. Dans ce sytème de quotas, chaque sous-volume est assigné à un <code>qgroup</code> de la forme <code>0/&amp;lt;ID du sous-volume&amp;gt;</code>. Il est possible de créer un groupe de quotas identifié par un nombre quelconque mais l&rsquo;ID du sous-volume est utilisé par défaut.</p>
 <h4 id="activer-les-quotas">Activer les quotas</h4>
 <p>Activer les quotas sur un sous-volume Btrfs nouvellement créer se fait uniquement grâce à :</p>
 <pre><code class="language-terminal" data-lang="terminal">root@debian:~# btrfs quota enable &amp;lt;path&amp;gt;</code></pre>
@@ -869,7 +868,7 @@ sda5    NC      Logique     btrfs   13799,27 Mo
 sda6    NC      Logique     swap     2004,88 Mo
 Linux debian 3.2.0-4-amd64 #1 SMP Debian 3.2.63-2+deb7u1 x86_64 GNU/Linux</code></pre>
 <h3 id="installer-debian-77-sur-un-système-de-fichiers-btrfs">Installer Debian 7.7 sur un système de fichiers Btrfs</h3>
-<p>Btrfs, bien qu'étant un système de fichier encore en développement, est intégré à l&rsquo;image d&rsquo;installation de Debian. Il suffit simplement de sélectionner Btrfs lors du partitionnement des disques.</p>
+<p>Btrfs, bien qu&rsquo;étant un système de fichier encore en développement, est intégré à l&rsquo;image d&rsquo;installation de Debian. Il suffit simplement de sélectionner Btrfs lors du partitionnement des disques.</p>
 
 
     
@@ -1415,7 +1414,7 @@ root@debian:/mnt/test/ext4# tree
   <div class="post-copyright">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" class="img-cc" src="/img/by-sa_4.0_80x15.png" /></a> Cet article est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licence Creative Commons Attribution-ShareAlike 4.0 International</a>.
     
-    Cet article a été publié il y a <strong>1957</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
+    Cet article a été publié il y a <strong>1996</strong> jours, son contenu peut être inexact, voire erroné, et l'application des conseils ou consignes présents dans cet article doit être fait à votre propre appréciation. L'auteur de l'article ne pourra être tenu responsable des inconvénients pouvant résulter de l'application des conseils et consignes énoncés dans cet article.
     
   </div>
 
@@ -1644,21 +1643,6 @@ root@debian:/mnt/test/ext4# tree
               </time>
             </header>
             <a href="/console/serveur-web-docker-nginx-php-postgres/" class="image"><img src="/media/2019/03/bff132734906900fcbf309071ae72229.png" alt=""></a>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/guides/installer-python-3.7-debian-9-strecth/">Installer Python 3.7 sur Debian 9 Stretch</a>
-              </h3>
-              
-              <time class="published" datetime='2019-03-04'>
-                4 mars 2019
-              </time>
-            </header>
-            <a href="/guides/installer-python-3.7-debian-9-strecth/" class="image"><img src="/media/2019/03/23eeeb4347bdd26bfc6b7ee9a3b755dd.png" alt=""></a>
             
 
           </article>

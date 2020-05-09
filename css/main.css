@@ -1112,14 +1112,15 @@ ul.actions.fit.small li {
 	}
 
 	ul.actions li {
-		padding: 1em 0 0 0;
+		padding: 0;
 		display: block;
 		text-align: center;
 		width: 100%;
 	}
 
 	ul.actions li:first-child {
-		padding-top: 0;
+		margin-left: -.5em;
+		padding-right: 1em;
 	}
 
 	ul.actions li > * {
@@ -1315,8 +1316,8 @@ dl dd {
 
 
 	.mini-posts .posts-container > * {
-		margin: 0 0 2em 0;
-		width: 49%;
+		margin: 0 0 1em 0;
+		width: calc(50% - .5em);
 	}
 
 }
@@ -1407,6 +1408,7 @@ dl dd {
 	text-align: right;
 	width: 14em;
     background-color: #f4f4f4;
+    z-index: 1;
 }
 
 .post > header .meta > * {
@@ -1429,13 +1431,13 @@ dl dd {
 	white-space: nowrap;
 }
 
-.post > header .meta-actus     { background-color: rgba(244, 67, 54, .7); }
-.post > header .meta-dossiers  { background-color: rgba(139, 195, 74, .7); }
-.post > header .meta-guides    { background-color: rgba(0, 188, 212, .7); }
-.post > header .meta-tutoriels { background-color: rgba(255, 193, 7, .7); }
-.post > header .meta-console   { background-color: rgba(0, 150, 136, .7); }
-.post > header .meta-securite  { background-color: rgba(244, 81, 30, .7); }
-.post > header .meta-write-up  { background-color: rgba(232, 30, 98, .7); }
+.post > header .meta-actus     { background-color: #f77b71; }
+.post > header .meta-dossiers  { background-color: #add580; }
+.post > header .meta-guides    { background-color: #4cd0e1; }
+.post > header .meta-tutoriels { background-color: #ffd350; }
+.post > header .meta-console   { background-color: #4cb5ab; }
+.post > header .meta-securite  { background-color: #f78461; }
+.post > header .meta-write-up  { background-color: #ef6190; }
 
 .post-copyright {
     color: #4a4a4a;
@@ -1579,14 +1581,18 @@ dl dd {
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
 		flex-direction: column;
-		padding: 3.75em 3em 1.25em 3em ;
+		padding: 0;
 		border-left: 0;
+		overflow: hidden;
+	}
+
+	.post > header .cover {
+		width: 100%;
 	}
 
 	.post > header .title {
 		-ms-flex: 0 1 auto;
-		margin: 0 0 2em 0;
-		padding: 0;
+		padding: 1.25em;
 		text-align: center;
 	}
 
@@ -1604,9 +1610,7 @@ dl dd {
 		-ms-justify-content: center;
 		justify-content: center;
 		border-left: 0;
-		margin: 0 0 2em 0;
-		padding-top: 0;
-		padding: 0;
+		padding: 1.25em;
 		text-align: left;
 		width: 100%;
 	}
@@ -1656,7 +1660,7 @@ dl dd {
 	}
 
 	.post > header {
-		padding: 3em 1.5em 0.5em 1.5em ;
+		padding: 0;
 		left: -1.5em;
 		margin: -1.5em 0 1.5em 0;
 		width: calc(100% + 3em);
